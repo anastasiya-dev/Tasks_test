@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d74af16c-9183-4e69-b2fa-2367d363e3e1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/.idea/sonarIssues.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/.idea/sonarlint/issuestore/1/8/1825687aef64993be21f07bbbd68d11b764a5e4f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/.idea/sonarlint/issuestore/2/0/2014d584e64d9ca05aee0d0ffb40b4fac9bcaf3e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/.idea/sonarlint/issuestore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/.idea/sonarlint/issuestore/5/d/5ddd7a53feddeab1866b1c27f8ae050218667aab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/.idea/sonarlint/issuestore/5/e/5eea3c0b2c04dbec519daf595d95a375a2fe689f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/.idea/sonarlint/issuestore/7/a/7a4c795756420aca044fcc8fff55f77d5b07181d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/.idea/sonarlint/issuestore/8/2/82d941ae205445f9bef18c5fc74fe279a41389c7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/.idea/sonarlint/issuestore/8/c/8cb1af1905be58cf6d9e8383dab14440e970929e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/.idea/sonarlint/issuestore/9/6/9678f50207b04543d654a0f9c61977435414ece1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/.idea/sonarlint/issuestore/9/8/9871478d9cf438f354395a44d956ae5e03e75178" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/.idea/sonarlint/issuestore/a/7/a749164c88d3470858806a2a1e07d635a5854b9c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/.idea/sonarlint/issuestore/a/c/ac783360641b999f23d97911080e4362495772c4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/Connection.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/MySQL_Homework.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/src/main/java/by/academy/Dao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/src/main/java/by/academy/DaoFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/src/main/java/by/academy/DtoExpense.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/src/main/java/by/academy/DtoReceiver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/src/main/java/by/academy/Main_Task_7.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/src/main/java/by/academy/Main_Tasks_1_5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/src/main/java/by/academy/mysql/DaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/src/main/java/by/academy/mysql/MySqlDataSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/src/main/resources/changelog-master.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/src/test/java/by/academy/mysql/DaoImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/src/test/resources/by/academy/mysql/DaoImplTestExpenses.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/src/test/resources/by/academy/mysql/DaoImplTestReceivers.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/src/test/resources/changelog-master-test.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/target/classes/by/academy/Dao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/target/classes/by/academy/DaoFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/target/classes/by/academy/DtoExpense.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/target/classes/by/academy/DtoReceiver.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/target/classes/by/academy/Main_Task_7.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/target/classes/by/academy/Main_Tasks_1_5.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/target/classes/by/academy/mysql/DaoImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/target/classes/by/academy/mysql/MySqlDataSource.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/target/classes/changelog-master.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/target/surefire-reports/TEST-by.academy.mysql.DaoImplTest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/target/surefire-reports/by.academy.mysql.DaoImplTest.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MySQL_Homework/target/test-classes/by/academy/mysql/DaoImplTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-server/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-server/client/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-server/client/src/main/java/by/it/academy/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-server/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-server/server/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-server/server/src/main/java/by/it/academy/Server.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-model/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-model/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-model/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-model/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-model/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-model/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-model/.idea/sonarIssues.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-model/.idea/sonarlint/issuestore/0/5/05f2d99869f659f7b26abcdf6e19c3809ee78d77" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-model/.idea/sonarlint/issuestore/0/d/0d0be77ac79ecc7071029580e8ab37fa9b06a1a5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-model/.idea/sonarlint/issuestore/0/f/0fe3c60eeb1e7ab6d9a162fdd3f4c8eab6bfbb94" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-model/.idea/sonarlint/issuestore/2/f/2fba712c7bb9c06ff50f0260693b0f9dd03b125d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-model/.idea/sonarlint/issuestore/3/3/336c463ca49822c3ec1b985e55f9b06d86ef1d00" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-model/.idea/sonarlint/issuestore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-model/.idea/sonarlint/issuestore/4/7/47a21bc1ae326e01a5e782a7602bab435e8cea98" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-model/.idea/sonarlint/issuestore/4/b/4b169eb387f6935d857bb6826366ddfd698b1937" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-model/.idea/sonarlint/issuestore/9/a/9ac67752a2b7ee3f6dd220c077e4f3c74a8460df" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-model/.idea/sonarlint/issuestore/a/4/a40c3cb94d36197571878e0d8e456c3708c2aeb5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-model/.idea/sonarlint/issuestore/a/5/a5163031349aa4d0db0db708e7a0bb541c44a397" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-model/.idea/sonarlint/issuestore/b/b/bb2f7b6c0effc137cfbe634ca507c5dc657be1ba" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-model/.idea/sonarlint/issuestore/c/9/c93f9637a0049c83194afd87e7b757bea412bf05" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-model/.idea/sonarlint/issuestore/e/6/e6d94f9a1a764d4d1a58cbc7be63d4b0a384ebcd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-model/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-model/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-model/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-model/data-model.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-model/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-model/src/main/java/by/shop/model/Counter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-model/src/main/java/by/shop/model/Country.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-model/src/main/java/by/shop/model/Department.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-model/src/main/java/by/shop/model/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-model/src/main/java/by/shop/model/EmployeeDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-model/src/main/java/by/shop/model/Meeting.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-model/src/main/java/by/shop/model/MeetingUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-model/src/main/java/by/shop/model/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-model/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-model/src/test/java/by/shop/model/CounterTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-model/src/test/java/by/shop/model/DepartmentTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-model/src/test/java/by/shop/model/EmployeeTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-model/src/test/java/by/shop/model/MeetingTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-model/src/test/java/by/shop/model/ModelTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-model/src/test/java/by/shop/model/MySQLDataSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-model/src/test/java/by/shop/model/ProductTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-model/src/test/resources/by/shop/model/ProductTest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-model/src/test/resources/hibernate.test.cfg.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-model/target/classes/by/shop/model/Product.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-model/target/classes/hibernate.cfg.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-model/target/data-model-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-model/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-model/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-model/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data-model/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-mysql/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-mysql/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-mysql/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-mysql/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-mysql/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-mysql/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-mysql/.idea/sonarIssues.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-mysql/.idea/sonarlint/issuestore/0/d/0d6c406c586ebdab659ef994a1580a466a2969d1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-mysql/.idea/sonarlint/issuestore/1/3/139c9a7b0a97ba72de0f97c1c954332a1759928c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-mysql/.idea/sonarlint/issuestore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-mysql/.idea/sonarlint/issuestore/8/9/89aee1fb0d7159abeab6ddce0e14ed6bcc770e3b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-mysql/.idea/sonarlint/issuestore/9/2/9209236214b0f1e64cfb691ad2cdc4decffb42a7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-mysql/.idea/sonarlint/issuestore/b/4/b402d64865fb316ffd027084ad1d1e02083e0a2d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-mysql/.idea/sonarlint/issuestore/b/f/bfa6532ac004a94a7579d4e47b0ce96964ff7803" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-mysql/.idea/sonarlint/issuestore/c/6/c61217bbdd6b92aa447b7016bb4c91106bbb7ff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-mysql/.idea/sonarlint/issuestore/d/4/d45ff063102d8b56e97c3361feaef27371c6bd31" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-mysql/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-mysql/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-mysql/hello-mysql.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-mysql/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-mysql/src/main/java/by/academy/it/ClientDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-mysql/src/main/java/by/academy/it/ClientDaoFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-mysql/src/main/java/by/academy/it/ClientDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-mysql/src/main/java/by/academy/it/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-mysql/src/main/java/by/academy/it/Main_2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-mysql/src/main/java/by/academy/it/mysql/ClientDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-mysql/src/main/java/by/academy/it/mysql/MySqlDataSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-mysql/src/main/resources/changelog-master.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-mysql/src/test/java/by/academy/it/mysql/ClientDaoImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-mysql/src/test/resources/by/academy/it/mysql/ClientDaoImplTest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-mysql/src/test/resources/changelog-master-test.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-mysql/target/classes/by/academy/it/ClientDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-mysql/target/classes/by/academy/it/ClientDaoFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-mysql/target/classes/by/academy/it/ClientDto.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-mysql/target/classes/by/academy/it/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-mysql/target/classes/by/academy/it/Main_2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-mysql/target/classes/by/academy/it/mysql/ClientDaoImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-mysql/target/classes/by/academy/it/mysql/MySqlDataSource.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-mysql/target/classes/changelog-master.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-mysql/target/hello-mysql-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-mysql/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-mysql/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-mysql/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-mysql/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-mysql/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-mysql/target/surefire-reports/TEST-by.academy.it.mysql.ClientDaoImplTest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-mysql/target/surefire-reports/by.academy.it.mysql.ClientDaoImplTest.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-mysql/target/test-classes/by/academy/it/mysql/ClientDaoImplTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-mysql/target/test-classes/by/academy/it/mysql/ClientDaoImplTest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-mysql/target/test-classes/changelog-master-test.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-tomcat/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-tomcat/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-tomcat/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-tomcat/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-tomcat/.idea/hello-tomcat.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-tomcat/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-tomcat/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-tomcat/.idea/sonarIssues.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-tomcat/.idea/sonarlint/issuestore/1/3/1337d72a3b1928dba82aa5210f5cdc0e88ce895b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-tomcat/.idea/sonarlint/issuestore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-tomcat/.idea/sonarlint/issuestore/a/4/a471d482e9963b6438e3fc09b39cdee667b447d6" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-tomcat/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-tomcat/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-tomcat/hello-tomcat.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-tomcat/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-tomcat/src/main/java/by/it/academy/HelloWorldServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-tomcat/src/main/java/by/it/academy/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-tomcat/src/main/java/by/it/academy/client/ClientServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-tomcat/src/main/resources/Hit counter.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-tomcat/src/main/webapp/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-tomcat/src/main/webapp/jsp/test.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-tomcat/target/classes/by/it/academy/HelloWorldServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-tomcat/target/hello-tomcat.war" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-tomcat/target/hello-tomcat/WEB-INF/classes/Hit counter.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-tomcat/target/hello-tomcat/WEB-INF/classes/by/it/academy/HelloWorldServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-tomcat/target/hello-tomcat/WEB-INF/lib/hello-mysql-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-tomcat/target/hello-tomcat/WEB-INF/lib/mysql-connector-java-8.0.20.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-tomcat/target/hello-tomcat/WEB-INF/lib/protobuf-java-3.6.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-tomcat/target/hello-tomcat/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-tomcat/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-tomcat/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-tomcat/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello-tomcat/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hibernate-homework.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hibernate-hw/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hibernate-hw/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hibernate-hw/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hibernate-hw/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hibernate-hw/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hibernate-hw/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hibernate-hw/.idea/sonarIssues.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hibernate-hw/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hibernate-hw/hibernate-hw.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hibernate-hw/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hibernate-hw/src/main/java/by/it/academy/Animal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hibernate-hw/src/main/java/by/it/academy/AnimalLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hibernate-hw/src/main/java/by/it/academy/HibernateUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hibernate-hw/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hibernate-hw/src/test/java/by/it/academy/AnimalTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hibernate-hw/src/test/java/by/it/academy/HibernateUtilTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hibernate-hw/src/test/java/by/it/academy/MySQLDataSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hibernate-hw/src/test/resources/AnimalTest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hibernate-hw/src/test/resources/META-INF/persistence.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarIssues.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Connection.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mysql-homework.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/it/academy/Dao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/it/academy/DaoFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/it/academy/DtoExpense.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/it/academy/DtoReceiver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/it/academy/Main_Task_7.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/it/academy/Main_Tasks_1_5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/it/academy/mysql/DaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/it/academy/mysql/MySqlDataSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/changelog-master.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/by/it/academy/mysql/DaoImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/by/it/academy/mysql/DaoImplTestExpenses.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/by/it/academy/mysql/DaoImplTestReceivers.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/changelog-master-test.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../work.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello-maven/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../hello-maven/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit4 Test Class" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1gDqIwsChOORX2spv5k0UosqALc" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="flattenPackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../data-model" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="by.it.academy.mysql" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="by.it.academy" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="by.it.academy" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\work\mysql-homework\src\test\resources\by\it\academy\mysql" />
+      <recent name="C:\work\mysql-homework" />
+      <recent name="C:\work\mysql-homework\src\test\resources" />
+      <recent name="C:\work\mysql-homework\src\main\resources" />
+      <recent name="C:\work\mysql-homework\src\main\java" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.DaoImplTest.testAddReceiver">
+    <configuration name="DaoImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mysql-homework" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="by.it.academy.mysql.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="by.it.academy.mysql" />
+      <option name="MAIN_CLASS_NAME" value="by.it.academy.mysql.DaoImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DaoImplTest.getReceiver" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mysql-homework" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="by.it.academy.mysql.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="by.it.academy.mysql" />
+      <option name="MAIN_CLASS_NAME" value="by.it.academy.mysql.DaoImplTest" />
+      <option name="METHOD_NAME" value="getReceiver" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DaoImplTest.testAddReceiver" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mysql-homework" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="by.it.academy.mysql.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="by.it.academy.mysql" />
+      <option name="MAIN_CLASS_NAME" value="by.it.academy.mysql.DaoImplTest" />
+      <option name="METHOD_NAME" value="testAddReceiver" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DaoImplTest.testGetExpense_equality" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mysql-homework" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="by.it.academy.mysql.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="by.it.academy.mysql" />
+      <option name="MAIN_CLASS_NAME" value="by.it.academy.mysql.DaoImplTest" />
+      <option name="METHOD_NAME" value="testGetExpense_equality" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DaoImplTest.testGetReceivers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mysql-homework" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="by.it.academy.mysql.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="by.it.academy.mysql" />
+      <option name="MAIN_CLASS_NAME" value="by.it.academy.mysql.DaoImplTest" />
+      <option name="METHOD_NAME" value="testGetReceivers" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.DaoImplTest.testAddReceiver" />
+        <item itemvalue="JUnit.DaoImplTest.testGetExpense_equality" />
+        <item itemvalue="JUnit.DaoImplTest" />
+        <item itemvalue="JUnit.DaoImplTest.testGetReceivers" />
+        <item itemvalue="JUnit.DaoImplTest.getReceiver" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d74af16c-9183-4e69-b2fa-2367d363e3e1" name="Default Changelist" comment="" />
+      <created>1597659434414</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1597659434414</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser" timestamp="1597660738544">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1597660738544" />
+    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1597739492198">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1597739492198" />
+    <state width="1237" height="204" key="GridCell.Tab.0.bottom" timestamp="1597740303536">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="204" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1597740303536" />
+    <state width="1237" height="204" key="GridCell.Tab.0.center" timestamp="1597740303535">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="204" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1597740303535" />
+    <state width="1237" height="204" key="GridCell.Tab.0.left" timestamp="1597740303535">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="204" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1597740303535" />
+    <state width="1237" height="204" key="GridCell.Tab.0.right" timestamp="1597740303535">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="204" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1597740303535" />
+    <state width="1237" height="204" key="GridCell.Tab.1.bottom" timestamp="1597740303536">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="204" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1597740303536" />
+    <state width="1237" height="204" key="GridCell.Tab.1.center" timestamp="1597740303536">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="204" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1597740303536" />
+    <state width="1237" height="204" key="GridCell.Tab.1.left" timestamp="1597740303536">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="204" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1597740303536" />
+    <state width="1237" height="204" key="GridCell.Tab.1.right" timestamp="1597740303536">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="204" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1597740303536" />
+    <state x="221" y="84" key="IDE.errors.dialog" timestamp="1597737355504">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="221" y="84" key="IDE.errors.dialog/0.0.1280.680@0.0.1280.680" timestamp="1597737355504" />
+    <state x="412" y="103" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1597662259554">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="412" y="103" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1280.680@0.0.1280.680" timestamp="1597662259554" />
+    <state x="372" y="98" key="refactoring.ChangeSignatureDialog" timestamp="1597737994534">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="372" y="98" key="refactoring.ChangeSignatureDialog/0.0.1280.680@0.0.1280.680" timestamp="1597737994534" />
+    <state x="297" y="-6" width="670" height="676" key="search.everywhere.popup" timestamp="1597665400845">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="297" y="-6" width="670" height="676" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1597665400845" />
+  </component>
+</project>
