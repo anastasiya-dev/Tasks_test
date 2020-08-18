@@ -1,14 +1,0 @@
-
-X	java:S125"<This block of commented-out lines of code should be removed.(¸éŸÎ8İ½€Í³.
-Y
-java:S2629*"7Use the built-in formatting to construct this argument.(’ÜÊãûÿÿÿÿ8—œŒ¸.
-Y
-java:S2629"7Use the built-in formatting to construct this argument.(ÂÜì‘ûÿÿÿÿ8—œŒ¸.
-]	java:S125-"<This block of commented-out lines of code should be removed.(›¦êüûÿÿÿÿ8Ü²Ï¹·.
-Y
-java:S2629"7Use the built-in formatting to construct this argument.(Üµğ§şÿÿÿÿ8—œŒ¸.
-W
-java:S1481)"5Remove this unused "clientDtoUpdated" local variable.(•Ö­÷ÿÿÿÿÿ8Ü²Ï¹·.
-g	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(€¶™ğıÿÿÿÿ
-f
-java:S1854)"DRemove this useless assignment to local variable "clientDtoUpdated".(•Ö­÷ÿÿÿÿÿ8Ü²Ï¹·.
