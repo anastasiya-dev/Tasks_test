@@ -41,9 +41,9 @@ public class Main_2 {
             ClientDto clientDtoUpdated = clientDao.read(101);
             log.info("Read after update: " + clientDtoCreated);
 
-            //Delete updated
-            clientDao.delete(clientDtoUpdated);
-            log.info("Object deleted: " + clientDtoUpdated.getId());
+//            //Delete updated
+//            clientDao.delete(clientDtoUpdated);
+//            log.info("Object deleted: " + clientDtoUpdated.getId());
 
         } catch (SQLException e) {
             log.log(Level.SEVERE, e.getMessage(), e);

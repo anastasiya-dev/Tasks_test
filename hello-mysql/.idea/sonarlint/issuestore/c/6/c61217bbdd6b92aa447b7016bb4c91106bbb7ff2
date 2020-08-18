@@ -1,13 +1,7 @@
 
-Q
-java:S1128
-"4Remove this unused import 'java.util.logging.Level'.(…µÛ¶8¶ãÐË³.
-T
-java:S2629;"7Use the built-in formatting to construct this argument.(‘ÜŠ¯8¿·å£³.
 [
-java:S1155E">Use isEmpty() to check whether the collection is empty or not.(Æÿ¤–8üåÏË³.
-Z
-java:S1128"8Remove this unused import 'com.mysql.cj.xdevapi.Client'.(ãô’ÿÿÿÿÿ8üåÏË³.
+java:S1155M">Use isEmpty() to check whether the collection is empty or not.(Æÿ¤–8¢˜§»·.
 T
-java:S2629"7Use the built-in formatting to construct this argument.(Êá‰µ8ôÏ©ý².
-]	java:S125"<This block of commented-out lines of code should be removed.(ôïßòþÿÿÿÿ8½ºïÎ³.
+java:S2629C"7Use the built-in formatting to construct this argument.(‘ÜŠ¯8¿·å£³.
+T
+java:S2629%"7Use the built-in formatting to construct this argument.(Êá‰µ8¢˜§»·.

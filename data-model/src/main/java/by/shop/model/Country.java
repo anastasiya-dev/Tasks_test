@@ -1,4 +1,5 @@
 package by.shop.model;
 
-public class Country {
+public enum Country {
+    BY, UA, RU
 }

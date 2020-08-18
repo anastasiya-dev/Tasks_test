@@ -6,12 +6,18 @@
 <hibernate-configuration>
 
     <session-factory>
-        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/shop?serverTimezone=UTC</property>
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/shop?serverTimezone=UTC&amp;createDatabaseIfNotExist=true</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password">Atme3816liveon!</property>
-        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
         <property name="show_sql">true</property>
+        <!--        use validate if database is the primary source, not java-->
+        <!--        <property name="hibernate.hbm2.ddl.auto">validate</property>-->
+
+        <mapping class="by.shop.model.Product"/>
+        <mapping class="by.shop.model.Employee"/>
+        <mapping class="by.shop.model.EmployeeDetails"/>
     </session-factory>
 
 </hibernate-configuration>

@@ -3,8 +3,9 @@ package by.it.academy;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import java.util.Properties;
 
-public class HibernateUtil {
+public class HibernateUtilTest {
     private static final EntityManagerFactory emFactory;
 
     static {

@@ -1,4 +1,4 @@
-package by.shop.model;
+package by.it.academy;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,7 +7,6 @@ import java.util.Properties;
 
 public class MySQLDataSource {
     static Properties properties = new Properties();
-//    static String url = "jdbc:mysql://localhost:3306/shop";
 
     static {
         properties.put("user", "root");
@@ -22,11 +21,7 @@ public class MySQLDataSource {
         }
     }
 
-//    public static Connection getConnection() throws SQLException {
-//        return DriverManager.getConnection(url, properties);
-//    }
-
-    private static String testUrl = "jdbc:mysql://localhost:3306/shop_test";
+    private static String testUrl = "jdbc:mysql://localhost:3306/animals_test";
 
     public static Connection getTestConnection() throws SQLException {
         return DriverManager.getConnection(testUrl, properties);

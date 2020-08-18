@@ -93,6 +93,21 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../MySQL_Homework/src/test/resources/by/academy/mysql/DaoImplTest.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySQL_Homework/src/test/resources/by/academy/mysql/DaoImplTestExpenses.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MySQL_Homework/src/test/resources/by/academy/mysql/DaoImplTestReceivers.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../client-server-app_13/07/pom.xml">
           <value>
             <set />
@@ -104,6 +119,41 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../client-server-app_13/hello-tomcat/src/main/java/by/it/academy/HelloWorldServlet.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../data-model/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../data-model/src/main/java/by/shop/model/MySQLDataSource.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../data-model/src/main/java/by/shop/model/Product.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../data-model/src/main/resources/hibernate.cfg.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../data-model/src/test/java/by/shop/model/ProductTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../data-model/src/test/resources/by/shop/model/ProductTest.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../data-model/src/test/resources/hibernate.test.cfg.xml">
           <value>
             <set />
           </value>
@@ -174,6 +224,111 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/test/resources/by/academy/it/mysql/ClientDaoImplTest.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../hello-tomcat/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../hello-tomcat/src/main/java/by/it/academy/client/ClientServlet.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../mysql-homework/Connection.sql">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../mysql-homework/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../mysql-homework/src/main/java/by/academy/Dao.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../mysql-homework/src/main/java/by/academy/DaoFactory.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../mysql-homework/src/main/java/by/academy/DaoImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../mysql-homework/src/main/java/by/academy/DtoExpense.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../mysql-homework/src/main/java/by/academy/DtoReceiver.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../mysql-homework/src/main/java/by/academy/mysql/DaoImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../mysql-homework/src/main/java/by/academy/mysql/MySqlDataSource.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../mysql-homework/src/main/java/by/it/academy/DaoFactory.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../mysql-homework/src/main/java/by/it/academy/DtoExpense.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../mysql-homework/src/main/java/by/it/academy/DtoReceiver.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../mysql-homework/src/main/java/by/it/academy/Main_Task7.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../mysql-homework/src/main/java/by/it/academy/Main_Task_7.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../mysql-homework/src/main/java/by/it/academy/Main_Tasks_1_5.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../mysql-homework/src/main/java/by/it/academy/mysql/DaoImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../mysql-homework/src/main/java/by/it/academy/mysql/MySqlDataSource.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../mysql-homework/src/test/java/by/it/academy/mysql/DaoImplTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../mysql-homework/src/test/resources/by/it/academy/mysql/DaoImplTestExpenses.xml">
           <value>
             <set />
           </value>

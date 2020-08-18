@@ -1,16 +1,28 @@
 package by.shop.model;
 
-import java.util.List;
+import java.util.Set;
 
 public class MeetingUtil {
-    public void add (List<Employee> employees, List<Meeting> meetings){
-
+    public static void add(Set<Employee> employees, Set<Meeting> meetings) {
+        for (Employee employee : employees) {
+            employee.getMeetings().addAll(meetings);
+        }
+        for (Meeting meeting : meetings) {
+            meeting.getEmployees().addAll(employees);
+        }
     }
 
+    public static void add(Employee employee, Set<Meeting> meetings) {
+        employee.getMeetings().addAll(meetings);
+        for (Meeting meeting : meetings) {
+            meeting.getEmployees().add(employee);
+        }
+    }
 
-
-public void add(Employee employee, List<Meeting> meetings){}
-
-public void add(List<Employee> employees, Meeting meeting){}
-
+    public static void add(Set<Employee> employees, Meeting meeting) {
+        meeting.getEmployees().addAll(employees);
+        for (Employee employee : employees) {
+            employee.getMeetings().add(meeting);
+        }
+    }
 }

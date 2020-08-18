@@ -15,6 +15,7 @@ public class Server {
                 DataOutputStream dos = new DataOutputStream(accept.getOutputStream());
                 dos.writeUTF("Hello " + Calendar.getInstance().toString());
                 dos.flush();
+                serverSocket.close();
             }
         } catch (IOException e) {
             e.printStackTrace();

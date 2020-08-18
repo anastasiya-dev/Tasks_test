@@ -182,8 +182,10 @@ public class ClientDaoImplTest {
 
         //When
         int maxId = clientDao.getMaxId();
+        ClientDto clientDto = clientDao.read(2);
 
         //Then
+        assertNotNull(clientDto);
         assertEquals(maxId, 5);
         DatabaseOperation.DELETE.execute(connection, dataSet);
     }

@@ -2,12 +2,10 @@ package by.academy.it.mysql;
 
 import by.academy.it.ClientDao;
 import by.academy.it.ClientDto;
-import com.mysql.cj.xdevapi.Client;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class ClientDaoImpl implements ClientDao {
@@ -17,25 +15,32 @@ public class ClientDaoImpl implements ClientDao {
     private static Logger log = Logger.getLogger(ClientDaoImpl.class.getName());
 
     public ClientDaoImpl() throws SQLException {
-        this.connection = MySqlDataSource.getConnection();
+        this.isTestInstance = false;
+        connect();
     }
 
     public ClientDaoImpl(boolean isTestInstance) throws SQLException {
-//        this.isTestInstance = false;
         this.isTestInstance = isTestInstance;
-        this.connection = MySqlDataSource.getTestConnection();
+        connect();
+    }
+
+    private void connect() throws SQLException {
+        if (isTestInstance) {
+            this.connection = MySqlDataSource.getTestConnection();
+        } else {
+            this.connection = MySqlDataSource.getConnection();
+        }
     }
 
     @Override
     public int create(ClientDto clientDto) throws SQLException {
         log.info("Creating new client: " + clientDto);
         PreparedStatement preparedStatement = null;
-        if(!isTestInstance){
+        if (!isTestInstance) {
             preparedStatement
                     = connection.prepareStatement("insert into clients " +
                     "values (?,?,?,?,?,?) ");
-        }
-        else{
+        } else {
             preparedStatement = connection.prepareStatement("insert into client_test.clients " +
                     "values (?,?,?,?,?,?) ");
         }
@@ -56,6 +61,9 @@ public class ClientDaoImpl implements ClientDao {
 
     @Override
     public ClientDto read(int id) throws SQLException {
+        if(connection.isClosed()){
+            connect();
+        }
         log.info("Reading client info for the following id: " + id);
         ClientDto clientDto = new ClientDto();
 
