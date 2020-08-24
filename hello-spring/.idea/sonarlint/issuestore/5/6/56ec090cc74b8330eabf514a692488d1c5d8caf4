@@ -1,16 +1,0 @@
-
-O
-java:S1199$"-Extract this nested code block into a method.(úà–Ñøÿÿÿÿ8íÛ¤½À.
-O
-java:S1199("-Extract this nested code block into a method.(Î—­Šşÿÿÿÿ8íÛ¤½À.
-t	java:S116"XRename this field "MessageSender" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(í”î¬8­¬ú¾À.
-U	java:S106"9Replace this use of System.out or System.err by a logger.(Ğ¦÷8·™Ø¼À.
-Z	java:S106%"9Replace this use of System.out or System.err by a logger.(ÚÉ…¶ÿÿÿÿÿ8ç¥½À.
-U	java:S106)"9Replace this use of System.out or System.err by a logger.(ÅÑˆ›8ÃÎ¾À.
-U	java:S106"9Replace this use of System.out or System.err by a logger.(Ô§Ç8õŠ¥½À.
-T	java:S106-"9Replace this use of System.out or System.err by a logger.(ÉÂS8Š­Ú¼À.
-J
-java:S1199 "-Extract this nested code block into a method.(×†‚È8°®¤½À.
-U	java:S106"9Replace this use of System.out or System.err by a logger.(ï“õÄ8úŠ×¼À.
-J
-java:S1199"-Extract this nested code block into a method.(ŠºÅ8°®¤½À.
