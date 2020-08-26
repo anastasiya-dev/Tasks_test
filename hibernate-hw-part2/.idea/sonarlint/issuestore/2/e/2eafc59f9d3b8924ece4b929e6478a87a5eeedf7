@@ -1,0 +1,8 @@
+
+i
+java:S1192+"GDefine a constant instead of duplicating this literal "salary" 4 times.(Ñ‘Ò¨ûÿÿÿÿ8ºë—ÔÂ.
+X	java:S125F"<This block of commented-out lines of code should be removed.(„êÀ8­›—ÔÂ.
+Z	java:S106D"9Replace this use of System.out or System.err by a logger.(ä¬¦¬úÿÿÿÿ8ºë—ÔÂ.
+]	java:S125M"<This block of commented-out lines of code should be removed.(í™¹·ÿÿÿÿÿ8­›—ÔÂ.
+U	java:S106?"9Replace this use of System.out or System.err by a logger.(¦áæå8ºë—ÔÂ.
+b	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ë²©
