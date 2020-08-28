@@ -18,6 +18,7 @@ public class Task_24 {
         person2.setName("Person2");
         Employee person3 = new Employee();
         person3.setName("Person3");
+        System.out.println(person1.hashCode() + " " + person2.hashCode() + " " + person3.hashCode());
 
         Meeting meeting1 = new Meeting();
         meeting1.setSubject("meeting1");
