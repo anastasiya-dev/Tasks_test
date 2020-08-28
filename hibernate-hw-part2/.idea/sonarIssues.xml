@@ -43,6 +43,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring/src/main/java/by/it/academy/controller/HomeController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../hello-spring/src/main/java/by/it/academy/simple/SimpleConfiguration.java">
           <value>
             <set />
@@ -54,6 +59,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../hello-spring/src/main/webapp/WEB-INF/jsp/index.jsp">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring/src/test/java/by/it/academy/NotificationCommandExecutorTest.java">
           <value>
             <set />
           </value>

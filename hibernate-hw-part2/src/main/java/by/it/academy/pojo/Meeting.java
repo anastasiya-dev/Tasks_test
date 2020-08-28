@@ -1,6 +1,8 @@
 package by.it.academy.pojo;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -27,4 +29,10 @@ public class Meeting {
                     @JoinColumn(name = "employee_id")
             })
     private Set<Employee> employees = new HashSet<>();
+
+    @Override
+    public int hashCode() {
+        final int hashCode = 29 * getSubject().hashCode();
+        return hashCode;
+    }
 }

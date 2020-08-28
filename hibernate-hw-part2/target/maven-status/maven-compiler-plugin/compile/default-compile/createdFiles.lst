@@ -1,4 +1,5 @@
 by\it\academy\pojo\Employee.class
+by\it\academy\results\Task_detached.class
 by\it\academy\results\Task_17_19.class
 by\it\academy\results\Task_24.class
 by\it\academy\pojo\Address.class
@@ -13,6 +14,7 @@ by\it\academy\support\HibernateUtil.class
 by\it\academy\pojo\EmployeeDetails.class
 by\it\academy\results\Task_22.class
 by\it\academy\pojo\Department.class
+by\it\academy\results\Task_23.class
 by\it\academy\support\CustomNamingStrategy.class
 by\it\academy\results\Task_25_26_27.class
 by\it\academy\pojo\MeetingUtil.class

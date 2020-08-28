@@ -45,6 +45,12 @@ public class Employee extends Person {
     private Set<Meeting> meetings = new HashSet<>();
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinTable(name = "EMPLOYEES_TASKS", joinColumns = {@JoinColumn(name="employee_id")}, inverseJoinColumns = {@JoinColumn(name="task_id")})
+    @JoinTable(name = "EMPLOYEES_TASKS", joinColumns = {@JoinColumn(name = "employee_id")}, inverseJoinColumns = {@JoinColumn(name = "task_id")})
     private List<Task> tasks = new ArrayList<>();
+
+    @Override
+    public int hashCode() {
+        final int hashCode = 17 * getName().hashCode();
+        return hashCode;
+    }
 }
