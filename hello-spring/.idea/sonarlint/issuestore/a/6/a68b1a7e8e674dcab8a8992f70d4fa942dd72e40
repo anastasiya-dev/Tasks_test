@@ -1,0 +1,8 @@
+
+
+java:S1130V"sRemove the declaration of thrown exception 'org.springframework.beans.BeansException' which is a runtime exception.(¾ıˆ„8İú€Á.
+U	java:S106]"9Replace this use of System.out or System.err by a logger.(š÷€™8¹’…Á.
+Z	java:S106W"9Replace this use of System.out or System.err by a logger.(É„´Áûÿÿÿÿ8º³‚Á.
+
+java:S1130\"sRemove the declaration of thrown exception 'org.springframework.beans.BeansException' which is a runtime exception.(ˆ’€·8İú€Á.
+]	java:S125%"<This block of commented-out lines of code should be removed.(Å€Æÿÿÿÿÿÿ8®ÜĞ€Ã.

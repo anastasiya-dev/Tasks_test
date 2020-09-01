@@ -1,0 +1,20 @@
+
+O
+java:S1199*"-Extract this nested code block into a method.(úà–Ñøÿÿÿÿ8íÛ¤½À.
+e
+java:S1128"ERemove this unused import 'org.springframework.stereotype.Component'.(Ş÷Ñ¸ÿÿÿÿÿ8ìÚÒ®Ã.
+U	java:S106"9Replace this use of System.out or System.err by a logger.(ï“õÄ8úŠ×¼À.
+J
+java:S1199&"-Extract this nested code block into a method.(×†‚È8°®¤½À.
+J
+java:S1199""-Extract this nested code block into a method.(ŠºÅ8°®¤½À.
+U	java:S106#"9Replace this use of System.out or System.err by a logger.(Ô§Ç8õŠ¥½À.
+t	java:S116"XRename this field "MessageSender" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²º¹€8­¬ú¾À.
+T	java:S1063"9Replace this use of System.out or System.err by a logger.(ÉÂS8Š­Ú¼À.
+Z	java:S106+"9Replace this use of System.out or System.err by a logger.(ÚÉ…¶ÿÿÿÿÿ8ç¥½À.
+Q
+java:S3740"/Provide the parametrized type for this generic.(Å·Ììıÿÿÿÿ8¼ÏÀÂ.
+O
+java:S1199."-Extract this nested code block into a method.(Î—­Šşÿÿÿÿ8íÛ¤½À.
+U	java:S106"9Replace this use of System.out or System.err by a logger.(Ğ¦÷8·™Ø¼À.
+U	java:S106/"9Replace this use of System.out or System.err by a logger.(ÅÑˆ›8ÃÎ¾À.
