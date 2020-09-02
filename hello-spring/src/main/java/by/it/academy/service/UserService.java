@@ -17,7 +17,7 @@ public class UserService {
     public List<String> search(String searchStr) {
         return (List<String>)userDao.findAll(searchStr)
                 .stream()
-                .map(o -> ((Recipient) o).getMobilePhone() + " " + ((Recipient) o).getEmailAddress())
+                .map(o -> ((Recipient) o).getId() + " " + ((Recipient) o).getMobilePhone() + " " + ((Recipient) o).getEmailAddress())
                 .collect(Collectors.toList());
     }
 

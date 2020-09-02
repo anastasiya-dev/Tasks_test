@@ -22,7 +22,7 @@
        padding-bottom: 100px; /* height of your footer */
       }
       footer {
-       position: absolute;
+       position: relative;
        bottom: 0;
        width: 100%;
       }

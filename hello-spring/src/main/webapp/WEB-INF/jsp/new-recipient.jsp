@@ -1,7 +1,14 @@
 <jsp:include page="header.jsp"/>
 <h1>New recipient: </h1>
 
+<form method="post" enctype="multipart/form-data">
+  <div class="form-group">
+      <label for="exampleFormControlFile1">Select image:</label>
+      <input type="file" class="form-control-file" name="image" id="exampleFormControlFile1">
+  </div>
+
 <form action="/hello-spring/new-recipient.html" method="post">
+
   <div class="form-group">
         <label for="formGroupExampleInput2">User name</label>
         <input type="text" class="form-control" name="userId" id="formGroupExampleInput1" placeholder="User name">

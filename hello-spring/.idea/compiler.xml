@@ -14,4 +14,9 @@
       </profile>
     </annotationProcessing>
   </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="hello-spring" options="--add-exports java.base/java=ALL-UNNAMED" />
+    </option>
+  </component>
 </project>

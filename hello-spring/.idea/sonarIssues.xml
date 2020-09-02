@@ -13,6 +13,41 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../blockchain-medium/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../blockchain-medium/src/main/java/by/it/academy/Main.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../blockchain-medium/src/main/java/by/it/academy/NoobChain.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../blockchain-medium/src/main/java/by/it/academy/NoobChain1.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../blockchain-medium/src/main/java/by/it/academy/NoobChain_2.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../blockchain-project/src/main/java/by/it/academy/pojo/Wallet.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../blockchain-project/src/main/resources/META-INF/services/javax.servlet.ServletContainerInitializer">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/pom.xml">
           <value>
             <set />
@@ -109,6 +144,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/controller/HomeController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/controller/ImageController.java">
           <value>
             <set />
           </value>
@@ -223,6 +263,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/image.jsp">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp">
           <value>
             <set />
@@ -259,6 +304,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/test/java/by/it/academy/NotificationCommandExecutorTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/by/it/academy/controller/HomeControllerTest.java">
           <value>
             <set />
           </value>

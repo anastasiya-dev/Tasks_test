@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.io.BufferedOutputStream;
+import java.io.File;
 import java.io.FileOutputStream;
 
 @Controller
@@ -35,21 +37,35 @@ public class RecipientController {
             @RequestParam("image") MultipartFile file
     ) {
 
-        byte[] bytes = file.getBytes();
-        String fileName = file.getOriginalFilename();
-        System.out.println("File location: " + fileName);
-        saveToDisk(bytes, fileName);
+        if (file == null) {
+            byte[] bytes = file.getBytes();
+//        String fileName = file.getOriginalFilename();
+            String fileName = "recipient_" + recipient.getId() + "_image.jpg";
+            saveToDisk(bytes, fileName, recipient);
+        }
 
         userService.update(recipient);
         return "redirect:recipient-list.html";
     }
 
     @SneakyThrows
-    private void saveToDisk(byte[] bytes, String fileName) {
-        FileOutputStream fileOutputStream
-                = new FileOutputStream("C:\\work\\" + fileName);
-        fileOutputStream.write(bytes);
-        fileOutputStream.flush();
-        fileOutputStream.close();
+    private void saveToDisk(byte[] bytes, String fileName, Recipient recipient) {
+        File recipientsDb = new File("C:\\work\\recipients\\");
+        if (!recipientsDb.exists()) {
+            recipientsDb.mkdir();
+        }
+        File indFolder = new File(recipientsDb, recipient.getId() + "\\");
+        if (!indFolder.exists()) {
+            indFolder.mkdir();
+        }
+        File picture = new File(indFolder, fileName);
+        if (!picture.exists()) {
+            picture.createNewFile();
+        }
+
+        BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(picture));
+        bos.write(bytes);
+        bos.flush();
+        bos.close();
     }
 }

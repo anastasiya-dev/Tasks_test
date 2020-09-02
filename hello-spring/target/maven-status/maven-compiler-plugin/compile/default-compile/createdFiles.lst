@@ -22,6 +22,7 @@ by\it\academy\web\WebAppInitializer.class
 by\it\academy\ApplicationConfiguration.class
 by\it\academy\service\Channel.class
 by\it\academy\controller\SearchController.class
+by\it\academy\controller\ImageController.class
 by\it\academy\StatAspect.class
 by\it\academy\service\Message$MessageBuilder.class
 by\it\academy\simple\B.class

@@ -1,6 +1,6 @@
 <jsp:include page="header.jsp"/>
     <h1>Recipient:</h1>
-
+<img src="/hello-spring/${user.id}/image" width=48 height=64 alt="recipient_${user.id}_no_image">
 <form action="/hello-spring/recipient.html" method="post" enctype="multipart/form-data">
   <div class="form-group">
       <label for="exampleFormControlFile1">Select image:</label>
@@ -18,7 +18,7 @@
   <div class="form-group">
       <label for="formGroupExampleInput2">Mobile phone</label>
       <input type="text" class="form-control" name="mobilePhone" value="${user.mobilePhone}" id="formGroupExampleInput2" placeholder="Mobile phone">
-  </div>
+
   <input type="hidden" name="id" value="${user.id}"/>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>

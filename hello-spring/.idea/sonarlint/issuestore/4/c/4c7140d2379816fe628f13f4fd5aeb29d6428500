@@ -1,5 +1,9 @@
 
 b
-java:S4684"@Replace this persistent entity with a simple POJO or DTO object.(µ¬§—üÿÿÿÿ8³‰°²Ã.
-X	java:S125""<This block of commented-out lines of code should be removed.(¥×ù©8ê¶ú©Ä.
-U	java:S106!"9Replace this use of System.out or System.err by a logger.(Çöþ§8ŸÙÚ©Ä.
+java:S4684"@Replace this persistent entity with a simple POJO or DTO object.(ýõëçùÿÿÿÿ8ÞŸŠÇÄ.
+c	java:S899<"BDo something with the "boolean" value returned by "createNewFile".(‚°¦¾üÿÿÿÿ8ì–—×Ä.
+U	java:S106#"9Replace this use of System.out or System.err by a logger.(Çöþ§8ÞŸŠÇÄ.
+^
+java:S10752"ARefactor your code to get this URI from a customizable parameter.(Û§ó8ì–—×Ä.
+H
+java:S10756"&Remove this hard-coded path-delimiter.(¡©´þùÿÿÿÿ8ì–—×Ä.
