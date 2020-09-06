@@ -5,11 +5,13 @@ import java.util.List;
 public interface BaseDao<T> {
     void create(T t);
 
-    T find(String id);
+    T findById(String id);
+
+    T findByName(String id);
 
     List<T> findAll(String searchStr);
 
-    void update(T t);
+    T update(T t);
 
     void delete(T t);
 }
