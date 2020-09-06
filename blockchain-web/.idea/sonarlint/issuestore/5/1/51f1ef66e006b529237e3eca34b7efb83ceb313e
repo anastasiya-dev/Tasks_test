@@ -1,0 +1,7 @@
+
+W
+java:S10754"ARefactor your code to get this URI from a customizable parameter.(­íÃô
+i	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(Üêº8‰œ¬üÅ.
+\	java:S899;"BDo something with the "boolean" value returned by "createNewFile".(‚°¦¾üÿÿÿÿ
+A
+java:S10756"&Remove this hard-coded path-delimiter.(”Ëœıÿÿÿÿ
