@@ -1,5 +1,5 @@
 
+n	java:S101	"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ß€Û™ûÿÿÿÿ8ü’ªüÅ.
 c
 java:S4488
 "HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(°¢ÆŸúÿÿÿÿ
-n	java:S101	"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ß€Û™ûÿÿÿÿ8ü’ªüÅ.

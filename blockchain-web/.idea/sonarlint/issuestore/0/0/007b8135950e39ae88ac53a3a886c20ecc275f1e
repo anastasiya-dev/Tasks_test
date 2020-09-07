@@ -1,0 +1,9 @@
+
+x
+java:S1450"VRemove the "context" field and declare it as a local variable in the relevant methods.(Å¯ÙÕúÿÿÿÿ8°Ôç”Æ.
+
+java:S1130L"sRemove the declaration of thrown exception 'org.springframework.beans.BeansException' which is a runtime exception.(¯¶…œ8µÜå”Æ.
+Z	java:S106:"9Replace this use of System.out or System.err by a logger.(Î…ââüÿÿÿÿ8Ğöù¤Æ.
+£
+java:S1186G"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(İåÉùÿÿÿÿ8ÖµÑ”Æ.
+T	java:S106<"9Replace this use of System.out or System.err by a logger.(çÆ·j8£Íû¤Æ.

@@ -1,5 +1,7 @@
 
-x
-java:S1450"VRemove the "context" field and declare it as a local variable in the relevant methods.(Å¯ÙÕúÿÿÿÿ8‚„ÿûÅ.
 
-java:S1130C"sRemove the declaration of thrown exception 'org.springframework.beans.BeansException' which is a runtime exception.(¯¶…œ8‚„ÿûÅ.
+java:S1130p"sRemove the declaration of thrown exception 'org.springframework.beans.BeansException' which is a runtime exception.(¯¶…œ8‚„ÿûÅ.
+X	java:S1256"<This block of commented-out lines of code should be removed.(†€éˆ8è±ï˜Æ.
+X	java:S125G"<This block of commented-out lines of code should be removed.(†€éˆ8Üšì˜Æ.
+x
+java:S1450"VRemove the "context" field and declare it as a local variable in the relevant methods.(Å¯ÙÕúÿÿÿÿ8‚„ÿûÅ.

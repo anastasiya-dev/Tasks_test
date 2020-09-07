@@ -1,0 +1,18 @@
+
+T	java:S1065"9Replace this use of System.out or System.err by a logger.(çÆ·j8‹¥è•Æ.
+U	java:S106,"9Replace this use of System.out or System.err by a logger.(êÕã8Û••Æ.
+U	java:S106""9Replace this use of System.out or System.err by a logger.(Ø¼¢ƒ8Û••Æ.
+b
+java:S46843"@Replace this persistent entity with a simple POJO or DTO object.(Ïªòœûÿÿÿÿ8ˆ²£Æ.
+j
+java:S44880"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(âŒù¡úÿÿÿÿ8Û••Æ.
+U	java:S106 "9Replace this use of System.out or System.err by a logger.(ö¡¹ê8Û••Æ.
+e
+java:S4488?"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ŠÓ”¼8€’¢¤Æ.
+`
+java:S12264"CIntroduce a new variable instead of reusing the parameter "wallet".(±İûş8Öò²£Æ.
+Z	java:S106:"9Replace this use of System.out or System.err by a logger.(Ìàáüÿÿÿÿ8à«½•Æ.
+]
+java:S46842"@Replace this persistent entity with a simple POJO or DTO object.(ÿÄùÚ8»¬¢£Æ.
+^
+java:S12266"AIntroduce a new variable instead of reusing the parameter "user".(÷Ä‚ô8Ø‰££Æ.

@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 public class WalletService {
 
@@ -16,5 +19,20 @@ public class WalletService {
     public boolean createNewWallet(Wallet wallet) {
         walletDao.create(wallet);
         return true;
+    }
+
+    public List<Wallet> getAll(String userId) {
+        List<Wallet> all = walletDao.findAll("");
+        List<Wallet> wallets = new ArrayList<>();
+        for (Wallet wallet : all) {
+            if (wallet.getUser().getUserId().equals(userId)) {
+                wallets.add(wallet);
+            }
+        }
+        System.out.println("wallet service wallets: ");
+        for(Wallet wallet : wallets){
+            System.out.println(wallet);
+        }
+        return wallets;
     }
 }

@@ -43,7 +43,7 @@ public class WalletUtil {
 //        }
 //        return total;
 //    }
-//
+
 //    //Generates and returns a new transaction from this wallet.
 //    public static Transaction sendFunds(Wallet wallet, PublicKey _recipient, float value) {
 //        if (getBalance(wallet) < value) { //gather balance and check funds.

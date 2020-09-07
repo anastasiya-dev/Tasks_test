@@ -4,6 +4,7 @@ import by.it.academy.pojo.Wallet;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -50,7 +51,15 @@ public class WalletDao implements BaseDao<Wallet>, ApplicationContextAware {
 
     @Override
     public List<Wallet> findAll(String searchStr) {
-        return null;
+        Session session = sessionFactory.openSession();
+        Query<Wallet> query = session.createQuery("from Wallet", Wallet.class);
+        List<Wallet> list = query.list();
+        session.close();
+        System.out.println("dao wallets: ");
+        for(Wallet wallet : list){
+            System.out.println(wallet);
+        }
+        return list;
     }
 
     @Override

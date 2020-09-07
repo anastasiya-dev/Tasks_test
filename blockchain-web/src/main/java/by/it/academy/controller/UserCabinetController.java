@@ -7,11 +7,10 @@ import by.it.academy.service.WalletService;
 import by.it.academy.util.WalletUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.List;
 
 @Controller
 public class UserCabinetController {
@@ -47,14 +46,25 @@ public class UserCabinetController {
     }
 
     @RequestMapping(value = "/create-wallet", method = RequestMethod.GET)
-    public ModelAndView createWallet(ModelAndView modelAndView) {
-        Wallet wallet = WalletUtil.createWallet();
+    public ModelAndView createWallet(ModelAndView modelAndView,
+                                     @ModelAttribute User user,
+                                     @ModelAttribute Wallet wallet) {
+        wallet = WalletUtil.createWallet();
         System.out.println(wallet);
-        User user = userService.findUserById(userId);
+        user = userService.findUserById(userId);
         wallet.setUser(user);
         user.wallets.add(wallet);
         walletService.createNewWallet(wallet);
         System.out.println(wallet.getUser());
+        modelAndView.addObject("wallet", wallet);
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/wallet-all", method = RequestMethod.GET)
+    public ModelAndView viewAllTheWallets(ModelAndView modelAndView) {
+        List<Wallet> wallets = walletService.getAll(userId);
+        modelAndView.setViewName("wallet-all");
+        modelAndView.addObject("wallets", wallets);
         return modelAndView;
     }
 }
