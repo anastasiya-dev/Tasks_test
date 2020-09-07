@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.view.RedirectView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @RequestMapping(value = "/login")
@@ -25,21 +25,20 @@ public class LoginController {
     }
 
     @PostMapping
-    public RedirectView userLogin(
+    public String userLogin(
             ModelAndView modelAndView,
-            @ModelAttribute Login login
+            @ModelAttribute Login login,
+            RedirectAttributes redirectAttributes
     ) {
 
         String name = login.getInputName();
-
         User userInput = userService.findUserByName(name);
-
         String id = userInput.getUserId();
-
+        redirectAttributes.addAttribute("userId",id);
         if (userInput.getUserPassword().equals(login.getInputPassword())) {
-            return new RedirectView("/blockchain-web/" + id + "/user-cabinet");
+            return "redirect:/{userId}/user-cabinet";
         } else {
-            return new RedirectView("/blockchain-web/home");
+            return "redirect:/home";
         }
     }
 }

@@ -13,6 +13,7 @@ C:\work\blockchain-web\src\main\java\by\it\academy\controller\LoginController.ja
 C:\work\blockchain-web\src\main\java\by\it\academy\repository\UserDao.java
 C:\work\blockchain-web\src\main\java\by\it\academy\support\Login.java
 C:\work\blockchain-web\src\main\java\by\it\academy\pojo\User.java
+C:\work\blockchain-web\src\main\java\by\it\academy\controller\WalletController.java
 C:\work\blockchain-web\src\main\java\by\it\academy\repository\BaseDao.java
 C:\work\blockchain-web\src\main\java\by\it\academy\service\WalletService.java
 C:\work\blockchain-web\src\main\java\by\it\academy\ApplicationConfiguration.java

@@ -20,7 +20,7 @@
           <td>${wallet.publicKey}</td>
           <td>${wallet.privateKey}</td>
           <td>TO BE DONE</td>
-          <td><p><a href="/blockchain-web/${wallet.walletId}/wallet" class="text-primary">Make transaction</a></p><td>
+          <td><p><a href="/blockchain-web/${userId}/wallet/${wallet.walletId}" class="text-primary">View wallet</a></p><td>
         </tr>
 </c:forEach>
       </tbody>

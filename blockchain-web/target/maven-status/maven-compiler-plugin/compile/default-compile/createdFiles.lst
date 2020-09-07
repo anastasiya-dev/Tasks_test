@@ -5,6 +5,7 @@ by\it\academy\controller\UserCabinetController.class
 by\it\academy\repository\BaseDao.class
 by\it\academy\pojo\User.class
 by\it\academy\web\WebAppInitializer.class
+by\it\academy\controller\WalletController.class
 by\it\academy\util\WalletUtil.class
 by\it\academy\ApplicationConfiguration.class
 by\it\academy\pojo\TransactionInput.class

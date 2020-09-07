@@ -17,5 +17,5 @@
         </tr>
       </tbody>
     </table>
-<a href="/blockchain-web/user-cabinet" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Get back to the cabinet</a>
+<a href="/blockchain-web/${userId}/user-cabinet" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Get back to the cabinet</a>
 <jsp:include page="footer.jsp"/>
