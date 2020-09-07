@@ -1,5 +1,6 @@
 package by.it.academy.repository;
 
+import by.it.academy.pojo.User;
 import by.it.academy.pojo.Wallet;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -10,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -40,8 +42,20 @@ public class WalletDao implements BaseDao<Wallet>, ApplicationContextAware {
     }
 
     @Override
+    @Transactional(propagation = Propagation.REQUIRED, readOnly = true)
     public Wallet findById(String id) {
-        return null;
+        Session session = sessionFactory.openSession();
+        Query<Wallet> query = session.createQuery("from Wallet w where w.walletId=:walletId", Wallet.class);
+        query.setParameter("walletId", id);
+        List<Wallet> list = query.list();
+        Wallet wallet = null;
+        try {
+            wallet = list.get(0);
+        } catch (Exception e) {
+//            e.printStackTrace();
+        }
+        session.close();
+        return wallet;
     }
 
     @Override
@@ -55,10 +69,6 @@ public class WalletDao implements BaseDao<Wallet>, ApplicationContextAware {
         Query<Wallet> query = session.createQuery("from Wallet", Wallet.class);
         List<Wallet> list = query.list();
         session.close();
-        System.out.println("dao wallets: ");
-        for(Wallet wallet : list){
-            System.out.println(wallet);
-        }
         return list;
     }
 

@@ -1,5 +1,6 @@
 package by.it.academy.service;
 
+import by.it.academy.pojo.User;
 import by.it.academy.pojo.Wallet;
 import by.it.academy.repository.BaseDao;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,10 +30,10 @@ public class WalletService {
                 wallets.add(wallet);
             }
         }
-        System.out.println("wallet service wallets: ");
-        for(Wallet wallet : wallets){
-            System.out.println(wallet);
-        }
         return wallets;
+    }
+
+    public Wallet findWalletById(String id) {
+        return (Wallet) walletDao.findById(id);
     }
 }

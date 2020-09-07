@@ -39,7 +39,6 @@ public class WalletController {
     @RequestMapping(value = "/{userId}/wallet-all", method = RequestMethod.GET)
     public ModelAndView viewAllTheWallets(ModelAndView modelAndView,
                                           @PathVariable String userId) {
-        System.out.println("call my controller one");
         List<Wallet> wallets = walletService.getAll(userId);
         modelAndView.setViewName("wallet-all");
         modelAndView.addObject("wallets", wallets);
@@ -50,7 +49,6 @@ public class WalletController {
     public ModelAndView viewIndWallet(ModelAndView modelAndView,
                                       @PathVariable String userId,
                                       @PathVariable String walletId) {
-        System.out.println("call my controller two");
         modelAndView.setViewName("ind-wallet");
         return modelAndView;
     }

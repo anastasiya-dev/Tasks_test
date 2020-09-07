@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.security.PublicKey;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 @Entity
 @Getter
@@ -22,4 +23,16 @@ public class Transaction {
     public ArrayList<TransactionInput> inputs = new ArrayList<TransactionInput>();
     public ArrayList<TransactionOutput> outputs = new ArrayList<TransactionOutput>();
 
+    @Override
+    public String toString() {
+        return "Transaction{" +
+                "transactionId='" + transactionId + '\'' +
+                ", sender=" + sender +
+                ", reciepient=" + reciepient +
+                ", value=" + value +
+//                ", signature=" + Arrays.toString(signature) +
+//                ", inputs=" + inputs +
+//                ", outputs=" + outputs +
+                '}';
+    }
 }
