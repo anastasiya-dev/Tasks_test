@@ -8,8 +8,6 @@
       <thead>
         <tr>
           <th scope="col">wallet id</th>
-          <th scope="col">public key</th>
-          <th scope="col">private key</th>
           <th scope="col">balance</th>
         </tr>
       </thead>
@@ -17,8 +15,6 @@
 <c:forEach items="${wallets}" var="wallet">
         <tr>
           <td>${wallet.walletId}</td>
-          <td>${wallet.publicKey}</td>
-          <td>${wallet.privateKey}</td>
           <td>TO BE DONE</td>
           <td><p><a href="/blockchain-web/${userId}/wallet/${wallet.walletId}" class="text-primary">View wallet</a></p><td>
         </tr>

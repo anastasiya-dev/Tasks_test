@@ -1,11 +1,13 @@
 package by.it.academy.repository;
 
 import by.it.academy.pojo.Transaction;
+import by.it.academy.pojo.Wallet;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Repository;
@@ -19,6 +21,10 @@ public class TransactionDao implements BaseDao<Transaction>, ApplicationContextA
 
     @Autowired
     SessionFactory sessionFactory;
+
+    @Autowired
+    @Value("#{walletDao}")
+    BaseDao walletDao;
 
     private ApplicationContext context;
 
@@ -62,6 +68,7 @@ public class TransactionDao implements BaseDao<Transaction>, ApplicationContextA
     }
 
     @Override
+    @Transactional(propagation = Propagation.REQUIRED, readOnly = true)
     public List<Transaction> findAll(String searchStr) {
         Session session = sessionFactory.openSession();
         Query<Transaction> query = session.createQuery("from Transaction", Transaction.class);
@@ -71,8 +78,30 @@ public class TransactionDao implements BaseDao<Transaction>, ApplicationContextA
     }
 
     @Override
-    public Transaction update(Transaction transaction) {
+    @Transactional(propagation = Propagation.REQUIRED, readOnly = true)
+    public List<Transaction> findAllWithParameter(String searchStr) {
+//        Session session = sessionFactory.openSession();
+//        Wallet wallet = (Wallet) walletDao.findById(searchStr);
+//        Query<Transaction> query = session.createQuery("from Transaction t where t.recipient=:recipient", Transaction.class);
+//        query.setParameter("recipient", wallet.publicKey);
+////        query.setParameter("sender", wallet.publicKey);
+//        List<Transaction> list = query.list();
+//        session.close();
         return null;
+    }
+
+    @Override
+    public Transaction update(Transaction transaction) {
+        Session session = sessionFactory.openSession();
+        org.hibernate.Transaction tx = session.beginTransaction();
+        Query query = session.createQuery("update Transaction t set t.signature=:signature, t.transactionDateTime=:transactionDateTime where t.transactionId=:transactionId");
+        query.setParameter("transactionId", transaction.getTransactionId());
+        query.setParameter("signature", transaction.getSignature());
+        query.setParameter("transactionDateTime", transaction.getTransactionDateTime());
+        int result = query.executeUpdate();
+        tx.commit();
+        session.close();
+        return transaction;
     }
 
     @Override

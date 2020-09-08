@@ -11,6 +11,8 @@ public interface BaseDao<T> {
 
     List<T> findAll(String searchStr);
 
+    List<T> findAllWithParameter(String searchStr);
+
     T update(T t);
 
     boolean delete(T t);

@@ -123,6 +123,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/repository/SupportDao.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/repository/TransactionDao.java">
           <value>
             <set />
@@ -234,6 +239,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/signup.jsp">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/transaction-all.jsp">
           <value>
             <set />
           </value>

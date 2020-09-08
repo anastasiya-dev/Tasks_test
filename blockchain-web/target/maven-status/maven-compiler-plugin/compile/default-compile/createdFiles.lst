@@ -12,7 +12,6 @@ by\it\academy\service\UserService.class
 by\it\academy\pojo\TransactionOutput.class
 by\it\academy\service\TransactionService.class
 by\it\academy\controller\_HomeController.class
-by\it\academy\Main.class
 by\it\academy\support\PrivateKeyInput.class
 by\it\academy\controller\LoginController.class
 by\it\academy\support\TransactionStart.class

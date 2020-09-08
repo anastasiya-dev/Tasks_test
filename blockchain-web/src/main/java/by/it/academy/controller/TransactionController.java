@@ -96,14 +96,15 @@ public class TransactionController {
         modelAndView.setViewName("sign-transaction");
         Wallet walletSender = walletService.findWalletById(walletId);
         PrivateKey privateKey = walletSender.getPrivateKey();
-
+        Transaction transaction = transactionService.findTransactionById(transactionId);
         if (privateKeyInput.getPrivateKeyString()
                 .equals(StringUtil.getStringFromKey(privateKey))) {
-            TransactionUtil.generateSignature(
-                    transactionService.findTransactionById(transactionId), privateKey);
+            TransactionUtil.generateSignature(transaction
+                    , privateKey);
+            transactionService.updateTransaction(transaction);
             return "redirect:/{userId}/user-cabinet";
         } else {
-            transactionService.deleteTransaction(transactionService.findTransactionById(transactionId));
+            transactionService.deleteTransaction(transaction);
             return "redirect:/home";
         }
     }
@@ -130,4 +131,19 @@ public class TransactionController {
         modelAndView.setViewName("sign-transaction");
         return modelAndView;
     }
+
+    @RequestMapping(value = "/{userId}/wallet/{walletId}/transaction-all", method = RequestMethod.GET)
+    public ModelAndView viewAllTheWallets(ModelAndView modelAndView,
+                                          @PathVariable String userId,
+                                          @PathVariable String walletId) {
+
+        List<Transaction> transactions = transactionService.getAllforWallet(walletId);
+        for (Transaction transaction : transactions) {
+            System.out.println(transaction);
+        }
+        modelAndView.setViewName("transaction-all");
+        modelAndView.addObject("trasactions", transactions);
+        return modelAndView;
+    }
+
 }

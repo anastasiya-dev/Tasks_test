@@ -6,6 +6,8 @@ import by.it.academy.pojo.TransactionOutput;
 
 import java.security.PrivateKey;
 import java.security.PublicKey;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class TransactionUtil {
@@ -33,6 +35,7 @@ public class TransactionUtil {
     public static void generateSignature(Transaction transaction, PrivateKey privateKey) {
         String data = StringUtil.getStringFromKey(transaction.getSender()) + StringUtil.getStringFromKey(transaction.getReciepient()) + Float.toString(transaction.getValue());
         transaction.setSignature(StringUtil.applyECDSASig(privateKey, data));
+        transaction.setTransactionDateTime(LocalDateTime.now());
     }
 
     //Verifies the data we signed hasn't been tampered with

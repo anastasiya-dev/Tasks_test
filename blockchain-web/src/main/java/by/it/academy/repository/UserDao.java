@@ -84,6 +84,11 @@ public class UserDao implements BaseDao<User>, ApplicationContextAware {
     }
 
     @Override
+    public List<User> findAllWithParameter(String searchStr) {
+        return null;
+    }
+
+    @Override
     @Transactional
     public User update(User user) {
         Transaction tx = null;

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class TransactionService {
@@ -30,5 +31,13 @@ public class TransactionService {
 
     public boolean deleteTransaction(Transaction transaction) {
         return transactionDao.delete(transaction);
+    }
+
+    public Transaction updateTransaction(Transaction transaction) {
+        return (Transaction) transactionDao.update(transaction);
+    }
+
+    public List<Transaction> getAllforWallet(String walletId) {
+        return transactionDao.findAllWithParameter(walletId);
     }
 }

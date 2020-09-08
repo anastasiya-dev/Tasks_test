@@ -72,6 +72,11 @@ public class WalletDao implements BaseDao<Wallet>, ApplicationContextAware {
     }
 
     @Override
+    public List<Wallet> findAllWithParameter(String searchStr) {
+        return null;
+    }
+
+    @Override
     public Wallet update(Wallet wallet) {
         return null;
     }
