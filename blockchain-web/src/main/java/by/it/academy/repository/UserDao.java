@@ -103,9 +103,8 @@ public class UserDao implements BaseDao<User>, ApplicationContextAware {
 
     @Override
     @Transactional
-    public void delete(User user) {
-        sessionFactory.getCurrentSession()
-                .delete(user);
+    public boolean delete(User user) {
+        return false;
     }
 
     @Override

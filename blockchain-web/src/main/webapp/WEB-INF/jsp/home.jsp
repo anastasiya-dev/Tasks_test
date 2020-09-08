@@ -1,11 +1,8 @@
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <html>
   <head>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,100' rel='stylesheet' type='text/css'>
-<spring:url value="/resources/css/styles.css" var="mainCss"/>
-<link href="${mainCss}" rel="stylesheet" />
-
+<link href="style.css" type="text/css" rel="stylesheet">
   </head>
  <body>
     <div class="header">

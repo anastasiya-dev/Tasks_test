@@ -1,6 +1,5 @@
 package by.it.academy.repository;
 
-import by.it.academy.pojo.User;
 import by.it.academy.pojo.Wallet;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -78,8 +77,8 @@ public class WalletDao implements BaseDao<Wallet>, ApplicationContextAware {
     }
 
     @Override
-    public void delete(Wallet wallet) {
-
+    public boolean delete(Wallet wallet) {
+        return false;
     }
 
     @Override

@@ -10,6 +10,7 @@ public class _HomeController {
     @RequestMapping(value = "/home", method = RequestMethod.GET)
     public ModelAndView homePage(ModelAndView modelAndView) {
         modelAndView.addObject("greeting", "Welcome to our blockchain service!");
+        modelAndView.setViewName("home");
         return modelAndView;
     }
 }

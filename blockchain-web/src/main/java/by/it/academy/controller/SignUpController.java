@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -33,7 +34,8 @@ public class SignUpController {
     public String createNewUser(
             @ModelAttribute User user,
             Model model,
-            @RequestParam("image") MultipartFile file
+            @RequestParam("image") MultipartFile file,
+            RedirectAttributes redirectAttributes
     ) {
         if (userService.findUserByName(user.getUserName()) != null) {
             return "redirect:login";
@@ -45,7 +47,8 @@ public class SignUpController {
                 byte[] bytes = file.getBytes();
                 String fileName = "user_" + user.getUserId() + "_image.jpg";
                 saveToDisk(bytes, fileName, user);
-                return "redirect:user-cabinet";
+                redirectAttributes.addAttribute("userId", user.getUserId());
+                return "redirect:/{userId}/user-cabinet";
             } else {
                 return "redirect:home";
             }

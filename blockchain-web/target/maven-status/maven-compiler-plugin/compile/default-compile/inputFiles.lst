@@ -3,6 +3,7 @@ C:\work\blockchain-web\src\main\java\by\it\academy\support\TransactionStart.java
 C:\work\blockchain-web\src\main\java\by\it\academy\controller\TransactionController.java
 C:\work\blockchain-web\src\main\java\by\it\academy\pojo\Transaction.java
 C:\work\blockchain-web\src\main\java\by\it\academy\util\WalletUtil.java
+C:\work\blockchain-web\src\main\java\by\it\academy\service\TransactionService.java
 C:\work\blockchain-web\src\main\java\by\it\academy\service\UserService.java
 C:\work\blockchain-web\src\main\java\by\it\academy\util\UserImageUtil.java
 C:\work\blockchain-web\src\main\java\by\it\academy\repository\WalletDao.java
@@ -21,6 +22,7 @@ C:\work\blockchain-web\src\main\java\by\it\academy\controller\SignUpController.j
 C:\work\blockchain-web\src\main\java\by\it\academy\pojo\TransactionInput.java
 C:\work\blockchain-web\src\main\java\by\it\academy\util\StringUtil.java
 C:\work\blockchain-web\src\main\java\by\it\academy\controller\LoginController.java
+C:\work\blockchain-web\src\main\java\by\it\academy\support\PrivateKeyInput.java
 C:\work\blockchain-web\src\main\java\by\it\academy\pojo\User.java
 C:\work\blockchain-web\src\main\java\by\it\academy\service\WalletService.java
 C:\work\blockchain-web\src\main\java\by\it\academy\ApplicationConfiguration.java

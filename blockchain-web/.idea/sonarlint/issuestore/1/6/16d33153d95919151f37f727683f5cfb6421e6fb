@@ -1,5 +1,5 @@
 
-T	java:S106""9Replace this use of System.out or System.err by a logger.(çÆ·j8›¹ü¤Æ.
 L
-java:S3740"/Provide the parametrized type for this generic.(ŞÊÊ‰8ıÑ®•Æ.
-U	java:S106 "9Replace this use of System.out or System.err by a logger.(èî Ö8åÕı¤Æ.
+java:S3740"/Provide the parametrized type for this generic.(ŞÊÊ‰8ıÑ®•Æ.
+Q
+java:S1128"4Remove this unused import 'by.it.academy.pojo.User'.(¯¡»8ş¿àÂÆ.

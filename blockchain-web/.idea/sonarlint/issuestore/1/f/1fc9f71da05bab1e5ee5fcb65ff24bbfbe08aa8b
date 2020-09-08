@@ -1,21 +1,21 @@
 
-n
-java:S1104"SMake outputs a static final constant or non-public and provide accessors if needed.(Ááãùÿÿÿÿ
-t
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ááãùÿÿÿÿ
-t
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(÷Ÿ„½ÿÿÿÿÿ
-h
-java:S1104"RMake sender a static final constant or non-public and provide accessors if needed.(ƒñúÑ
-k
-java:S1104"UMake signature a static final constant or non-public and provide accessors if needed.(Ÿôàí
-m
-java:S1104"RMake inputs a static final constant or non-public and provide accessors if needed.(÷Ÿ„½ÿÿÿÿÿ
-l
-java:S1104"QMake value a static final constant or non-public and provide accessors if needed.(¼Á’Øıÿÿÿÿ
 q
-java:S1104"VMake reciepient a static final constant or non-public and provide accessors if needed.(Ğ¼Î¼şÿÿÿÿ
+java:S1104"VMake reciepient a static final constant or non-public and provide accessors if needed.(Ğ¼Î¼şÿÿÿÿ
 
-java:S1319"rThe type of the "outputs" object should be an interface such as "List" rather than the implementation "ArrayList".(Ááãùÿÿÿÿ
+java:S1319"rThe type of the "outputs" object should be an interface such as "List" rather than the implementation "ArrayList".(Ááãùÿÿÿÿ
+h
+java:S1104"RMake sender a static final constant or non-public and provide accessors if needed.(ƒñúÑ
+k
+java:S1104"UMake signature a static final constant or non-public and provide accessors if needed.(Ÿôàí
+m
+java:S1104"RMake inputs a static final constant or non-public and provide accessors if needed.(÷Ÿ„½ÿÿÿÿÿ
+t
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(÷Ÿ„½ÿÿÿÿÿ
 Œ
-java:S1319"qThe type of the "inputs" object should be an interface such as "List" rather than the implementation "ArrayList".(÷Ÿ„½ÿÿÿÿÿ
+java:S1319"qThe type of the "inputs" object should be an interface such as "List" rather than the implementation "ArrayList".(÷Ÿ„½ÿÿÿÿÿ
+n
+java:S1104"SMake outputs a static final constant or non-public and provide accessors if needed.(Ááãùÿÿÿÿ
+t
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ááãùÿÿÿÿ
+l
+java:S1104"QMake value a static final constant or non-public and provide accessors if needed.(¼Á’Øıÿÿÿÿ

@@ -138,6 +138,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/service/TransactionService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/service/UserService.java">
           <value>
             <set />
@@ -149,6 +154,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/service/WalletUtil.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/support/PrivateKeyInput.java">
           <value>
             <set />
           </value>
@@ -169,6 +179,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/util/WalletUtil.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/web/WebAppInitializer.java">
           <value>
             <set />
           </value>
@@ -209,6 +224,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/sign-transaction.jsp">
           <value>
             <set />
           </value>

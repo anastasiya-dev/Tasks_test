@@ -1,4 +1,5 @@
 <jsp:include page="header.jsp"/>
+
 <h1>Sign Up: </h1>
 <form method="post" enctype="multipart/form-data">
    <div class="form-group">

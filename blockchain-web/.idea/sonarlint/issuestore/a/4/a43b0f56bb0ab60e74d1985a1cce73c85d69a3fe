@@ -1,0 +1,12 @@
+
+j
+java:S4488l"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ñ¦…©üÿÿÿÿ8ˆªÇÆ.
+l
+java:S4488P"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(Ñ¦…©üÿÿÿÿ8àŠÆÅÆ.
+l
+java:S44880"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(ıîÿäıÿÿÿÿ8 ×¶ÂÆ.
+]	java:S125K"<This block of commented-out lines of code should be removed.(´šıºùÿÿÿÿ8é¼¿ÇÆ.
+X	java:S125F"<This block of commented-out lines of code should be removed.(ˆş¥ö8ú¢ëÅÆ.
+j
+java:S4488&"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ıîÿäıÿÿÿÿ8Ï¨çÃÆ.
+U	java:S106H"9Replace this use of System.out or System.err by a logger.(Û†­8„©·ÅÆ.
