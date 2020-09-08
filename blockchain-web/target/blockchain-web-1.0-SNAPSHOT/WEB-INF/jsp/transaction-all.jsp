@@ -18,12 +18,23 @@
       <tbody>
 <c:forEach items="${transactions}" var="transaction">
         <tr>
-          <td>${wallet.walletId}</td>
+          <td>${transaction.transactionId}</td>
+          <td>will be sender</td>
+          <td>will be recipient</td>
+          <td>${transaction.value}</td>
           <td>TO BE DONE</td>
-          <td><p><a href="/blockchain-web/${userId}/wallet/${wallet.walletId}" class="text-primary">View wallet</a></p><td>
+          <td>${transaction.transactionDateTime}</td>
         </tr>
 </c:forEach>
       </tbody>
+          <tfoot>
+            <td>Total</td>
+            <td></td>
+            <td></td>
+            <td>${sum}</td>
+            <td></td>
+            <td></td>
+          </tfoot>
 
     </table>
 <jsp:include page="footer.jsp"/>

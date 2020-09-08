@@ -137,12 +137,14 @@ public class TransactionController {
                                           @PathVariable String userId,
                                           @PathVariable String walletId) {
 
-        List<Transaction> transactions = transactionService.getAllforWallet(walletId);
+        List<Transaction> transactions = transactionService.getAllForWallet(walletId);
+        Float sum = 0.0f;
         for (Transaction transaction : transactions) {
-            System.out.println(transaction);
+            sum += transaction.value;
         }
         modelAndView.setViewName("transaction-all");
-        modelAndView.addObject("trasactions", transactions);
+        modelAndView.addObject("transactions", transactions);
+        modelAndView.addObject("sum", sum);
         return modelAndView;
     }
 

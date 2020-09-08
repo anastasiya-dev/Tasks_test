@@ -5,6 +5,7 @@ import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import java.security.PublicKey;
 import java.time.LocalDateTime;
 import java.util.ArrayList;

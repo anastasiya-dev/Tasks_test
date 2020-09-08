@@ -20,6 +20,10 @@
         </tr>
 </c:forEach>
       </tbody>
+                <tfoot>
+                  <td>Total</td>
+                  <td>${sum}</td>
+                </tfoot>
 
     </table>
 <jsp:include page="footer.jsp"/>

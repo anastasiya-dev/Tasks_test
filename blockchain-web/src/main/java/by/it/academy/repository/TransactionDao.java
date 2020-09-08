@@ -22,10 +22,6 @@ public class TransactionDao implements BaseDao<Transaction>, ApplicationContextA
     @Autowired
     SessionFactory sessionFactory;
 
-    @Autowired
-    @Value("#{walletDao}")
-    BaseDao walletDao;
-
     private ApplicationContext context;
 
     @Override

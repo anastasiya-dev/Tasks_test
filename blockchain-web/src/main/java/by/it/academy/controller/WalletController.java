@@ -1,7 +1,9 @@
 package by.it.academy.controller;
 
+import by.it.academy.pojo.Transaction;
 import by.it.academy.pojo.User;
 import by.it.academy.pojo.Wallet;
+import by.it.academy.service.TransactionService;
 import by.it.academy.service.UserService;
 import by.it.academy.service.WalletService;
 import by.it.academy.util.WalletUtil;
@@ -19,6 +21,9 @@ public class WalletController {
 
     @Autowired
     WalletService walletService;
+
+    @Autowired
+    TransactionService transactionService;
 
     @Autowired
     UserService userService;
@@ -42,6 +47,15 @@ public class WalletController {
         List<Wallet> wallets = walletService.getAll(userId);
         modelAndView.setViewName("wallet-all");
         modelAndView.addObject("wallets", wallets);
+
+        Float sum = 0.0f;
+        for (Wallet wallet : wallets) {
+            List<Transaction> transactions = transactionService.getAllForWallet(wallet.getWalletId());
+            for (Transaction transaction : transactions) {
+                sum += transaction.value;
+            }
+        }
+        modelAndView.addObject("sum", sum);
         return modelAndView;
     }
 
