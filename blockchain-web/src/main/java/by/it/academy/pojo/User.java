@@ -1,9 +1,13 @@
 package by.it.academy.pojo;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import javax.validation.constraints.Pattern;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,6 +24,8 @@ public class User {
     private String userId;
 
     @Column(name = "user_name")
+//    @Pattern(regexp = "[A-Z]+[a-z]+$",
+//            message = "Username must be alphabetic with no spaces and first capital")
     private String userName;
 
     @Column(name = "user_password")

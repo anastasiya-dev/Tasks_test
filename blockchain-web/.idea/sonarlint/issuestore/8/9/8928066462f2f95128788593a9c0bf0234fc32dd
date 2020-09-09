@@ -1,3 +1,7 @@
 
 Q
-java:S3740"/Provide the parametrized type for this generic.(Ï³ìÑşÿÿÿÿ8½ˆ¨ÅÆ.
+java:S3740"/Provide the parametrized type for this generic.(Ï³ìÑşÿÿÿÿ8½ˆ¨ÅÆ.
+’
+java:S1319-"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Û“Ä©ûÿÿÿÿ8ÿ¥ŒïÆ.
+
+java:S1319 "pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(€¡¯8®»‚åÆ.

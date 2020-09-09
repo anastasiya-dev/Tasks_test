@@ -81,5 +81,11 @@ h
 0src/main/webapp/WEB-INF/jsp/sign-transaction.jsp,0\3\039799b6189813d42673e11cce995ffc25cdafe4
 q
 Asrc/main/java/by/it/academy/controller/TransactionController.java,a\4\a43b0f56bb0ab60e74d1985a1cce73c85d69a3fe
-R
-"src/main/webapp/WEB-INF/styles.css,a\f\afdfc9bbe65ff63f040dfcff425ae28432cf8e71
+_
+/src/main/webapp/WEB-INF/jsp/transaction-all.jsp,c\5\c5e9664d9cff51714a7ebb13d51dcd94f96fe246
+X
+(src/main/webapp/resources/css/styles.css,4\2\427775e2015b413542fec34801ef44d8d4e22b2c
+Z
+*src/main/java/by/it/academy/MvcConfig.java,7\f\7ffb7e9dcf31c4829957011d27688131f8885b1b
+B
+blockchain-web.iml,7\4\7474ed6dfb4e13e4dda0f7da377fc1e63af2f26b

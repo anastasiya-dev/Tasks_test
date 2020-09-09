@@ -44,7 +44,7 @@ public class LoginController {
         if (userInput.getUserPassword().equals(login.getInputPassword())) {
             return "redirect:/{userId}/user-cabinet";
         } else {
-            return "redirect:/home";
+            return "redirect:/login";
         }
     }
 }

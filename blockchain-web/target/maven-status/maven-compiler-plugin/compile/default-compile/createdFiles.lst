@@ -25,4 +25,5 @@ by\it\academy\support\Login.class
 by\it\academy\repository\TransactionDao.class
 by\it\academy\pojo\Transaction.class
 by\it\academy\pojo\Wallet.class
+by\it\academy\MvcConfig.class
 by\it\academy\service\WalletService.class
