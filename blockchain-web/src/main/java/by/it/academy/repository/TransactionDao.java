@@ -31,7 +31,7 @@ public class TransactionDao implements BaseDao<Transaction>, ApplicationContextA
         Session session = sessionFactory.openSession();
         try {
             tx = session.beginTransaction();
-            session.save(transaction);
+            session.saveOrUpdate(transaction);
             tx.commit();
         } catch (Exception e) {
             if (tx != null) tx.rollback();
@@ -94,6 +94,7 @@ public class TransactionDao implements BaseDao<Transaction>, ApplicationContextA
         query.setParameter("transactionId", transaction.getTransactionId());
         query.setParameter("signature", transaction.getSignature());
         query.setParameter("transactionDateTime", transaction.getTransactionDateTime());
+//        query.setParameter("outputs", transaction.getOutputs());
         int result = query.executeUpdate();
         tx.commit();
         session.close();

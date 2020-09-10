@@ -3,13 +3,13 @@ package by.it.academy.pojo;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.security.PublicKey;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Getter
@@ -24,7 +24,10 @@ public class Transaction {
     public LocalDateTime transactionDateTime;
 
     public ArrayList<TransactionInput> inputs = new ArrayList<TransactionInput>();
-    public ArrayList<TransactionOutput> outputs = new ArrayList<TransactionOutput>();
+//    public ArrayList<TransactionOutput> outputs = new ArrayList<TransactionOutput>();
+
+    @OneToMany(mappedBy = "transaction", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    public List<TransactionOutput> outputs = new ArrayList<>();
 
     @Override
     public String toString() {
@@ -34,9 +37,9 @@ public class Transaction {
                 ", reciepient=" + reciepient +
                 ", value=" + value +
                 ", date time =" + transactionDateTime +
-//                ", signature=" + Arrays.toString(signature) +
+                ", signature=" + Arrays.toString(signature) +
 //                ", inputs=" + inputs +
-//                ", outputs=" + outputs +
+                ", outputs=" + outputs +
                 '}';
     }
 }

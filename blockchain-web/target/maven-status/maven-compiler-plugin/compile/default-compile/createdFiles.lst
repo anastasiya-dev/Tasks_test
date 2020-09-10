@@ -6,12 +6,12 @@ by\it\academy\controller\WalletController.class
 by\it\academy\pojo\TransactionInput.class
 by\it\academy\util\UserImageUtil.class
 by\it\academy\repository\WalletDao.class
+by\it\academy\controller\HomeController.class
 by\it\academy\repository\UserDao.class
 by\it\academy\controller\SignUpController.class
 by\it\academy\service\UserService.class
 by\it\academy\pojo\TransactionOutput.class
 by\it\academy\service\TransactionService.class
-by\it\academy\controller\_HomeController.class
 by\it\academy\support\PrivateKeyInput.class
 by\it\academy\controller\LoginController.class
 by\it\academy\support\TransactionStart.class
@@ -19,6 +19,7 @@ by\it\academy\web\WebAppInitializer.class
 by\it\academy\util\WalletUtil.class
 by\it\academy\ApplicationConfiguration.class
 by\it\academy\util\StringUtil.class
+by\it\academy\util\TransactionOutputUtil.class
 by\it\academy\pojo\Block.class
 by\it\academy\controller\TransactionController.class
 by\it\academy\support\Login.class

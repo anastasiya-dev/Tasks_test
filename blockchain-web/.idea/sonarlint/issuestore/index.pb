@@ -21,8 +21,6 @@ V
 &src/main/webapp/WEB-INF/jsp/header.jsp,b\8\b89d908249dbd6ca3797ce58650e188ee38cfe06
 V
 &src/main/webapp/WEB-INF/jsp/footer.jsp,8\d\8de6e3d4c30a2d3691e5ed5016c05dc9727cb054
-k
-;src/main/java/by/it/academy/controller/_HomeController.java,a\8\a824fd9efd3f394b391cbea01bd8fcf84c37600a
 V
 &src/main/webapp/WEB-INF/jsp/signup.jsp,0\2\02d06d2125adf76fc1055c76daaeaf1e97ddca0f
 i
@@ -89,3 +87,5 @@ Z
 *src/main/java/by/it/academy/MvcConfig.java,7\f\7ffb7e9dcf31c4829957011d27688131f8885b1b
 B
 blockchain-web.iml,7\4\7474ed6dfb4e13e4dda0f7da377fc1e63af2f26b
+k
+;src/main/java/by/it/academy/util/TransactionOutputUtil.java,e\b\eb7deb57e078c0431d7a5a9adb0c753294104791

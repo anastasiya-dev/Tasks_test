@@ -2,6 +2,7 @@ package by.it.academy.controller;
 
 import by.it.academy.pojo.Transaction;
 import by.it.academy.pojo.TransactionInput;
+import by.it.academy.pojo.TransactionOutput;
 import by.it.academy.pojo.Wallet;
 import by.it.academy.service.TransactionService;
 import by.it.academy.service.UserService;
@@ -9,6 +10,7 @@ import by.it.academy.service.WalletService;
 import by.it.academy.support.PrivateKeyInput;
 import by.it.academy.support.TransactionStart;
 import by.it.academy.util.StringUtil;
+import by.it.academy.util.TransactionOutputUtil;
 import by.it.academy.util.TransactionUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -101,7 +103,17 @@ public class TransactionController {
                 .equals(StringUtil.getStringFromKey(privateKey))) {
             TransactionUtil.generateSignature(transaction
                     , privateKey);
+            TransactionOutput transactionOutput = TransactionOutputUtil.createTransactionOutput(
+                    transaction.getReciepient(),
+                    transaction.getValue(),
+                    transaction);
+//            System.out.println("single: " + transactionOutput);
+            transaction.outputs.add(transactionOutput);
+//            System.out.println("total: " + transaction.outputs);
             transactionService.updateTransaction(transaction);
+            transactionService.createNewTransaction(transaction);
+            Transaction newTr = transactionService.findTransactionById(transactionId);
+            System.out.println(newTr);
             return "redirect:/{userId}/user-cabinet";
         } else {
             transactionService.deleteTransaction(transaction);
