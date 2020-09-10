@@ -83,6 +83,16 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../blockchain-web/src/main/java/by/it/academy/pojo/BlockchainUtxo.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../blockchain-web/src/main/java/by/it/academy/pojo/Transaction.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../blockchain-web/src/main/java/by/it/academy/pojo/TransactionInput.java">
           <value>
             <set />
@@ -93,12 +103,67 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../blockchain-web/src/main/java/by/it/academy/pojo/Wallet.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../blockchain-web/src/main/java/by/it/academy/repository/BlockchainUtxoDao.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../blockchain-web/src/main/java/by/it/academy/repository/TransactionOutputDao.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../blockchain-web/src/main/java/by/it/academy/service/BlockService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../blockchain-web/src/main/java/by/it/academy/service/BlockchainUtxoService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../blockchain-web/src/main/java/by/it/academy/service/TransactionOutputService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../blockchain-web/src/main/java/by/it/academy/service/TransactionService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../blockchain-web/src/main/java/by/it/academy/util/BlockUtil.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../blockchain-web/src/main/java/by/it/academy/util/BlockchainUtxoUtil.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../blockchain-web/src/main/java/by/it/academy/util/TransactionInputUtil.java">
           <value>
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../blockchain-web/src/main/java/by/it/academy/util/TransactionOutputUtil.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../blockchain-web/src/main/java/by/it/academy/util/TransactionUtil.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../blockchain-web/src/main/java/by/it/academy/util/WalletUtil.java">
           <value>
             <set />
           </value>
