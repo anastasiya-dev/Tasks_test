@@ -1,0 +1,16 @@
+C:\work\blockchain-mining-support\src\main\java\by\it\academy\pojo\Block.java
+C:\work\blockchain-mining-support\src\main\java\by\it\academy\MySqlDataSource.java
+C:\work\blockchain-mining-support\src\main\java\by\it\academy\util\WalletUtil.java
+C:\work\blockchain-mining-support\src\main\java\by\it\academy\pojo\Blockchain.java
+C:\work\blockchain-mining-support\src\main\java\by\it\academy\pojo\TransactionInput.java
+C:\work\blockchain-mining-support\src\main\java\by\it\academy\pojo\repository\TransactionDao.java
+C:\work\blockchain-mining-support\src\main\java\by\it\academy\pojo\TransactionOutput.java
+C:\work\blockchain-mining-support\src\main\java\by\it\academy\util\BlockUtil.java
+C:\work\blockchain-mining-support\src\main\java\by\it\academy\pojo\User.java
+C:\work\blockchain-mining-support\src\main\java\by\it\academy\pojo\Wallet.java
+C:\work\blockchain-mining-support\src\main\java\by\it\academy\util\StringUtil.java
+C:\work\blockchain-mining-support\src\main\java\by\it\academy\pojo\repository\BaseDao.java
+C:\work\blockchain-mining-support\src\main\java\by\it\academy\pojo\Transaction.java
+C:\work\blockchain-mining-support\src\main\java\by\it\academy\Main.java
+C:\work\blockchain-mining-support\src\main\java\by\it\academy\util\TransactionOutputUtil.java
+C:\work\blockchain-mining-support\src\main\java\by\it\academy\util\TransactionUtil.java

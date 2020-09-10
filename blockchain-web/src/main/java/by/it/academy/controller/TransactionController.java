@@ -10,6 +10,7 @@ import by.it.academy.service.WalletService;
 import by.it.academy.support.PrivateKeyInput;
 import by.it.academy.support.TransactionStart;
 import by.it.academy.util.StringUtil;
+import by.it.academy.util.TransactionInputUtil;
 import by.it.academy.util.TransactionOutputUtil;
 import by.it.academy.util.TransactionUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -110,6 +111,12 @@ public class TransactionController {
 //            System.out.println("single: " + transactionOutput);
             transaction.outputs.add(transactionOutput);
 //            System.out.println("total: " + transaction.outputs);
+
+            TransactionInput transactionInput
+                    = TransactionInputUtil.createTransactionInput(transactionOutput.id);
+            transactionInput.setTransactionOutput(transactionOutput);
+            transactionOutput.setTransactionInput(transactionInput);
+
             transactionService.updateTransaction(transaction);
             transactionService.createNewTransaction(transaction);
             Transaction newTr = transactionService.findTransactionById(transactionId);

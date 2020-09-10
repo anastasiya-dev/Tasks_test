@@ -40,9 +40,10 @@ public class ApplicationConfiguration {
                 User.class,
                 Block.class,
                 Transaction.class,
-                TransactionInput.class,
                 TransactionOutput.class,
-                Wallet.class);
+                TransactionInput.class,
+                Wallet.class,
+                Blockchain.class);
         sessionFactory.setHibernateProperties(getHibernateProperties());
         return sessionFactory;
     }

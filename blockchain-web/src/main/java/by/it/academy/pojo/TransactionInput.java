@@ -5,7 +5,7 @@ import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import java.util.ArrayList;
+import javax.persistence.OneToOne;
 
 @Entity
 @Getter
@@ -15,6 +15,7 @@ public class TransactionInput {
     @Id
     public String transactionOutputId; //Reference to TransactionOutputs -> transactionId
 
-    public ArrayList<TransactionOutput> UTXO = new ArrayList<TransactionOutput>(); //Contains the Unspent transaction output
+    @OneToOne
+    public TransactionOutput transactionOutput; //Contains the Unspent transaction output
 }
 
