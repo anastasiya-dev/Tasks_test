@@ -18,12 +18,27 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/pojo/Block.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/pojo/BlockUtil.java">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/pojo/Blockchain.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/pojo/BlockchainUtxo.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/pojo/Transaction.java">
           <value>
             <set />
           </value>
@@ -44,6 +59,41 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/pojo/repository/TransactionDao.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/repository/BaseDao.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/repository/BlockDao.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/repository/BlockchainUtxoDao.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/repository/TransactionDao.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/repository/TransactionInputDao.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/service/BlockService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/service/TransactionService.java">
           <value>
             <set />
           </value>
@@ -78,6 +128,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../blockchain-web/src/main/java/by/it/academy/pojo/Block.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../blockchain-web/src/main/java/by/it/academy/pojo/Blockchain.java">
           <value>
             <set />
@@ -108,7 +163,17 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../blockchain-web/src/main/java/by/it/academy/repository/BlockDao.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../blockchain-web/src/main/java/by/it/academy/repository/BlockchainUtxoDao.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../blockchain-web/src/main/java/by/it/academy/repository/TransactionInputDao.java">
           <value>
             <set />
           </value>

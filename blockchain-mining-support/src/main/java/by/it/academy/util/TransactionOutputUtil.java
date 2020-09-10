@@ -7,17 +7,17 @@ import java.security.PublicKey;
 
 public class TransactionOutputUtil {
     //Constructor
-    public static TransactionOutput createTransactionOutput(PublicKey reciepient, float value, Transaction transaction) {
+    public static TransactionOutput createTransactionOutput(PublicKey recipient, float value, Transaction transaction) {
         TransactionOutput transactionOutput = new TransactionOutput();
-        transactionOutput.setReciepient(reciepient);
+        transactionOutput.setRecipient(recipient);
         transactionOutput.setValue(value);
         transactionOutput.setTransaction(transaction);
-        transactionOutput.setId(StringUtil.applySha256(StringUtil.getStringFromKey(reciepient) + Float.toString(value) + transaction.getTransactionId()));
+        transactionOutput.setId(StringUtil.applySha256(StringUtil.getStringFromKey(recipient) + Float.toString(value) + transaction.getTransactionId()));
         return transactionOutput;
     }
 
     //Check if coin belongs to you
     public static boolean isMine(TransactionOutput transactionOutput, PublicKey publicKey) {
-        return (publicKey == transactionOutput.getReciepient());
+        return (publicKey == transactionOutput.getRecipient());
     }
 }

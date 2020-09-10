@@ -3,6 +3,7 @@ package by.it.academy.util;
 import by.it.academy.pojo.Block;
 import by.it.academy.pojo.Transaction;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class BlockUtil {
@@ -26,7 +27,7 @@ public class BlockUtil {
     }
 
     public static void mineBlock(Block block, int difficulty) {
-        block.merkleRoot = StringUtil.getMerkleRoot(block.transactions);
+        block.merkleRoot = StringUtil.getMerkleRoot((ArrayList<Transaction>) block.getTransactions());
         String target = new String(new char[difficulty]).replace('\0', '0'); //Create a string with difficulty * "0"
         while (!block.getHash().substring(0, difficulty).equals(target)) {
             block.setNonce(block.getNonce() + 1);
@@ -35,18 +36,5 @@ public class BlockUtil {
         System.out.println("Block Mined!!! : " + block.getHash());
     }
 
-    //Add transactions to this block
-    public static boolean addTransaction(Block block, Transaction transaction) {
-        //process transaction and check if valid, unless block is genesis block then ignore.
-        if (transaction == null) return false;
-        if ((block.getPreviousHash() != "0")) {
-            if ((TransactionUtil.processTransaction(transaction) != true)) {
-                System.out.println("Transaction failed to process. Discarded.");
-                return false;
-            }
-        }
-        block.transactions.add(transaction);
-        System.out.println("Transaction Successfully added to Block");
-        return true;
-    }
+
 }

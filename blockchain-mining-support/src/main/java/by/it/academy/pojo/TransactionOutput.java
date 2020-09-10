@@ -12,7 +12,7 @@ import java.security.PublicKey;
 public class TransactionOutput {
     @Id
     public String id;
-    public PublicKey reciepient; //also known as the new owner of these coins.
+    public PublicKey recipient; //also known as the new owner of these coins.
     public float value; //the amount of coins they own
 //    public String parentTransactionId; //the id of the transaction this output was created in
 
@@ -26,7 +26,7 @@ public class TransactionOutput {
     public String toString() {
         return "TransactionOutput{" +
                 "id='" + id + '\'' +
-                ", reciepient=" + reciepient +
+                ", recipient=" + recipient +
                 ", value=" + value +
                 ", parentTransactionId='" + transaction.getTransactionId() + '\'' +
                 '}';

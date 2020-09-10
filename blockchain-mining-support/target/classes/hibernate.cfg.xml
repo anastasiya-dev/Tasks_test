@@ -17,6 +17,7 @@
 
         <mapping class="by.it.academy.pojo.Blockchain"/>
         <mapping class="by.it.academy.pojo.Block"/>
+        <mapping class="by.it.academy.pojo.BlockchainUtxo"/>
         <mapping class="by.it.academy.pojo.Transaction"/>
         <mapping class="by.it.academy.pojo.TransactionOutput"/>
         <mapping class="by.it.academy.pojo.Wallet"/>

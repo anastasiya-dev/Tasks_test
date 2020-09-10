@@ -23,7 +23,10 @@ public class Wallet {
     private String walletId;
 
     public PrivateKey privateKey;
+    public String privateKeyString;
+
     public PublicKey publicKey;
+    public String publicKeyString;
 
     public HashMap<String, TransactionOutput> UTXOs = new HashMap<String, TransactionOutput>(); //only UTXOs owned by this wallet.
 

@@ -1,4 +1,4 @@
-package by.it.academy.pojo.repository;
+package by.it.academy.repository;
 
 import by.it.academy.pojo.Transaction;
 import org.hibernate.Session;
@@ -7,10 +7,17 @@ import org.hibernate.query.Query;
 
 import java.util.List;
 
+//@Repository
 public class TransactionDao implements BaseDao<Transaction> {
 
+//    @Autowired
+//    SessionFactory sessionFactory;
+
+//    private ApplicationContext context;
+
     @Override
-    public void create(Transaction transaction, SessionFactory sessionFactory) {
+//    @Transactional
+    public void create(SessionFactory sessionFactory, Transaction transaction) {
         org.hibernate.Transaction tx = null;
         Session session = sessionFactory.openSession();
         try {
@@ -26,7 +33,8 @@ public class TransactionDao implements BaseDao<Transaction> {
     }
 
     @Override
-    public Transaction findById(String id, SessionFactory sessionFactory) {
+//    @Transactional(propagation = Propagation.REQUIRED, readOnly = true)
+    public Transaction findById(SessionFactory sessionFactory, String id) {
         Session session = sessionFactory.openSession();
         Query<Transaction> query = session.createQuery("from Transaction t where t.transactionId=:transactionId", Transaction.class);
         query.setParameter("transactionId", id);
@@ -42,12 +50,13 @@ public class TransactionDao implements BaseDao<Transaction> {
     }
 
     @Override
-    public Transaction findByName(String id, SessionFactory sessionFactory) {
+    public Transaction findByName(SessionFactory sessionFactory, String id) {
         return null;
     }
 
     @Override
-    public List<Transaction> findAll(String searchStr, SessionFactory sessionFactory) {
+//    @Transactional(propagation = Propagation.REQUIRED, readOnly = true)
+    public List<Transaction> findAll(SessionFactory sessionFactory, String searchStr) {
         Session session = sessionFactory.openSession();
         Query<Transaction> query = session.createQuery("from Transaction", Transaction.class);
         List<Transaction> list = query.list();
@@ -56,7 +65,8 @@ public class TransactionDao implements BaseDao<Transaction> {
     }
 
     @Override
-    public List<Transaction> findAllWithParameter(String searchStr, SessionFactory sessionFactory) {
+//    @Transactional(propagation = Propagation.REQUIRED, readOnly = true)
+    public List<Transaction> findAllWithParameter(SessionFactory sessionFactory, String searchStr) {
 //        Session session = sessionFactory.openSession();
 //        Wallet wallet = (Wallet) walletDao.findById(searchStr);
 //        Query<Transaction> query = session.createQuery("from Transaction t where t.recipient=:recipient", Transaction.class);
@@ -68,7 +78,7 @@ public class TransactionDao implements BaseDao<Transaction> {
     }
 
     @Override
-    public Transaction update(Transaction transaction, SessionFactory sessionFactory) {
+    public Transaction update(SessionFactory sessionFactory, Transaction transaction) {
         Session session = sessionFactory.openSession();
         org.hibernate.Transaction tx = session.beginTransaction();
         Query query = session.createQuery("update Transaction t set t.signature=:signature, t.transactionDateTime=:transactionDateTime where t.transactionId=:transactionId");
@@ -83,7 +93,8 @@ public class TransactionDao implements BaseDao<Transaction> {
     }
 
     @Override
-    public boolean delete(Transaction transaction, SessionFactory sessionFactory) {
+//    @Transactional
+    public boolean delete(SessionFactory sessionFactory, Transaction transaction) {
         System.out.println("in the delete method");
         org.hibernate.Transaction tx = null;
 //        Transaction transactionToDelete = findById(transaction.getTransactionId());
@@ -108,4 +119,8 @@ public class TransactionDao implements BaseDao<Transaction> {
         }
     }
 
+//    @Override
+//    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+//        context = applicationContext;
+//    }
 }

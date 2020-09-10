@@ -15,8 +15,6 @@ public class TransactionInput {
     @Id
     public String transactionOutputId; //Reference to TransactionOutputs -> transactionId
 
-//    public List<TransactionOutput> UTXO = new ArrayList<TransactionOutput>(); //Contains the Unspent transaction output
-
     @OneToOne
     public TransactionOutput transactionOutput; //Contains the Unspent transaction output
 }

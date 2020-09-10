@@ -1,26 +1,47 @@
 package by.it.academy;
 
-import by.it.academy.pojo.Transaction;
-import by.it.academy.pojo.repository.TransactionDao;
+import by.it.academy.pojo.*;
+import by.it.academy.repository.BlockDao;
+import by.it.academy.repository.BlockchainUtxoDao;
+import by.it.academy.service.BlockService;
+import by.it.academy.service.TransactionService;
+import by.it.academy.util.BlockUtil;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class Main {
 
     public static int difficulty = 3;
+    public static SessionFactory factory = null;
 
     public static void main(String[] args) {
 
-        SessionFactory factory = null;
+
         factory = start();
 
-        TransactionDao transactionDao = new TransactionDao();
-        List<Transaction> all = transactionDao.findAll("", factory);
+        BlockchainUtxoDao blockchainUtxoDao = new BlockchainUtxoDao();
+        List<BlockchainUtxo> all = blockchainUtxoDao.findAll(factory, "");
         System.out.println(all);
+
+        Block genesis = BlockUtil.createBlock("0");
+        BlockDao blockDao = new BlockDao();
+        BlockService blockService = new BlockService();
+        TransactionService transactionService = new TransactionService();
+        ArrayList<Transaction> allTransactions = transactionService.findAllTransactions();
+        for (Transaction transaction : allTransactions) {
+            blockService.addTransaction(genesis, transaction);
+        }
+        System.out.println("before saving");
+        System.out.println(genesis);
+        blockDao.create(factory, genesis);
+        System.out.println("after saving");
+        System.out.println(genesis);
 
         finish(factory);
 
@@ -53,4 +74,5 @@ public class Main {
             factory = null;
         }
     }
+
 }
