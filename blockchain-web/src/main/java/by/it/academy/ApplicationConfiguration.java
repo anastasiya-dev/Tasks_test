@@ -43,7 +43,8 @@ public class ApplicationConfiguration {
                 TransactionOutput.class,
                 TransactionInput.class,
                 Wallet.class,
-                Blockchain.class);
+                Blockchain.class,
+                BlockchainUtxo.class);
         sessionFactory.setHibernateProperties(getHibernateProperties());
         return sessionFactory;
     }

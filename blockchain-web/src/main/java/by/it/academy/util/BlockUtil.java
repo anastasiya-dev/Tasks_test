@@ -35,18 +35,5 @@ public class BlockUtil {
         System.out.println("Block Mined!!! : " + block.getHash());
     }
 
-    //Add transactions to this block
-    public static boolean addTransaction(Block block, Transaction transaction) {
-        //process transaction and check if valid, unless block is genesis block then ignore.
-        if (transaction == null) return false;
-        if ((block.getPreviousHash() != "0")) {
-            if ((TransactionUtil.processTransaction(transaction) != true)) {
-                System.out.println("Transaction failed to process. Discarded.");
-                return false;
-            }
-        }
-        block.transactions.add(transaction);
-        System.out.println("Transaction Successfully added to Block");
-        return true;
-    }
+
 }

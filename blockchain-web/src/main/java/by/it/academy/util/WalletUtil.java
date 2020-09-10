@@ -25,7 +25,9 @@ public class WalletUtil {
             KeyPair keyPair = keyGen.generateKeyPair();
             // Set the public and private keys from the keyPair
             wallet.privateKey = keyPair.getPrivate();
+            wallet.privateKeyString = StringUtil.getStringFromKey(wallet.privateKey);
             wallet.publicKey = keyPair.getPublic();
+            wallet.publicKeyString = StringUtil.getStringFromKey(wallet.publicKey);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

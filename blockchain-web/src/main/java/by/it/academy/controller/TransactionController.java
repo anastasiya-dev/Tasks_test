@@ -1,18 +1,13 @@
 package by.it.academy.controller;
 
-import by.it.academy.pojo.Transaction;
-import by.it.academy.pojo.TransactionInput;
-import by.it.academy.pojo.TransactionOutput;
-import by.it.academy.pojo.Wallet;
+import by.it.academy.pojo.*;
+import by.it.academy.service.BlockchainUtxoService;
 import by.it.academy.service.TransactionService;
 import by.it.academy.service.UserService;
 import by.it.academy.service.WalletService;
 import by.it.academy.support.PrivateKeyInput;
 import by.it.academy.support.TransactionStart;
-import by.it.academy.util.StringUtil;
-import by.it.academy.util.TransactionInputUtil;
-import by.it.academy.util.TransactionOutputUtil;
-import by.it.academy.util.TransactionUtil;
+import by.it.academy.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -28,6 +23,9 @@ import java.util.List;
 
 @Controller
 public class TransactionController {
+
+    @Autowired
+    BlockchainUtxoService blockchainUtxoService;
 
     @Autowired
     TransactionService transactionService;
@@ -105,9 +103,10 @@ public class TransactionController {
             TransactionUtil.generateSignature(transaction
                     , privateKey);
             TransactionOutput transactionOutput = TransactionOutputUtil.createTransactionOutput(
-                    transaction.getReciepient(),
+                    transaction.getRecipient(),
                     transaction.getValue(),
                     transaction);
+
 //            System.out.println("single: " + transactionOutput);
             transaction.outputs.add(transactionOutput);
 //            System.out.println("total: " + transaction.outputs);
@@ -119,6 +118,11 @@ public class TransactionController {
 
             transactionService.updateTransaction(transaction);
             transactionService.createNewTransaction(transaction);
+
+            BlockchainUtxo blockchainUtxo
+                    = BlockchainUtxoUtil.createBcUtxo(transactionOutput.id, transactionOutput);
+            blockchainUtxoService.createNewUTXO(blockchainUtxo);
+
             Transaction newTr = transactionService.findTransactionById(transactionId);
             System.out.println(newTr);
             return "redirect:/{userId}/user-cabinet";
@@ -140,7 +144,7 @@ public class TransactionController {
 
         Transaction transaction = transactionService.findTransactionById(transactionId);
         modelAndView.addObject("sender", transaction.getSender());
-        modelAndView.addObject("recipient", transaction.getReciepient());
+        modelAndView.addObject("recipient", transaction.getRecipient());
         modelAndView.addObject("value", transaction.getValue());
 
         Wallet walletSender = walletService.findWalletById(walletId);

@@ -1,9 +1,12 @@
 C:\work\blockchain-web\src\main\java\by\it\academy\support\TransactionStart.java
+C:\work\blockchain-web\src\main\java\by\it\academy\repository\BlockchainUtxoDao.java
 C:\work\blockchain-web\src\main\java\by\it\academy\controller\TransactionController.java
 C:\work\blockchain-web\src\main\java\by\it\academy\pojo\Transaction.java
 C:\work\blockchain-web\src\main\java\by\it\academy\util\WalletUtil.java
 C:\work\blockchain-web\src\main\java\by\it\academy\service\TransactionService.java
 C:\work\blockchain-web\src\main\java\by\it\academy\service\UserService.java
+C:\work\blockchain-web\src\main\java\by\it\academy\service\BlockchainUtxoService.java
+C:\work\blockchain-web\src\main\java\by\it\academy\repository\TransactionOutputDao.java
 C:\work\blockchain-web\src\main\java\by\it\academy\util\UserImageUtil.java
 C:\work\blockchain-web\src\main\java\by\it\academy\repository\WalletDao.java
 C:\work\blockchain-web\src\main\java\by\it\academy\pojo\Block.java
@@ -14,11 +17,14 @@ C:\work\blockchain-web\src\main\java\by\it\academy\controller\WalletController.j
 C:\work\blockchain-web\src\main\java\by\it\academy\repository\BaseDao.java
 C:\work\blockchain-web\src\main\java\by\it\academy\pojo\Blockchain.java
 C:\work\blockchain-web\src\main\java\by\it\academy\web\WebAppInitializer.java
+C:\work\blockchain-web\src\main\java\by\it\academy\service\BlockService.java
 C:\work\blockchain-web\src\main\java\by\it\academy\pojo\Wallet.java
 C:\work\blockchain-web\src\main\java\by\it\academy\controller\UserCabinetController.java
+C:\work\blockchain-web\src\main\java\by\it\academy\service\TransactionOutputService.java
 C:\work\blockchain-web\src\main\java\by\it\academy\util\TransactionUtil.java
 C:\work\blockchain-web\src\main\java\by\it\academy\pojo\TransactionOutput.java
 C:\work\blockchain-web\src\main\java\by\it\academy\repository\TransactionDao.java
+C:\work\blockchain-web\src\main\java\by\it\academy\pojo\BlockchainUtxo.java
 C:\work\blockchain-web\src\main\java\by\it\academy\controller\SignUpController.java
 C:\work\blockchain-web\src\main\java\by\it\academy\util\TransactionOutputUtil.java
 C:\work\blockchain-web\src\main\java\by\it\academy\pojo\TransactionInput.java
@@ -30,4 +36,5 @@ C:\work\blockchain-web\src\main\java\by\it\academy\pojo\User.java
 C:\work\blockchain-web\src\main\java\by\it\academy\service\WalletService.java
 C:\work\blockchain-web\src\main\java\by\it\academy\ApplicationConfiguration.java
 C:\work\blockchain-web\src\main\java\by\it\academy\MvcConfig.java
+C:\work\blockchain-web\src\main\java\by\it\academy\util\BlockchainUtxoUtil.java
 C:\work\blockchain-web\src\main\java\by\it\academy\util\TransactionInputUtil.java

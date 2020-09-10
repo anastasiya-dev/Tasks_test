@@ -18,7 +18,9 @@ public class Transaction {
     @Id
     public String transactionId; // this is also the hash of the transaction.
     public PublicKey sender; // senders address/public key.
-    public PublicKey reciepient; // Recipients address/public key.
+    public String senderString;
+    public PublicKey recipient; // Recipients address/public key.
+    public String recipientString;
     public float value;
     public byte[] signature; // this is to prevent anybody else from spending funds in our wallet.
     public LocalDateTime transactionDateTime;
@@ -34,7 +36,7 @@ public class Transaction {
         return "Transaction{" +
                 "transactionId='" + transactionId + '\'' +
                 ", sender=" + sender +
-                ", reciepient=" + reciepient +
+                ", recipient=" + recipient +
                 ", value=" + value +
                 ", date time =" + transactionDateTime +
                 ", signature=" + Arrays.toString(signature) +
