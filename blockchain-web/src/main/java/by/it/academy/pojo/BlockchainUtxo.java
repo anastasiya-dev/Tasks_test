@@ -20,4 +20,14 @@ public class BlockchainUtxo {
     public String parentTransactionId;
     public String transactionInputId;
 
+    @Override
+    public String toString() {
+        return "BlockchainUtxo{" +
+                "blockchainUtxoId='" + blockchainUtxoId + '\'' +
+                ", recipient=" + recipient +
+                ", value=" + value +
+                ", parentTransactionId='" + parentTransactionId + '\'' +
+                ", transactionInputId='" + transactionInputId + '\'' +
+                '}';
+    }
 }

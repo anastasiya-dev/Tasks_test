@@ -1,6 +1,5 @@
 package by.it.academy.repository;
 
-import by.it.academy.pojo.Transaction;
 import by.it.academy.pojo.TransactionOutput;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

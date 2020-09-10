@@ -9,6 +9,7 @@ by\it\academy\util\BlockUtil.class
 by\it\academy\repository\BlockchainUtxoDao.class
 by\it\academy\util\UserImageUtil.class
 by\it\academy\repository\WalletDao.class
+by\it\academy\repository\TransactionInputDao.class
 by\it\academy\service\BlockService.class
 by\it\academy\util\BlockchainUtxoUtil.class
 by\it\academy\controller\HomeController.class
@@ -28,6 +29,7 @@ by\it\academy\util\WalletUtil.class
 by\it\academy\ApplicationConfiguration.class
 by\it\academy\pojo\BlockchainUtxo.class
 by\it\academy\util\StringUtil.class
+by\it\academy\repository\BlockDao.class
 by\it\academy\util\TransactionOutputUtil.class
 by\it\academy\pojo\Block.class
 by\it\academy\controller\TransactionController.class

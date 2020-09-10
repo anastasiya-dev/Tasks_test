@@ -3,6 +3,7 @@ package by.it.academy.util;
 import by.it.academy.pojo.Block;
 import by.it.academy.pojo.Transaction;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class BlockUtil {
@@ -26,7 +27,7 @@ public class BlockUtil {
     }
 
     public static void mineBlock(Block block, int difficulty) {
-        block.merkleRoot = StringUtil.getMerkleRoot(block.transactions);
+        block.merkleRoot = StringUtil.getMerkleRoot((ArrayList<Transaction>) block.getTransactions());
         String target = new String(new char[difficulty]).replace('\0', '0'); //Create a string with difficulty * "0"
         while (!block.getHash().substring(0, difficulty).equals(target)) {
             block.setNonce(block.getNonce() + 1);

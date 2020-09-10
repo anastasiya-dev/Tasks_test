@@ -1,15 +1,13 @@
 package by.it.academy.pojo;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
 import java.security.PublicKey;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @Entity
 @Getter
@@ -30,6 +28,10 @@ public class Transaction {
 
     @OneToMany(mappedBy = "transaction", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     public List<TransactionOutput> outputs = new ArrayList<>();
+
+    @ManyToMany(mappedBy = "transactions")
+    @EqualsAndHashCode.Exclude
+    private Set<Block> blocks = new HashSet<>();
 
     @Override
     public String toString() {

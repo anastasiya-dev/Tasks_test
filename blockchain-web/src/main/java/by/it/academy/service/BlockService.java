@@ -21,7 +21,7 @@ public class BlockService {
                 return false;
             }
         }
-        block.transactions.add(transaction);
+        block.getTransactions().add(transaction);
         System.out.println("Transaction Successfully added to Block");
         return true;
     }

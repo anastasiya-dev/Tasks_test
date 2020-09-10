@@ -2,6 +2,7 @@ C:\work\blockchain-web\src\main\java\by\it\academy\support\TransactionStart.java
 C:\work\blockchain-web\src\main\java\by\it\academy\repository\BlockchainUtxoDao.java
 C:\work\blockchain-web\src\main\java\by\it\academy\controller\TransactionController.java
 C:\work\blockchain-web\src\main\java\by\it\academy\pojo\Transaction.java
+C:\work\blockchain-web\src\main\java\by\it\academy\repository\BlockDao.java
 C:\work\blockchain-web\src\main\java\by\it\academy\util\WalletUtil.java
 C:\work\blockchain-web\src\main\java\by\it\academy\service\TransactionService.java
 C:\work\blockchain-web\src\main\java\by\it\academy\service\UserService.java
@@ -16,6 +17,7 @@ C:\work\blockchain-web\src\main\java\by\it\academy\support\Login.java
 C:\work\blockchain-web\src\main\java\by\it\academy\controller\WalletController.java
 C:\work\blockchain-web\src\main\java\by\it\academy\repository\BaseDao.java
 C:\work\blockchain-web\src\main\java\by\it\academy\pojo\Blockchain.java
+C:\work\blockchain-web\src\main\java\by\it\academy\repository\TransactionInputDao.java
 C:\work\blockchain-web\src\main\java\by\it\academy\web\WebAppInitializer.java
 C:\work\blockchain-web\src\main\java\by\it\academy\service\BlockService.java
 C:\work\blockchain-web\src\main\java\by\it\academy\pojo\Wallet.java

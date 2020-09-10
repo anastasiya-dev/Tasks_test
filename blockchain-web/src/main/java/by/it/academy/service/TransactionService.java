@@ -21,6 +21,10 @@ public class TransactionService {
     @Value("#{blockchainUtxoDao}")
     BaseDao blockchainUtxoDao;
 
+    @Autowired
+    @Value("#{transactionInputDao}")
+    BaseDao transactionInputDao;
+
     private float minimumTransaction = 0.1f;
 
     @Autowired
@@ -79,7 +83,13 @@ public class TransactionService {
 
         //gather transaction inputs (Make sure they are unspent):
         for (TransactionInput i : transaction.inputs) {
-            i.transactionOutput = (TransactionOutput) blockchainUtxoDao.findById(i.transactionOutputId);
+            BlockchainUtxo UTXO = (BlockchainUtxo) blockchainUtxoDao.findById(i.transactionOutputId);
+
+            i.transactionOutput.setId(UTXO.getBlockchainUtxoId());
+            i.transactionOutput.setTransactionInput((TransactionInput) transactionInputDao.findById(UTXO.getTransactionInputId()));
+            i.transactionOutput.setTransaction((Transaction) transactionDao.findById(UTXO.getParentTransactionId()));
+            i.transactionOutput.setValue(UTXO.getValue());
+            i.transactionOutput.setRecipient(UTXO.recipient);
 //                    Blockchain.getUTXOs().get(i.transactionOutputId);
         }
 
