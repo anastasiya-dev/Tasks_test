@@ -15,7 +15,7 @@
         <!--        use validate if database is the primary source, not java-->
         <!--        <property name="hibernate.hbm2.ddl.auto">validate</property>-->
 
-        <mapping class="by.it.academy.pojo.Blockchain"/>
+<!--        <mapping class="by.it.academy.pojo.Blockchain"/>-->
         <mapping class="by.it.academy.pojo.Block"/>
         <mapping class="by.it.academy.pojo.BlockchainUtxo"/>
         <mapping class="by.it.academy.pojo.Transaction"/>

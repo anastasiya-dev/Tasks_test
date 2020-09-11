@@ -1,0 +1,19 @@
+
+]	java:S125{"<This block of commented-out lines of code should be removed.(şğš³úÿÿÿÿ8£ö¿ÃÇ.
+V	java:S125d"<This block of commented-out lines of code should be removed.(ÒÖïáúÿÿÿÿ
+S	java:S106b"9Replace this use of System.out or System.err by a logger.(ŠŠ«•ıÿÿÿÿ
+]	java:S125"<This block of commented-out lines of code should be removed.(ÉÇŒÏùÿÿÿÿ8¸ÌÀÃÇ.
+F
+java:S1481Y"+Remove this unused "result" local variable.(·‚Öèøÿÿÿÿ
+]	java:S125"<This block of commented-out lines of code should be removed.(ì¤§“şÿÿÿÿ8à¨ÁÃÇ.
+N	java:S106e"9Replace this use of System.out or System.err by a logger.(Û†­
+J
+java:S3740T"/Provide the parametrized type for this generic.(¶ëÙşıÿÿÿÿ
+U
+java:S1854Y":Remove this useless assignment to local variable "result".(·‚Öèøÿÿÿÿ
+V	java:S125X"<This block of commented-out lines of code should be removed.(£Í¤…ıÿÿÿÿ
+A
+java:S1168M"+Return an empty collection instead of null.(¥¹ï
+Q	java:S125."<This block of commented-out lines of code should be removed.(†€éˆ
+V	java:S125m"<This block of commented-out lines of code should be removed.(¬·æºúÿÿÿÿ
+Q	java:S125F"<This block of commented-out lines of code should be removed.(¥øî

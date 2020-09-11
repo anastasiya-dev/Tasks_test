@@ -1,0 +1,22 @@
+
+Œ
+java:S1319"qThe type of the "inputs" object should be an interface such as "List" rather than the implementation "ArrayList".(÷Ÿ„½ÿÿÿÿÿ
+h
+java:S1104"RMake sender a static final constant or non-public and provide accessors if needed.(ƒñúÑ
+l
+java:S1104"QMake value a static final constant or non-public and provide accessors if needed.(¼Á’Øýÿÿÿÿ
+k
+java:S1104"UMake signature a static final constant or non-public and provide accessors if needed.(Ÿôàí
+n
+java:S1104"XMake senderString a static final constant or non-public and provide accessors if needed.(ôÕÖç
+V	java:S125"<This block of commented-out lines of code should be removed.(µƒ„Õùÿÿÿÿ
+v
+java:S1104"[Make recipientString a static final constant or non-public and provide accessors if needed.(ðçò þÿÿÿÿ
+z
+java:S1104"_Make transactionDateTime a static final constant or non-public and provide accessors if needed.(ŠòŸÕÿÿÿÿÿ
+m
+java:S1104"RMake inputs a static final constant or non-public and provide accessors if needed.(÷Ÿ„½ÿÿÿÿÿ
+k
+java:S1104"UMake recipient a static final constant or non-public and provide accessors if needed.(ÊÞ„Ï
+t
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(÷Ÿ„½ÿÿÿÿÿ

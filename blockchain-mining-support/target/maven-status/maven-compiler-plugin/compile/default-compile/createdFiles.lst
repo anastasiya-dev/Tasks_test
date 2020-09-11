@@ -3,7 +3,6 @@ by\it\academy\util\TransactionUtil.class
 by\it\academy\service\TransactionService.class
 by\it\academy\Main.class
 by\it\academy\repository\BaseDao.class
-by\it\academy\pojo\Blockchain.class
 by\it\academy\pojo\User.class
 by\it\academy\pojo\BlockchainUtxo.class
 by\it\academy\pojo\TransactionInput.class
@@ -18,4 +17,5 @@ by\it\academy\service\BlockService.class
 by\it\academy\repository\TransactionDao.class
 by\it\academy\pojo\Transaction.class
 by\it\academy\pojo\Wallet.class
+by\it\academy\Start.class
 by\it\academy\pojo\TransactionOutput.class
