@@ -1,0 +1,12 @@
+
+H
+java:S11687"+Return an empty collection instead of null.(¥¹ï8Ğ¨™ÄÇ.
+x
+java:S1450"VRemove the "context" field and declare it as a local variable in the relevant methods.(Å¯ÙÕúÿÿÿÿ8“ä™ÄÇ.
+
+java:S1130J"sRemove the declaration of thrown exception 'org.springframework.beans.BeansException' which is a runtime exception.(¯¶…œ8Ğ¨™ÄÇ.
+H
+java:S1168<"+Return an empty collection instead of null.(¥¹ï8Ğ¨™ÄÇ.
+X	java:S125*"<This block of commented-out lines of code should be removed.(†€éˆ8ªÀÄÇ.
+
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Öˆ±u8Ğ¨™ÄÇ.

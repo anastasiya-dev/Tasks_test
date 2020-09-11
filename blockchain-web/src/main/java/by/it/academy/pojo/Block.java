@@ -6,8 +6,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 @Entity
 @Getter
@@ -17,7 +16,6 @@ public class Block {
     public String hash;
     public String previousHash;
     public String merkleRoot;
-//    public ArrayList<Transaction> transactions = new ArrayList<Transaction>();
 
     private long timeStamp;
     private int nonce;
@@ -33,7 +31,7 @@ public class Block {
             }
     )
     @EqualsAndHashCode.Exclude
-    private Set<Transaction> transactions = new HashSet<>();
+    private List<Transaction> transactions = new ArrayList<>();
 
     @Override
     public String toString() {
@@ -41,9 +39,9 @@ public class Block {
                 "hash='" + hash + '\'' +
                 ", previousHash='" + previousHash + '\'' +
                 ", merkleRoot='" + merkleRoot + '\'' +
-                ", transactions=" + transactions +
                 ", timeStamp=" + timeStamp +
                 ", nonce=" + nonce +
+                ", transactions=" + transactions +
                 '}';
     }
 }

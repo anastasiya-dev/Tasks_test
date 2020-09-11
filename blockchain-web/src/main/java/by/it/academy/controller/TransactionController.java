@@ -125,6 +125,8 @@ public class TransactionController {
 
             Transaction newTr = transactionService.findTransactionById(transactionId);
             System.out.println(newTr);
+
+            System.out.println("get balance: " + walletService.getBalance(walletSender));
             return "redirect:/{userId}/user-cabinet";
         } else {
             transactionService.deleteTransaction(transaction);

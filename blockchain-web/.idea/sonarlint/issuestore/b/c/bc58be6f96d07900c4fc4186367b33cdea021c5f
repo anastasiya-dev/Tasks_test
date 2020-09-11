@@ -1,11 +1,6 @@
 
-o
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ªùœ›
 s
-java:S1104"XMake previousHash a static final constant or non-public and provide accessors if needed.(Û±µ¨úÿÿÿÿ
-n
-java:S1104"XMake transactions a static final constant or non-public and provide accessors if needed.(ªùœ›
+java:S1104"XMake previousHash a static final constant or non-public and provide accessors if needed.(Û±µ¨úÿÿÿÿ
+W	java:S125"<This block of commented-out lines of code should be removed.(·ééY8ˆ¡ïÄÇ.
 l
-java:S1104"VMake merkleRoot a static final constant or non-public and provide accessors if needed.(›ÏŸ¨
-
-java:S1319"wThe type of the "transactions" object should be an interface such as "List" rather than the implementation "ArrayList".(ªùœ›
+java:S1104"VMake merkleRoot a static final constant or non-public and provide accessors if needed.(›ÏŸ¨

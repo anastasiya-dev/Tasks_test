@@ -5,6 +5,7 @@ import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import java.security.PublicKey;
 
 @Entity
@@ -19,6 +20,9 @@ public class BlockchainUtxo {
     public float value;
     public String parentTransactionId;
     public String transactionInputId;
+
+    @ManyToOne
+    public Wallet wallet;
 
     @Override
     public String toString() {

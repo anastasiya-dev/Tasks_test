@@ -16,7 +16,6 @@ C:\work\blockchain-web\src\main\java\by\it\academy\repository\UserDao.java
 C:\work\blockchain-web\src\main\java\by\it\academy\support\Login.java
 C:\work\blockchain-web\src\main\java\by\it\academy\controller\WalletController.java
 C:\work\blockchain-web\src\main\java\by\it\academy\repository\BaseDao.java
-C:\work\blockchain-web\src\main\java\by\it\academy\pojo\Blockchain.java
 C:\work\blockchain-web\src\main\java\by\it\academy\repository\TransactionInputDao.java
 C:\work\blockchain-web\src\main\java\by\it\academy\web\WebAppInitializer.java
 C:\work\blockchain-web\src\main\java\by\it\academy\service\BlockService.java

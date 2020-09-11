@@ -1,23 +1,23 @@
 
-X	java:S125O"<This block of commented-out lines of code should be removed.(¥øî8ßåÕîÆ.
 ]	java:S125m"<This block of commented-out lines of code should be removed.(ÒÖïáúÿÿÿÿ8Ã§‹çÆ.
+x
+java:S1450"VRemove the "context" field and declare it as a local variable in the relevant methods.(Å¯ÙÕúÿÿÿÿ8¿ŒŸÅÆ.
+\
+java:S1854b":Remove this useless assignment to local variable "result".(·‚Öèøÿÿÿÿ8Î¥ºìÆ.
+M
+java:S1481b"+Remove this unused "result" local variable.(·‚Öèøÿÿÿÿ8Î¥ºìÆ.
+Q
+java:S3740]"/Provide the parametrized type for this generic.(¶ëÙşıÿÿÿÿ8Î¥ºìÆ.
 l
 java:S1128
 "ORemove this unused import 'org.springframework.beans.factory.annotation.Value'.(ìø›8ˆÉïÆ.
+X	java:S1257"<This block of commented-out lines of code should be removed.(†€éˆ8’»äÆ.
+]	java:S125a"<This block of commented-out lines of code should be removed.(£Í¤…ıÿÿÿÿ8—Îî˜Ç.
+X	java:S125O"<This block of commented-out lines of code should be removed.(¥øî8ßåÕîÆ.
+]	java:S125v"<This block of commented-out lines of code should be removed.(¬·æºúÿÿÿÿ8‡º”çÆ.
+U	java:S106n"9Replace this use of System.out or System.err by a logger.(Û†­8ñ…ÛæÆ.
 ‘
 java:S1130„"sRemove the declaration of thrown exception 'org.springframework.beans.BeansException' which is a runtime exception.(¯¶…œ8ÂÂÅÆ.
-]	java:S125v"<This block of commented-out lines of code should be removed.(¬·æºúÿÿÿÿ8‡º”çÆ.
 H
 java:S1168V"+Return an empty collection instead of null.(¥¹ï8–Ò×îÆ.
-X	java:S1257"<This block of commented-out lines of code should be removed.(†€éˆ8’»äÆ.
-U	java:S106n"9Replace this use of System.out or System.err by a logger.(Û†­8ñ…ÛæÆ.
-x
-java:S1450"VRemove the "context" field and declare it as a local variable in the relevant methods.(Å¯ÙÕúÿÿÿÿ8¿ŒŸÅÆ.
-M
-java:S1481b"+Remove this unused "result" local variable.(·‚Öèøÿÿÿÿ8Î¥ºìÆ.
-\
-java:S1854b":Remove this useless assignment to local variable "result".(·‚Öèøÿÿÿÿ8Î¥ºìÆ.
-]	java:S125a"<This block of commented-out lines of code should be removed.(£Í¤…ıÿÿÿÿ8—Îî˜Ç.
-Q
-java:S3740]"/Provide the parametrized type for this generic.(¶ëÙşıÿÿÿÿ8Î¥ºìÆ.
 Z	java:S106k"9Replace this use of System.out or System.err by a logger.(ŠŠ«•ıÿÿÿÿ8¢‘ÜæÆ.

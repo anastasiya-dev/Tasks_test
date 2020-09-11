@@ -38,6 +38,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../blockchain-mining-support/src/main/java/by/it/academy/Start.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../blockchain-mining-support/src/main/java/by/it/academy/pojo/Block.java">
           <value>
             <set />
@@ -69,6 +74,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../blockchain-mining-support/src/main/java/by/it/academy/pojo/TransactionOutput.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../blockchain-mining-support/src/main/java/by/it/academy/pojo/Wallet.java">
           <value>
             <set />
           </value>
@@ -119,6 +129,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../blockchain-mining-support/src/main/java/by/it/academy/util/BlockUtil.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../blockchain-mining-support/src/main/java/by/it/academy/util/TransactionOutputUtil.java">
           <value>
             <set />
           </value>

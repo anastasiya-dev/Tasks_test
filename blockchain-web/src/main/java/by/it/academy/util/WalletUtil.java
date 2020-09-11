@@ -1,10 +1,10 @@
 package by.it.academy.util;
 
 import by.it.academy.pojo.Wallet;
-import jdk.swing.interop.SwingInterOpUtils;
-import org.springframework.stereotype.Service;
 
-import java.security.*;
+import java.security.KeyPair;
+import java.security.KeyPairGenerator;
+import java.security.SecureRandom;
 import java.security.spec.ECGenParameterSpec;
 
 public class WalletUtil {
@@ -32,43 +32,5 @@ public class WalletUtil {
             throw new RuntimeException(e);
         }
     }
-//
-//    //returns balance and stores the UTXO's owned by this wallet in this.UTXOs
-//    public static float getBalance(Wallet wallet) {
-//        float total = 0;
-//        for (Map.Entry<String, TransactionOutput> item : BlockChain.UTXOs.entrySet()) {
-//            TransactionOutput UTXO = item.getValue();
-//            if (TrOutputService.isMine(UTXO, wallet.publicKey)) { //if output belongs to me ( if coins belong to me )
-//                wallet.UTXOs.put(UTXO.id, UTXO); //add it to our list of unspent transactions.
-//                total += UTXO.value;
-//            }
-//        }
-//        return total;
-//    }
 
-//    //Generates and returns a new transaction from this wallet.
-//    public static Transaction sendFunds(Wallet wallet, PublicKey _recipient, float value) {
-//        if (getBalance(wallet) < value) { //gather balance and check funds.
-//            System.out.println("#Not Enough funds to send transaction. Transaction Discarded.");
-//            return null;
-//        }
-//        //create array list of inputs
-//        ArrayList<TransactionInput> inputs = new ArrayList<TransactionInput>();
-//
-//        float total = 0;
-//        for (Map.Entry<String, TransactionOutput> item : wallet.UTXOs.entrySet()) {
-//            TransactionOutput UTXO = item.getValue();
-//            total += UTXO.value;
-//            inputs.add(TrInputService.createTransactionInput(UTXO.id));
-//            if (total > value) break;
-//        }
-//
-//        Transaction newTransaction = new Transaction(wallet.publicKey, _recipient, value, inputs);
-//        newTransaction.generateSignature(wallet.privateKey);
-//
-//        for (TransactionInput input : inputs) {
-//            wallet.UTXOs.remove(input.transactionOutputId);
-//        }
-//        return newTransaction;
-//    }
 }

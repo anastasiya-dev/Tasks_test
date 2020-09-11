@@ -1,0 +1,6 @@
+
+S	java:S106$"9Replace this use of System.out or System.err by a logger.(±°Ôûúÿÿÿÿ
+|
+java:S1488"fImmediately return this expression instead of assigning it to the temporary variable "calculatedhash".(­üŒÈ
+U
+java:S1118	":Add a private constructor to hide the implicit public one.(Õþç³ýÿÿÿÿ

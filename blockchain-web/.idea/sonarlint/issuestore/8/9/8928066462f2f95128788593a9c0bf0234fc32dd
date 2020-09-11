@@ -1,7 +1,21 @@
 
-ç
-java:S1319 "pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Ä°çØ8ÆªÇÂ∆.
+]	java:S125]"<This block of commented-out lines of code should be removed.(Õâøï¯ˇˇˇˇ8¯∏…ø«.
+m	java:S117V"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ë⁄˘µ8Ï˘˝√«.
+Q
+java:S3740"/Provide the parametrized type for this generic.(†≠Ä˚˘ˇˇˇˇ8ñπ∆ø«.
+Z	java:S106P"9Replace this use of System.out or System.err by a logger.(îÇ€å¯ˇˇˇˇ8ñπ∆ø«.
+X	java:S125u"<This block of commented-out lines of code should be removed.(ÊïÁº8Åâ—ø«.
+]	java:S125}"<This block of commented-out lines of code should be removed.(´§ß¬˛ˇˇˇˇ8€äÇ¡«.
+K
+java:S1125O")Remove the literal "false" boolean value.(–ÄÏ§˛ˇˇˇˇ8ñπ∆ø«.
 Q
 java:S3740"/Provide the parametrized type for this generic.(œ≥Ï—˛ˇˇˇˇ8Ωà®≈∆.
+U	java:S106b"9Replace this use of System.out or System.err by a logger.(Œ˛∆π8ñπ∆ø«.
+L
+java:S3740"/Provide the parametrized type for this generic.(§È°€8Ûöáƒ«.
+]	java:S125h"<This block of commented-out lines of code should be removed.(≠˝ˇ±ˇˇˇˇˇ8ñπ∆ø«.
+ç
+java:S1319*"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Ä°çØ8ÆªÇÂ∆.
+Y	java:S125Ö"<This block of commented-out lines of code should be removed.(˝∫°Õ8€ñÂø«.
 í
-java:S1319-"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(€ìƒ©˚ˇˇˇˇ8ˇ•åÔ∆.
+java:S13197"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(€ìƒ©˚ˇˇˇˇ8ˇ•åÔ∆.

@@ -30,7 +30,7 @@ public class WalletDao implements BaseDao<Wallet>, ApplicationContextAware {
         Session session = sessionFactory.openSession();
         try {
             tx = session.beginTransaction();
-            session.save(wallet);
+            session.saveOrUpdate(wallet);
             tx.commit();
         } catch (Exception e) {
             if (tx != null) tx.rollback();

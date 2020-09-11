@@ -3,6 +3,9 @@ package by.it.academy.pojo;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+import org.hibernate.annotations.IndexColumn;
 
 import javax.persistence.*;
 import java.security.PublicKey;
@@ -23,27 +26,31 @@ public class Transaction {
     public byte[] signature; // this is to prevent anybody else from spending funds in our wallet.
     public LocalDateTime transactionDateTime;
 
-    public ArrayList<TransactionInput> inputs = new ArrayList<TransactionInput>();
-//    public ArrayList<TransactionOutput> outputs = new ArrayList<TransactionOutput>();
+    @OneToMany(mappedBy = "transaction", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    public List<TransactionInput> inputs = new ArrayList<TransactionInput>();
 
     @OneToMany(mappedBy = "transaction", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @Fetch(FetchMode.SELECT)
     public List<TransactionOutput> outputs = new ArrayList<>();
 
     @ManyToMany(mappedBy = "transactions")
     @EqualsAndHashCode.Exclude
-    private Set<Block> blocks = new HashSet<>();
+    private List<Block> blocks = new ArrayList<>();
 
     @Override
     public String toString() {
         return "Transaction{" +
                 "transactionId='" + transactionId + '\'' +
-                ", sender=" + sender +
-                ", recipient=" + recipient +
+//                ", sender=" + sender +
+                ", senderString='" + senderString + '\'' +
+//                ", recipient=" + recipient +
+                ", recipientString='" + recipientString + '\'' +
                 ", value=" + value +
-                ", date time =" + transactionDateTime +
                 ", signature=" + Arrays.toString(signature) +
-//                ", inputs=" + inputs +
+                ", transactionDateTime=" + transactionDateTime +
+                ", inputs=" + inputs +
                 ", outputs=" + outputs +
+//                ", blocks=" + blocks +
                 '}';
     }
 }

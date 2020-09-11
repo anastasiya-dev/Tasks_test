@@ -1,20 +1,24 @@
 
-x
-java:S1104"VMake privateKey a static final constant or non-public and provide accessors if needed.(½¡Úãıÿÿÿÿ8ÕÈÆùÅ.
 v
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(øéà8°ŠñîÆ.
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(øéà8ÅÅÙÁÇ.
+N
+java:S1153)"1Directly append the argument of String.valueOf().(Ñœ¾Ø8Óáø•Æ.
+y
+java:S1104"\Make privateKeyString a static final constant or non-public and provide accessors if needed.(½¨Û8êíØÁÇ.
+r
+java:S1104"UMake publicKey a static final constant or non-public and provide accessors if needed.(·ó«ø8ÕÈÆùÅ.
+Š
+java:S1319"mThe type of the "UTXOs" object should be an interface such as "Map" rather than the implementation "HashMap".(øéà8ÕÈÆùÅ.
+N
+java:S1153("1Directly append the argument of String.valueOf().(‹ªœ8Ù¡ø•Æ.
 M
 java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8…ƒïÆ.
-N
-java:S1153%"1Directly append the argument of String.valueOf().(‹ªœ8Ù¡ø•Æ.
-r
-java:S1104"UMake publicKey a static final constant or non-public and provide accessors if needed.(·ó«ø8ÕÈÆùÅ.
-l	java:S116"PRename this field "UTXOs" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(øéà8ÕÈÆùÅ.
-Š
-java:S1319"mThe type of the "UTXOs" object should be an interface such as "Map" rather than the implementation "HashMap".(øéà8ÕÈÆùÅ.
-N
-java:S1153&"1Directly append the argument of String.valueOf().(Ñœ¾Ø8Óáø•Æ.
-n
-java:S1104"QMake UTXOs a static final constant or non-public and provide accessors if needed.(øéà8ÕÈÆùÅ.
+}
+java:S1104"[Make publicKeyString a static final constant or non-public and provide accessors if needed.(¨£Ğìûÿÿÿÿ8ÅÅÙÁÇ.
+x
+java:S1104"VMake privateKey a static final constant or non-public and provide accessors if needed.(½¡Úãıÿÿÿÿ8ÕÈÆùÅ.
 M
 java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8…ƒïÆ.
+l	java:S116"PRename this field "UTXOs" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(øéà8ÕÈÆùÅ.
+n
+java:S1104"QMake UTXOs a static final constant or non-public and provide accessors if needed.(øéà8ÕÈÆùÅ.

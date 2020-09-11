@@ -1,12 +1,18 @@
 package by.it.academy.service;
 
-import by.it.academy.pojo.User;
+import by.it.academy.pojo.BlockchainUtxo;
+import by.it.academy.pojo.Transaction;
+import by.it.academy.pojo.TransactionInput;
 import by.it.academy.pojo.Wallet;
 import by.it.academy.repository.BaseDao;
+import by.it.academy.util.BlockchainUtxoUtil;
+import by.it.academy.util.TransactionInputUtil;
+import by.it.academy.util.TransactionUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import java.security.PublicKey;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,6 +22,10 @@ public class WalletService {
     @Autowired
     @Value("#{walletDao}")
     BaseDao walletDao;
+
+    @Autowired
+    @Value("#{blockchainUtxoDao}")
+    BaseDao blockchainUtxoDao;
 
     public boolean createNewWallet(Wallet wallet) {
         walletDao.create(wallet);
@@ -35,5 +45,44 @@ public class WalletService {
 
     public Wallet findWalletById(String id) {
         return (Wallet) walletDao.findById(id);
+    }
+
+    //returns balance and stores the UTXO's owned by this wallet in this.UTXOs
+    public float getBalance(Wallet wallet) {
+        float total = 0;
+        ArrayList<BlockchainUtxo> UTXOs = (ArrayList<BlockchainUtxo>) blockchainUtxoDao.findAll("");
+        for (BlockchainUtxo UTXO : UTXOs) {
+            if (BlockchainUtxoUtil.isMine(UTXO, wallet.publicKey)) { //if output belongs to me ( if coins belong to me )
+                wallet.UTXOs.add(UTXO); //add it to our list of unspent transactions.
+                walletDao.create(wallet);
+                total += UTXO.value;
+            }
+        }
+        return total;
+    }
+
+    //Generates and returns a new transaction from this wallet.
+    public Transaction sendFunds(Wallet wallet, PublicKey recipient, float value) {
+        if (getBalance(wallet) < value) { //gather balance and check funds.
+            System.out.println("#Not Enough funds to send transaction. Transaction Discarded.");
+            return null;
+        }
+        //create array list of inputs
+        ArrayList<TransactionInput> inputs = new ArrayList<TransactionInput>();
+
+        float total = 0;
+        for (BlockchainUtxo UTXO : wallet.UTXOs) {
+            total += UTXO.value;
+            inputs.add(TransactionInputUtil.createTransactionInput(UTXO.getBlockchainUtxoId()));
+            if (total > value) break;
+        }
+
+        Transaction newTransaction = TransactionUtil.createTransaction(wallet.publicKey, recipient, value, inputs);
+        TransactionUtil.generateSignature(newTransaction, wallet.privateKey);
+
+        for (TransactionInput input : inputs) {
+            wallet.UTXOs.remove(input.transactionOutputId);
+        }
+        return newTransaction;
     }
 }
