@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class Main {
+public class Validation {
     public static int difficulty = 3;
     public static SessionFactory factory = null;
     public static Transaction genesisTransaction;
