@@ -1,8 +1,9 @@
 package by.it.academy;
 
-import by.it.academy.pojo.*;
+import by.it.academy.pojo.Block;
+import by.it.academy.pojo.Transaction;
+import by.it.academy.pojo.Wallet;
 import by.it.academy.repository.BlockDao;
-import by.it.academy.repository.BlockchainUtxoDao;
 import by.it.academy.service.BlockService;
 import by.it.academy.service.TransactionService;
 import by.it.academy.util.BlockUtil;
@@ -11,9 +12,7 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import static by.it.academy.Start.walletService;
 
 public class Validation {
     public static int difficulty = 3;
@@ -27,24 +26,18 @@ public class Validation {
     public static void main(String[] args) {
 
         factory = start();
+        String genericBlockHash = "0000f9ff930d31ba20357d6bd187da8a034da031708df0f4b2e4a4cd1dc500a1";
 
-        BlockchainUtxoDao blockchainUtxoDao = new BlockchainUtxoDao();
-        List<BlockchainUtxo> all = blockchainUtxoDao.findAll(factory, "");
-        System.out.println(all);
+        Block block1 = BlockUtil.createBlock(genericBlockHash);
+        String firstActualWalletNumber = "4054c7bf-347f-480e-b86f-69a0b3011319";
+        Wallet firstActualWallet = walletService.findWalletById(factory, firstActualWalletNumber);
 
-        Block genesis = BlockUtil.createBlock("0");
-        BlockDao blockDao = new BlockDao();
-        BlockService blockService = new BlockService();
-        TransactionService transactionService = new TransactionService();
-        ArrayList<Transaction> allTransactions = transactionService.findAllTransactions();
-        for (Transaction transaction : allTransactions) {
-            blockService.addTransaction(genesis, transaction);
-        }
-        System.out.println("before saving");
-        System.out.println(genesis);
-        blockDao.create(factory, genesis);
-        System.out.println("after saving");
-        System.out.println(genesis);
+        System.out.println("\nWalletA's balance is: " + walletService.getBalance(factory,firstActualWallet));
+        System.out.println("\nWalletA is Attempting to send funds (400) to WalletB...");
+//        block1.addTransaction(walletA.sendFunds(walletB.publicKey, 400f));
+//        addBlock(block1);
+//        System.out.println("\nWalletA's balance is: " + walletA.getBalance());
+//        System.out.println("WalletB's balance is: " + walletB.getBalance());
 
         finish(factory);
 

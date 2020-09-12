@@ -1,0 +1,41 @@
+
+Q	java:S125S"<This block of commented-out lines of code should be removed.(ªÏÛ¥
+Q	java:S125b"<This block of commented-out lines of code should be removed.(öü‰
+V	java:S125]"<This block of commented-out lines of code should be removed.(›’ø™ùÿÿÿÿ
+H
+java:S1444"-Make this "public static factory" field final(Š¿Ë•şÿÿÿÿ
+P	java:S125}"<This block of commented-out lines of code should be removed.(ƒ‹‹9
+W
+java:S1854":Remove this useless assignment to local variable "block1".(Æ½‡»8ıÓşîÇ.
+Q	java:S125J"<This block of commented-out lines of code should be removed.(£å™Ö
+P	java:S125Q"<This block of commented-out lines of code should be removed.(ü‰
+R	java:S125‚"<This block of commented-out lines of code should be removed.(Ë¿Œê
+k
+java:S1104"VMake difficulty a static final constant or non-public and provide accessors if needed.(ç”
+Q	java:S125O"<This block of commented-out lines of code should be removed.(š§½ò
+V	java:S125x"<This block of commented-out lines of code should be removed.(õêúŸıÿÿÿÿ
+W	java:S125’"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ
+U	java:S106#"9Replace this use of System.out or System.err by a logger.(ª­†û8®ŒïÇ.
+n
+java:S1104"SMake factory a static final constant or non-public and provide accessors if needed.(Š¿Ë•şÿÿÿÿ
+Q	java:S125u"<This block of commented-out lines of code should be removed.(ì‚Şß
+Q
+java:S1854F";Remove this useless assignment to local variable "factory".(Ìª³›
+Q	java:S125h"<This block of commented-out lines of code should be removed.(ñ–íÛ
+W	java:S125‰"<This block of commented-out lines of code should be removed.(µ˜Œªûÿÿÿÿ
+H
+java:S1481"+Remove this unused "block1" local variable.(Æ½‡»8ıÓşîÇ.
+V	java:S125l"<This block of commented-out lines of code should be removed.(‘¨šıÿÿÿÿ
+U	java:S106$"9Replace this use of System.out or System.err by a logger.(âÑ¢§8§´¢ïÇ.
+S
+java:S1444"8Make this "public static genesisTransaction" field final(‘ÈÙáùÿÿÿÿ
+R	java:S125…"<This block of commented-out lines of code should be removed.(ä’È
+Q	java:S125U"<This block of commented-out lines of code should be removed.(¾¡ö
+E
+java:S1444"0Make this "public static difficulty" field final(ç”
+c
+java:S2259*"F"NullPointerException" will be thrown when invoking method "finish()".(µ¬Ã—8ıÓşîÇ.
+y
+java:S1104"^Make genesisTransaction a static final constant or non-public and provide accessors if needed.(‘ÈÙáùÿÿÿÿ
+V	java:S125X"<This block of commented-out lines of code should be removed.(áÕÏ†ÿÿÿÿÿ
+X	java:S125%"<This block of commented-out lines of code should be removed.( ä°—8§´¢ïÇ.

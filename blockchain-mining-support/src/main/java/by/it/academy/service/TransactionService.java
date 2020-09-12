@@ -1,6 +1,6 @@
 package by.it.academy.service;
 
-import by.it.academy.Main;
+import by.it.academy.Validation;
 import by.it.academy.pojo.BlockchainUtxo;
 import by.it.academy.pojo.Transaction;
 import by.it.academy.pojo.TransactionInput;
@@ -10,10 +10,11 @@ import by.it.academy.repository.TransactionDao;
 import by.it.academy.repository.TransactionInputDao;
 import by.it.academy.util.StringUtil;
 import by.it.academy.util.TransactionOutputUtil;
+import org.hibernate.SessionFactory;
 
 import java.util.ArrayList;
 
-import static by.it.academy.Main.factory;
+import static by.it.academy.Validation.factory;
 
 //@Service
 public class TransactionService {
@@ -33,12 +34,12 @@ public class TransactionService {
 ////    @Autowired
 //    WalletService walletService;
 
-    //    public boolean createNewTransaction(Transaction transaction) {
-//        transactionDao.create(transaction);
-//        return true;
-//    }
-//
-//    public Transaction findTransactionById(String id) {
+    public boolean createNewTransaction(SessionFactory sessionFactory, Transaction transaction) {
+        transactionDao.create(sessionFactory, transaction);
+        return true;
+    }
+
+    //    public Transaction findTransactionById(String id) {
 //        return (Transaction) transactionDao.findById(id);
 //    }
 //
@@ -86,11 +87,11 @@ public class TransactionService {
 
         //gather transaction inputs (Make sure they are unspent):
         for (TransactionInput i : transaction.inputs) {
-            BlockchainUtxo UTXO = (BlockchainUtxo) blockchainUtxoDao.findById(Main.factory, i.transactionOutputId);
+            BlockchainUtxo UTXO = (BlockchainUtxo) blockchainUtxoDao.findById(Validation.factory, i.transactionOutputId);
 
             i.transactionOutput.setId(UTXO.getBlockchainUtxoId());
-            i.transactionOutput.setTransactionInput((TransactionInput) transactionInputDao.findById(Main.factory, UTXO.getTransactionInputId()));
-            i.transactionOutput.setTransaction((Transaction) transactionDao.findById(Main.factory, UTXO.getParentTransactionId()));
+            i.transactionOutput.setTransactionInput((TransactionInput) transactionInputDao.findById(Validation.factory, UTXO.getTransactionInputId()));
+            i.transactionOutput.setTransaction((Transaction) transactionDao.findById(Validation.factory, UTXO.getParentTransactionId()));
             i.transactionOutput.setValue(UTXO.getValue());
             i.transactionOutput.setRecipient(UTXO.recipient);
 //                    Blockchain.getUTXOs().get(i.transactionOutputId);
@@ -116,7 +117,7 @@ public class TransactionService {
             blockchainUtxo.setTransactionInputId(o.transactionInput.transactionOutputId);
             blockchainUtxo.setParentTransactionId(o.getTransaction().transactionId);
             blockchainUtxo.setValue(o.value);
-            blockchainUtxoDao.create(Main.factory, blockchainUtxo);
+            blockchainUtxoDao.create(Validation.factory, blockchainUtxo);
 //            Blockchain.getUTXOs().put(o.id, o);
         }
 
@@ -132,7 +133,7 @@ public class TransactionService {
             blockchainUtxoDel.setParentTransactionId(i.transactionOutput.getTransaction().transactionId);
             blockchainUtxoDel.setValue(i.transactionOutput.value);
 
-            blockchainUtxoDao.delete(Main.factory, blockchainUtxoDel);
+            blockchainUtxoDao.delete(Validation.factory, blockchainUtxoDel);
 //            Blockchain.getUTXOs().remove(i.transactionOutput.id);
         }
 

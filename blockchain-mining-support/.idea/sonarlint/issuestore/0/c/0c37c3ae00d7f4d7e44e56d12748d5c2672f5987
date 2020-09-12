@@ -1,20 +1,14 @@
 
-G
-java:S1153("1Directly append the argument of String.valueOf().(‹ªœ
-G
-java:S1153)"1Directly append the argument of String.valueOf().(Ñœ¾Ø
-ƒ
-java:S1319"mThe type of the "UTXOs" object should be an interface such as "Map" rather than the implementation "HashMap".(øéà
-q
-java:S1104"VMake privateKey a static final constant or non-public and provide accessors if needed.(½¡Úãıÿÿÿÿ
-e	java:S116"PRename this field "UTXOs" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(øéà
-o
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(øéà
-g
-java:S1104"QMake UTXOs a static final constant or non-public and provide accessors if needed.(øéà
-v
-java:S1104"[Make publicKeyString a static final constant or non-public and provide accessors if needed.(¨£Ğìûÿÿÿÿ
 r
-java:S1104"\Make privateKeyString a static final constant or non-public and provide accessors if needed.(½¨Û
+java:S1104"\Make privateKeyString a static final constant or non-public and provide accessors if needed.(½¨Û
+G
+java:S1153'"1Directly append the argument of String.valueOf().(‹ªœ
 k
-java:S1104"UMake publicKey a static final constant or non-public and provide accessors if needed.(·ó«ø
+java:S1104"UMake publicKey a static final constant or non-public and provide accessors if needed.(·ó«ø
+q
+java:S1104"VMake privateKey a static final constant or non-public and provide accessors if needed.(½¡Úãıÿÿÿÿ
+v
+java:S1104"[Make publicKeyString a static final constant or non-public and provide accessors if needed.(¨£Ğìûÿÿÿÿ
+q	java:S116"PRename this field "UTXOs" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ì¡åâüÿÿÿÿ8¾÷´åÇ.
+G
+java:S1153("1Directly append the argument of String.valueOf().(Ñœ¾Ø

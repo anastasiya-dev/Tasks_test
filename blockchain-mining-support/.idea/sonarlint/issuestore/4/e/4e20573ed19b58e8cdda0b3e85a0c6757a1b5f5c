@@ -1,5 +1,5 @@
 
-L
-java:S1144#"1Remove this unused private "calulateHash" method.(–º»˜úÿÿÿÿ
 †
 java:S1319"qThe type of the "inputs" object should be an interface such as "List" rather than the implementation "ArrayList".(É£™#
+L
+java:S1144#"1Remove this unused private "calulateHash" method.(–º»˜úÿÿÿÿ

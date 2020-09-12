@@ -1,19 +1,24 @@
 
-U	java:S106e"9Replace this use of System.out or System.err by a logger.(ÎşÆ¹8­‡ÕÃÇ.
-]	java:S125:"<This block of commented-out lines of code should be removed.(Øõøÿÿÿÿ8¾şÕÃÇ.
-]	java:S125)"<This block of commented-out lines of code should be removed.(ûúšûÿÿÿÿ8»ÎÚÃÇ.
-W	java:S1255"<This block of commented-out lines of code should be removed.(Éµø8»ÎÚÃÇ.
-^	java:S125€"<This block of commented-out lines of code should be removed.(«¤§Âşÿÿÿÿ8­‡ÕÃÇ.
-X	java:S125x"<This block of commented-out lines of code should be removed.(æ•ç¼8­‡ÕÃÇ.
-]	java:S125$"<This block of commented-out lines of code should be removed.(ˆ„ô¡ıÿÿÿÿ8»ÎÚÃÇ.
-Y	java:S125ˆ"<This block of commented-out lines of code should be removed.(ıº¡Í8­‡ÕÃÇ.
+^	java:S125"<This block of commented-out lines of code should be removed.(«¤§Âşÿÿÿÿ8­‡ÕÃÇ.
+r	java:S117Z"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÅŠˆæøÿÿÿÿ8¸€ÄÇ.
+U	java:S106f"9Replace this use of System.out or System.err by a logger.(ÎşÆ¹8­‡ÕÃÇ.
+X	java:S125#"<This block of commented-out lines of code should be removed.(¯Àâ8­ÃÖÃÇ.
+]	java:S125*"<This block of commented-out lines of code should be removed.(ûúšûÿÿÿÿ8»ÎÚÃÇ.
+Y	java:S125‰"<This block of commented-out lines of code should be removed.(ıº¡Í8­‡ÕÃÇ.
+S
+java:S1905Z"1Remove this unnecessary cast to "BlockchainUtxo".(ÅŠˆæøÿÿÿÿ8“±ÕæÇ.
+Z	java:S106T"9Replace this use of System.out or System.err by a logger.(”‚ÛŒøÿÿÿÿ8­‡ÕÃÇ.
+P
+java:S1905]"3Remove this unnecessary cast to "TransactionInput".(‰©¤˜8“±ÕæÇ.
 K
-java:S1125R")Remove the literal "false" boolean value.(Ğ€ì¤şÿÿÿÿ8­‡ÕÃÇ.
-]	java:S1251"<This block of commented-out lines of code should be removed.(Î¥Úüÿÿÿÿÿ8»ÎÚÃÇ.
-X	java:S125""<This block of commented-out lines of code should be removed.(¯Àâ8­ÃÖÃÇ.
+java:S1905^".Remove this unnecessary cast to "Transaction".(í¾²Ÿ8“±ÕæÇ.
+K
+java:S1125S")Remove the literal "false" boolean value.(Ğ€ì¤şÿÿÿÿ8­‡ÕÃÇ.
 
-java:S1319-"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(€¡¯8œÑµÄÇ.
-Z	java:S106S"9Replace this use of System.out or System.err by a logger.(”‚ÛŒøÿÿÿÿ8­‡ÕÃÇ.
-]	java:S125`"<This block of commented-out lines of code should be removed.(Í‰¿•øÿÿÿÿ8øñÃÇ.
-V	java:S125k"<This block of commented-out lines of code should be removed.(­ıÿ±ÿÿÿÿÿ
-r	java:S117Y"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÅŠˆæøÿÿÿÿ8¸€ÄÇ.
+java:S1319."pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(€¡¯8œÑµÄÇ.
+W	java:S1256"<This block of commented-out lines of code should be removed.(Éµø8»ÎÚÃÇ.
+X	java:S125y"<This block of commented-out lines of code should be removed.(æ•ç¼8­‡ÕÃÇ.
+]	java:S125a"<This block of commented-out lines of code should be removed.(Í‰¿•øÿÿÿÿ8øñÃÇ.
+]	java:S1252"<This block of commented-out lines of code should be removed.(Î¥Úüÿÿÿÿÿ8»ÎÚÃÇ.
+]	java:S125;"<This block of commented-out lines of code should be removed.(Øõøÿÿÿÿ8¾şÕÃÇ.
+V	java:S125l"<This block of commented-out lines of code should be removed.(­ıÿ±ÿÿÿÿÿ
