@@ -1,15 +1,0 @@
-
-4
-java:S1700"Rename field "blockchain"(™Ç«øÿÿÿÿ
-t
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(™Ç«øÿÿÿÿ
-K
-java:S1444"0Make this "public static blockchain" field final(™Ç«øÿÿÿÿ
-8
-java:S2386"Make this member "protected".(™Ç«øÿÿÿÿ
-
-java:S1319"uThe type of the "blockchain" object should be an interface such as "List" rather than the implementation "ArrayList".(™Ç«øÿÿÿÿ
-q
-java:S1104"VMake blockchain a static final constant or non-public and provide accessors if needed.(™Ç«øÿÿÿÿ
-]	java:S125"<This block of commented-out lines of code should be removed.(®½†•ùÿÿÿÿ8’¶×¾Ç.
-W	java:S125"<This block of commented-out lines of code should be removed.(ˆÄd8’¶×¾Ç.

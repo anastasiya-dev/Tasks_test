@@ -1,18 +1,19 @@
 
-T	java:S106"9Replace this use of System.out or System.err by a logger.(çãë98öêŸ¿Ç.
-l
-java:S44881"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(ıîÿäıÿÿÿÿ8öêŸ¿Ç.
-U	java:S106P"9Replace this use of System.out or System.err by a logger.(Û†­8öêŸ¿Ç.
-j
-java:S4488'"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ıîÿäıÿÿÿÿ8öêŸ¿Ç.
-f
-java:S4488"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ä±8öêŸ¿Ç.
-]	java:S125n"<This block of commented-out lines of code should be removed.(¦èè‚ıÿÿÿÿ8öêŸ¿Ç.
 `
 java:S1155H">Use isEmpty() to check whether the collection is empty or not.(à‚Ìùÿÿÿÿ8—ïİëÆ.
-k
-java:S4488‡"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ñ¦…©üÿÿÿÿ8öêŸ¿Ç.
-[	java:S106˜"9Replace this use of System.out or System.err by a logger.(‰˜áœüÿÿÿÿ8öêŸ¿Ç.
+j
+java:S4488'"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ıîÿäıÿÿÿÿ8öêŸ¿Ç.
+l
+java:S44881"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(ıîÿäıÿÿÿÿ8öêŸ¿Ç.
+[	java:S106š"9Replace this use of System.out or System.err by a logger.(‰˜áœüÿÿÿÿ8öêŸ¿Ç.
+T	java:S106"9Replace this use of System.out or System.err by a logger.(çãë98öêŸ¿Ç.
+]	java:S125n"<This block of commented-out lines of code should be removed.(¦èè‚ıÿÿÿÿ8öêŸ¿Ç.
+V	java:S106"9Replace this use of System.out or System.err by a logger.(úúÁš8Ğ˜ÀåÇ.
 l
 java:S4488W"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(Ñ¦…©üÿÿÿÿ8öêŸ¿Ç.
 ]	java:S125p"<This block of commented-out lines of code should be removed.(µ¸ûğøÿÿÿÿ8öêŸ¿Ç.
+k
+java:S4488‰"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ñ¦…©üÿÿÿÿ8öêŸ¿Ç.
+U	java:S106P"9Replace this use of System.out or System.err by a logger.(Û†­8öêŸ¿Ç.
+f
+java:S4488 "HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ä±8öêŸ¿Ç.

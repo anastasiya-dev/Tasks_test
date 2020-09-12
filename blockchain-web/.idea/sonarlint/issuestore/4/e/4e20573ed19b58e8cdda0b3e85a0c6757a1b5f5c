@@ -1,7 +1,7 @@
 
-S
-java:S1144&"1Remove this unused private "calulateHash" method.(–º»˜úÿÿÿÿ8Ìı˜ºÇ.
 e
 java:S1128"HRemove this unused import 'by.it.academy.service.BlockchainUtxoService'.(Éî¾ß8–Ïª¿Ç.
+S
+java:S1144&"1Remove this unused private "calulateHash" method.(–º»˜úÿÿÿÿ8Ìı˜ºÇ.
 
 java:S1319"qThe type of the "inputs" object should be an interface such as "List" rather than the implementation "ArrayList".(É£™#8Ù³”ºÇ.

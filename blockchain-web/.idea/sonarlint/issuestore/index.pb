@@ -89,8 +89,6 @@ B
 blockchain-web.iml,7\4\7474ed6dfb4e13e4dda0f7da377fc1e63af2f26b
 k
 ;src/main/java/by/it/academy/util/TransactionOutputUtil.java,e\b\eb7deb57e078c0431d7a5a9adb0c753294104791
-`
-0src/main/java/by/it/academy/pojo/Blockchain.java,6\d\6d4072f78f3a3d1e55b209b5fa4afd68bd5c5b9d
 m
 =src/main/java/by/it/academy/repository/BlockchainUtxoDao.java,a\0\a0f5beb455f04afff7bb34673ac20f8d9b95b766
 d

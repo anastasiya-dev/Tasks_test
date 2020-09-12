@@ -1,5 +1,5 @@
 
-
-java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(€¡¯8©‚€¾Ç.
 Q
 java:S3740"/Provide the parametrized type for this generic.(×¿…¬ıÿÿÿÿ8¬¶ı½Ç.
+
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(€¡¯8©‚€¾Ç.

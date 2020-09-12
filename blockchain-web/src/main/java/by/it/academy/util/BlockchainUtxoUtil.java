@@ -18,6 +18,6 @@ public class BlockchainUtxoUtil {
 
     //Check if coin belongs to you
     public static boolean isMine(BlockchainUtxo blockchainUtxo, PublicKey publicKey) {
-        return (publicKey == blockchainUtxo.getRecipient());
+        return (publicKey.equals(blockchainUtxo.getRecipient()));
     }
 }

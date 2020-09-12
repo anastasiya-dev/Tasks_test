@@ -1,5 +1,11 @@
 
-L
-java:S3740"/Provide the parametrized type for this generic.(ŞÊÊ‰8ıÑ®•Æ.
 Q
-java:S1128"4Remove this unused import 'by.it.academy.pojo.User'.(¯¡»8ş¿àÂÆ.
+java:S3740"/Provide the parametrized type for this generic.( ­€ûùÿÿÿÿ8ÒÏûãÇ.
+v
+java:S2293G"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ğ§Š£8ÅòæÇ.
+L
+java:S3740"/Provide the parametrized type for this generic.(ŞÊÊ‰8ıÑ®•Æ.
+U	java:S106C"9Replace this use of System.out or System.err by a logger.(ÂÇèß8ÅòæÇ.
+U
+java:S2175T"3A "List<BlockchainUtxo>" cannot contain a "String".(½œ”ñÿÿÿÿÿ8ô€’æÇ.
+l	java:S1175"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÂÛè8ãÿãÇ.

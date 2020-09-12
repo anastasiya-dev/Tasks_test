@@ -118,7 +118,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../blockchain-mining-support/src/main/java/by/it/academy/repository/UserDao.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../blockchain-mining-support/src/main/java/by/it/academy/repository/WalletDao.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../blockchain-mining-support/src/main/java/by/it/academy/service/BlockService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../blockchain-mining-support/src/main/java/by/it/academy/service/BlockchainUtxoService.java">
           <value>
             <set />
           </value>
@@ -128,7 +143,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../blockchain-mining-support/src/main/java/by/it/academy/service/UserService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../blockchain-mining-support/src/main/java/by/it/academy/service/WalletService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../blockchain-mining-support/src/main/java/by/it/academy/util/BlockUtil.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../blockchain-mining-support/src/main/java/by/it/academy/util/BlockchainUtxoUtil.java">
           <value>
             <set />
           </value>
