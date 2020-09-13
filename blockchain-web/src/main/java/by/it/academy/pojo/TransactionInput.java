@@ -18,5 +18,12 @@ public class TransactionInput {
 
     @ManyToOne
     public Transaction transaction;
+
+    @Override
+    public String toString() {
+        return "TransactionInput{" +
+                "transactionOutputId='" + transactionOutputId +
+                '}';
+    }
 }
 

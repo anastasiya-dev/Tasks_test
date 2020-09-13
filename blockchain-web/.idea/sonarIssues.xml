@@ -43,6 +43,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../blockchain-mining-support/src/main/java/by/it/academy/TransactionCheck.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../blockchain-mining-support/src/main/java/by/it/academy/pojo/Block.java">
           <value>
             <set />
@@ -114,6 +119,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../blockchain-mining-support/src/main/java/by/it/academy/repository/TransactionInputDao.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../blockchain-mining-support/src/main/java/by/it/academy/repository/TransactionOutputDao.java">
           <value>
             <set />
           </value>

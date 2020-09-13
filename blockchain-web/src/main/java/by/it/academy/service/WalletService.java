@@ -27,6 +27,9 @@ public class WalletService {
     @Value("#{blockchainUtxoDao}")
     BaseDao blockchainUtxoDao;
 
+    @Autowired
+    TransactionService transactionService;
+
     public boolean createNewWallet(Wallet wallet) {
         walletDao.create(wallet);
         return true;
@@ -53,8 +56,8 @@ public class WalletService {
         ArrayList<BlockchainUtxo> UTXOs = (ArrayList<BlockchainUtxo>) blockchainUtxoDao.findAll("");
         for (BlockchainUtxo UTXO : UTXOs) {
             if (BlockchainUtxoUtil.isMine(UTXO, wallet.publicKey)) { //if output belongs to me ( if coins belong to me )
-                wallet.UTXOs.add(UTXO); //add it to our list of unspent transactions.
-                walletDao.create(wallet);
+//                wallet.UTXOs.add(UTXO); //add it to our list of unspent transactions.
+//                walletDao.create(wallet);
                 total += UTXO.value;
             }
         }
@@ -62,27 +65,32 @@ public class WalletService {
     }
 
     //Generates and returns a new transaction from this wallet.
-    public Transaction sendFunds(Wallet wallet, PublicKey recipient, float value) {
-        if (getBalance(wallet) < value) { //gather balance and check funds.
-            System.out.println("#Not Enough funds to send transaction. Transaction Discarded.");
-            return null;
-        }
+    public Transaction sendFunds(Wallet wallet, PublicKey recipient, float value, Transaction transaction) {
+
         //create array list of inputs
         ArrayList<TransactionInput> inputs = new ArrayList<TransactionInput>();
 
         float total = 0;
+        System.out.println("wallet before: " + wallet.getUTXOs());
         for (BlockchainUtxo UTXO : wallet.UTXOs) {
             total += UTXO.value;
-            inputs.add(TransactionInputUtil.createTransactionInput(UTXO.getBlockchainUtxoId()));
+            TransactionInput transactionInput = TransactionInputUtil.createTransactionInput(transaction, UTXO.getBlockchainUtxoId());
+            inputs.add(transactionInput);
+            transactionInput.setTransaction(transaction);
             if (total > value) break;
         }
 
-        Transaction newTransaction = TransactionUtil.createTransaction(wallet.publicKey, recipient, value, inputs);
-        TransactionUtil.generateSignature(newTransaction, wallet.privateKey);
+        System.out.println("inputs to add: " + inputs);
+        transaction.setInputs(inputs);
+        TransactionUtil.generateSignature(transaction, wallet.privateKey);
+        transactionService.createNewTransaction(transaction);
+        System.out.println("transaction after update: " + transactionService.findTransactionById(transaction.transactionId));
 
         for (TransactionInput input : inputs) {
             wallet.UTXOs.remove(input.transactionOutputId);
         }
-        return newTransaction;
+
+        System.out.println("wallet after: " + wallet.getUTXOs());
+        return transaction;
     }
 }

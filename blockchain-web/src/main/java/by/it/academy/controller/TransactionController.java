@@ -1,13 +1,16 @@
 package by.it.academy.controller;
 
-import by.it.academy.pojo.*;
+import by.it.academy.pojo.Transaction;
+import by.it.academy.pojo.TransactionInput;
+import by.it.academy.pojo.Wallet;
 import by.it.academy.service.BlockchainUtxoService;
 import by.it.academy.service.TransactionService;
 import by.it.academy.service.UserService;
 import by.it.academy.service.WalletService;
 import by.it.academy.support.PrivateKeyInput;
 import by.it.academy.support.TransactionStart;
-import by.it.academy.util.*;
+import by.it.academy.util.StringUtil;
+import by.it.academy.util.TransactionUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -68,14 +71,14 @@ public class TransactionController {
                 (ArrayList<TransactionInput>) inputs
         );
 
-        List<Transaction> transactionList = transactionService.findAllTransactions();
-        if (transactionList.size() == 0) {
-            transaction.setTransactionId("0");
-        } else {
-            transaction.setTransactionId(
-                    transactionList.get(transactionList.size() - 1).getTransactionId() + "0"
-            );
-        }
+//        List<Transaction> transactionList = transactionService.findAllTransactions();
+//        if (transactionList.size() == 0) {
+//            transaction.setTransactionId("0");
+//        } else {
+//            transaction.setTransactionId(
+//                    transactionList.get(transactionList.size() - 1).getTransactionId() + "0"
+//            );
+//        }
         transactionService.createNewTransaction(transaction);
         System.out.println(transaction);
         String transactionId = transaction.getTransactionId();
@@ -98,39 +101,18 @@ public class TransactionController {
         Wallet walletSender = walletService.findWalletById(walletId);
         PrivateKey privateKey = walletSender.getPrivateKey();
         Transaction transaction = transactionService.findTransactionById(transactionId);
-        if (privateKeyInput.getPrivateKeyString()
+        System.out.println("get balance from controller: " + walletService.getBalance(walletSender));
+        System.out.println("beginning transaction in the controller");
+        if (!privateKeyInput.getPrivateKeyString()
                 .equals(StringUtil.getStringFromKey(privateKey))) {
-            TransactionUtil.generateSignature(transaction
-                    , privateKey);
-            TransactionOutput transactionOutput = TransactionOutputUtil.createTransactionOutput(
-                    transaction.getRecipient(),
-                    transaction.getValue(),
-                    transaction);
-
-//            System.out.println("single: " + transactionOutput);
-            transaction.outputs.add(transactionOutput);
-//            System.out.println("total: " + transaction.outputs);
-
-            TransactionInput transactionInput
-                    = TransactionInputUtil.createTransactionInput(transactionOutput.id);
-            transactionInput.setTransactionOutput(transactionOutput);
-            transactionOutput.setTransactionInput(transactionInput);
-
-            transactionService.updateTransaction(transaction);
-            transactionService.createNewTransaction(transaction);
-
-            BlockchainUtxo blockchainUtxo
-                    = BlockchainUtxoUtil.createBcUtxo(transactionOutput.id, transactionOutput);
-            blockchainUtxoService.createNewUTXO(blockchainUtxo);
-
-            Transaction newTr = transactionService.findTransactionById(transactionId);
-            System.out.println(newTr);
-
-            System.out.println("get balance: " + walletService.getBalance(walletSender));
-            return "redirect:/{userId}/user-cabinet";
-        } else {
-            transactionService.deleteTransaction(transaction);
+            System.out.println("Unauthorized");
             return "redirect:/home";
+        } else if (walletService.getBalance(walletSender) < transaction.getValue()) {
+            System.out.println("#Not Enough funds to send transaction. Transaction Discarded.");
+            return "redirect:/home";
+        } else {
+            walletService.sendFunds(walletSender, transaction.getRecipient(), transaction.getValue(), transaction);
+            return "redirect:/{userId}/user-cabinet";
         }
     }
 

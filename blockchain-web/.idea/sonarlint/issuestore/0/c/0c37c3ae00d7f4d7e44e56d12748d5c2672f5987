@@ -1,14 +1,14 @@
 
-x
-java:S1104"VMake privateKey a static final constant or non-public and provide accessors if needed.(½¡Úãıÿÿÿÿ8ÕÈÆùÅ.
-r
-java:S1104"UMake publicKey a static final constant or non-public and provide accessors if needed.(·ó«ø8ÕÈÆùÅ.
-N
-java:S1153'"1Directly append the argument of String.valueOf().(‹ªœ8Ù¡ø•Æ.
-}
-java:S1104"[Make publicKeyString a static final constant or non-public and provide accessors if needed.(¨£Ğìûÿÿÿÿ8ÅÅÙÁÇ.
 N
 java:S1153("1Directly append the argument of String.valueOf().(Ñœ¾Ø8Óáø•Æ.
+}
+java:S1104"[Make publicKeyString a static final constant or non-public and provide accessors if needed.(¨£Ğìûÿÿÿÿ8ÅÅÙÁÇ.
 q	java:S116"PRename this field "UTXOs" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ì¡åâüÿÿÿÿ8ÕÈÆùÅ.
+N
+java:S1153'"1Directly append the argument of String.valueOf().(‹ªœ8Ù¡ø•Æ.
+x
+java:S1104"VMake privateKey a static final constant or non-public and provide accessors if needed.(½¡Úãıÿÿÿÿ8ÕÈÆùÅ.
 y
 java:S1104"\Make privateKeyString a static final constant or non-public and provide accessors if needed.(½¨Û8êíØÁÇ.
+r
+java:S1104"UMake publicKey a static final constant or non-public and provide accessors if needed.(·ó«ø8ÕÈÆùÅ.

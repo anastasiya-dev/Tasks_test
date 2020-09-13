@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
+import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.IndexColumn;
 
 import javax.persistence.*;
@@ -17,6 +18,8 @@ import java.util.*;
 @Setter
 public class Transaction {
     @Id
+    @GeneratedValue(generator = "system-uuid")
+    @GenericGenerator(name = "system-uuid", strategy = "uuid2")
     public String transactionId; // this is also the hash of the transaction.
     public PublicKey sender; // senders address/public key.
     public String senderString;
@@ -33,9 +36,8 @@ public class Transaction {
     @Fetch(FetchMode.SELECT)
     public List<TransactionOutput> outputs = new ArrayList<>();
 
-    @ManyToMany(mappedBy = "transactions")
-    @EqualsAndHashCode.Exclude
-    private List<Block> blocks = new ArrayList<>();
+    @ManyToOne
+    private Block block;
 
     @Override
     public String toString() {
