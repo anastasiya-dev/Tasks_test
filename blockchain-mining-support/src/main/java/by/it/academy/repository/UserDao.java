@@ -1,6 +1,7 @@
 package by.it.academy.repository;
 
 import by.it.academy.pojo.User;
+import by.it.academy.pojo.Wallet;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -72,10 +73,11 @@ public class UserDao implements BaseDao<User>
     @Override
 //    @Transactional(readOnly = true)
     public List<User> findAll(SessionFactory sessionFactory, String searchStr) {
-        return sessionFactory
-                .getCurrentSession()
-                .createQuery("from User", User.class)
-                .list();
+        Session session = sessionFactory.openSession();
+        Query<User> query = session.createQuery("from User u", User.class);
+        List<User> list = query.list();
+        session.close();
+        return list;
     }
 
     @Override

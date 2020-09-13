@@ -20,18 +20,8 @@ public class Block {
     private long timeStamp;
     private int nonce;
 
-    @ManyToMany
-    @JoinTable(
-            name = "block_transaction",
-            joinColumns = {
-                    @JoinColumn(name = "block_hash")
-            },
-            inverseJoinColumns = {
-                    @JoinColumn(name = "transaction_transactionId")
-            }
-    )
-    @EqualsAndHashCode.Exclude
-    private List<Transaction> transactions = new ArrayList<>();
+    @OneToMany(mappedBy = "block", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    public List<Transaction> transactions = new ArrayList<>();
 
     @Override
     public String toString() {

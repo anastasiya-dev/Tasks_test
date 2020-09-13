@@ -1,10 +1,10 @@
 
+]	java:S125?"<This block of commented-out lines of code should be removed.(ôä“ûÿÿÿÿ8üŸØêÇ.
+X	java:S125Q"<This block of commented-out lines of code should be removed.(Æã¤è8üŸØêÇ.
+X	java:S125G"<This block of commented-out lines of code should be removed.(Æ§ø¶8üŸØêÇ.
+]	java:S125N"<This block of commented-out lines of code should be removed.(Æ÷£×şÿÿÿÿ8üŸØêÇ.
 K
-java:S1905(")Remove this unnecessary cast to "Wallet".(è¯ñÌÿÿÿÿÿ8å›ëÇ.
-]	java:S125@"<This block of commented-out lines of code should be removed.(æ÷òåşÿÿÿÿ8üŸØêÇ.
-m	java:S117."QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤Î”Ò8‹šïÇ.
-X	java:S125L"<This block of commented-out lines of code should be removed.(Æã¤è8üŸØêÇ.
-]	java:S125I"<This block of commented-out lines of code should be removed.(Æ÷£×şÿÿÿÿ8üŸØêÇ.
-X	java:S125B"<This block of commented-out lines of code should be removed.(Æ§ø¶8üŸØêÇ.
-X	java:S125"<This block of commented-out lines of code should be removed.(Òâøè8üŸØêÇ.
-]	java:S125:"<This block of commented-out lines of code should be removed.(ôä“ûÿÿÿÿ8üŸØêÇ.
+java:S1905)")Remove this unnecessary cast to "Wallet".(è¯ñÌÿÿÿÿÿ8å›ëÇ.
+m	java:S117/"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤Î”Ò8‹šïÇ.
+]	java:S125E"<This block of commented-out lines of code should be removed.(æ÷òåşÿÿÿÿ8üŸØêÇ.
+X	java:S1253"<This block of commented-out lines of code should be removed.(±î‘«8Ø˜È.

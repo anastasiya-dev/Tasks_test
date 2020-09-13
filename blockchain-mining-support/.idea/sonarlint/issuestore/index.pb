@@ -57,3 +57,5 @@ V
 &src/main/java/by/it/academy/Start.java,7\5\751708ab3dc976dfbf95e23ccf71dbdc8b06d3e8
 [
 +src/main/java/by/it/academy/Validation.java,7\2\72e3c613aa48495b57185a292091c9ac78c0ead5
+a
+1src/main/java/by/it/academy/TransactionCheck.java,9\8\98008f283f6d45e53a2c7db4da05f677f5c12248

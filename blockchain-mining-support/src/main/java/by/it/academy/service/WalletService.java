@@ -8,6 +8,7 @@ import by.it.academy.util.BlockchainUtxoUtil;
 import org.hibernate.SessionFactory;
 
 import java.util.ArrayList;
+import java.util.List;
 
 //@Service
 public class WalletService {
@@ -25,17 +26,17 @@ public class WalletService {
         return true;
     }
 
-    //    public List<Wallet> getAll(String userId) {
-//        List<Wallet> all = walletDao.findAll("");
-//        List<Wallet> wallets = new ArrayList<>();
-//        for (Wallet wallet : all) {
-//            if (wallet.getUser().getUserId().equals(userId)) {
-//                wallets.add(wallet);
-//            }
-//        }
-//        return wallets;
-//    }
-//
+    public List<Wallet> getAll(SessionFactory sessionFactory, String userId) {
+        List<Wallet> all = walletDao.findAll(sessionFactory, "");
+        List<Wallet> wallets = new ArrayList<>();
+        for (Wallet wallet : all) {
+            if (wallet.getUser().getUserId().equals(userId)) {
+                wallets.add(wallet);
+            }
+        }
+        return wallets;
+    }
+
     public Wallet findWalletById(SessionFactory sessionFactory, String id) {
         return (Wallet) walletDao.findById(sessionFactory, id);
     }
@@ -43,15 +44,19 @@ public class WalletService {
     //returns balance and stores the UTXO's owned by this wallet in this.UTXOs
     public float getBalance(SessionFactory factory, Wallet wallet) {
         float total = 0;
-        ArrayList<BlockchainUtxo> UTXOs = (ArrayList<BlockchainUtxo>) blockchainUtxoDao.findAll(factory,"");
+        ArrayList<BlockchainUtxo> UTXOs = (ArrayList<BlockchainUtxo>) blockchainUtxoDao.findAll(factory, "");
         for (BlockchainUtxo UTXO : UTXOs) {
             if (BlockchainUtxoUtil.isMine(UTXO, wallet.publicKey)) { //if output belongs to me ( if coins belong to me )
-                wallet.UTXOs.add(UTXO); //add it to our list of unspent transactions.
-                walletDao.create(factory, wallet);
+//                wallet.UTXOs.add(UTXO); //add it to our list of unspent transactions.
+//                walletDao.create(factory, wallet);
                 total += UTXO.value;
             }
         }
         return total;
+    }
+
+    public void updateWallet(SessionFactory factory, Wallet wallet) {
+        walletDao.update(factory, wallet);
     }
 
 //    //Generates and returns a new transaction from this wallet.

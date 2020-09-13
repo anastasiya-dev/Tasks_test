@@ -18,7 +18,18 @@ public class TransactionInputDao implements BaseDao<TransactionInput> {
 
     @Override
     public void create(SessionFactory sessionFactory, TransactionInput transactionInput) {
-
+        org.hibernate.Transaction tx = null;
+        Session session = sessionFactory.openSession();
+        try {
+            tx = session.beginTransaction();
+            session.saveOrUpdate(transactionInput);
+            tx.commit();
+        } catch (Exception e) {
+            if (tx != null) tx.rollback();
+            throw e;
+        } finally {
+            session.close();
+        }
     }
 
     @Override

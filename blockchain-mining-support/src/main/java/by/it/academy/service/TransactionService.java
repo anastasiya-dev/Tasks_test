@@ -1,6 +1,5 @@
 package by.it.academy.service;
 
-import by.it.academy.Validation;
 import by.it.academy.pojo.BlockchainUtxo;
 import by.it.academy.pojo.Transaction;
 import by.it.academy.pojo.TransactionInput;
@@ -8,6 +7,7 @@ import by.it.academy.pojo.TransactionOutput;
 import by.it.academy.repository.BlockchainUtxoDao;
 import by.it.academy.repository.TransactionDao;
 import by.it.academy.repository.TransactionInputDao;
+import by.it.academy.repository.TransactionOutputDao;
 import by.it.academy.util.StringUtil;
 import by.it.academy.util.TransactionOutputUtil;
 import org.hibernate.SessionFactory;
@@ -29,6 +29,8 @@ public class TransactionService {
 
     TransactionInputDao transactionInputDao = new TransactionInputDao();
 
+    TransactionOutputDao transactionOutputDao = new TransactionOutputDao();
+
     private float minimumTransaction = 0.1f;
 
 ////    @Autowired
@@ -39,11 +41,11 @@ public class TransactionService {
         return true;
     }
 
-    //    public Transaction findTransactionById(String id) {
-//        return (Transaction) transactionDao.findById(id);
-//    }
-//
-    public ArrayList<Transaction> findAllTransactions() {
+    public Transaction findTransactionById(SessionFactory sessionFactory, String id) {
+        return (Transaction) transactionDao.findById(sessionFactory, id);
+    }
+
+    public ArrayList<Transaction> findAllTransactions(SessionFactory factory) {
         return (ArrayList<Transaction>) transactionDao.findAll(factory, "");
     }
 
@@ -80,25 +82,31 @@ public class TransactionService {
     //Returns true if new transaction could be created.
     public boolean processTransaction(Transaction transaction) {
 
-        if (verifySignature(transaction) == false) {
-            System.out.println("#Transaction Signature failed to verify");
-            return false;
-        }
+//        if (verifySignature(transaction) == false) {
+//            System.out.println("#Transaction Signature failed to verify");
+//            return false;
+//        }
 
         //gather transaction inputs (Make sure they are unspent):
         for (TransactionInput i : transaction.inputs) {
-            BlockchainUtxo UTXO = (BlockchainUtxo) blockchainUtxoDao.findById(Validation.factory, i.transactionOutputId);
-
-            i.transactionOutput.setId(UTXO.getBlockchainUtxoId());
-            i.transactionOutput.setTransactionInput((TransactionInput) transactionInputDao.findById(Validation.factory, UTXO.getTransactionInputId()));
-            i.transactionOutput.setTransaction((Transaction) transactionDao.findById(Validation.factory, UTXO.getParentTransactionId()));
-            i.transactionOutput.setValue(UTXO.getValue());
-            i.transactionOutput.setRecipient(UTXO.recipient);
+            BlockchainUtxo UTXO = blockchainUtxoDao.findById(factory, i.transactionOutputId);
+            TransactionOutput transactionOutput =
+                    TransactionOutputUtil.createTransactionOutput(
+                            UTXO.recipient,UTXO.value,transaction
+                    );
+            i.setTransactionOutput(transactionOutput);
+////            i.transactionOutput.setTransactionInput((TransactionInput) transactionInputDao.findById(factory, UTXO.getTransactionInputId()));
+//            i.transactionOutput.setTransaction((Transaction) transactionDao.findById(factory, UTXO.getParentTransactionId()));
+//            i.transactionOutput.setValue(UTXO.getValue());
+//            i.transactionOutput.setRecipient(UTXO.recipient);
+            transactionInputDao.create(factory, i);
+            transactionOutputDao.create(factory,transactionOutput);
 //                    Blockchain.getUTXOs().get(i.transactionOutputId);
         }
 
         //check if transaction is valid:
         if (getInputsValue(transaction) < minimumTransaction) {
+            System.out.println("inputs for checking: " + getInputsValue(transaction));
             System.out.println("#Transaction Inputs to small: " + getInputsValue(transaction));
             return false;
         }
@@ -109,6 +117,10 @@ public class TransactionService {
         transaction.outputs.add(TransactionOutputUtil.createTransactionOutput(transaction.getRecipient(), transaction.getValue(), transaction)); //send value to recipient
         transaction.outputs.add(TransactionOutputUtil.createTransactionOutput(transaction.getSender(), leftOver, transaction)); //send the left over 'change' back to sender
 
+        createNewTransaction(factory, transaction);
+
+        System.out.println(findTransactionById(factory, transaction.transactionId));
+
         //add outputs to Unspent list
         for (TransactionOutput o : transaction.outputs) {
             BlockchainUtxo blockchainUtxo = new BlockchainUtxo();
@@ -117,7 +129,7 @@ public class TransactionService {
             blockchainUtxo.setTransactionInputId(o.transactionInput.transactionOutputId);
             blockchainUtxo.setParentTransactionId(o.getTransaction().transactionId);
             blockchainUtxo.setValue(o.value);
-            blockchainUtxoDao.create(Validation.factory, blockchainUtxo);
+            blockchainUtxoDao.create(factory, blockchainUtxo);
 //            Blockchain.getUTXOs().put(o.id, o);
         }
 
@@ -133,7 +145,7 @@ public class TransactionService {
             blockchainUtxoDel.setParentTransactionId(i.transactionOutput.getTransaction().transactionId);
             blockchainUtxoDel.setValue(i.transactionOutput.value);
 
-            blockchainUtxoDao.delete(Validation.factory, blockchainUtxoDel);
+            blockchainUtxoDao.delete(factory, blockchainUtxoDel);
 //            Blockchain.getUTXOs().remove(i.transactionOutput.id);
         }
 

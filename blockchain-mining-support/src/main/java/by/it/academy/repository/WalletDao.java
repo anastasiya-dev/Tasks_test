@@ -60,7 +60,7 @@ public class WalletDao implements BaseDao<Wallet>
     @Override
     public List<Wallet> findAll(SessionFactory sessionFactory, String searchStr) {
         Session session = sessionFactory.openSession();
-        Query<Wallet> query = session.createQuery("from Wallet", Wallet.class);
+        Query<Wallet> query = session.createQuery("from Wallet w", Wallet.class);
         List<Wallet> list = query.list();
         session.close();
         return list;
@@ -73,7 +73,19 @@ public class WalletDao implements BaseDao<Wallet>
 
     @Override
     public Wallet update(SessionFactory sessionFactory, Wallet wallet) {
-        return null;
+        Transaction tx = null;
+        Session session = sessionFactory.openSession();
+        try {
+            tx = session.beginTransaction();
+            session.update(wallet);
+            tx.commit();
+        } catch (Exception e) {
+            if (tx != null) tx.rollback();
+            throw e;
+        } finally {
+            session.close();
+        }
+        return wallet;
     }
 
     @Override

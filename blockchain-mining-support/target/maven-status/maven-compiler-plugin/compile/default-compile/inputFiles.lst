@@ -2,6 +2,7 @@ C:\work\blockchain-mining-support\src\main\java\by\it\academy\pojo\Block.java
 C:\work\blockchain-mining-support\src\main\java\by\it\academy\MySqlDataSource.java
 C:\work\blockchain-mining-support\src\main\java\by\it\academy\pojo\TransactionOutput.java
 C:\work\blockchain-mining-support\src\main\java\by\it\academy\util\BlockUtil.java
+C:\work\blockchain-mining-support\src\main\java\by\it\academy\Validation.java
 C:\work\blockchain-mining-support\src\main\java\by\it\academy\service\BlockService.java
 C:\work\blockchain-mining-support\src\main\java\by\it\academy\util\StringUtil.java
 C:\work\blockchain-mining-support\src\main\java\by\it\academy\pojo\Transaction.java
@@ -14,6 +15,7 @@ C:\work\blockchain-mining-support\src\main\java\by\it\academy\repository\BaseDao
 C:\work\blockchain-mining-support\src\main\java\by\it\academy\repository\TransactionDao.java
 C:\work\blockchain-mining-support\src\main\java\by\it\academy\repository\UserDao.java
 C:\work\blockchain-mining-support\src\main\java\by\it\academy\service\TransactionService.java
+C:\work\blockchain-mining-support\src\main\java\by\it\academy\TransactionCheck.java
 C:\work\blockchain-mining-support\src\main\java\by\it\academy\util\BlockchainUtxoUtil.java
 C:\work\blockchain-mining-support\src\main\java\by\it\academy\service\WalletService.java
 C:\work\blockchain-mining-support\src\main\java\by\it\academy\util\WalletUtil.java
@@ -21,7 +23,7 @@ C:\work\blockchain-mining-support\src\main\java\by\it\academy\pojo\TransactionIn
 C:\work\blockchain-mining-support\src\main\java\by\it\academy\pojo\User.java
 C:\work\blockchain-mining-support\src\main\java\by\it\academy\pojo\Wallet.java
 C:\work\blockchain-mining-support\src\main\java\by\it\academy\repository\BlockDao.java
-C:\work\blockchain-mining-support\src\main\java\by\it\academy\Main.java
+C:\work\blockchain-mining-support\src\main\java\by\it\academy\repository\TransactionOutputDao.java
 C:\work\blockchain-mining-support\src\main\java\by\it\academy\service\BlockchainUtxoService.java
 C:\work\blockchain-mining-support\src\main\java\by\it\academy\service\UserService.java
 C:\work\blockchain-mining-support\src\main\java\by\it\academy\Start.java

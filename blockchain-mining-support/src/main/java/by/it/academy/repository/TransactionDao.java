@@ -58,7 +58,7 @@ public class TransactionDao implements BaseDao<Transaction> {
 //    @Transactional(propagation = Propagation.REQUIRED, readOnly = true)
     public List<Transaction> findAll(SessionFactory sessionFactory, String searchStr) {
         Session session = sessionFactory.openSession();
-        Query<Transaction> query = session.createQuery("from Transaction", Transaction.class);
+        Query<Transaction> query = session.createQuery("from Transaction t", Transaction.class);
         List<Transaction> list = query.list();
         session.close();
         return list;

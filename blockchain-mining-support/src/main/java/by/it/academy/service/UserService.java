@@ -4,6 +4,8 @@ import by.it.academy.pojo.User;
 import by.it.academy.repository.UserDao;
 import org.hibernate.SessionFactory;
 
+import java.util.List;
+
 //@Service
 public class UserService {
 
@@ -23,7 +25,11 @@ public class UserService {
         return (User) baseDao.findById(sessionFactory, id);
     }
 
-//    public User findUserByName(String name) {
+    public List<User> findAll(SessionFactory factory) {
+        return baseDao.findAll(factory, "");
+    }
+
+    //    public User findUserByName(String name) {
 //        return (User) baseDao.findByName(name);
 //    }
 //

@@ -1,9 +1,6 @@
 package by.it.academy;
 
-import by.it.academy.pojo.Block;
-import by.it.academy.pojo.Transaction;
-import by.it.academy.pojo.User;
-import by.it.academy.pojo.Wallet;
+import by.it.academy.pojo.*;
 import by.it.academy.repository.BlockDao;
 import by.it.academy.service.*;
 import by.it.academy.util.*;
@@ -11,6 +8,8 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+
+import java.util.ArrayList;
 
 public class Start {
     public static int difficulty = 3;
@@ -38,7 +37,28 @@ public class Start {
         genesisUser.getWallets().add(genesisWallet);
         userService.update(factory, genesisUser);
 
-        Wallet firstActualWallet = walletService.findWalletById(factory, "4054c7bf-347f-480e-b86f-69a0b3011319");
+        User firstActualUser = null;
+        ArrayList<User> all = (ArrayList<User>) userService.findAll(factory);
+        for (User user : all) {
+            if
+            (user.getUserName().equals("Anastasiya")) {
+                firstActualUser = user;
+                break;
+            }
+        }
+        String firstActualWalletId = null;
+        ArrayList<Wallet> walletServiceAll = (ArrayList<Wallet>) walletService.getAll(factory, firstActualUser.getUserId());
+        System.out.println(walletServiceAll);
+        for (Wallet wallet : walletServiceAll) {
+            if
+            (wallet.getUser().getUserName().equals("Anastasiya")) {
+                firstActualWalletId = wallet.getWalletId();
+                break;
+            }
+        }
+        System.out.println(firstActualWalletId);
+        Wallet firstActualWallet = walletService.findWalletById(factory, firstActualWalletId);
+        System.out.println(firstActualWallet);
         genesisTransaction = TransactionUtil.createTransaction(
                 genesisWallet.getPublicKey(),
                 firstActualWallet.getPublicKey(),
@@ -46,24 +66,25 @@ public class Start {
                 null
         );
         TransactionUtil.generateSignature(genesisTransaction, genesisWallet.getPrivateKey());
-        genesisTransaction.transactionId = "0"; //manually set the transaction id
+//        genesisTransaction.transactionId = "0"; //manually set the transaction id
         genesisTransaction.outputs.add(TransactionOutputUtil.createTransactionOutput(genesisTransaction.recipient, genesisTransaction.value, genesisTransaction)); //manually add the Transactions Output
         transactionService.createNewTransaction(factory, genesisTransaction);
         //см.закомменченную строку в конструкторе ютхо
-        blockchainUtxoService.createNewUTXO(factory,
-                BlockchainUtxoUtil.createBcUtxo(
-                        genesisTransaction.getOutputs().get(0).getId(),
-                        TransactionOutputUtil.createTransactionOutput(
-                                genesisTransaction.getRecipient(), genesisTransaction.getValue(), genesisTransaction
-                        )
-                )
-        );
+        BlockchainUtxo bcUtxo = BlockchainUtxoUtil.createBcUtxo(
+                genesisTransaction.getOutputs().get(0).getId(),
+                TransactionOutputUtil.createTransactionOutput(
+                        genesisTransaction.getRecipient(), genesisTransaction.getValue(), genesisTransaction
+                ));
+        bcUtxo.setWallet(firstActualWallet);
+        firstActualWallet.getUTXOs().add(bcUtxo);
+//        blockchainUtxoService.createNewUTXO(factory, bcUtxo);
+        walletService.createNewWallet(factory, firstActualWallet);
 
         System.out.println("Creating and Mining Genesis block... ");
 
         Block genesisBlock = BlockUtil.createBlock("0");
-        blockService.addTransaction(genesisBlock,genesisTransaction);
-        genesisTransaction.getBlocks().add(genesisBlock);
+        blockService.addTransaction(genesisBlock, genesisTransaction);
+        genesisTransaction.setBlock(genesisBlock);
         BlockUtil.mineBlock(genesisBlock, difficulty);
         blockDao.create(factory, genesisBlock);
 
