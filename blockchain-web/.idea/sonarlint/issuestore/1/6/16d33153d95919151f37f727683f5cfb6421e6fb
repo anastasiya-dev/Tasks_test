@@ -1,14 +1,12 @@
 
-v
-java:S2293G"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ğ§Š£8ÅòæÇ.
-L
-java:S3740"/Provide the parametrized type for this generic.(ŞÊÊ‰8ıÑ®•Æ.
+\
+java:S1128"?Remove this unused import 'by.it.academy.util.TransactionUtil'.(í×½ß8œåß¼È.
+l	java:S1179"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÂÛè8ãÿãÇ.
+Z	java:S106G"9Replace this use of System.out or System.err by a logger.(€õ€ùÿÿÿÿ8‚‘ù¼È.
 Q
-java:S3740"/Provide the parametrized type for this generic.( ­€ûùÿÿÿÿ8ÒÏûãÇ.
-X	java:S125<"<This block of commented-out lines of code should be removed.(¿³ú¨8ìÙàŒÈ.
+java:S3740"/Provide the parametrized type for this generic.( ­€ûùÿÿÿÿ8úüÄºÈ.
+X	java:S125="<This block of commented-out lines of code should be removed.(¿³ú¨8ìÙàŒÈ.
+L
+java:S3740"/Provide the parametrized type for this generic.(ŞÊÊ‰8úüÄºÈ.
 M
-java:S1172D"0Remove this unused method parameter "recipient".(Äêñ“8­ëÂÈ.
-l	java:S1178"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÂÛè8ãÿãÇ.
-U
-java:S2175V"3A "List<BlockchainUtxo>" cannot contain a "String".(½œ”ñÿÿÿÿÿ8ô€’æÇ.
-]	java:S125P"<This block of commented-out lines of code should be removed.(Æ÷£×şÿÿÿÿ8­ëÂÈ.
+java:S1172E"0Remove this unused method parameter "recipient".(Äêñ“8­ëÂÈ.

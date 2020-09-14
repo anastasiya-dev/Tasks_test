@@ -2,11 +2,9 @@ package by.it.academy.service;
 
 import by.it.academy.pojo.BlockchainUtxo;
 import by.it.academy.pojo.Transaction;
-import by.it.academy.pojo.TransactionInput;
 import by.it.academy.pojo.Wallet;
 import by.it.academy.repository.BaseDao;
 import by.it.academy.util.BlockchainUtxoUtil;
-import by.it.academy.util.TransactionInputUtil;
 import by.it.academy.util.TransactionUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -29,6 +27,9 @@ public class WalletService {
 
     @Autowired
     TransactionService transactionService;
+
+    @Autowired
+    BlockchainUtxoService blockchainUtxoService;
 
     public boolean createNewWallet(Wallet wallet) {
         walletDao.create(wallet);
@@ -67,30 +68,20 @@ public class WalletService {
     //Generates and returns a new transaction from this wallet.
     public Transaction sendFunds(Wallet wallet, PublicKey recipient, float value, Transaction transaction) {
 
-        //create array list of inputs
-        ArrayList<TransactionInput> inputs = new ArrayList<TransactionInput>();
-
+        System.out.println("send funds received transaction: " + transaction);
         float total = 0;
-        System.out.println("wallet before: " + wallet.getUTXOs());
         for (BlockchainUtxo UTXO : wallet.UTXOs) {
             total += UTXO.value;
-            TransactionInput transactionInput = TransactionInputUtil.createTransactionInput(transaction, UTXO.getBlockchainUtxoId());
-            inputs.add(transactionInput);
-            transactionInput.setTransaction(transaction);
+            BlockchainUtxo utxoFromChain = (BlockchainUtxo) blockchainUtxoDao.findById(UTXO.blockchainUtxoId);
+            utxoFromChain.setOutputTransactionId(transaction.transactionId);
+            utxoFromChain.setWallet(null);
+            blockchainUtxoDao.create(utxoFromChain);
+            BlockchainUtxo utxoIntoChain = blockchainUtxoService.createBcUtxo(transaction.transactionId);
+            blockchainUtxoDao.create(utxoIntoChain);
+            wallet.UTXOs.remove(UTXO);
+            createNewWallet(wallet);
             if (total > value) break;
         }
-
-        System.out.println("inputs to add: " + inputs);
-        transaction.setInputs(inputs);
-        TransactionUtil.generateSignature(transaction, wallet.privateKey);
-        transactionService.createNewTransaction(transaction);
-        System.out.println("transaction after update: " + transactionService.findTransactionById(transaction.transactionId));
-
-        for (TransactionInput input : inputs) {
-            wallet.UTXOs.remove(input.transactionOutputId);
-        }
-
-        System.out.println("wallet after: " + wallet.getUTXOs());
         return transaction;
     }
 }

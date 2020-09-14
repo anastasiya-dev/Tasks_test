@@ -1,7 +1,4 @@
 
-ç
-java:S1319"qThe type of the "inputs" object should be an interface such as "List" rather than the implementation "ArrayList".(…£ô#8Ÿ≥î∫«.
+]	java:S125"<This block of commented-out lines of code should be removed.(ìàΩ˙˚ˇˇˇˇ8∞Ä√∏».
 S
-java:S1144&"1Remove this unused private "calulateHash" method.(ñ∫ªò˙ˇˇˇˇ8Ã˝ò∫«.
-e
-java:S1128"HRemove this unused import 'by.it.academy.service.BlockchainUtxoService'.(…Óæﬂ8ñœ™ø«.
+java:S1144$"1Remove this unused private "calulateHash" method.(ñ∫ªò˙ˇˇˇˇ8Ã˝ò∫«.

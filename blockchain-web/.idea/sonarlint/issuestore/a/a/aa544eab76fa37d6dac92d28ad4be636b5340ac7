@@ -1,5 +1,11 @@
 
-g
-java:S1104"QMake value a static final constant or non-public and provide accessors if needed.(ğ–èÓ
-r
-java:S1104"UMake recipient a static final constant or non-public and provide accessors if needed.(…•‚8à¬ÌÁÇ.
+7
+java:S1220""Move this file to a named package.8Äµ¤¸È.
+X	java:S125"<This block of commented-out lines of code should be removed.(¡¥ß»8Äµ¤¸È.
+X	java:S125"<This block of commented-out lines of code should be removed.(æ¨Â8Äµ¤¸È.
+W	java:S125"<This block of commented-out lines of code should be removed.(‚«“%8Äµ¤¸È.
+]	java:S125"<This block of commented-out lines of code should be removed.(Ãå«‚øÿÿÿÿ8Äµ¤¸È.
+]	java:S125"<This block of commented-out lines of code should be removed.(å¿µ–ûÿÿÿÿ8Äµ¤¸È.
+X	java:S125"<This block of commented-out lines of code should be removed.(şÜËë8Äµ¤¸È.
+]	java:S125"<This block of commented-out lines of code should be removed.(òß¿•üÿÿÿÿ8Äµ¤¸È.
+X	java:S125 "<This block of commented-out lines of code should be removed.(†í³½8Äµ¤¸È.

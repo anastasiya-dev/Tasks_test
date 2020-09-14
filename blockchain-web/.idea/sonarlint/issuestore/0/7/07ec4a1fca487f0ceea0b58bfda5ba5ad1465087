@@ -1,5 +1,8 @@
 
-Q
-java:S3740"/Provide the parametrized type for this generic.(×¿…¬ıÿÿÿÿ8¬¶ı½Ç.
-
-java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(€¡¯8©‚€¾Ç.
+7
+java:S1220""Move this file to a named package.8‡öÀ¸È.
+]	java:S125"<This block of commented-out lines of code should be removed.(¦Èøÿÿÿÿ8‡öÀ¸È.
+X	java:S125	"<This block of commented-out lines of code should be removed.(¥•ÖÏ8‡öÀ¸È.
+X	java:S125"<This block of commented-out lines of code should be removed.(½‘²Ç8‡öÀ¸È.
+X	java:S125"<This block of commented-out lines of code should be removed.(çæ©«8‡öÀ¸È.
+X	java:S125"<This block of commented-out lines of code should be removed.(Ø‰Ÿ¼8‡öÀ¸È.

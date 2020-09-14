@@ -40,8 +40,8 @@ public class ApplicationConfiguration {
                 User.class,
                 Block.class,
                 Transaction.class,
-                TransactionOutput.class,
-                TransactionInput.class,
+//                TransactionOutput.class,
+//                TransactionInput.class,
                 Wallet.class,
 //                Blockchain.class,
                 BlockchainUtxo.class);

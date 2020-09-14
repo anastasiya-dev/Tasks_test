@@ -44,14 +44,19 @@ public class TransactionDao implements BaseDao<Transaction>, ApplicationContextA
     @Override
     @Transactional(propagation = Propagation.REQUIRED, readOnly = true)
     public Transaction findById(String id) {
+        System.out.println("in the find by id: " + id);
         Session session = sessionFactory.openSession();
         Query<Transaction> query = session.createQuery("from Transaction t where t.transactionId=:transactionId", Transaction.class);
         query.setParameter("transactionId", id);
         List<Transaction> list = query.list();
+        System.out.println("find by id list: " + list);
         Transaction transaction = null;
         try {
+            System.out.println("in the try block 1");
             transaction = list.get(0);
+            System.out.println("in the try block 2");
         } catch (Exception e) {
+            System.out.println("in the catch block");
 //            e.printStackTrace();
         }
         session.close();

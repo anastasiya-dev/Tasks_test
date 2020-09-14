@@ -1,12 +1,17 @@
 
-H
-java:S11687"+Return an empty collection instead of null.(¥¹ï8Ğ¨™ÄÇ.
-x
-java:S1450"VRemove the "context" field and declare it as a local variable in the relevant methods.(Å¯ÙÕúÿÿÿÿ8“ä™ÄÇ.
-
-java:S1130J"sRemove the declaration of thrown exception 'org.springframework.beans.BeansException' which is a runtime exception.(¯¶…œ8Ğ¨™ÄÇ.
-H
-java:S1168<"+Return an empty collection instead of null.(¥¹ï8Ğ¨™ÄÇ.
-X	java:S125*"<This block of commented-out lines of code should be removed.(†€éˆ8ªÀÄÇ.
-
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Öˆ±u8Ğ¨™ÄÇ.
+7
+java:S1220""Move this file to a named package.8ùÅ¿¸È.
+X	java:S125"<This block of commented-out lines of code should be removed.(ªŸ½á8ùÅ¿¸È.
+X	java:S125"<This block of commented-out lines of code should be removed.(ÚËÚ…8ùÅ¿¸È.
+]	java:S125"<This block of commented-out lines of code should be removed.(¿ãòùÿÿÿÿ8ùÅ¿¸È.
+]	java:S125"<This block of commented-out lines of code should be removed.(ì¤§“şÿÿÿÿ8ùÅ¿¸È.
+]	java:S125"<This block of commented-out lines of code should be removed.(ÉÇŒÏùÿÿÿÿ8ùÅ¿¸È.
+X	java:S125"<This block of commented-out lines of code should be removed.(ˆ™ù8ùÅ¿¸È.
+]	java:S125"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ8ùÅ¿¸È.
+X	java:S125!"<This block of commented-out lines of code should be removed.(üÛÁ¦8ùÅ¿¸È.
+X	java:S1251"<This block of commented-out lines of code should be removed.(¨„´‘8ùÅ¿¸È.
+]	java:S1256"<This block of commented-out lines of code should be removed.(°Ü·ûøÿÿÿÿ8ùÅ¿¸È.
+]	java:S125;"<This block of commented-out lines of code should be removed.(ıø»—şÿÿÿÿ8ùÅ¿¸È.
+W	java:S125@"<This block of commented-out lines of code should be removed.(ĞóşR8ùÅ¿¸È.
+]	java:S125E"<This block of commented-out lines of code should be removed.(ÙÎü²ûÿÿÿÿ8ùÅ¿¸È.
+]	java:S125J"<This block of commented-out lines of code should be removed.(şğš³úÿÿÿÿ8ùÅ¿¸È.

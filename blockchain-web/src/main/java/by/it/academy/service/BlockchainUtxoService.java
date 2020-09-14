@@ -16,6 +16,21 @@ public class BlockchainUtxoService {
     @Value("#{blockchainUtxoDao}")
     BaseDao blockchainUtxoDao;
 
+    @Autowired
+    TransactionService transactionService;
+
+
+    public BlockchainUtxo createBcUtxo(String inputTransactionId) {
+        BlockchainUtxo blockchainUtxo = new BlockchainUtxo();
+//        TransactionService transactionService = new TransactionService();
+        System.out.println("tr id in create utxo: " + inputTransactionId);
+        Transaction inputTr = transactionService.findTransactionById(inputTransactionId);
+        blockchainUtxo.setRecipient(inputTr.getRecipient());
+        blockchainUtxo.setValue(inputTr.getValue());
+        blockchainUtxo.setInputTransactionId(inputTransactionId);
+        return blockchainUtxo;
+    }
+
     public ArrayList<BlockchainUtxo> findAllUTXOs() {
         return (ArrayList<BlockchainUtxo>) blockchainUtxoDao.findAll("");
     }

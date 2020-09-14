@@ -29,12 +29,12 @@ public class Transaction {
     public byte[] signature; // this is to prevent anybody else from spending funds in our wallet.
     public LocalDateTime transactionDateTime;
 
-    @OneToMany(mappedBy = "transaction", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    public List<TransactionInput> inputs = new ArrayList<TransactionInput>();
-
-    @OneToMany(mappedBy = "transaction", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @Fetch(FetchMode.SELECT)
-    public List<TransactionOutput> outputs = new ArrayList<>();
+//    @OneToMany(mappedBy = "transaction", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+//    public List<TransactionInput> inputs = new ArrayList<TransactionInput>();
+//
+//    @OneToMany(mappedBy = "transaction", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+//    @Fetch(FetchMode.SELECT)
+//    public List<TransactionOutput> outputs = new ArrayList<>();
 
     @ManyToOne
     private Block block;
@@ -50,8 +50,8 @@ public class Transaction {
                 ", value=" + value +
                 ", signature=" + Arrays.toString(signature) +
                 ", transactionDateTime=" + transactionDateTime +
-                ", inputs=" + inputs +
-                ", outputs=" + outputs +
+//                ", inputs=" + inputs +
+//                ", outputs=" + outputs +
 //                ", blocks=" + blocks +
                 '}';
     }

@@ -1,23 +1,28 @@
 
-Q
-java:S3740]"/Provide the parametrized type for this generic.(¶ëÙşıÿÿÿÿ8Î¥ºìÆ.
-]	java:S125m"<This block of commented-out lines of code should be removed.(ÒÖïáúÿÿÿÿ8Ã§‹çÆ.
-X	java:S1257"<This block of commented-out lines of code should be removed.(†€éˆ8’»äÆ.
-x
-java:S1450"VRemove the "context" field and declare it as a local variable in the relevant methods.(Å¯ÙÕúÿÿÿÿ8¿ŒŸÅÆ.
-Z	java:S106k"9Replace this use of System.out or System.err by a logger.(ŠŠ«•ıÿÿÿÿ8¢‘ÜæÆ.
-H
-java:S1168V"+Return an empty collection instead of null.(¥¹ï8–Ò×îÆ.
-U	java:S106n"9Replace this use of System.out or System.err by a logger.(Û†­8ñ…ÛæÆ.
+Z	java:S1067"9Replace this use of System.out or System.err by a logger.(ìàşÿÿÿÿÿ8÷÷¸½È.
+U	java:S106s"9Replace this use of System.out or System.err by a logger.(Û†­8ñ…ÛæÆ.
 M
-java:S1481b"+Remove this unused "result" local variable.(·‚Öèøÿÿÿÿ8Î¥ºìÆ.
-]	java:S125a"<This block of commented-out lines of code should be removed.(£Í¤…ıÿÿÿÿ8—Îî˜Ç.
+java:S1481g"+Remove this unused "result" local variable.(·‚Öèøÿÿÿÿ8Î¥ºìÆ.
+U	java:S1064"9Replace this use of System.out or System.err by a logger.(÷èÜˆ8ò«½È.
+]	java:S125f"<This block of commented-out lines of code should be removed.(£Í¤…ıÿÿÿÿ8—Îî˜Ç.
+\
+java:S1854g":Remove this useless assignment to local variable "result".(·‚Öèøÿÿÿÿ8Î¥ºìÆ.
+]	java:S125r"<This block of commented-out lines of code should be removed.(ÒÖïáúÿÿÿÿ8Ã§‹çÆ.
+H
+java:S1168["+Return an empty collection instead of null.(¥¹ï8–Ò×îÆ.
+Q
+java:S3740b"/Provide the parametrized type for this generic.(¶ëÙşıÿÿÿÿ8Î¥ºìÆ.
+X	java:S125T"<This block of commented-out lines of code should be removed.(¥øî8ßåÕîÆ.
+]	java:S125{"<This block of commented-out lines of code should be removed.(¬·æºúÿÿÿÿ8‡º”çÆ.
+Z	java:S106p"9Replace this use of System.out or System.err by a logger.(ŠŠ«•ıÿÿÿÿ8¢‘ÜæÆ.
+X	java:S125<"<This block of commented-out lines of code should be removed.(†€éˆ8’»äÆ.
+‘
+java:S1130‰"sRemove the declaration of thrown exception 'org.springframework.beans.BeansException' which is a runtime exception.(¯¶…œ8ÂÂÅÆ.
+Z	java:S106/"9Replace this use of System.out or System.err by a logger.(°µò·ÿÿÿÿÿ8±¼˜½È.
 l
 java:S1128
 "ORemove this unused import 'org.springframework.beans.factory.annotation.Value'.(ìø›8ˆÉïÆ.
-]	java:S125v"<This block of commented-out lines of code should be removed.(¬·æºúÿÿÿÿ8‡º”çÆ.
-‘
-java:S1130„"sRemove the declaration of thrown exception 'org.springframework.beans.BeansException' which is a runtime exception.(¯¶…œ8ÂÂÅÆ.
-X	java:S125O"<This block of commented-out lines of code should be removed.(¥øî8ßåÕîÆ.
-\
-java:S1854b":Remove this useless assignment to local variable "result".(·‚Öèøÿÿÿÿ8Î¥ºìÆ.
+U	java:S106;"9Replace this use of System.out or System.err by a logger.(ûÂŠ8€°¸½È.
+x
+java:S1450"VRemove the "context" field and declare it as a local variable in the relevant methods.(Å¯ÙÕúÿÿÿÿ8¿ŒŸÅÆ.
+Z	java:S1069"9Replace this use of System.out or System.err by a logger.(›Ø„…ıÿÿÿÿ8Å«¹½È.

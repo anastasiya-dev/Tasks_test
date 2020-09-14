@@ -1,19 +1,19 @@
 
+]	java:S125%"<This block of commented-out lines of code should be removed.(™şˆºüÿÿÿÿ8³‰¦¸È.
 _
 java:S1128	"BRemove this unused import 'org.hibernate.annotations.IndexColumn'.(îØƒ±8şáƒéÇ.
-}
-java:S1104"[Make recipientString a static final constant or non-public and provide accessors if needed.(ğçò şÿÿÿÿ8¬ àÁÇ.
-k
-java:S1104"UMake signature a static final constant or non-public and provide accessors if needed.(Ÿôàí
 l
 java:S1104"QMake value a static final constant or non-public and provide accessors if needed.(¼Á’Øıÿÿÿÿ
+u
+java:S1104"XMake senderString a static final constant or non-public and provide accessors if needed.(ôÕÖç8ÉÙßÁÇ.
+}
+java:S1104"[Make recipientString a static final constant or non-public and provide accessors if needed.(ğçò şÿÿÿÿ8¬ àÁÇ.
+]	java:S125!"<This block of commented-out lines of code should be removed.(…İ›ˆüÿÿÿÿ8³‰¦¸È.
+
+java:S1104"_Make transactionDateTime a static final constant or non-public and provide accessors if needed.(ŠòŸÕÿÿÿÿÿ8÷ØëëÆ.
 h
 java:S1104"RMake sender a static final constant or non-public and provide accessors if needed.(ƒñúÑ
 r
 java:S1104"UMake recipient a static final constant or non-public and provide accessors if needed.(ÊŞ„Ï8©¤ÇÁÇ.
-
-java:S1104"_Make transactionDateTime a static final constant or non-public and provide accessors if needed.(ŠòŸÕÿÿÿÿÿ8÷ØëëÆ.
-u
-java:S1104"XMake senderString a static final constant or non-public and provide accessors if needed.(ôÕÖç8ÉÙßÁÇ.
-v
-java:S2293!"YReplace the type specification in this constructor call with the diamond operator ("<>").(ŞìÚ÷8¬ àÁÇ.
+k
+java:S1104"UMake signature a static final constant or non-public and provide accessors if needed.(Ÿôàí

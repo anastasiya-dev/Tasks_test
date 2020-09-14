@@ -1,9 +1,11 @@
 package by.it.academy.service;
 
-import by.it.academy.pojo.*;
+import by.it.academy.pojo.BlockchainUtxo;
+import by.it.academy.pojo.Transaction;
+import by.it.academy.pojo.Wallet;
 import by.it.academy.repository.BaseDao;
+import by.it.academy.util.BlockchainUtxoUtil;
 import by.it.academy.util.StringUtil;
-import by.it.academy.util.TransactionOutputUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -18,17 +20,24 @@ public class TransactionService {
     BaseDao transactionDao;
 
     @Autowired
+    @Value("#{walletDao}")
+    BaseDao walletDao;
+
+    @Autowired
     @Value("#{blockchainUtxoDao}")
     BaseDao blockchainUtxoDao;
 
-    @Autowired
-    @Value("#{transactionInputDao}")
-    BaseDao transactionInputDao;
+//    @Autowired
+//    @Value("#{transactionInputDao}")
+//    BaseDao transactionInputDao;
 
     private float minimumTransaction = 0.1f;
 
     @Autowired
     WalletService walletService;
+
+    @Autowired
+    BlockchainUtxoService blockchainUtxoService;
 
     public boolean createNewTransaction(Transaction transaction) {
         transactionDao.create(transaction);
@@ -76,62 +85,47 @@ public class TransactionService {
     //Returns true if new transaction could be created.
     public boolean processTransaction(Transaction transaction) {
 
-        if (verifySignature(transaction) == false) {
-            System.out.println("#Transaction Signature failed to verify");
-            return false;
+        ArrayList<Wallet> wallets = (ArrayList<Wallet>) walletDao.findAll("");
+        Wallet sender = new Wallet();
+        Wallet recipient = new Wallet();
+        for (Wallet wallet : wallets) {
+            if (transaction.getSenderString().equals(wallet.getPublicKeyString())) {
+                sender = wallet;
+            }
+            if (transaction.getRecipientString().equals(wallet.getPublicKeyString())) {
+                sender = wallet;
+            }
         }
 
-        //gather transaction inputs (Make sure they are unspent):
-        for (TransactionInput i : transaction.inputs) {
-            BlockchainUtxo UTXO = (BlockchainUtxo) blockchainUtxoDao.findById(i.transactionOutputId);
-
-            i.transactionOutput.setId(UTXO.getBlockchainUtxoId());
-            i.transactionOutput.setTransactionInput((TransactionInput) transactionInputDao.findById(UTXO.getTransactionInputId()));
-            i.transactionOutput.setTransaction((Transaction) transactionDao.findById(UTXO.getParentTransactionId()));
-            i.transactionOutput.setValue(UTXO.getValue());
-            i.transactionOutput.setRecipient(UTXO.recipient);
-//                    Blockchain.getUTXOs().get(i.transactionOutputId);
-        }
+        ArrayList<BlockchainUtxo> BcUTXOs = (ArrayList<BlockchainUtxo>) blockchainUtxoDao.findAll("");
 
         //check if transaction is valid:
         if (getInputsValue(transaction) < minimumTransaction) {
             System.out.println("#Transaction Inputs to small: " + getInputsValue(transaction));
+            for (BlockchainUtxo i : BcUTXOs) {
+                if (i.outputTransactionId.equals(transaction.transactionId)) {
+                    i.setOutputTransactionId("");
+                }
+            }
             return false;
         }
 
         //generate transaction outputs:
         float leftOver = getInputsValue(transaction) - transaction.value; //get value of inputs then the left over change:
-//        transactionId = calulateHash(transaction);
-        transaction.outputs.add(TransactionOutputUtil.createTransactionOutput(transaction.getRecipient(), transaction.getValue(), transaction)); //send value to recipient
-        transaction.outputs.add(TransactionOutputUtil.createTransactionOutput(transaction.getSender(), leftOver, transaction)); //send the left over 'change' back to sender
-
-        //add outputs to Unspent list
-        for (TransactionOutput o : transaction.outputs) {
-            BlockchainUtxo blockchainUtxo = new BlockchainUtxo();
-            blockchainUtxo.setBlockchainUtxoId(o.id);
-            blockchainUtxo.setRecipient(o.recipient);
-            blockchainUtxo.setTransactionInputId(o.transactionInput.transactionOutputId);
-            blockchainUtxo.setParentTransactionId(o.getTransaction().transactionId);
-            blockchainUtxo.setValue(o.value);
-            blockchainUtxoDao.create(blockchainUtxo);
-//            Blockchain.getUTXOs().put(o.id, o);
+        BlockchainUtxo bcUtxoActual = null;
+        for (BlockchainUtxo blockchainUtxo : BcUTXOs) {
+            if (blockchainUtxo.getInputTransactionId().equals(transaction.transactionId)) {
+                bcUtxoActual = blockchainUtxo;
+            }
         }
-
-        //remove transaction inputs from UTXO lists as spent:
-        for (TransactionInput i : transaction.inputs) {
-            if (i.transactionOutput == null) continue; //if Transaction can't be found skip it
-            BlockchainUtxo blockchainUtxoDel = new BlockchainUtxo();
-            blockchainUtxoDel.setBlockchainUtxoId(i.transactionOutput.id);
-//            blockchainUtxoDel.setTransactionOutput(i.transactionOutput);
-
-            blockchainUtxoDel.setRecipient(i.transactionOutput.recipient);
-            blockchainUtxoDel.setTransactionInputId(i.transactionOutput.transactionInput.transactionOutputId);
-            blockchainUtxoDel.setParentTransactionId(i.transactionOutput.getTransaction().transactionId);
-            blockchainUtxoDel.setValue(i.transactionOutput.value);
-
-            blockchainUtxoDao.delete(blockchainUtxoDel);
-//            Blockchain.getUTXOs().remove(i.transactionOutput.id);
-        }
+        bcUtxoActual.setWallet(recipient);
+        recipient.getUTXOs().add(bcUtxoActual);
+        BlockchainUtxo bcUtxoChange = blockchainUtxoService.createBcUtxo(transaction.transactionId);
+        bcUtxoChange.setValue(leftOver);
+        bcUtxoChange.setWallet(sender);
+        sender.getUTXOs().add(bcUtxoChange);
+        walletService.createNewWallet(sender);
+        walletService.createNewWallet(recipient);
 
         return true;
     }
@@ -145,9 +139,11 @@ public class TransactionService {
     //returns sum of inputs(UTXOs) values
     public float getInputsValue(Transaction transaction) {
         float total = 0;
-        for (TransactionInput i : transaction.inputs) {
-            if (i.transactionOutput == null) continue; //if Transaction can't be found skip it
-            total += i.transactionOutput.value;
+        ArrayList<BlockchainUtxo> BcUTXOs = (ArrayList<BlockchainUtxo>) blockchainUtxoDao.findAll("");
+        for (BlockchainUtxo i : BcUTXOs) {
+            if (i.inputTransactionId.equals(transaction.transactionId)) {
+                total += i.value;
+            }
         }
         return total;
     }
@@ -155,8 +151,11 @@ public class TransactionService {
     //returns sum of outputs:
     public float getOutputsValue(Transaction transaction) {
         float total = 0;
-        for (TransactionOutput o : transaction.outputs) {
-            total += o.value;
+        ArrayList<BlockchainUtxo> BcUTXOs = (ArrayList<BlockchainUtxo>) blockchainUtxoDao.findAll("");
+        for (BlockchainUtxo i : BcUTXOs) {
+            if (i.outputTransactionId.equals(transaction.transactionId)) {
+                total += i.value;
+            }
         }
         return total;
     }

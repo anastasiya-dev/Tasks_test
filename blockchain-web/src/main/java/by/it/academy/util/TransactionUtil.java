@@ -1,16 +1,14 @@
 package by.it.academy.util;
 
-import by.it.academy.pojo.*;
+import by.it.academy.pojo.Transaction;
 import by.it.academy.repository.BlockchainUtxoDao;
-import by.it.academy.service.BlockchainUtxoService;
 import by.it.academy.service.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.security.PrivateKey;
 import java.security.PublicKey;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
+
 //
 //@Service
 public class TransactionUtil {
@@ -23,14 +21,14 @@ public class TransactionUtil {
     BlockchainUtxoDao blockchainUtxoDao;
 
     // Constructor:
-    public static Transaction createTransaction(PublicKey from, PublicKey to, float value, ArrayList<TransactionInput> inputs) {
+    public static Transaction createTransaction(PublicKey from, PublicKey to, float value) {
         Transaction transaction = new Transaction();
         transaction.setSender(from);
         transaction.setSenderString(StringUtil.getStringFromKey(from));
         transaction.setRecipient(to);
         transaction.setRecipientString(StringUtil.getStringFromKey(to));
         transaction.setValue(value);
-        transaction.setInputs(inputs);
+//        transaction.setInputs(inputs);
         return transaction;
     }
 

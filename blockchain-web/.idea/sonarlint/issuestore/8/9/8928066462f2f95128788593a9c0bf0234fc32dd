@@ -1,21 +1,20 @@
 
-]	java:S125]"<This block of commented-out lines of code should be removed.(Í‰¿•øÿÿÿÿ8ø¸É¿Ç.
-m	java:S117V"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘Úùµ8ìùıÃÇ.
-Q
-java:S3740"/Provide the parametrized type for this generic.( ­€ûùÿÿÿÿ8–¹Æ¿Ç.
-Z	java:S106P"9Replace this use of System.out or System.err by a logger.(”‚ÛŒøÿÿÿÿ8–¹Æ¿Ç.
-X	java:S125u"<This block of commented-out lines of code should be removed.(æ•ç¼8‰Ñ¿Ç.
-]	java:S125}"<This block of commented-out lines of code should be removed.(«¤§Âşÿÿÿÿ8ÛŠ‚ÁÇ.
-K
-java:S1125O")Remove the literal "false" boolean value.(Ğ€ì¤şÿÿÿÿ8–¹Æ¿Ç.
-Q
-java:S3740"/Provide the parametrized type for this generic.(Ï³ìÑşÿÿÿÿ8½ˆ¨ÅÆ.
-U	java:S106b"9Replace this use of System.out or System.err by a logger.(ÎşÆ¹8–¹Æ¿Ç.
 L
-java:S3740"/Provide the parametrized type for this generic.(¤é¡Û8óš‡ÄÇ.
-]	java:S125h"<This block of commented-out lines of code should be removed.(­ıÿ±ÿÿÿÿÿ8–¹Æ¿Ç.
+java:S3740"/Provide the parametrized type for this generic.(ŞÊÊ‰8‘ÊˆºÈ.
+Q
+java:S3740"/Provide the parametrized type for this generic.(Ï³ìÑşÿÿÿÿ8‘ÊˆºÈ.
 
-java:S1319*"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(€¡¯8®»‚åÆ.
-Y	java:S125…"<This block of commented-out lines of code should be removed.(ıº¡Í8Û–å¿Ç.
+java:S13193"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(€¡¯8®»‚åÆ.
+m	java:S117d"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ıììî8½¤ñ»È.
+U	java:S106h"9Replace this use of System.out or System.err by a logger.(ÎşÆ¹8–¹Æ¿Ç.
+n	java:S117š"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ıììî8å¡¹È.
+]	java:S125 "<This block of commented-out lines of code should be removed.(º¬Ôøùÿÿÿÿ8‘ÊˆºÈ.
+_
+java:S1128"BRemove this unused import 'by.it.academy.util.BlockchainUtxoUtil'.(ÂÇç8êğÌ½È.
+Q
+java:S3740"/Provide the parametrized type for this generic.( ­€ûùÿÿÿÿ8‘ÊˆºÈ.
+l
+java:S2259y"JA "NullPointerException" could be thrown; "bcUtxoActual" is nullable here.(Ò–°àüÿÿÿÿ8ˆ÷»È.
 ’
-java:S13197"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Û“Ä©ûÿÿÿÿ8ÿ¥ŒïÆ.
+java:S1319@"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Û“Ä©ûÿÿÿÿ8ÿ¥ŒïÆ.
+n	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ıììî8˜†ˆ¹È.

@@ -1,7 +1,6 @@
 package by.it.academy.controller;
 
 import by.it.academy.pojo.Transaction;
-import by.it.academy.pojo.TransactionInput;
 import by.it.academy.pojo.Wallet;
 import by.it.academy.service.BlockchainUtxoService;
 import by.it.academy.service.TransactionService;
@@ -21,7 +20,6 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.security.PrivateKey;
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -61,14 +59,12 @@ public class TransactionController {
         Wallet walletSender = walletService.findWalletById(walletId);
         Wallet walletRecipient = walletService.findWalletById(transactionStart.getRecipient());
         Float value = Float.valueOf(transactionStart.getValue());
-        List<TransactionInput> inputs = new ArrayList<>();
 
         Transaction transaction
                 = TransactionUtil.createTransaction(
                 walletSender.getPublicKey(),
                 walletRecipient.getPublicKey(),
-                value,
-                (ArrayList<TransactionInput>) inputs
+                value
         );
 
 //        List<Transaction> transactionList = transactionService.findAllTransactions();
@@ -111,7 +107,10 @@ public class TransactionController {
             System.out.println("#Not Enough funds to send transaction. Transaction Discarded.");
             return "redirect:/home";
         } else {
-            walletService.sendFunds(walletSender, transaction.getRecipient(), transaction.getValue(), transaction);
+            TransactionUtil.generateSignature(transaction, walletSender.privateKey);
+            transactionService.createNewTransaction(transaction);
+            Transaction signedTr = transactionService.findTransactionById(transaction.transactionId);
+            walletService.sendFunds(walletSender, transaction.getRecipient(), transaction.getValue(), signedTr);
             return "redirect:/{userId}/user-cabinet";
         }
     }

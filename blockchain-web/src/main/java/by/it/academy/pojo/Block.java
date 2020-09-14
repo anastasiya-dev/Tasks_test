@@ -3,6 +3,7 @@ package by.it.academy.pojo;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -13,6 +14,10 @@ import java.util.List;
 @Setter
 public class Block {
     @Id
+    @GeneratedValue(generator = "system-uuid")
+    @GenericGenerator(name = "system-uuid", strategy = "uuid2")
+    public String blockId;
+
     public String hash;
     public String previousHash;
     public String merkleRoot;
