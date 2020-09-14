@@ -9,7 +9,7 @@ import java.util.List;
 
 public class BlockDao implements BaseDao<Block> {
     @Override
-    public void create(SessionFactory sessionFactory, Block block) {
+    public Block create(SessionFactory sessionFactory, Block block) {
         org.hibernate.Transaction tx = null;
         Session session = sessionFactory.openSession();
         try {
@@ -22,6 +22,7 @@ public class BlockDao implements BaseDao<Block> {
         } finally {
             session.close();
         }
+        return block;
     }
 
     @Override
@@ -34,15 +35,10 @@ public class BlockDao implements BaseDao<Block> {
         try {
             block = list.get(0);
         } catch (Exception e) {
-//            e.printStackTrace();
+            e.printStackTrace();
         }
         session.close();
         return block;
-    }
-
-    @Override
-    public Block findByName(SessionFactory sessionFactory, String id) {
-        return null;
     }
 
     @Override
@@ -52,11 +48,6 @@ public class BlockDao implements BaseDao<Block> {
         List<Block> list = query.list();
         session.close();
         return list;
-    }
-
-    @Override
-    public List<Block> findAllWithParameter(SessionFactory sessionFactory, String searchStr) {
-        return null;
     }
 
     @Override

@@ -7,17 +7,10 @@ import org.hibernate.query.Query;
 
 import java.util.List;
 
-//@Repository
 public class TransactionDao implements BaseDao<Transaction> {
 
-//    @Autowired
-//    SessionFactory sessionFactory;
-
-//    private ApplicationContext context;
-
     @Override
-//    @Transactional
-    public void create(SessionFactory sessionFactory, Transaction transaction) {
+    public Transaction create(SessionFactory sessionFactory, Transaction transaction) {
         org.hibernate.Transaction tx = null;
         Session session = sessionFactory.openSession();
         try {
@@ -30,10 +23,10 @@ public class TransactionDao implements BaseDao<Transaction> {
         } finally {
             session.close();
         }
+        return transaction;
     }
 
     @Override
-//    @Transactional(propagation = Propagation.REQUIRED, readOnly = true)
     public Transaction findById(SessionFactory sessionFactory, String id) {
         Session session = sessionFactory.openSession();
         Query<Transaction> query = session.createQuery("from Transaction t where t.transactionId=:transactionId", Transaction.class);
@@ -43,38 +36,19 @@ public class TransactionDao implements BaseDao<Transaction> {
         try {
             transaction = list.get(0);
         } catch (Exception e) {
-//            e.printStackTrace();
+            e.printStackTrace();
         }
         session.close();
         return transaction;
     }
 
     @Override
-    public Transaction findByName(SessionFactory sessionFactory, String id) {
-        return null;
-    }
-
-    @Override
-//    @Transactional(propagation = Propagation.REQUIRED, readOnly = true)
     public List<Transaction> findAll(SessionFactory sessionFactory, String searchStr) {
         Session session = sessionFactory.openSession();
         Query<Transaction> query = session.createQuery("from Transaction t", Transaction.class);
         List<Transaction> list = query.list();
         session.close();
         return list;
-    }
-
-    @Override
-//    @Transactional(propagation = Propagation.REQUIRED, readOnly = true)
-    public List<Transaction> findAllWithParameter(SessionFactory sessionFactory, String searchStr) {
-//        Session session = sessionFactory.openSession();
-//        Wallet wallet = (Wallet) walletDao.findById(searchStr);
-//        Query<Transaction> query = session.createQuery("from Transaction t where t.recipient=:recipient", Transaction.class);
-//        query.setParameter("recipient", wallet.publicKey);
-////        query.setParameter("sender", wallet.publicKey);
-//        List<Transaction> list = query.list();
-//        session.close();
-        return null;
     }
 
     @Override
@@ -85,7 +59,6 @@ public class TransactionDao implements BaseDao<Transaction> {
         query.setParameter("transactionId", transaction.getTransactionId());
         query.setParameter("signature", transaction.getSignature());
         query.setParameter("transactionDateTime", transaction.getTransactionDateTime());
-//        query.setParameter("outputs", transaction.getOutputs());
         int result = query.executeUpdate();
         tx.commit();
         session.close();
@@ -93,12 +66,8 @@ public class TransactionDao implements BaseDao<Transaction> {
     }
 
     @Override
-//    @Transactional
     public boolean delete(SessionFactory sessionFactory, Transaction transaction) {
-        System.out.println("in the delete method");
         org.hibernate.Transaction tx = null;
-//        Transaction transactionToDelete = findById(transaction.getTransactionId());
-        System.out.println(transaction);
         Session session = sessionFactory.openSession();
 
         if (transaction != null) {
@@ -106,7 +75,6 @@ public class TransactionDao implements BaseDao<Transaction> {
                 tx = session.beginTransaction();
                 session.delete(transaction);
                 tx.commit();
-//                session.flush();
                 return true;
             } catch (Exception e) {
                 if (tx != null) tx.rollback();
@@ -118,9 +86,4 @@ public class TransactionDao implements BaseDao<Transaction> {
             return false;
         }
     }
-
-//    @Override
-//    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-//        context = applicationContext;
-//    }
 }

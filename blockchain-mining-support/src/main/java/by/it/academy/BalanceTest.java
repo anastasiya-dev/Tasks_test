@@ -1,7 +1,6 @@
 package by.it.academy;
 
-import by.it.academy.pojo.Block;
-import by.it.academy.pojo.BlockchainUtxo;
+import by.it.academy.pojo.Utxo;
 import by.it.academy.pojo.User;
 import by.it.academy.pojo.Wallet;
 import by.it.academy.repository.BlockDao;
@@ -23,7 +22,7 @@ public class BalanceTest {
     static TransactionService transactionService = new TransactionService();
     static UserService userService = new UserService();
     static WalletService walletService = new WalletService();
-    static BlockchainUtxoService blockchainUtxoService = new BlockchainUtxoService();
+    static UtxoService utxoService = new UtxoService();
 
     public static void main(String[] args) {
         factory = start();
@@ -45,17 +44,15 @@ public class BalanceTest {
         ArrayList<Wallet> anastasiyaW = (ArrayList<Wallet>) walletService.getAll(factory, anastasiya.getUserId());
         System.out.println(walletService.getBalance(factory, anastasiyaW.get(0)));
         System.out.println("Anastasiya cash:");
-        for(Wallet wallet: anastasiyaW){
-            for(BlockchainUtxo blockchainUtxo: wallet.getUTXOs()){
-                System.out.println(blockchainUtxo.getBlockchainUtxoId());
+        for (Wallet wallet : anastasiyaW) {
+            for (Utxo utxo : wallet.getUTXOs()) {
             }
         }
         ArrayList<Wallet> philippW = (ArrayList<Wallet>) walletService.getAll(factory, philipp.getUserId());
         System.out.println(walletService.getBalance(factory, philippW.get(0)));
         System.out.println("Philipp cash:");
-        for(Wallet wallet: philippW){
-            for(BlockchainUtxo blockchainUtxo: wallet.getUTXOs()){
-                System.out.println(blockchainUtxo.getBlockchainUtxoId());
+        for (Wallet wallet : philippW) {
+            for (Utxo utxo : wallet.getUTXOs()) {
             }
         }
         finish(factory);

@@ -10,10 +10,8 @@ import org.hibernate.SessionFactory;
 import java.util.ArrayList;
 import java.util.List;
 
-//@Service
 public class BlockService {
 
-    //    @Autowired
     TransactionService transactionService = new TransactionService();
     BlockDao blockDao = new BlockDao();
 
@@ -28,9 +26,7 @@ public class BlockService {
             }
         }
         block.getTransactions().add(transaction);
-        System.out.println("going to save block: " + block);
         blockDao.create(sessionFactory, block);
-        System.out.println();
         System.out.println("Transaction Successfully added to Block");
         return true;
     }
@@ -47,10 +43,7 @@ public class BlockService {
             block.setHash(BlockUtil.calculateHash(block));
 
         }
-
-        System.out.println("going to save block: " + block);
         blockDao.create(sessionFactory, block);
-
         System.out.println("Block Mined!!! : " + block.getHash());
     }
 }

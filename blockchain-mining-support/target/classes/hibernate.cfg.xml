@@ -12,18 +12,14 @@
         <property name="hibernate.connection.password">Atme3816liveon!</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
         <property name="show_sql">true</property>
-<!--                use validate if database is the primary source, not java-->
-<!--                <property name="hibernate.hbm2.ddl.auto">create</property>-->
+        <!--                use validate if database is the primary source, not java-->
+        <!--                <property name="hibernate.hbm2.ddl.auto">create</property>-->
 
-<!--        <mapping class="by.it.academy.pojo.Blockchain"/>-->
         <mapping class="by.it.academy.pojo.Block"/>
-        <mapping class="by.it.academy.pojo.BlockchainUtxo"/>
+        <mapping class="by.it.academy.pojo.Utxo"/>
         <mapping class="by.it.academy.pojo.Transaction"/>
-<!--        <mapping class="by.it.academy.pojo.TransactionOutput"/>-->
         <mapping class="by.it.academy.pojo.Wallet"/>
         <mapping class="by.it.academy.pojo.User"/>
-<!--        <mapping class="by.it.academy.pojo.TransactionInput"/>-->
-
 
     </session-factory>
 

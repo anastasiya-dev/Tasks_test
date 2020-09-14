@@ -22,7 +22,7 @@ public class TransactionCheck {
     static TransactionService transactionService = new TransactionService();
     static UserService userService = new UserService();
     static WalletService walletService = new WalletService();
-    static BlockchainUtxoService blockchainUtxoService = new BlockchainUtxoService();
+    static UtxoService utxoService = new UtxoService();
 
     public static void main(String[] args) {
         factory = start();
@@ -50,14 +50,11 @@ public class TransactionCheck {
             transaction.setBlock(block1);
             System.out.println("in the transaction add loop");
             blockService.addTransaction(factory, block1, transaction);
-//            System.out.println(transaction);
-//            blockDao.create(factory, block1);
         }
 
         System.out.println("transactions in the block: " + block1.getTransactions());
         System.out.println("Going to start mining");
         blockService.mineBlock(factory, block1, difficulty);
-//        blockDao.create(factory, block1);
 
         finish(factory);
     }

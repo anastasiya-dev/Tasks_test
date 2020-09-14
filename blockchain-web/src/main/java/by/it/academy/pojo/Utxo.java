@@ -13,7 +13,7 @@ import java.security.PublicKey;
 @Entity
 @Setter
 @Getter
-public class BlockchainUtxo {
+public class Utxo {
 
     @Id
     @GeneratedValue(generator = "system-uuid")

@@ -23,7 +23,7 @@ public class Start {
     static TransactionService transactionService = new TransactionService();
     static UserService userService = new UserService();
     static WalletService walletService = new WalletService();
-    static BlockchainUtxoService blockchainUtxoService = new BlockchainUtxoService();
+    static UtxoService utxoService = new UtxoService();
 
     public static void main(String[] args) {
 
@@ -67,15 +67,11 @@ public class Start {
                 1000f
         );
         TransactionUtil.generateSignature(genesisTransaction, genesisWallet.getPrivateKey());
-//        genesisTransaction.transactionId = "0"; //manually set the transaction id
-//        genesisTransaction.outputs.add(TransactionOutputUtil.createTransactionOutput(genesisTransaction.recipient, genesisTransaction.value, genesisTransaction)); //manually add the Transactions Output
         transactionService.createNewTransaction(factory, genesisTransaction);
         //см.закомменченную строку в конструкторе ютхо
-        BlockchainUtxo bcUtxo = blockchainUtxoService.createBcUtxo(factory, genesisTransaction.transactionId);
-//        bcUtxo.setOutputTransactionId(genesisTransaction.transactionId);
+        Utxo bcUtxo = utxoService.createBcUtxo(factory, genesisTransaction.transactionId);
         bcUtxo.setWallet(firstActualWallet);
         firstActualWallet.getUTXOs().add(bcUtxo);
-//        blockchainUtxoService.createNewUTXO(factory, bcUtxo);
         walletService.createNewWallet(factory, firstActualWallet);
 
         System.out.println("Creating and Mining Genesis block... ");
@@ -84,7 +80,6 @@ public class Start {
         genesisTransaction.setBlock(genesisBlock);
         blockService.addTransaction(factory, genesisBlock, genesisTransaction);
         blockService.mineBlock(factory, genesisBlock, difficulty);
-//        blockDao.create(factory, genesisBlock);
 
         finish(factory);
     }

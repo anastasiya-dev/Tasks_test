@@ -1,33 +1,22 @@
 package by.it.academy.service;
 
-import by.it.academy.pojo.BlockchainUtxo;
 import by.it.academy.pojo.Transaction;
+import by.it.academy.pojo.Utxo;
 import by.it.academy.pojo.Wallet;
-import by.it.academy.repository.BlockchainUtxoDao;
+import by.it.academy.repository.UtxoDao;
 import by.it.academy.repository.WalletDao;
-import by.it.academy.util.BlockchainUtxoUtil;
-import by.it.academy.util.TransactionUtil;
+import by.it.academy.util.UtxoUtil;
 import org.hibernate.SessionFactory;
 
 import java.security.PublicKey;
 import java.util.ArrayList;
 import java.util.List;
 
-//@Service
 public class WalletService {
 
-    //    @Autowired
-//    @Value("#{walletDao}")
     WalletDao walletDao = new WalletDao();
-
-    //    @Autowired
-//    @Value("#{blockchainUtxoDao}")
-    BlockchainUtxoDao blockchainUtxoDao = new BlockchainUtxoDao();
-
-    BlockchainUtxoService blockchainUtxoService = new BlockchainUtxoService();
-
-    //    @Autowired
-//    TransactionService transactionService = new TransactionService();
+    UtxoDao utxoDao = new UtxoDao();
+    UtxoService utxoService = new UtxoService();
 
     public boolean createNewWallet(SessionFactory factory, Wallet wallet) {
         walletDao.create(factory, wallet);
@@ -52,12 +41,9 @@ public class WalletService {
     //returns balance and stores the UTXO's owned by this wallet in this.UTXOs
     public float getBalance(SessionFactory sessionFactory, Wallet wallet) {
         float total = 0;
-        ArrayList<BlockchainUtxo> UTXOs = (ArrayList<BlockchainUtxo>) blockchainUtxoDao.findAll(sessionFactory, "");
-        for (BlockchainUtxo UTXO : UTXOs) {
-            if (BlockchainUtxoUtil.isMine(UTXO, wallet)) { //if output belongs to me ( if coins belong to me )
-//                wallet.UTXOs.add(UTXO); //add it to our list of unspent transactions.
-//                walletDao.create(wallet);
-                System.out.println(UTXO.blockchainUtxoId + " + " + UTXO.getValue());
+        ArrayList<Utxo> UTXOs = (ArrayList<Utxo>) utxoDao.findAll(sessionFactory, "");
+        for (Utxo UTXO : UTXOs) {
+            if (UtxoUtil.isMine(UTXO, wallet)) { //if output belongs to me ( if coins belong to me )
                 total += UTXO.value;
             }
         }
@@ -68,18 +54,18 @@ public class WalletService {
     public Transaction sendFunds(SessionFactory sessionFactory, Wallet wallet, PublicKey recipient, float value, Transaction transaction) {
 
         float total = 0;
-        for (BlockchainUtxo UTXO : wallet.UTXOs) {
+        for (Utxo UTXO : wallet.UTXOs) {
             total += UTXO.value;
-            UTXO.setOutputTransactionId(transaction.transactionId);
+            Utxo utxoFromChain = (Utxo) utxoDao.findById(sessionFactory, UTXO.utxoId);
+            utxoFromChain.setOutputTransactionId(transaction.transactionId);
+            utxoFromChain.setWallet(null);
+            utxoDao.create(sessionFactory, utxoFromChain);
+            Utxo utxoIntoChain = utxoService.createBcUtxo(sessionFactory, transaction.transactionId);
+            utxoDao.create(sessionFactory, utxoIntoChain);
             wallet.UTXOs.remove(UTXO);
+            createNewWallet(sessionFactory, wallet);
             if (total > value) break;
         }
-
-        createNewWallet(sessionFactory, wallet);
-        TransactionUtil.generateSignature(transaction, wallet.privateKey);
-        BlockchainUtxo blockchainUtxo = blockchainUtxoService.createBcUtxo(sessionFactory, transaction.transactionId);
-        blockchainUtxoDao.create(sessionFactory, blockchainUtxo);
-
         return transaction;
     }
 }

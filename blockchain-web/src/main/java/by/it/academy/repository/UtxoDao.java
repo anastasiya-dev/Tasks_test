@@ -1,6 +1,6 @@
 package by.it.academy.repository;
 
-import by.it.academy.pojo.BlockchainUtxo;
+import by.it.academy.pojo.Utxo;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
@@ -15,7 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Repository
-public class BlockchainUtxoDao implements BaseDao<BlockchainUtxo>, ApplicationContextAware {
+public class UtxoDao implements BaseDao<Utxo>, ApplicationContextAware {
 
     @Autowired
     SessionFactory sessionFactory;
@@ -25,12 +25,12 @@ public class BlockchainUtxoDao implements BaseDao<BlockchainUtxo>, ApplicationCo
 
     @Override
     @Transactional
-    public void create(BlockchainUtxo blockchainUtxo) {
+    public Utxo create(Utxo utxo) {
         org.hibernate.Transaction tx = null;
         Session session = sessionFactory.openSession();
         try {
             tx = session.beginTransaction();
-            session.saveOrUpdate(blockchainUtxo);
+            session.saveOrUpdate(utxo);
             tx.commit();
         } catch (Exception e) {
             if (tx != null) tx.rollback();
@@ -38,60 +38,55 @@ public class BlockchainUtxoDao implements BaseDao<BlockchainUtxo>, ApplicationCo
         } finally {
             session.close();
         }
+        return utxo;
     }
 
     @Override
     @Transactional(propagation = Propagation.REQUIRED, readOnly = true)
-    public BlockchainUtxo findById(String id) {
+    public Utxo findById(String id) {
         Session session = sessionFactory.openSession();
-        Query<BlockchainUtxo> query = session.createQuery("from BlockchainUtxo bu where bu.blockchainUtxoId=:blockchainUtxoId", BlockchainUtxo.class);
+        Query<Utxo> query = session.createQuery("from BlockchainUtxo bu where bu.blockchainUtxoId=:blockchainUtxoId", Utxo.class);
         query.setParameter("blockchainUtxoId", id);
-        List<BlockchainUtxo> list = query.list();
-        BlockchainUtxo blockchainUtxo = null;
+        List<Utxo> list = query.list();
+        Utxo utxo = null;
         try {
-            blockchainUtxo = list.get(0);
+            utxo = list.get(0);
         } catch (Exception e) {
 //            e.printStackTrace();
         }
         session.close();
-        return blockchainUtxo;
+        return utxo;
     }
 
     @Override
-    public BlockchainUtxo findByName(String id) {
+    public Utxo findByName(String id) {
         return null;
     }
 
     @Override
     @Transactional(propagation = Propagation.REQUIRED, readOnly = true)
-    public List<BlockchainUtxo> findAll(String searchStr) {
+    public List<Utxo> findAll(String searchStr) {
         Session session = sessionFactory.openSession();
-        Query<BlockchainUtxo> query = session.createQuery("from BlockchainUtxo", BlockchainUtxo.class);
-        List<BlockchainUtxo> list = query.list();
+        Query<Utxo> query = session.createQuery("from BlockchainUtxo", Utxo.class);
+        List<Utxo> list = query.list();
         session.close();
         return list;
     }
 
-
     @Override
-    public List<BlockchainUtxo> findAllWithParameter(String searchStr) {
-        return null;
-    }
-
-    @Override
-    public BlockchainUtxo update(BlockchainUtxo blockchainUtxo) {
+    public Utxo update(Utxo utxo) {
         return null;
     }
 
     @Override
     @Transactional
-    public boolean delete(BlockchainUtxo blockchainUtxo) {
+    public boolean delete(Utxo utxo) {
         org.hibernate.Transaction tx = null;
         Session session = sessionFactory.openSession();
-        if (blockchainUtxo != null) {
+        if (utxo != null) {
             try {
                 tx = session.beginTransaction();
-                session.delete(blockchainUtxo);
+                session.delete(utxo);
                 tx.commit();
 //                session.flush();
                 return true;

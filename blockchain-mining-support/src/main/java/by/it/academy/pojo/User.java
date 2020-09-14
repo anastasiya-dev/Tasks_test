@@ -48,7 +48,7 @@ public class User {
                 ", confirmPassword='" + confirmPassword + '\'' +
                 ", email='" + email + '\'' +
                 ", mobile='" + mobile + '\'' +
-//                ", wallets=" + wallets.get(0).getWalletId() +
+//                ", wallets=" + wallets +
                 '}';
     }
 }

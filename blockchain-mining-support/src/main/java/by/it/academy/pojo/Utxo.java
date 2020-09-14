@@ -13,13 +13,13 @@ import java.security.PublicKey;
 @Entity
 @Setter
 @Getter
-public class BlockchainUtxo {
+public class Utxo {
 
     @Id
     @GeneratedValue(generator = "system-uuid")
     @GenericGenerator(name = "system-uuid", strategy = "uuid2")
 
-    public String blockchainUtxoId;
+    public String utxoId;
     public PublicKey recipient;
     public float value;
     public String inputTransactionId;
@@ -30,8 +30,8 @@ public class BlockchainUtxo {
 
     @Override
     public String toString() {
-        return "BlockchainUtxo{" +
-                "blockchainUtxoId='" + blockchainUtxoId + '\'' +
+        return "Utxo{" +
+                "utxoId='" + utxoId + '\'' +
                 ", recipient=" + recipient +
                 ", value=" + value +
                 ", inputTransactionId='" + inputTransactionId + '\'' +

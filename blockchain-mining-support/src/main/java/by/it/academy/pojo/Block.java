@@ -1,6 +1,5 @@
 package by.it.academy.pojo;
 
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
@@ -16,7 +15,6 @@ public class Block {
     @Id
     @GeneratedValue(generator = "system-uuid")
     @GenericGenerator(name = "system-uuid", strategy = "uuid2")
-
     public String blockId;
 
     public String hash;
@@ -38,7 +36,7 @@ public class Block {
                 ", merkleRoot='" + merkleRoot + '\'' +
                 ", timeStamp=" + timeStamp +
                 ", nonce=" + nonce +
-                ", transactions=" + transactions +
+//                ", transactions=" + transactions +
                 '}';
     }
 }

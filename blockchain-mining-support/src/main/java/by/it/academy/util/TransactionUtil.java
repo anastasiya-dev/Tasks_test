@@ -1,23 +1,14 @@
 package by.it.academy.util;
 
 import by.it.academy.pojo.Transaction;
-import by.it.academy.repository.BlockchainUtxoDao;
+import by.it.academy.repository.UtxoDao;
 import by.it.academy.service.TransactionService;
 
 import java.security.PrivateKey;
 import java.security.PublicKey;
 import java.time.LocalDateTime;
 
-//
-//@Service
 public class TransactionUtil {
-
-
-    //    @Autowired
-    TransactionService transactionService;
-
-    //    @Autowired
-    BlockchainUtxoDao blockchainUtxoDao;
 
     // Constructor:
     public static Transaction createTransaction(PublicKey from, PublicKey to, float value) {
@@ -27,10 +18,10 @@ public class TransactionUtil {
         transaction.setRecipient(to);
         transaction.setRecipientString(StringUtil.getStringFromKey(to));
         transaction.setValue(value);
-//        transaction.setInputs(inputs);
         return transaction;
     }
 
+    //!!!not used
     // This Calculates the transaction hash (which will be used as its Id)
     private static String calulateHash(Transaction transaction) {
         return StringUtil.applySha256(

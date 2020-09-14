@@ -8,19 +8,10 @@ import org.hibernate.query.Query;
 
 import java.util.List;
 
-//@Repository
-public class WalletDao implements BaseDao<Wallet>
-//        , ApplicationContextAware
-{
-
-    //    @Autowired
-    //    SessionFactory sessionFactory;
-
-//    private ApplicationContext context;
+public class WalletDao implements BaseDao<Wallet> {
 
     @Override
-//    @Transactional
-    public void create(SessionFactory sessionFactory, Wallet wallet) {
+    public Wallet create(SessionFactory sessionFactory, Wallet wallet) {
         Transaction tx = null;
         Session session = sessionFactory.openSession();
         try {
@@ -33,10 +24,10 @@ public class WalletDao implements BaseDao<Wallet>
         } finally {
             session.close();
         }
+        return wallet;
     }
 
     @Override
-//    @Transactional(propagation = Propagation.REQUIRED, readOnly = true)
     public Wallet findById(SessionFactory sessionFactory, String id) {
         Session session = sessionFactory.openSession();
         Query<Wallet> query = session.createQuery("from Wallet w where w.walletId=:walletId", Wallet.class);
@@ -46,15 +37,10 @@ public class WalletDao implements BaseDao<Wallet>
         try {
             wallet = list.get(0);
         } catch (Exception e) {
-//            e.printStackTrace();
+            e.printStackTrace();
         }
         session.close();
         return wallet;
-    }
-
-    @Override
-    public Wallet findByName(SessionFactory sessionFactory, String id) {
-        return null;
     }
 
     @Override
@@ -64,11 +50,6 @@ public class WalletDao implements BaseDao<Wallet>
         List<Wallet> list = query.list();
         session.close();
         return list;
-    }
-
-    @Override
-    public List<Wallet> findAllWithParameter(SessionFactory sessionFactory, String searchStr) {
-        return null;
     }
 
     @Override
@@ -93,8 +74,4 @@ public class WalletDao implements BaseDao<Wallet>
         return false;
     }
 
-//    @Override
-//    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-//        context = applicationContext;
-//    }
 }

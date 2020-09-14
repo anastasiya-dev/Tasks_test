@@ -6,11 +6,8 @@ import org.hibernate.SessionFactory;
 
 import java.util.List;
 
-//@Service
 public class UserService {
 
-    //    @Autowired
-//    @Value("#{userDao}")
     UserDao baseDao = new UserDao();
 
     public boolean createNewUser(SessionFactory sessionFactory, User user) {
@@ -29,10 +26,6 @@ public class UserService {
         return baseDao.findAll(factory, "");
     }
 
-    //    public User findUserByName(String name) {
-//        return (User) baseDao.findByName(name);
-//    }
-//
     public User update(SessionFactory factory, User user) {
         return (User) baseDao.update(factory, user);
     }
