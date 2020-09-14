@@ -1,10 +1,11 @@
 package by.it.academy;
 
 import by.it.academy.pojo.Block;
-import by.it.academy.pojo.Transaction;
+import by.it.academy.pojo.BlockchainUtxo;
+import by.it.academy.pojo.User;
+import by.it.academy.pojo.Wallet;
 import by.it.academy.repository.BlockDao;
 import by.it.academy.service.*;
-import by.it.academy.util.BlockUtil;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
@@ -12,7 +13,7 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
 import java.util.ArrayList;
 
-public class TransactionCheck {
+public class BalanceTest {
 
     public static SessionFactory factory = null;
     public static int difficulty = 3;
@@ -27,38 +28,36 @@ public class TransactionCheck {
     public static void main(String[] args) {
         factory = start();
 
-        ArrayList<Block> blockchain = (ArrayList<Block>) blockDao.findAll(factory, "");
-        long lastBlockTs = 0;
-        String lastBlockHash = null;
-        for (Block block : blockchain) {
-            if (block.getTimeStamp() > lastBlockTs) {
-                lastBlockTs = block.getTimeStamp();
-                lastBlockHash = block.getHash();
+        User anastasiya = null;
+        User philipp = null;
+        ArrayList<User> all = (ArrayList<User>) userService.findAll(factory);
+        for (User user : all) {
+            if
+            (user.getUserName().equals("Anastasiya")) {
+                anastasiya = user;
             }
-        }
-        Block block1 = BlockUtil.createBlock(lastBlockHash);
-
-        ArrayList<Transaction> allTransactions = transactionService.findAllTransactions(factory);
-        ArrayList<Transaction> transactionsToAdd = new ArrayList<>();
-        for (Transaction transaction : allTransactions) {
-            if (transaction.getBlock() == null) {
-                transactionsToAdd.add(transaction);
+            if
+            (user.getUserName().equals("Philipp")) {
+                philipp = user;
             }
         }
 
-        for (Transaction transaction : transactionsToAdd) {
-            transaction.setBlock(block1);
-            System.out.println("in the transaction add loop");
-            blockService.addTransaction(factory, block1, transaction);
-//            System.out.println(transaction);
-//            blockDao.create(factory, block1);
+        ArrayList<Wallet> anastasiyaW = (ArrayList<Wallet>) walletService.getAll(factory, anastasiya.getUserId());
+        System.out.println(walletService.getBalance(factory, anastasiyaW.get(0)));
+        System.out.println("Anastasiya cash:");
+        for(Wallet wallet: anastasiyaW){
+            for(BlockchainUtxo blockchainUtxo: wallet.getUTXOs()){
+                System.out.println(blockchainUtxo.getBlockchainUtxoId());
+            }
         }
-
-        System.out.println("transactions in the block: " + block1.getTransactions());
-        System.out.println("Going to start mining");
-        blockService.mineBlock(factory, block1, difficulty);
-//        blockDao.create(factory, block1);
-
+        ArrayList<Wallet> philippW = (ArrayList<Wallet>) walletService.getAll(factory, philipp.getUserId());
+        System.out.println(walletService.getBalance(factory, philippW.get(0)));
+        System.out.println("Philipp cash:");
+        for(Wallet wallet: philippW){
+            for(BlockchainUtxo blockchainUtxo: wallet.getUTXOs()){
+                System.out.println(blockchainUtxo.getBlockchainUtxoId());
+            }
+        }
         finish(factory);
     }
 

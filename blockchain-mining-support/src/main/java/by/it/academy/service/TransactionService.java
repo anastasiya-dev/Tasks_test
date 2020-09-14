@@ -2,39 +2,39 @@ package by.it.academy.service;
 
 import by.it.academy.pojo.BlockchainUtxo;
 import by.it.academy.pojo.Transaction;
-import by.it.academy.pojo.TransactionInput;
-import by.it.academy.pojo.TransactionOutput;
+import by.it.academy.pojo.Wallet;
 import by.it.academy.repository.BlockchainUtxoDao;
 import by.it.academy.repository.TransactionDao;
-import by.it.academy.repository.TransactionInputDao;
-import by.it.academy.repository.TransactionOutputDao;
+import by.it.academy.repository.WalletDao;
 import by.it.academy.util.StringUtil;
-import by.it.academy.util.TransactionOutputUtil;
 import org.hibernate.SessionFactory;
 
 import java.util.ArrayList;
 
-import static by.it.academy.Validation.factory;
-
 //@Service
 public class TransactionService {
-
-    //    @Autowired
+    //
+//    @Autowired
 //    @Value("#{transactionDao}")
     TransactionDao transactionDao = new TransactionDao();
 
     //    @Autowired
+//    @Value("#{walletDao}")
+    WalletDao walletDao = new WalletDao();
+
+    //    @Autowired
 //    @Value("#{blockchainUtxoDao}")
     BlockchainUtxoDao blockchainUtxoDao = new BlockchainUtxoDao();
+    BlockchainUtxoService blockchainUtxoService = new BlockchainUtxoService();
 
-    TransactionInputDao transactionInputDao = new TransactionInputDao();
-
-    TransactionOutputDao transactionOutputDao = new TransactionOutputDao();
+//    @Autowired
+//    @Value("#{transactionInputDao}")
+//    BaseDao transactionInputDao;
 
     private float minimumTransaction = 0.1f;
 
-////    @Autowired
-//    WalletService walletService;
+    //    @Autowired
+    WalletService walletService = new WalletService();
 
     public boolean createNewTransaction(SessionFactory sessionFactory, Transaction transaction) {
         transactionDao.create(sessionFactory, transaction);
@@ -45,22 +45,22 @@ public class TransactionService {
         return (Transaction) transactionDao.findById(sessionFactory, id);
     }
 
-    public ArrayList<Transaction> findAllTransactions(SessionFactory factory) {
-        return (ArrayList<Transaction>) transactionDao.findAll(factory, "");
+    public ArrayList<Transaction> findAllTransactions(SessionFactory sessionFactory) {
+        return (ArrayList<Transaction>) transactionDao.findAll(sessionFactory, "");
     }
 
-//    public boolean deleteTransaction(Transaction transaction) {
-//        return transactionDao.delete(transaction);
-//    }
-//
-//    public Transaction updateTransaction(Transaction transaction) {
-//        return (Transaction) transactionDao.update(transaction);
-//    }
+    public boolean deleteTransaction(SessionFactory sessionFactory, Transaction transaction) {
+        return transactionDao.delete(sessionFactory, transaction);
+    }
+
+    public Transaction updateTransaction(SessionFactory sessionFactory, Transaction transaction) {
+        return (Transaction) transactionDao.update(sessionFactory, transaction);
+    }
 
 
-//    public ArrayList<Transaction> getAllForWallet(String walletId) {
-//        ArrayList<Transaction> transactionsAll = (ArrayList<Transaction>) transactionDao.findAll("");
-//        Wallet wallet = walletService.findWalletById(walletId);
+//    public ArrayList<Transaction> getAllForWallet(SessionFactory sessionFactory, String walletId) {
+//        ArrayList<Transaction> transactionsAll = (ArrayList<Transaction>) transactionDao.findAll(sessionFactory, "");
+//        Wallet wallet = walletService.findWalletById(sessionFactory, walletId);
 //        String publicKey = StringUtil.getStringFromKey(wallet.getPublicKey());
 //        ArrayList<Transaction> transactionsForWallet = new ArrayList<>();
 //        for (Transaction transaction : transactionsAll) {
@@ -80,74 +80,50 @@ public class TransactionService {
 //    }
 
     //Returns true if new transaction could be created.
-    public boolean processTransaction(Transaction transaction) {
+    public boolean processTransaction(SessionFactory sessionFactory, Transaction transaction) {
 
-//        if (verifySignature(transaction) == false) {
-//            System.out.println("#Transaction Signature failed to verify");
-//            return false;
-//        }
-
-        //gather transaction inputs (Make sure they are unspent):
-        for (TransactionInput i : transaction.inputs) {
-            BlockchainUtxo UTXO = blockchainUtxoDao.findById(factory, i.transactionOutputId);
-            TransactionOutput transactionOutput =
-                    TransactionOutputUtil.createTransactionOutput(
-                            UTXO.recipient,UTXO.value,transaction
-                    );
-            i.setTransactionOutput(transactionOutput);
-////            i.transactionOutput.setTransactionInput((TransactionInput) transactionInputDao.findById(factory, UTXO.getTransactionInputId()));
-//            i.transactionOutput.setTransaction((Transaction) transactionDao.findById(factory, UTXO.getParentTransactionId()));
-//            i.transactionOutput.setValue(UTXO.getValue());
-//            i.transactionOutput.setRecipient(UTXO.recipient);
-            transactionInputDao.create(factory, i);
-            transactionOutputDao.create(factory,transactionOutput);
-//                    Blockchain.getUTXOs().get(i.transactionOutputId);
+        ArrayList<Wallet> wallets = (ArrayList<Wallet>) walletDao.findAll(sessionFactory, "");
+        Wallet sender = new Wallet();
+        Wallet recipient = new Wallet();
+        for (Wallet wallet : wallets) {
+            if (transaction.getSenderString().equals(wallet.getPublicKeyString())) {
+                sender = wallet;
+            }
+            if (transaction.getRecipientString().equals(wallet.getPublicKeyString())) {
+                recipient = wallet;
+            }
         }
 
+        ArrayList<BlockchainUtxo> BcUTXOs = (ArrayList<BlockchainUtxo>) blockchainUtxoDao.findAll(sessionFactory, "");
+
         //check if transaction is valid:
-        if (getInputsValue(transaction) < minimumTransaction) {
-            System.out.println("inputs for checking: " + getInputsValue(transaction));
-            System.out.println("#Transaction Inputs to small: " + getInputsValue(transaction));
+        if (getInputsValue(sessionFactory, transaction) < minimumTransaction) {
+            System.out.println("#Transaction Inputs to small: " + getInputsValue(sessionFactory, transaction));
+            for (BlockchainUtxo i : BcUTXOs) {
+                if (i.outputTransactionId.equals(transaction.transactionId)) {
+                    i.setOutputTransactionId("");
+                }
+            }
             return false;
         }
 
         //generate transaction outputs:
-        float leftOver = getInputsValue(transaction) - transaction.value; //get value of inputs then the left over change:
-//        transactionId = calulateHash(transaction);
-        transaction.outputs.add(TransactionOutputUtil.createTransactionOutput(transaction.getRecipient(), transaction.getValue(), transaction)); //send value to recipient
-        transaction.outputs.add(TransactionOutputUtil.createTransactionOutput(transaction.getSender(), leftOver, transaction)); //send the left over 'change' back to sender
-
-        createNewTransaction(factory, transaction);
-
-        System.out.println(findTransactionById(factory, transaction.transactionId));
-
-        //add outputs to Unspent list
-        for (TransactionOutput o : transaction.outputs) {
-            BlockchainUtxo blockchainUtxo = new BlockchainUtxo();
-            blockchainUtxo.setBlockchainUtxoId(o.id);
-            blockchainUtxo.setRecipient(o.recipient);
-            blockchainUtxo.setTransactionInputId(o.transactionInput.transactionOutputId);
-            blockchainUtxo.setParentTransactionId(o.getTransaction().transactionId);
-            blockchainUtxo.setValue(o.value);
-            blockchainUtxoDao.create(factory, blockchainUtxo);
-//            Blockchain.getUTXOs().put(o.id, o);
+        float leftOver = getInputsValue(sessionFactory, transaction) - transaction.value; //get value of inputs then the left over change:
+        BlockchainUtxo bcUtxoActual = null;
+        for (BlockchainUtxo blockchainUtxo : BcUTXOs) {
+            if (blockchainUtxo.getInputTransactionId().equals(transaction.transactionId)) {
+                bcUtxoActual = blockchainUtxo;
+            }
         }
-
-        //remove transaction inputs from UTXO lists as spent:
-        for (TransactionInput i : transaction.inputs) {
-            if (i.transactionOutput == null) continue; //if Transaction can't be found skip it
-            BlockchainUtxo blockchainUtxoDel = new BlockchainUtxo();
-            blockchainUtxoDel.setBlockchainUtxoId(i.transactionOutput.id);
-//            blockchainUtxoDel.setTransactionOutput(i.transactionOutput);
-
-            blockchainUtxoDel.setRecipient(i.transactionOutput.recipient);
-            blockchainUtxoDel.setTransactionInputId(i.transactionOutput.transactionInput.transactionOutputId);
-            blockchainUtxoDel.setParentTransactionId(i.transactionOutput.getTransaction().transactionId);
-            blockchainUtxoDel.setValue(i.transactionOutput.value);
-
-            blockchainUtxoDao.delete(factory, blockchainUtxoDel);
-//            Blockchain.getUTXOs().remove(i.transactionOutput.id);
-        }
+        bcUtxoActual.setWallet(recipient);
+        recipient.getUTXOs().add(bcUtxoActual);
+        BlockchainUtxo bcUtxoChange = blockchainUtxoService.createBcUtxo(sessionFactory, transaction.transactionId);
+        bcUtxoChange.setValue(leftOver);
+        bcUtxoChange.setWallet(sender);
+        bcUtxoChange.setRecipient(sender.publicKey);
+        sender.getUTXOs().add(bcUtxoChange);
+        walletService.createNewWallet(sessionFactory, sender);
+        walletService.createNewWallet(sessionFactory, recipient);
 
         return true;
     }
@@ -159,20 +135,25 @@ public class TransactionService {
     }
 
     //returns sum of inputs(UTXOs) values
-    public float getInputsValue(Transaction transaction) {
+    public float getInputsValue(SessionFactory sessionFactory, Transaction transaction) {
         float total = 0;
-        for (TransactionInput i : transaction.inputs) {
-            if (i.transactionOutput == null) continue; //if Transaction can't be found skip it
-            total += i.transactionOutput.value;
+        ArrayList<BlockchainUtxo> BcUTXOs = (ArrayList<BlockchainUtxo>) blockchainUtxoDao.findAll(sessionFactory, "");
+        for (BlockchainUtxo i : BcUTXOs) {
+            if (i.outputTransactionId != null && i.outputTransactionId.equals(transaction.transactionId)) {
+                total += i.value;
+            }
         }
         return total;
     }
 
     //returns sum of outputs:
-    public float getOutputsValue(Transaction transaction) {
+    public float getOutputsValue(SessionFactory sessionFactory, Transaction transaction) {
         float total = 0;
-        for (TransactionOutput o : transaction.outputs) {
-            total += o.value;
+        ArrayList<BlockchainUtxo> BcUTXOs = (ArrayList<BlockchainUtxo>) blockchainUtxoDao.findAll(sessionFactory, "");
+        for (BlockchainUtxo i : BcUTXOs) {
+            if (i.inputTransactionId.equals(transaction.transactionId)) {
+                total += i.value;
+            }
         }
         return total;
     }

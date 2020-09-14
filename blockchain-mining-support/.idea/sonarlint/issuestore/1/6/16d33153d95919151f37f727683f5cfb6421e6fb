@@ -1,10 +1,9 @@
 
-]	java:S125?"<This block of commented-out lines of code should be removed.(ôä“ûÿÿÿÿ8üŸØêÇ.
-X	java:S125Q"<This block of commented-out lines of code should be removed.(Æã¤è8üŸØêÇ.
-X	java:S125G"<This block of commented-out lines of code should be removed.(Æ§ø¶8üŸØêÇ.
-]	java:S125N"<This block of commented-out lines of code should be removed.(Æ÷£×şÿÿÿÿ8üŸØêÇ.
+X	java:S125"<This block of commented-out lines of code should be removed.(ÎŒ¿8÷¶«¼È.
+U	java:S106<"9Replace this use of System.out or System.err by a logger.(ÔğÜ8ÖúÃÈ.
+X	java:S125;"<This block of commented-out lines of code should be removed.(¿³ú¨8ÅÑú»È.
+m	java:S1177"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŸèÒ÷8ÅÑú»È.
 K
-java:S1905)")Remove this unnecessary cast to "Wallet".(è¯ñÌÿÿÿÿÿ8å›ëÇ.
-m	java:S117/"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤Î”Ò8‹šïÇ.
-]	java:S125E"<This block of commented-out lines of code should be removed.(æ÷òåşÿÿÿÿ8üŸØêÇ.
-X	java:S1253"<This block of commented-out lines of code should be removed.(±î‘«8Ø˜È.
+java:S19051")Remove this unnecessary cast to "Wallet".(è¯ñÌÿÿÿÿÿ8†š“ÃÈ.
+R
+java:S1172D"0Remove this unused method parameter "recipient".(¯ºÓ¢úÿÿÿÿ8Å™…¼È.

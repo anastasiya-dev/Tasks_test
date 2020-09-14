@@ -3,7 +3,9 @@ package by.it.academy;
 import by.it.academy.pojo.*;
 import by.it.academy.repository.BlockDao;
 import by.it.academy.service.*;
-import by.it.academy.util.*;
+import by.it.academy.util.BlockUtil;
+import by.it.academy.util.TransactionUtil;
+import by.it.academy.util.WalletUtil;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
@@ -62,19 +64,15 @@ public class Start {
         genesisTransaction = TransactionUtil.createTransaction(
                 genesisWallet.getPublicKey(),
                 firstActualWallet.getPublicKey(),
-                1000f,
-                null
+                1000f
         );
         TransactionUtil.generateSignature(genesisTransaction, genesisWallet.getPrivateKey());
 //        genesisTransaction.transactionId = "0"; //manually set the transaction id
-        genesisTransaction.outputs.add(TransactionOutputUtil.createTransactionOutput(genesisTransaction.recipient, genesisTransaction.value, genesisTransaction)); //manually add the Transactions Output
+//        genesisTransaction.outputs.add(TransactionOutputUtil.createTransactionOutput(genesisTransaction.recipient, genesisTransaction.value, genesisTransaction)); //manually add the Transactions Output
         transactionService.createNewTransaction(factory, genesisTransaction);
         //см.закомменченную строку в конструкторе ютхо
-        BlockchainUtxo bcUtxo = BlockchainUtxoUtil.createBcUtxo(
-                genesisTransaction.getOutputs().get(0).getId(),
-                TransactionOutputUtil.createTransactionOutput(
-                        genesisTransaction.getRecipient(), genesisTransaction.getValue(), genesisTransaction
-                ));
+        BlockchainUtxo bcUtxo = blockchainUtxoService.createBcUtxo(factory, genesisTransaction.transactionId);
+//        bcUtxo.setOutputTransactionId(genesisTransaction.transactionId);
         bcUtxo.setWallet(firstActualWallet);
         firstActualWallet.getUTXOs().add(bcUtxo);
 //        blockchainUtxoService.createNewUTXO(factory, bcUtxo);
@@ -83,10 +81,10 @@ public class Start {
         System.out.println("Creating and Mining Genesis block... ");
 
         Block genesisBlock = BlockUtil.createBlock("0");
-        blockService.addTransaction(genesisBlock, genesisTransaction);
         genesisTransaction.setBlock(genesisBlock);
-        BlockUtil.mineBlock(genesisBlock, difficulty);
-        blockDao.create(factory, genesisBlock);
+        blockService.addTransaction(factory, genesisBlock, genesisTransaction);
+        blockService.mineBlock(factory, genesisBlock, difficulty);
+//        blockDao.create(factory, genesisBlock);
 
         finish(factory);
     }

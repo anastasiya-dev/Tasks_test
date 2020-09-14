@@ -1,5 +1,7 @@
 
-…
-java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ÍŒ‘l
 N
-java:S1905"1Remove this unnecessary cast to "BlockchainUtxo".(Ì€óÇ8ñ’ÔëÇ.
+java:S1905""1Remove this unnecessary cast to "BlockchainUtxo".(Ì€óÇ8ñ’ÔëÇ.
+…
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ÍŒ‘l
+R
+java:S1128"0Remove this unused import 'by.it.academy.Start'.(°ÑŽßøÿÿÿÿ8Ê±«¾È.

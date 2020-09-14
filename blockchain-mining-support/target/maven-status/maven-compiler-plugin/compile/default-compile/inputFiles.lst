@@ -7,9 +7,11 @@ C:\work\blockchain-mining-support\src\main\java\by\it\academy\service\BlockServi
 C:\work\blockchain-mining-support\src\main\java\by\it\academy\util\StringUtil.java
 C:\work\blockchain-mining-support\src\main\java\by\it\academy\pojo\Transaction.java
 C:\work\blockchain-mining-support\src\main\java\by\it\academy\repository\TransactionInputDao.java
+C:\work\blockchain-mining-support\src\main\java\by\it\academy\Consistency.java
 C:\work\blockchain-mining-support\src\main\java\by\it\academy\util\TransactionOutputUtil.java
 C:\work\blockchain-mining-support\src\main\java\by\it\academy\repository\BlockchainUtxoDao.java
 C:\work\blockchain-mining-support\src\main\java\by\it\academy\repository\WalletDao.java
+C:\work\blockchain-mining-support\src\main\java\by\it\academy\BalanceTest.java
 C:\work\blockchain-mining-support\src\main\java\by\it\academy\pojo\BlockchainUtxo.java
 C:\work\blockchain-mining-support\src\main\java\by\it\academy\repository\BaseDao.java
 C:\work\blockchain-mining-support\src\main\java\by\it\academy\repository\TransactionDao.java

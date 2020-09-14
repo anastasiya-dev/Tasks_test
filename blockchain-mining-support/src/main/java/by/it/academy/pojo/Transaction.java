@@ -6,13 +6,12 @@ import lombok.Setter;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.IndexColumn;
 
 import javax.persistence.*;
 import java.security.PublicKey;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 @Entity
 @Getter
@@ -30,12 +29,12 @@ public class Transaction {
     public byte[] signature; // this is to prevent anybody else from spending funds in our wallet.
     public LocalDateTime transactionDateTime;
 
-    @OneToMany(mappedBy = "transaction", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    public List<TransactionInput> inputs = new ArrayList<TransactionInput>();
-
-    @OneToMany(mappedBy = "transaction", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @Fetch(FetchMode.SELECT)
-    public List<TransactionOutput> outputs = new ArrayList<>();
+//    @OneToMany(mappedBy = "transaction", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+//    public List<TransactionInput> inputs = new ArrayList<TransactionInput>();
+//
+//    @OneToMany(mappedBy = "transaction", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+//    @Fetch(FetchMode.SELECT)
+//    public List<TransactionOutput> outputs = new ArrayList<>();
 
     @ManyToOne
     private Block block;
@@ -49,10 +48,10 @@ public class Transaction {
 //                ", recipient=" + recipient +
                 ", recipientString='" + recipientString + '\'' +
                 ", value=" + value +
-//                ", signature=" + Arrays.toString(signature) +
+                ", signature=" + Arrays.toString(signature) +
                 ", transactionDateTime=" + transactionDateTime +
-                ", inputs=" + inputs +
-                ", outputs=" + outputs +
+//                ", inputs=" + inputs +
+//                ", outputs=" + outputs +
 //                ", blocks=" + blocks +
                 '}';
     }

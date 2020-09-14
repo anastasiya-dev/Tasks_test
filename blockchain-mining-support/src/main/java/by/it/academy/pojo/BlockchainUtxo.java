@@ -2,8 +2,10 @@ package by.it.academy.pojo;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import java.security.PublicKey;
@@ -14,12 +16,14 @@ import java.security.PublicKey;
 public class BlockchainUtxo {
 
     @Id
-    //transactionOutputId
-            String blockchainUtxoId;
+    @GeneratedValue(generator = "system-uuid")
+    @GenericGenerator(name = "system-uuid", strategy = "uuid2")
+
+    public String blockchainUtxoId;
     public PublicKey recipient;
     public float value;
-    public String parentTransactionId;
-    public String transactionInputId;
+    public String inputTransactionId;
+    public String outputTransactionId;
 
     @ManyToOne
     public Wallet wallet;
@@ -30,8 +34,9 @@ public class BlockchainUtxo {
                 "blockchainUtxoId='" + blockchainUtxoId + '\'' +
                 ", recipient=" + recipient +
                 ", value=" + value +
-                ", parentTransactionId='" + parentTransactionId + '\'' +
-                ", transactionInputId='" + transactionInputId + '\'' +
+                ", inputTransactionId='" + inputTransactionId + '\'' +
+                ", outputTransactionId='" + outputTransactionId + '\'' +
+                ", wallet=" + wallet +
                 '}';
     }
 }

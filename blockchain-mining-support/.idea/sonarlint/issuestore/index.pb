@@ -59,3 +59,9 @@ V
 +src/main/java/by/it/academy/Validation.java,7\2\72e3c613aa48495b57185a292091c9ac78c0ead5
 a
 1src/main/java/by/it/academy/TransactionCheck.java,9\8\98008f283f6d45e53a2c7db4da05f677f5c12248
+p
+@src/main/java/by/it/academy/repository/TransactionOutputDao.java,4\d\4d98d9408cc56c33e804e28c48e38804af866aee
+\
+,src/main/java/by/it/academy/BalanceTest.java,9\5\95ff4945e23ad7cc8c3136d944bfa29082a69812
+\
+,src/main/java/by/it/academy/Consistency.java,1\7\17372d44d53f25e0495eb0742a754169a5a15a13

@@ -1,14 +1,13 @@
 package by.it.academy.repository;
 
 import by.it.academy.pojo.Block;
-import by.it.academy.pojo.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 
 import java.util.List;
 
-public class BlockDao implements BaseDao<Block>{
+public class BlockDao implements BaseDao<Block> {
     @Override
     public void create(SessionFactory sessionFactory, Block block) {
         org.hibernate.Transaction tx = null;
@@ -27,7 +26,18 @@ public class BlockDao implements BaseDao<Block>{
 
     @Override
     public Block findById(SessionFactory sessionFactory, String id) {
-        return null;
+        Session session = sessionFactory.openSession();
+        Query<Block> query = session.createQuery("from Block b where b.blockId=:blockId", Block.class);
+        query.setParameter("blockId", id);
+        List<Block> list = query.list();
+        Block block = null;
+        try {
+            block = list.get(0);
+        } catch (Exception e) {
+//            e.printStackTrace();
+        }
+        session.close();
+        return block;
     }
 
     @Override

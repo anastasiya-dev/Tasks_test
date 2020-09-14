@@ -1,5 +1,7 @@
 
 s
-java:S1104"XMake previousHash a static final constant or non-public and provide accessors if needed.(Û±µ¨úÿÿÿÿ
+java:S1104"XMake previousHash a static final constant or non-public and provide accessors if needed.(Û±µ¨úÿÿÿÿ
+m
+java:S1104"PMake hash a static final constant or non-public and provide accessors if needed.(õïœÄ8£†¡ÂÈ.
 l
-java:S1104"VMake merkleRoot a static final constant or non-public and provide accessors if needed.(›ÏŸ¨
+java:S1104"VMake merkleRoot a static final constant or non-public and provide accessors if needed.(›ÏŸ¨
