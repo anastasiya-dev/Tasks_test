@@ -13,17 +13,14 @@ import java.util.ArrayList;
 public class UtxoService {
 
     @Autowired
-    @Value("#{blockchainUtxoDao}")
-    BaseDao blockchainUtxoDao;
+    @Value("#{utxoDao}")
+    BaseDao utxoDao;
 
     @Autowired
     TransactionService transactionService;
 
-
     public Utxo createBcUtxo(String inputTransactionId) {
         Utxo utxo = new Utxo();
-//        TransactionService transactionService = new TransactionService();
-        System.out.println("tr id in create utxo: " + inputTransactionId);
         Transaction inputTr = transactionService.findTransactionById(inputTransactionId);
         utxo.setRecipient(inputTr.getRecipient());
         utxo.setValue(inputTr.getValue());
@@ -32,15 +29,15 @@ public class UtxoService {
     }
 
     public ArrayList<Utxo> findAllUTXOs() {
-        return (ArrayList<Utxo>) blockchainUtxoDao.findAll("");
+        return (ArrayList<Utxo>) utxoDao.findAll("");
     }
 
     public Utxo findUTXOById(String id) {
-        return (Utxo) blockchainUtxoDao.findById(id);
+        return (Utxo) utxoDao.findById(id);
     }
 
     public boolean createNewUTXO(Utxo utxo) {
-        blockchainUtxoDao.create(utxo);
+        utxoDao.create(utxo);
         return true;
     }
 }

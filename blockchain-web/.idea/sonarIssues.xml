@@ -108,6 +108,16 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../blockchain-mining-support/src/main/java/by/it/academy/pojo/User.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../blockchain-mining-support/src/main/java/by/it/academy/pojo/Utxo.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../blockchain-mining-support/src/main/java/by/it/academy/pojo/Wallet.java">
           <value>
             <set />
@@ -158,6 +168,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../blockchain-mining-support/src/main/java/by/it/academy/repository/UtxoDao.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../blockchain-mining-support/src/main/java/by/it/academy/repository/WalletDao.java">
           <value>
             <set />
@@ -179,6 +194,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../blockchain-mining-support/src/main/java/by/it/academy/service/UserService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../blockchain-mining-support/src/main/java/by/it/academy/service/UtxoService.java">
           <value>
             <set />
           </value>
@@ -318,6 +338,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/pojo/Utxo.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/pojo/Wallet.java">
           <value>
             <set />
@@ -363,6 +388,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/repository/UtxoDao.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/repository/WalletDao.java">
           <value>
             <set />
@@ -389,6 +419,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/service/UserService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/service/UtxoService.java">
           <value>
             <set />
           </value>
@@ -439,6 +474,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/util/TransactionUtil.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/util/UtxoUtil.java">
           <value>
             <set />
           </value>

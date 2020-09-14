@@ -1,10 +1,9 @@
 package by.it.academy.service;
 
-import by.it.academy.pojo.BlockchainUtxo;
 import by.it.academy.pojo.Transaction;
+import by.it.academy.pojo.Utxo;
 import by.it.academy.pojo.Wallet;
 import by.it.academy.repository.BaseDao;
-import by.it.academy.util.BlockchainUtxoUtil;
 import by.it.academy.util.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -24,12 +23,8 @@ public class TransactionService {
     BaseDao walletDao;
 
     @Autowired
-    @Value("#{blockchainUtxoDao}")
-    BaseDao blockchainUtxoDao;
-
-//    @Autowired
-//    @Value("#{transactionInputDao}")
-//    BaseDao transactionInputDao;
+    @Value("#{utxoDao}")
+    BaseDao utxoDao;
 
     private float minimumTransaction = 0.1f;
 
@@ -37,7 +32,7 @@ public class TransactionService {
     WalletService walletService;
 
     @Autowired
-    BlockchainUtxoService blockchainUtxoService;
+    UtxoService utxoService;
 
     public boolean createNewTransaction(Transaction transaction) {
         transactionDao.create(transaction);
@@ -93,16 +88,16 @@ public class TransactionService {
                 sender = wallet;
             }
             if (transaction.getRecipientString().equals(wallet.getPublicKeyString())) {
-                sender = wallet;
+                recipient = wallet;
             }
         }
 
-        ArrayList<BlockchainUtxo> BcUTXOs = (ArrayList<BlockchainUtxo>) blockchainUtxoDao.findAll("");
+        ArrayList<Utxo> BcUTXOs = (ArrayList<Utxo>) utxoDao.findAll("");
 
         //check if transaction is valid:
-        if (getInputsValue(transaction) < minimumTransaction) {
-            System.out.println("#Transaction Inputs to small: " + getInputsValue(transaction));
-            for (BlockchainUtxo i : BcUTXOs) {
+        if (getOutputsValue(transaction) < minimumTransaction) {
+            System.out.println("#Transaction Outputs too small: " + getOutputsValue(transaction));
+            for (Utxo i : BcUTXOs) {
                 if (i.outputTransactionId.equals(transaction.transactionId)) {
                     i.setOutputTransactionId("");
                 }
@@ -111,18 +106,19 @@ public class TransactionService {
         }
 
         //generate transaction outputs:
-        float leftOver = getInputsValue(transaction) - transaction.value; //get value of inputs then the left over change:
-        BlockchainUtxo bcUtxoActual = null;
-        for (BlockchainUtxo blockchainUtxo : BcUTXOs) {
-            if (blockchainUtxo.getInputTransactionId().equals(transaction.transactionId)) {
-                bcUtxoActual = blockchainUtxo;
+        float leftOver = getOutputsValue(transaction) - transaction.value; //get value of inputs then the left over change:
+        Utxo bcUtxoActual = null;
+        for (Utxo utxo : BcUTXOs) {
+            if (utxo.getInputTransactionId().equals(transaction.transactionId)) {
+                bcUtxoActual = utxo;
             }
         }
         bcUtxoActual.setWallet(recipient);
         recipient.getUTXOs().add(bcUtxoActual);
-        BlockchainUtxo bcUtxoChange = blockchainUtxoService.createBcUtxo(transaction.transactionId);
+        Utxo bcUtxoChange = utxoService.createBcUtxo(transaction.transactionId);
         bcUtxoChange.setValue(leftOver);
         bcUtxoChange.setWallet(sender);
+        bcUtxoChange.setRecipient(sender.publicKey);
         sender.getUTXOs().add(bcUtxoChange);
         walletService.createNewWallet(sender);
         walletService.createNewWallet(recipient);
@@ -137,11 +133,11 @@ public class TransactionService {
     }
 
     //returns sum of inputs(UTXOs) values
-    public float getInputsValue(Transaction transaction) {
+    public float getOutputsValue(Transaction transaction) {
         float total = 0;
-        ArrayList<BlockchainUtxo> BcUTXOs = (ArrayList<BlockchainUtxo>) blockchainUtxoDao.findAll("");
-        for (BlockchainUtxo i : BcUTXOs) {
-            if (i.inputTransactionId.equals(transaction.transactionId)) {
+        ArrayList<Utxo> BcUTXOs = (ArrayList<Utxo>) utxoDao.findAll("");
+        for (Utxo i : BcUTXOs) {
+            if (i.outputTransactionId != null && i.outputTransactionId.equals(transaction.transactionId)) {
                 total += i.value;
             }
         }
@@ -149,11 +145,11 @@ public class TransactionService {
     }
 
     //returns sum of outputs:
-    public float getOutputsValue(Transaction transaction) {
+    public float getInputsValue(Transaction transaction) {
         float total = 0;
-        ArrayList<BlockchainUtxo> BcUTXOs = (ArrayList<BlockchainUtxo>) blockchainUtxoDao.findAll("");
-        for (BlockchainUtxo i : BcUTXOs) {
-            if (i.outputTransactionId.equals(transaction.transactionId)) {
+        ArrayList<Utxo> BcUTXOs = (ArrayList<Utxo>) utxoDao.findAll("");
+        for (Utxo i : BcUTXOs) {
+            if (i.inputTransactionId.equals(transaction.transactionId)) {
                 total += i.value;
             }
         }

@@ -6,30 +6,38 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+
 @Service
 public class UserService {
 
     @Autowired
     @Value("#{userDao}")
-    BaseDao baseDao;
+    BaseDao userDao;
 
     public boolean createNewUser(User user) {
-        if (baseDao.findById(user.getUserId()) != null) {
+        if (userDao.findById(user.getUserId()) != null) {
             return false;
         }
-        baseDao.create(user);
+        userDao.create(user);
         return true;
     }
 
     public User findUserById(String id) {
-        return (User) baseDao.findById(id);
+        return (User) userDao.findById(id);
     }
 
     public User findUserByName(String name) {
-        return (User) baseDao.findByName(name);
+        ArrayList<User> users = (ArrayList<User>) userDao.findAll("");
+        for(User user: users){
+            if(user.getUserName().equals(name)){
+                return user;
+            }
+        }
+        return null;
     }
 
     public User update(User user) {
-        return (User) baseDao.update(user);
+        return (User) userDao.update(user);
     }
 }

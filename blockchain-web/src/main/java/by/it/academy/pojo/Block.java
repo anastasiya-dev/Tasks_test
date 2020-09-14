@@ -1,6 +1,5 @@
 package by.it.academy.pojo;
 
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
@@ -31,12 +30,13 @@ public class Block {
     @Override
     public String toString() {
         return "Block{" +
-                "hash='" + hash + '\'' +
+                "blockId='" + blockId + '\'' +
+                ", hash='" + hash + '\'' +
                 ", previousHash='" + previousHash + '\'' +
                 ", merkleRoot='" + merkleRoot + '\'' +
                 ", timeStamp=" + timeStamp +
                 ", nonce=" + nonce +
-                ", transactions=" + transactions +
+//                ", transactions=" + transactions +
                 '}';
     }
 }

@@ -7,7 +7,6 @@ import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import javax.validation.constraints.Pattern;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,7 +48,7 @@ public class User {
                 ", confirmPassword='" + confirmPassword + '\'' +
                 ", email='" + email + '\'' +
                 ", mobile='" + mobile + '\'' +
-//                ", wallets=" + wallets.get(0).getWalletId() +
+//                ", wallets=" + wallets +
                 '}';
     }
 }

@@ -27,7 +27,7 @@ public class Wallet {
     public String publicKeyString;
 
     @OneToMany(mappedBy = "wallet", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    public List<BlockchainUtxo> UTXOs = new ArrayList<>(); //only UTXOs owned by this wallet.
+    public List<Utxo> UTXOs = new ArrayList<>(); //only UTXOs owned by this wallet.
 
     @ManyToOne
     private User user;
@@ -36,9 +36,10 @@ public class Wallet {
     public String toString() {
         return "Wallet{" +
                 "walletId='" + walletId + '\'' +
-                ", privateKey=" + String.valueOf(privateKey) +
-                ", publicKey=" + String.valueOf(publicKey) +
-                ", user=" + user +
+                ", privateKeyString='" + privateKeyString + '\'' +
+                ", publicKeyString='" + publicKeyString + '\'' +
+                ", UTXOs=" + UTXOs +
+//                ", user=" + user +
                 '}';
     }
 }

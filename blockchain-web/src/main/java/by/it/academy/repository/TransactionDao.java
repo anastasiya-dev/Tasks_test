@@ -1,13 +1,11 @@
 package by.it.academy.repository;
 
 import by.it.academy.pojo.Transaction;
-import by.it.academy.pojo.Wallet;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Repository;
@@ -26,7 +24,7 @@ public class TransactionDao implements BaseDao<Transaction>, ApplicationContextA
 
     @Override
     @Transactional
-    public void create(Transaction transaction) {
+    public Transaction create(Transaction transaction) {
         org.hibernate.Transaction tx = null;
         Session session = sessionFactory.openSession();
         try {
@@ -39,33 +37,24 @@ public class TransactionDao implements BaseDao<Transaction>, ApplicationContextA
         } finally {
             session.close();
         }
+        return transaction;
     }
 
     @Override
     @Transactional(propagation = Propagation.REQUIRED, readOnly = true)
     public Transaction findById(String id) {
-        System.out.println("in the find by id: " + id);
         Session session = sessionFactory.openSession();
         Query<Transaction> query = session.createQuery("from Transaction t where t.transactionId=:transactionId", Transaction.class);
         query.setParameter("transactionId", id);
         List<Transaction> list = query.list();
-        System.out.println("find by id list: " + list);
         Transaction transaction = null;
         try {
-            System.out.println("in the try block 1");
             transaction = list.get(0);
-            System.out.println("in the try block 2");
         } catch (Exception e) {
-            System.out.println("in the catch block");
-//            e.printStackTrace();
+            e.printStackTrace();
         }
         session.close();
         return transaction;
-    }
-
-    @Override
-    public Transaction findByName(String id) {
-        return null;
     }
 
     @Override
@@ -79,19 +68,6 @@ public class TransactionDao implements BaseDao<Transaction>, ApplicationContextA
     }
 
     @Override
-    @Transactional(propagation = Propagation.REQUIRED, readOnly = true)
-    public List<Transaction> findAllWithParameter(String searchStr) {
-//        Session session = sessionFactory.openSession();
-//        Wallet wallet = (Wallet) walletDao.findById(searchStr);
-//        Query<Transaction> query = session.createQuery("from Transaction t where t.recipient=:recipient", Transaction.class);
-//        query.setParameter("recipient", wallet.publicKey);
-////        query.setParameter("sender", wallet.publicKey);
-//        List<Transaction> list = query.list();
-//        session.close();
-        return null;
-    }
-
-    @Override
     public Transaction update(Transaction transaction) {
         Session session = sessionFactory.openSession();
         org.hibernate.Transaction tx = session.beginTransaction();
@@ -99,7 +75,6 @@ public class TransactionDao implements BaseDao<Transaction>, ApplicationContextA
         query.setParameter("transactionId", transaction.getTransactionId());
         query.setParameter("signature", transaction.getSignature());
         query.setParameter("transactionDateTime", transaction.getTransactionDateTime());
-//        query.setParameter("outputs", transaction.getOutputs());
         int result = query.executeUpdate();
         tx.commit();
         session.close();
@@ -109,10 +84,7 @@ public class TransactionDao implements BaseDao<Transaction>, ApplicationContextA
     @Override
     @Transactional
     public boolean delete(Transaction transaction) {
-        System.out.println("in the delete method");
         org.hibernate.Transaction tx = null;
-//        Transaction transactionToDelete = findById(transaction.getTransactionId());
-        System.out.println(transaction);
         Session session = sessionFactory.openSession();
 
         if (transaction != null) {
@@ -120,7 +92,6 @@ public class TransactionDao implements BaseDao<Transaction>, ApplicationContextA
                 tx = session.beginTransaction();
                 session.delete(transaction);
                 tx.commit();
-//                session.flush();
                 return true;
             } catch (Exception e) {
                 if (tx != null) tx.rollback();

@@ -45,29 +45,24 @@ public class UtxoDao implements BaseDao<Utxo>, ApplicationContextAware {
     @Transactional(propagation = Propagation.REQUIRED, readOnly = true)
     public Utxo findById(String id) {
         Session session = sessionFactory.openSession();
-        Query<Utxo> query = session.createQuery("from BlockchainUtxo bu where bu.blockchainUtxoId=:blockchainUtxoId", Utxo.class);
-        query.setParameter("blockchainUtxoId", id);
+        Query<Utxo> query = session.createQuery("from Utxo bu where bu.utxoId=:utxoId", Utxo.class);
+        query.setParameter("utxoId", id);
         List<Utxo> list = query.list();
         Utxo utxo = null;
         try {
             utxo = list.get(0);
         } catch (Exception e) {
-//            e.printStackTrace();
+            e.printStackTrace();
         }
         session.close();
         return utxo;
     }
 
     @Override
-    public Utxo findByName(String id) {
-        return null;
-    }
-
-    @Override
     @Transactional(propagation = Propagation.REQUIRED, readOnly = true)
     public List<Utxo> findAll(String searchStr) {
         Session session = sessionFactory.openSession();
-        Query<Utxo> query = session.createQuery("from BlockchainUtxo", Utxo.class);
+        Query<Utxo> query = session.createQuery("from Utxo", Utxo.class);
         List<Utxo> list = query.list();
         session.close();
         return list;
@@ -88,7 +83,6 @@ public class UtxoDao implements BaseDao<Utxo>, ApplicationContextAware {
                 tx = session.beginTransaction();
                 session.delete(utxo);
                 tx.commit();
-//                session.flush();
                 return true;
             } catch (Exception e) {
                 if (tx != null) tx.rollback();

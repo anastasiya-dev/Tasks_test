@@ -25,7 +25,7 @@ public class WalletDao implements BaseDao<Wallet>, ApplicationContextAware {
 
     @Override
     @Transactional
-    public void create(Wallet wallet) {
+    public Wallet create(Wallet wallet) {
         Transaction tx = null;
         Session session = sessionFactory.openSession();
         try {
@@ -38,6 +38,7 @@ public class WalletDao implements BaseDao<Wallet>, ApplicationContextAware {
         } finally {
             session.close();
         }
+        return wallet;
     }
 
     @Override
@@ -51,15 +52,10 @@ public class WalletDao implements BaseDao<Wallet>, ApplicationContextAware {
         try {
             wallet = list.get(0);
         } catch (Exception e) {
-//            e.printStackTrace();
+            e.printStackTrace();
         }
         session.close();
         return wallet;
-    }
-
-    @Override
-    public Wallet findByName(String id) {
-        return null;
     }
 
     @Override
@@ -69,11 +65,6 @@ public class WalletDao implements BaseDao<Wallet>, ApplicationContextAware {
         List<Wallet> list = query.list();
         session.close();
         return list;
-    }
-
-    @Override
-    public List<Wallet> findAllWithParameter(String searchStr) {
-        return null;
     }
 
     @Override

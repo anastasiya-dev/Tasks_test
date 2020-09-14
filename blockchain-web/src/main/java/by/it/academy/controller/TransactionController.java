@@ -2,7 +2,7 @@ package by.it.academy.controller;
 
 import by.it.academy.pojo.Transaction;
 import by.it.academy.pojo.Wallet;
-import by.it.academy.service.BlockchainUtxoService;
+import by.it.academy.service.UtxoService;
 import by.it.academy.service.TransactionService;
 import by.it.academy.service.UserService;
 import by.it.academy.service.WalletService;
@@ -26,7 +26,7 @@ import java.util.List;
 public class TransactionController {
 
     @Autowired
-    BlockchainUtxoService blockchainUtxoService;
+    UtxoService utxoService;
 
     @Autowired
     TransactionService transactionService;
@@ -67,14 +67,6 @@ public class TransactionController {
                 value
         );
 
-//        List<Transaction> transactionList = transactionService.findAllTransactions();
-//        if (transactionList.size() == 0) {
-//            transaction.setTransactionId("0");
-//        } else {
-//            transaction.setTransactionId(
-//                    transactionList.get(transactionList.size() - 1).getTransactionId() + "0"
-//            );
-//        }
         transactionService.createNewTransaction(transaction);
         System.out.println(transaction);
         String transactionId = transaction.getTransactionId();
@@ -97,11 +89,9 @@ public class TransactionController {
         Wallet walletSender = walletService.findWalletById(walletId);
         PrivateKey privateKey = walletSender.getPrivateKey();
         Transaction transaction = transactionService.findTransactionById(transactionId);
-        System.out.println("get balance from controller: " + walletService.getBalance(walletSender));
-        System.out.println("beginning transaction in the controller");
         if (!privateKeyInput.getPrivateKeyString()
                 .equals(StringUtil.getStringFromKey(privateKey))) {
-            System.out.println("Unauthorized");
+            System.out.println("#Unauthorized");
             return "redirect:/home";
         } else if (walletService.getBalance(walletSender) < transaction.getValue()) {
             System.out.println("#Not Enough funds to send transaction. Transaction Discarded.");
@@ -153,5 +143,4 @@ public class TransactionController {
         modelAndView.addObject("sum", sum);
         return modelAndView;
     }
-
 }

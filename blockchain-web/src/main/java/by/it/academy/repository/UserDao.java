@@ -25,7 +25,7 @@ public class UserDao implements BaseDao<User>, ApplicationContextAware {
 
     @Override
     @Transactional
-    public void create(User user) {
+    public User create(User user) {
         Transaction tx = null;
         Session session = sessionFactory.openSession();
         try {
@@ -38,6 +38,7 @@ public class UserDao implements BaseDao<User>, ApplicationContextAware {
         } finally {
             session.close();
         }
+        return user;
     }
 
     @Override
@@ -51,24 +52,7 @@ public class UserDao implements BaseDao<User>, ApplicationContextAware {
         try {
             user = list.get(0);
         } catch (Exception e) {
-//            e.printStackTrace();
-        }
-        session.close();
-        return user;
-    }
-
-    @Override
-    @Transactional(propagation = Propagation.REQUIRED, readOnly = true)
-    public User findByName(String name) {
-        Session session = sessionFactory.openSession();
-        Query<User> query = session.createQuery("from User u where u.userName=:userName", User.class);
-        query.setParameter("userName", name);
-        List<User> list = query.list();
-        User user = null;
-        try {
-            user = list.get(0);
-        } catch (Exception e) {
-//            e.printStackTrace();
+            e.printStackTrace();
         }
         session.close();
         return user;
@@ -77,15 +61,11 @@ public class UserDao implements BaseDao<User>, ApplicationContextAware {
     @Override
     @Transactional(readOnly = true)
     public List<User> findAll(String searchStr) {
-        return sessionFactory
-                .getCurrentSession()
-                .createQuery("from User", User.class)
-                .list();
-    }
-
-    @Override
-    public List<User> findAllWithParameter(String searchStr) {
-        return null;
+        Session session = sessionFactory.openSession();
+        Query<User> query = session.createQuery("from User", User.class);
+        List<User> list = query.list();
+        session.close();
+        return list;
     }
 
     @Override
