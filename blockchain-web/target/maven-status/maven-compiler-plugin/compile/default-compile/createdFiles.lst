@@ -7,6 +7,7 @@ by\it\academy\controller\WalletController.class
 by\it\academy\util\UserImageUtil.class
 by\it\academy\repository\WalletDao.class
 by\it\academy\util\UtxoUtil.class
+by\it\academy\support\TransactionStatus.class
 by\it\academy\controller\HomeController.class
 by\it\academy\repository\UserDao.class
 by\it\academy\controller\SignUpController.class

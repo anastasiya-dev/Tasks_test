@@ -19,8 +19,8 @@
 <c:forEach items="${transactions}" var="transaction">
         <tr>
           <td>${transaction.transactionId}</td>
-          <td>will be sender</td>
-          <td>will be recipient</td>
+          <td>${transaction.senderString}</td>
+          <td>${transaction.recipientString}</td>
           <td>${transaction.value}</td>
           <td>TO BE DONE</td>
           <td>${transaction.transactionDateTime}</td>
