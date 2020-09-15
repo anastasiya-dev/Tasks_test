@@ -1,6 +1,12 @@
 
-|
-java:S1488"fImmediately return this expression instead of assigning it to the temporary variable "calculatedhash".(­üŒÈ
-S	java:S106$"9Replace this use of System.out or System.err by a logger.(±°Ôûúÿÿÿÿ
-U
-java:S1118	":Add a private constructor to hide the implicit public one.(Õþç³ýÿÿÿÿ
+7
+java:S1220""Move this file to a named package.8ç˜£ÞÈ.
+X	java:S125"<This block of commented-out lines of code should be removed.(õÄÄá8ç˜£ÞÈ.
+X	java:S125"<This block of commented-out lines of code should be removed.(¥•ÖÏ8ç˜£ÞÈ.
+X	java:S125	"<This block of commented-out lines of code should be removed.(ÌŠðâ8ç˜£ÞÈ.
+]	java:S125"<This block of commented-out lines of code should be removed.(¬øÃëüÿÿÿÿ8ç˜£ÞÈ.
+]	java:S125"<This block of commented-out lines of code should be removed.(’§˜ûþÿÿÿÿ8ç˜£ÞÈ.
+]	java:S125"<This block of commented-out lines of code should be removed.(¼è÷ïøÿÿÿÿ8ç˜£ÞÈ.
+]	java:S125"<This block of commented-out lines of code should be removed.(Öå‡¬üÿÿÿÿ8ç˜£ÞÈ.
+]	java:S125 "<This block of commented-out lines of code should be removed.(ƒÔÞÁüÿÿÿÿ8ç˜£ÞÈ.
+]	java:S125("<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ8ç˜£ÞÈ.

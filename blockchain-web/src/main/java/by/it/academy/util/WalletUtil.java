@@ -27,7 +27,7 @@ public class WalletUtil {
             wallet.privateKey = keyPair.getPrivate();
             wallet.privateKeyString = StringUtil.getStringFromKey(wallet.privateKey);
             wallet.publicKey = keyPair.getPublic();
-            wallet.publicKeyString = StringUtil.getStringFromKey(wallet.publicKey);
+            wallet.setWalletId(StringUtil.getStringFromKey(wallet.publicKey));
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

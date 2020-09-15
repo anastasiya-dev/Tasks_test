@@ -1,7 +1,4 @@
 
 m
 java:S1104"PMake hash a static final constant or non-public and provide accessors if needed.(õïœÄ8±—£ÂÈ.
-s
-java:S1104"XMake previousHash a static final constant or non-public and provide accessors if needed.(Û±µ¨úÿÿÿÿ
-l
-java:S1104"VMake merkleRoot a static final constant or non-public and provide accessors if needed.(›ÏŸ¨
+X	java:S125"<This block of commented-out lines of code should be removed.(‡…¡¶8²ž®êÈ.

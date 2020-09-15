@@ -84,10 +84,10 @@ public class TransactionService {
         Wallet sender = new Wallet();
         Wallet recipient = new Wallet();
         for (Wallet wallet : wallets) {
-            if (transaction.getSenderString().equals(wallet.getPublicKeyString())) {
+            if (transaction.getSenderString().equals(wallet.getWalletId())) {
                 sender = wallet;
             }
-            if (transaction.getRecipientString().equals(wallet.getPublicKeyString())) {
+            if (transaction.getRecipientString().equals(wallet.getWalletId())) {
                 recipient = wallet;
             }
         }

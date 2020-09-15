@@ -1,9 +1,0 @@
-
-€
-java:S1104"^Make inputTransactionId a static final constant or non-public and provide accessors if needed.(ëö·§ûÿÿÿÿ8¶Ğ¨¸È.
-
-java:S1104"_Make outputTransactionId a static final constant or non-public and provide accessors if needed.(’¼ö£şÿÿÿÿ8«ü¨¸È.
-w
-java:S1104"UMake recipient a static final constant or non-public and provide accessors if needed.(™Íâìøÿÿÿÿ8ó³«¸È.
-s
-java:S1104"QMake value a static final constant or non-public and provide accessors if needed.(¼Á’Øıÿÿÿÿ8©ÎéÀÇ.

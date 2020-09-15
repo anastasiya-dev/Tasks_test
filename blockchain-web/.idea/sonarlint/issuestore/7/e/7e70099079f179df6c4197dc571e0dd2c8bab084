@@ -1,7 +1,0 @@
-
-
-java:S1319""pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(æ¦¢8ˆ£“¿Ç.
-Q
-java:S3740"/Provide the parametrized type for this generic.( ­€ûùÿÿÿÿ8ˆ£“¿Ç.
-Z	java:S106"9Replace this use of System.out or System.err by a logger.(™ÛËÔùÿÿÿÿ8ŠÀÈ½È.
-X	java:S125"<This block of commented-out lines of code should be removed.(ÎŒ¿8ñÉ½È.

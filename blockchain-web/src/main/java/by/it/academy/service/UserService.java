@@ -16,8 +16,10 @@ public class UserService {
     BaseDao userDao;
 
     public boolean createNewUser(User user) {
-        if (userDao.findById(user.getUserId()) != null) {
-            return false;
+        if (user.getUserId() != null) {
+            if (userDao.findById(user.getUserId()) != null) {
+                return false;
+            }
         }
         userDao.create(user);
         return true;
@@ -29,8 +31,8 @@ public class UserService {
 
     public User findUserByName(String name) {
         ArrayList<User> users = (ArrayList<User>) userDao.findAll("");
-        for(User user: users){
-            if(user.getUserName().equals(name)){
+        for (User user : users) {
+            if (user.getUserName().equals(name)) {
                 return user;
             }
         }

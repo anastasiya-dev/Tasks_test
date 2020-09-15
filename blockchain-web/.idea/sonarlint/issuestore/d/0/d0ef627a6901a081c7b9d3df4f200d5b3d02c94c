@@ -1,0 +1,5 @@
+
+
+java:S1130c"sRemove the declaration of thrown exception 'org.springframework.beans.BeansException' which is a runtime exception.(¯¶…œ8Š±à¾Ç.
+x
+java:S1450"VRemove the "context" field and declare it as a local variable in the relevant methods.(Å¯ÙÕúÿÿÿÿ8ĞŞà¾Ç.

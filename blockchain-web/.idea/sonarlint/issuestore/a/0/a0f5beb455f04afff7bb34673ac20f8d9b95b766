@@ -1,9 +1,0 @@
-
-
-java:S1130n"sRemove the declaration of thrown exception 'org.springframework.beans.BeansException' which is a runtime exception.(¯¶…œ8Š±à¾Ç.
-x
-java:S1450"VRemove the "context" field and declare it as a local variable in the relevant methods.(Å¯ÙÕúÿÿÿÿ8ĞŞà¾Ç.
-X	java:S1256"<This block of commented-out lines of code should be removed.(†€éˆ8Ñíğ¾Ç.
-H
-java:S1168N"+Return an empty collection instead of null.(¥¹ï8Š±à¾Ç.
-]	java:S125`"<This block of commented-out lines of code should be removed.(¬·æºúÿÿÿÿ8Î¼Û¿Ç.

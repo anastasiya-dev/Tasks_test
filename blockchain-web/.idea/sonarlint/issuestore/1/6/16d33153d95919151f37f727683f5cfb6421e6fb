@@ -1,12 +1,8 @@
 
-\
-java:S1128"?Remove this unused import 'by.it.academy.util.TransactionUtil'.(í×½ß8œåß¼È.
-l	java:S1179"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÂÛè8ãÿãÇ.
-Z	java:S106G"9Replace this use of System.out or System.err by a logger.(€õ€ùÿÿÿÿ8‚‘ù¼È.
-Q
-java:S3740"/Provide the parametrized type for this generic.( ­€ûùÿÿÿÿ8úüÄºÈ.
-X	java:S125="<This block of commented-out lines of code should be removed.(¿³ú¨8ìÙàŒÈ.
 L
-java:S3740"/Provide the parametrized type for this generic.(ŞÊÊ‰8úüÄºÈ.
+java:S3740"/Provide the parametrized type for this generic.(ŞÊÊ‰8úüÄºÈ.
+r	java:S1178"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡îÁ¢ûÿÿÿÿ8ãÿãÇ.
 M
-java:S1172E"0Remove this unused method parameter "recipient".(Äêñ“8­ëÂÈ.
+java:S1172B"0Remove this unused method parameter "recipient".(Äêñ“8­ëÂÈ.
+Q
+java:S3740"/Provide the parametrized type for this generic.(™à©ˆıÿÿÿÿ8úüÄºÈ.

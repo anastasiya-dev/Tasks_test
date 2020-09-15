@@ -4,10 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.security.PublicKey;
 
 @Entity
@@ -18,11 +15,13 @@ public class Utxo {
     @Id
     @GeneratedValue(generator = "system-uuid")
     @GenericGenerator(name = "system-uuid", strategy = "uuid2")
-
+    @Column(name = "utxo_id")
     public String utxoId;
     public PublicKey recipient;
     public float value;
+    @Column(name = "input_transaction_id")
     public String inputTransactionId;
+    @Column(name = "output_transaction_id")
     public String outputTransactionId;
 
     @ManyToOne

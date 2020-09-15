@@ -1,9 +1,8 @@
 
-V
-java:S4973"9Use the "equals" method if value comparison was intended.(öºÑ8æ»€ÀÇ.
-E
-java:S1125"(Remove the literal "true" boolean value.(àº£Ø8ş…î¿Ç.
-Z	java:S106"9Replace this use of System.out or System.err by a logger.(¿Ä‹üÿÿÿÿ8ş…î¿Ç.
-L
-java:S1066"/Merge this if statement with the enclosing one.(àº£Ø8ş…î¿Ç.
-Z	java:S106"9Replace this use of System.out or System.err by a logger.(ÀÕë„ÿÿÿÿÿ8ş…î¿Ç.
+7
+java:S1220""Move this file to a named package.8œŒİÈ.
+X	java:S125"<This block of commented-out lines of code should be removed.(õÄÄá8œŒİÈ.
+X	java:S125	"<This block of commented-out lines of code should be removed.(êµà8œŒİÈ.
+]	java:S125"<This block of commented-out lines of code should be removed.(£”ëÏıÿÿÿÿ8œŒİÈ.
+X	java:S125"<This block of commented-out lines of code should be removed.(Í­à8œŒİÈ.
+X	java:S125"<This block of commented-out lines of code should be removed.(ØàÄ…8œŒİÈ.
