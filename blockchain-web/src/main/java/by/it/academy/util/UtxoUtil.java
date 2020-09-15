@@ -8,10 +8,10 @@ public class UtxoUtil {
 
     //Check if coin belongs to you
     public static boolean isMine(Utxo utxo, Wallet wallet) {
-        if (utxo.getWallet() == null) {
+        if (utxo.getWalletId() == null) {
             return false;
         } else {
-            return (wallet.getWalletId().equals(utxo.getWallet().getWalletId()));
+            return (wallet.getWalletId().equals(utxo.getWalletId()));
         }
     }
 }

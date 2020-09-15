@@ -26,6 +26,8 @@ public class UtxoDao implements BaseDao<Utxo>, ApplicationContextAware {
     @Override
     @Transactional
     public Utxo create(Utxo utxo) {
+        System.out.println("Saving utxo!");
+        System.out.println(utxo);
         org.hibernate.Transaction tx = null;
         Session session = sessionFactory.openSession();
         try {
@@ -69,8 +71,17 @@ public class UtxoDao implements BaseDao<Utxo>, ApplicationContextAware {
     }
 
     @Override
-    public Utxo update(Utxo utxo) {
-        return null;
+    public Utxo update(Utxo utxoFromChain) {
+        Session session = sessionFactory.openSession();
+        org.hibernate.Transaction tx = session.beginTransaction();
+        Query query = session.createQuery("update Utxo u set u.walletId=:walletId, u.outputTransactionId=:outputTransactionId where u.utxoId=:utxoId");
+        query.setParameter("walletId", utxoFromChain.getWalletId());
+        query.setParameter("outputTransactionId", utxoFromChain.getOutputTransactionId());
+        query.setParameter("utxoId", utxoFromChain.getUtxoId());
+        int result = query.executeUpdate();
+        tx.commit();
+        session.close();
+        return utxoFromChain;
     }
 
     @Override

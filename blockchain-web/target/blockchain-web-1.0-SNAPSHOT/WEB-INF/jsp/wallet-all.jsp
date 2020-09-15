@@ -15,7 +15,7 @@
 <c:forEach items="${wallets}" var="wallet">
         <tr>
           <td>${wallet.walletId}</td>
-          <td>TO BE DONE</td>
+          <td>${wallet.balance}</td>
           <td><p><a href="/blockchain-web/${userId}/wallet/${wallet.walletId}" class="text-primary">View wallet</a></p><td>
         </tr>
 </c:forEach>

@@ -1,6 +1,5 @@
 package by.it.academy.controller;
 
-import by.it.academy.pojo.Transaction;
 import by.it.academy.pojo.User;
 import by.it.academy.pojo.Wallet;
 import by.it.academy.service.TransactionService;
@@ -31,7 +30,7 @@ public class WalletController {
     @RequestMapping(value = "/{userId}/create-wallet", method = RequestMethod.GET)
     public ModelAndView createWallet(ModelAndView modelAndView,
                                      @PathVariable String userId) {
-        Wallet wallet = WalletUtil.createWallet();
+        Wallet wallet = walletService.createWallet();
         User user = userService.findUserById(userId);
         wallet.setUser(user);
         user.wallets.add(wallet);
@@ -45,16 +44,21 @@ public class WalletController {
     public ModelAndView viewAllTheWallets(ModelAndView modelAndView,
                                           @PathVariable String userId) {
         List<Wallet> wallets = walletService.getAll(userId);
+        Float sum = 0.0f;
+        for (Wallet wallet : wallets) {
+            wallet.setBalance(walletService.getBalance(wallet));
+            sum += wallet.getBalance();
+        }
+
         modelAndView.setViewName("wallet-all");
         modelAndView.addObject("wallets", wallets);
 
-        Float sum = 0.0f;
-        for (Wallet wallet : wallets) {
-            List<Transaction> transactions = transactionService.getAllForWallet(wallet.getWalletId());
-            for (Transaction transaction : transactions) {
-                sum += transaction.value;
-            }
-        }
+//        for (Wallet wallet : wallets) {
+//            List<Transaction> transactions = transactionService.getAllForWallet(wallet.getWalletId());
+//            for (Transaction transaction : transactions) {
+//                sum += transaction.value;
+//            }
+//        }
         modelAndView.addObject("sum", sum);
         return modelAndView;
     }

@@ -16,8 +16,8 @@ import java.util.List;
 public class Wallet {
 
     @Id
-//    @GeneratedValue(generator = "system-uuid")
-//    @GenericGenerator(name = "system-uuid", strategy = "uuid2")
+    @GeneratedValue(generator = "system-uuid")
+    @GenericGenerator(name = "system-uuid", strategy = "uuid2")
     @Column(name="wallet_id")
     private String walletId;
 
@@ -27,11 +27,14 @@ public class Wallet {
     public String privateKeyString;
     @Column(name = "public_key")
     public PublicKey publicKey;
-//    @Column(name = "public_key_string")
-//    public String publicKeyString;
+    @Column(name = "public_key_string")
+    public String publicKeyString;
 
-    @OneToMany(mappedBy = "wallet", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    public List<Utxo> UTXOs = new ArrayList<>(); //only UTXOs owned by this wallet.
+    @Transient
+    public float balance;
+
+//    @OneToMany(mappedBy = "wallet", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+//    public List<Utxo> UTXOs = new ArrayList<>(); //only UTXOs owned by this wallet.
 
     @ManyToOne
     private User user;
@@ -41,8 +44,8 @@ public class Wallet {
         return "Wallet{" +
                 "walletId='" + walletId + '\'' +
                 ", privateKeyString='" + privateKeyString + '\'' +
-//                ", publicKeyString='" + publicKeyString + '\'' +
-                ", UTXOs=" + UTXOs +
+                ", publicKeyString='" + publicKeyString + '\'' +
+//                ", UTXOs=" + UTXOs +
 //                ", user=" + user +
                 '}';
     }

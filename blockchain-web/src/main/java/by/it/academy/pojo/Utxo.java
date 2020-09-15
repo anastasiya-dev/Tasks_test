@@ -13,8 +13,8 @@ import java.security.PublicKey;
 public class Utxo {
 
     @Id
-    @GeneratedValue(generator = "system-uuid")
-    @GenericGenerator(name = "system-uuid", strategy = "uuid2")
+//    @GeneratedValue(generator = "system-uuid")
+//    @GenericGenerator(name = "system-uuid", strategy = "uuid2")
     @Column(name = "utxo_id")
     public String utxoId;
     public PublicKey recipient;
@@ -24,8 +24,9 @@ public class Utxo {
     @Column(name = "output_transaction_id")
     public String outputTransactionId;
 
-    @ManyToOne
-    public Wallet wallet;
+//    @ManyToOne
+    @Column(name = "wallet_id")
+    public String walletId;
 
     @Override
     public String toString() {
@@ -35,7 +36,7 @@ public class Utxo {
                 ", value=" + value +
                 ", inputTransactionId='" + inputTransactionId + '\'' +
                 ", outputTransactionId='" + outputTransactionId + '\'' +
-                ", wallet=" + wallet +
+//                ", wallet=" + wallet +
                 '}';
     }
 }

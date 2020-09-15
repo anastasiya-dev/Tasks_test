@@ -77,54 +77,54 @@ public class TransactionService {
         return transactionsForWallet;
     }
 
-    //Returns true if new transaction could be created.
-    public boolean processTransaction(Transaction transaction) {
-
-        ArrayList<Wallet> wallets = (ArrayList<Wallet>) walletDao.findAll("");
-        Wallet sender = new Wallet();
-        Wallet recipient = new Wallet();
-        for (Wallet wallet : wallets) {
-            if (transaction.getSenderString().equals(wallet.getWalletId())) {
-                sender = wallet;
-            }
-            if (transaction.getRecipientString().equals(wallet.getWalletId())) {
-                recipient = wallet;
-            }
-        }
-
-        ArrayList<Utxo> BcUTXOs = (ArrayList<Utxo>) utxoDao.findAll("");
-
-        //check if transaction is valid:
-        if (getOutputsValue(transaction) < minimumTransaction) {
-            System.out.println("#Transaction Outputs too small: " + getOutputsValue(transaction));
-            for (Utxo i : BcUTXOs) {
-                if (i.outputTransactionId.equals(transaction.transactionId)) {
-                    i.setOutputTransactionId("");
-                }
-            }
-            return false;
-        }
-
-        //generate transaction outputs:
-        float leftOver = getOutputsValue(transaction) - transaction.value; //get value of inputs then the left over change:
-        Utxo bcUtxoActual = null;
-        for (Utxo utxo : BcUTXOs) {
-            if (utxo.getInputTransactionId().equals(transaction.transactionId)) {
-                bcUtxoActual = utxo;
-            }
-        }
-        bcUtxoActual.setWallet(recipient);
-        recipient.getUTXOs().add(bcUtxoActual);
-        Utxo bcUtxoChange = utxoService.createBcUtxo(transaction.transactionId);
-        bcUtxoChange.setValue(leftOver);
-        bcUtxoChange.setWallet(sender);
-        bcUtxoChange.setRecipient(sender.publicKey);
-        sender.getUTXOs().add(bcUtxoChange);
-        walletService.createNewWallet(sender);
-        walletService.createNewWallet(recipient);
-
-        return true;
-    }
+//    //Returns true if new transaction could be created.
+//    public boolean processTransaction(Transaction transaction) {
+//
+//        ArrayList<Wallet> wallets = (ArrayList<Wallet>) walletDao.findAll("");
+//        Wallet sender = new Wallet();
+//        Wallet recipient = new Wallet();
+//        for (Wallet wallet : wallets) {
+//            if (transaction.getSenderString().equals(wallet.getWalletId())) {
+//                sender = wallet;
+//            }
+//            if (transaction.getRecipientString().equals(wallet.getWalletId())) {
+//                recipient = wallet;
+//            }
+//        }
+//
+//        ArrayList<Utxo> BcUTXOs = (ArrayList<Utxo>) utxoDao.findAll("");
+//
+//        //check if transaction is valid:
+//        if (getOutputsValue(transaction) < minimumTransaction) {
+//            System.out.println("#Transaction Outputs too small: " + getOutputsValue(transaction));
+//            for (Utxo i : BcUTXOs) {
+//                if (i.outputTransactionId.equals(transaction.transactionId)) {
+//                    i.setOutputTransactionId("");
+//                }
+//            }
+//            return false;
+//        }
+//
+//        //generate transaction outputs:
+//        float leftOver = getOutputsValue(transaction) - transaction.value; //get value of inputs then the left over change:
+//        Utxo bcUtxoActual = null;
+//        for (Utxo utxo : BcUTXOs) {
+//            if (utxo.getInputTransactionId().equals(transaction.transactionId)) {
+//                bcUtxoActual = utxo;
+//            }
+//        }
+//        bcUtxoActual.setWalletId(recipient.getWalletId());
+////        recipient.getUTXOs().add(bcUtxoActual);
+//        Utxo bcUtxoChange = utxoService.createBcUtxo(transaction.transactionId);
+//        bcUtxoChange.setValue(leftOver);
+//        bcUtxoChange.setWalletId(sender.getWalletId());
+//        bcUtxoChange.setRecipient(sender.publicKey);
+////        sender.getUTXOs().add(bcUtxoChange);
+//        walletService.createNewWallet(sender);
+//        walletService.createNewWallet(recipient);
+//
+//        return true;
+//    }
 
     //Verifies the data we signed hasn't been tampered with
     public boolean verifySignature(Transaction transaction) {
