@@ -58,12 +58,14 @@ public class TransactionController {
 
         Wallet walletSender = walletService.findWalletById(walletId);
         Wallet walletRecipient = walletService.findWalletById(transactionStart.getRecipient());
+        System.out.println("wallet recipient found: ");
+        System.out.println(walletRecipient);
         Float value = Float.valueOf(transactionStart.getValue());
 
         Transaction transaction
-                = TransactionUtil.createTransaction(
-                walletSender.getPublicKey(),
-                walletRecipient.getPublicKey(),
+                = transactionService.createTransaction(
+                walletSender.getWalletId(),
+                transactionStart.getRecipient(),
                 value
         );
 

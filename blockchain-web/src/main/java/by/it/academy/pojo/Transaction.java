@@ -14,8 +14,8 @@ import java.util.Arrays;
 @Setter
 public class Transaction {
     @Id
-    @GeneratedValue(generator = "system-uuid")
-    @GenericGenerator(name = "system-uuid", strategy = "uuid2")
+//    @GeneratedValue(generator = "system-uuid")
+//    @GenericGenerator(name = "system-uuid", strategy = "uuid2")
     @Column(name = "transaction_id")
     public String transactionId; // this is also the hash of the transaction.
     public PublicKey sender; // senders address/public key.

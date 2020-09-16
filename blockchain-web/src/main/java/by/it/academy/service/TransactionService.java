@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 @Service
 public class TransactionService {
@@ -62,11 +63,11 @@ public class TransactionService {
         String publicKey = StringUtil.getStringFromKey(wallet.getPublicKey());
         ArrayList<Transaction> transactionsForWallet = new ArrayList<>();
         for (Transaction transaction : transactionsAll) {
-            if (StringUtil.getStringFromKey(transaction.getRecipient())
-                    .equals(StringUtil.getStringFromKey(transaction.getSender()))) {
-                transactionsForWallet.add(transaction);
-                transaction.setValue(transaction.getValue() * Float.valueOf(-1));
-                transactionsForWallet.add(transaction);
+            if (transaction.getSenderId().equals(transaction.getRecipientId())){
+//                    .equals(StringUtil.getStringFromKey(transaction.getSender()))) {
+//                transactionsForWallet.add(transaction);
+//                transaction.setValue(transaction.getValue() * Float.valueOf(-1));
+//                transactionsForWallet.add(transaction);
             } else if (StringUtil.getStringFromKey(transaction.getSender()).equals(publicKey)) {
                 transaction.setValue(transaction.getValue() * Float.valueOf(-1));
                 transactionsForWallet.add(transaction);
@@ -166,11 +167,11 @@ public class TransactionService {
         for (Wallet walletProcessed : wallets) {
             System.out.println("in the wallet loop");
             System.out.println(walletProcessed);
-            if (transactionInProcessing.getSenderString().equals(walletProcessed.getPublicKeyString())) {
+            if (transactionInProcessing.getSenderId().equals(walletProcessed.getWalletId())) {
                 System.out.println("found sender");
                 sender = walletProcessed;
             }
-            if (transactionInProcessing.getRecipientString().equals(walletProcessed.getPublicKeyString())) {
+            if (transactionInProcessing.getRecipientId().equals(walletProcessed.getWalletId())) {
                 System.out.println("found recipient");
                 recipient = walletProcessed;
             }
@@ -212,6 +213,21 @@ public class TransactionService {
         utxoService.createNewUTXO(bcUtxoChange);
 
         return true;
+    }
+
+
+    // Constructor:
+    public Transaction createTransaction(String from, String to, float value) {
+        Transaction transaction = new Transaction();
+        transaction.setTransactionId(String.valueOf(new Date().getTime()));
+        transaction.setSender(((Wallet) walletDao.findById(from)).publicKey);
+        transaction.setSenderId(from);
+        transaction.setRecipient(((Wallet) walletDao.findById(to)).publicKey);
+        transaction.setRecipientId(to);
+        transaction.setValue(value);
+        System.out.println("transaction formed: ");
+        System.out.println(transaction);
+        return transaction;
     }
 
 }

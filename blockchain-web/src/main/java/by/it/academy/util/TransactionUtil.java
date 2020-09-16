@@ -1,13 +1,17 @@
 package by.it.academy.util;
 
 import by.it.academy.pojo.Transaction;
+import by.it.academy.pojo.Wallet;
+import by.it.academy.repository.BaseDao;
 import by.it.academy.repository.UtxoDao;
 import by.it.academy.service.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.security.PrivateKey;
 import java.security.PublicKey;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 //
 //@Service
@@ -20,16 +24,6 @@ public class TransactionUtil {
     @Autowired
     UtxoDao utxoDao;
 
-    // Constructor:
-    public static Transaction createTransaction(PublicKey from, PublicKey to, float value) {
-        Transaction transaction = new Transaction();
-        transaction.setSender(from);
-        transaction.setSenderString(StringUtil.getStringFromKey(from));
-        transaction.setRecipient(to);
-        transaction.setRecipientString(StringUtil.getStringFromKey(to));
-        transaction.setValue(value);
-        return transaction;
-    }
 
     //!!!not used
     // This Calculates the transaction hash (which will be used as its Id)
