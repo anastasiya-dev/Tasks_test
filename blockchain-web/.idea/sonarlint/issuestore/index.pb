@@ -99,3 +99,5 @@ Z
 .src/main/java/by/it/academy/util/UtxoUtil.java,7\2\729fbe212a77f76ed8371f9d682f0aa3927890da
 d
 4src/main/java/by/it/academy/service/UtxoService.java,a\b\ab86c0bb42b70f38da5a743f0ab12e980315c543
+j
+:src/main/java/by/it/academy/support/TransactionStatus.java,3\4\34f11ae0bcefc9e104523e72c5c2a46753336ebe

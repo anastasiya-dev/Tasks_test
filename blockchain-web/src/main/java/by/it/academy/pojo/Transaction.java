@@ -19,11 +19,11 @@ public class Transaction {
     @Column(name = "transaction_id")
     public String transactionId; // this is also the hash of the transaction.
     public PublicKey sender; // senders address/public key.
-    @Column(name = "sender_string")
-    public String senderString;
+    @Column(name = "sender_id")
+    public String senderId;
     public PublicKey recipient; // Recipients address/public key.
-    @Column(name = "recipient_string")
-    public String recipientString;
+    @Column(name = "recipient_id")
+    public String recipientId;
     public float value;
     public byte[] signature; // this is to prevent anybody else from spending funds in our wallet.
     @Column(name = "transaction_date_time")
@@ -37,8 +37,8 @@ public class Transaction {
     public String toString() {
         return "Transaction{" +
                 "transactionId='" + transactionId + '\'' +
-                ", senderString='" + senderString + '\'' +
-                ", recipientString='" + recipientString + '\'' +
+                ", senderString='" + senderId + '\'' +
+                ", recipientString='" + recipientId + '\'' +
                 ", value=" + value +
                 ", signature=" + Arrays.toString(signature) +
                 ", transactionDateTime=" + transactionDateTime +

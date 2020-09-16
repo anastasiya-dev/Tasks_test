@@ -1,7 +1,6 @@
 package by.it.academy.service;
 
 import by.it.academy.pojo.Transaction;
-import by.it.academy.pojo.User;
 import by.it.academy.pojo.Utxo;
 import by.it.academy.pojo.Wallet;
 import by.it.academy.repository.BaseDao;
@@ -78,7 +77,7 @@ public class WalletService {
         ArrayList<Utxo> allUTXOs = utxoService.findAllUTXOs();
         ArrayList<Utxo> walletUTXOs = new ArrayList<>();
         for (Utxo utxo : allUTXOs) {
-            if (UtxoUtil.isMine(utxo, wallet)){
+            if (UtxoUtil.isMine(utxo, wallet)) {
                 walletUTXOs.add(utxo);
             }
         }
@@ -88,15 +87,13 @@ public class WalletService {
             Utxo utxoFromChain = (Utxo) utxoDao.findById(UTXO.utxoId);
             utxoFromChain.setOutputTransactionId(transaction.transactionId);
             utxoFromChain.setWalletId(
-                    (((ArrayList<User>) userDao.findAll("")).stream()
-                            .filter((u -> u.getUserName().equals("Genesis User")))
-                            .findFirst().get()).getWallets().get(0).getWalletId()
-            );
+                    "");
             utxoDao.update(utxoFromChain);
 //            Utxo utxoIntoChain = utxoService.createBcUtxo(transaction.transactionId);
 //            utxoDao.create(utxoIntoChain);
 //            wallet.UTXOs.remove(UTXO);
-            createNewWallet(wallet);
+//            createNewWallet(wallet);
+            transactionService.processTransaction(transaction);
             if (total > value) break;
         }
         return transaction;

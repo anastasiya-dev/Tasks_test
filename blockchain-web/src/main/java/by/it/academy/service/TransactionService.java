@@ -156,4 +156,62 @@ public class TransactionService {
         return total;
     }
 
+    //Returns true if new transaction could be created.
+    public boolean processTransaction(Transaction transactionInProcessing) {
+        System.out.println("transaction in the function");
+        System.out.println(transactionInProcessing);
+        ArrayList<Wallet> wallets = (ArrayList<Wallet>) walletDao.findAll("");
+        Wallet sender = walletService.createWallet();
+        Wallet recipient = walletService.createWallet();
+        for (Wallet walletProcessed : wallets) {
+            System.out.println("in the wallet loop");
+            System.out.println(walletProcessed);
+            if (transactionInProcessing.getSenderString().equals(walletProcessed.getPublicKeyString())) {
+                System.out.println("found sender");
+                sender = walletProcessed;
+            }
+            if (transactionInProcessing.getRecipientString().equals(walletProcessed.getPublicKeyString())) {
+                System.out.println("found recipient");
+                recipient = walletProcessed;
+            }
+        }
+
+        ArrayList<Utxo> BcUTXOs = (ArrayList<Utxo>) utxoDao.findAll("");
+
+//        //check if transaction is valid:
+//        if (getOutputsValue(transactionInProcessing) < minimumTransaction) {
+//            System.out.println("#Transaction Outputs too small: " + getOutputsValue(transactionInProcessing));
+//            for (Utxo i : BcUTXOs) {
+//                if (i.outputTransactionId.equals(transactionInProcessing.transactionId)) {
+//                    i.setOutputTransactionId("");
+//                }
+//            }
+//            return false;
+//        }
+
+        //generate transaction outputs:
+        float leftOver = getOutputsValue(transactionInProcessing) - transactionInProcessing.value; //get value of inputs then the left over change:
+//        Utxo bcUtxoActual = null;
+//        for (Utxo utxo : BcUTXOs) {
+//            if (utxo.getInputTransactionId().equals(transactionInProcessing.transactionId)) {
+//                bcUtxoActual = utxo;
+//            }
+//        }
+        Utxo bcUtxoActual = utxoService.createBcUtxo(transactionInProcessing.transactionId);
+        bcUtxoActual.setWalletId(recipient.getWalletId());
+//        recipient.getUTXOs().add(bcUtxoActual);
+        utxoService.createNewUTXO(bcUtxoActual);
+
+        Utxo bcUtxoChange = utxoService.createBcUtxo(transactionInProcessing.transactionId);
+        bcUtxoChange.setValue(leftOver);
+        bcUtxoChange.setWalletId(sender.getWalletId());
+        bcUtxoChange.setRecipient(sender.publicKey);
+//        sender.getUTXOs().add(bcUtxoChange);
+//        walletService.createNewWallet(sender);
+//        walletService.createNewWallet(recipient);
+        utxoService.createNewUTXO(bcUtxoChange);
+
+        return true;
+    }
+
 }

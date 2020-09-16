@@ -1,5 +1,9 @@
 
-J
-java:S3740"/Provide the parametrized type for this generic.(™ΰ©ύÿÿÿÿ
-†
-java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ράφε
+Q
+java:S3740"/Provide the parametrized type for this generic.(™ΰ©ύÿÿÿÿ8‡―Έ—Ι.
+
+java:S1319("pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ράφε8‡―Έ—Ι.
+`
+java:S1155">Use isEmpty() to check whether the collection is empty or not.(ƒΏθηωÿÿÿÿ8 ®ώΙ.
+f
+java:S1128"DRemove this unused import 'by.it.academy.support.TransactionStatus'.(ΨΨ€βϊÿÿÿÿ8βύ™Ι.
