@@ -40,6 +40,8 @@ public class UtxoDao implements BaseDao<Utxo>, ApplicationContextAware {
         } finally {
             session.close();
         }
+        System.out.println("Check UTXO save:");
+        System.out.println(utxo);
         return utxo;
     }
 
@@ -81,6 +83,8 @@ public class UtxoDao implements BaseDao<Utxo>, ApplicationContextAware {
         int result = query.executeUpdate();
         tx.commit();
         session.close();
+        System.out.println("Check UTXO update:");
+        System.out.println(utxoFromChain);
         return utxoFromChain;
     }
 

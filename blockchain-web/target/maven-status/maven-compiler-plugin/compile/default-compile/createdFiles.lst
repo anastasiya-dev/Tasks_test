@@ -3,6 +3,7 @@ by\it\academy\pojo\Utxo.class
 by\it\academy\controller\UserCabinetController.class
 by\it\academy\repository\BaseDao.class
 by\it\academy\pojo\User.class
+by\it\academy\repository\UserRepository.class
 by\it\academy\controller\WalletController.class
 by\it\academy\controller\DownloadController.class
 by\it\academy\util\UserImageUtil.class

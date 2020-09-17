@@ -1,13 +1,18 @@
 package by.it.academy;
 
 import by.it.academy.pojo.*;
+import liquibase.integration.spring.SpringLiquibase;
 import org.apache.commons.dbcp.BasicDataSource;
 import org.hibernate.SessionFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
+import org.springframework.orm.jpa.JpaVendorAdapter;
+import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -20,6 +25,7 @@ import java.util.Properties;
 @ComponentScan("by.it.academy")
 @EnableTransactionManagement
 @EnableWebMvc
+@EnableJpaRepositories(basePackages = "by.it.academy.repository")
 public class ApplicationConfiguration {
 
     @Bean
@@ -32,19 +38,20 @@ public class ApplicationConfiguration {
         return dataSource;
     }
 
-    @Bean
-    public LocalSessionFactoryBean sessionFactory(DataSource dataSource) {
-        LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
-        sessionFactory.setDataSource(dataSource);
-        sessionFactory.setAnnotatedClasses(
-                User.class,
-                Block.class,
-                Transaction.class,
-                Wallet.class,
-                Utxo.class);
-        sessionFactory.setHibernateProperties(getHibernateProperties());
-        return sessionFactory;
-    }
+//    @Bean
+//    public LocalSessionFactoryBean sessionFactory(DataSource dataSource) {
+//        LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
+//        sessionFactory.setDataSource(dataSource);
+//        sessionFactory.setAnnotatedClasses(
+//                User.class,
+//                Block.class,
+//                Transaction.class,
+//                Wallet.class,
+//                Utxo.class
+//        );
+//        sessionFactory.setHibernateProperties(getHibernateProperties());
+//        return sessionFactory;
+//    }
 
     @Bean
     public HibernateTransactionManager transactionManager(SessionFactory sessionFactory) {
@@ -77,5 +84,27 @@ public class ApplicationConfiguration {
                 = new CommonsMultipartResolver();
         multipartResolver.setMaxUploadSize(5_000_000);
         return multipartResolver;
+    }
+
+    @Bean
+    public SpringLiquibase liquibase() {
+        SpringLiquibase liquibase = new SpringLiquibase();
+        liquibase.setChangeLog("classpath:liquibase-changeLog.xml");
+        liquibase.setDataSource(dataSource());
+        return liquibase;
+    }
+
+    @Bean
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
+        LocalContainerEntityManagerFactoryBean em
+                = new LocalContainerEntityManagerFactoryBean();
+        em.setDataSource(dataSource());
+        em.setPackagesToScan(new String[]{"by.it.academy"});
+
+        JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
+        em.setJpaVendorAdapter(vendorAdapter);
+        em.setJpaProperties(getHibernateProperties());
+
+        return em;
     }
 }

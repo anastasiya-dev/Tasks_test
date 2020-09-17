@@ -3,9 +3,9 @@ x
 java:S1450"VRemove the "context" field and declare it as a local variable in the relevant methods.(Å¯ÙÕúÿÿÿÿ8¿ŒŸÅÆ.
 Q
 java:S3740J"/Provide the parametrized type for this generic.(¶ëÙşıÿÿÿÿ8Î¥ºìÆ.
-\
-java:S1854N":Remove this useless assignment to local variable "result".(·‚Öèøÿÿÿÿ8Î¥ºìÆ.
-
-java:S1130l"sRemove the declaration of thrown exception 'org.springframework.beans.BeansException' which is a runtime exception.(¯¶…œ8ÂÂÅÆ.
 M
 java:S1481N"+Remove this unused "result" local variable.(·‚Öèøÿÿÿÿ8Î¥ºìÆ.
+
+java:S1130l"sRemove the declaration of thrown exception 'org.springframework.beans.BeansException' which is a runtime exception.(¯¶…œ8ÂÂÅÆ.
+\
+java:S1854N":Remove this useless assignment to local variable "result".(·‚Öèøÿÿÿÿ8Î¥ºìÆ.

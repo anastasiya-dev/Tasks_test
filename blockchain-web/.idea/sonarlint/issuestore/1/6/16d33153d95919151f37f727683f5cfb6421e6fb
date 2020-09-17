@@ -1,15 +1,15 @@
 
-]	java:S125\"<This block of commented-out lines of code should be removed.(˜¶ªèıÿÿÿÿ8èÌº—É.
-Q
-java:S3740"/Provide the parametrized type for this generic.(™à©ˆıÿÿÿÿ8èÌº—É.
+]	java:S125y"<This block of commented-out lines of code should be removed.(á´şúüÿÿÿÿ8èÌº—É.
 [
 java:S4426p">Use a key length of at least 224 bits for EC cipher algorithm.(—Ñ“½8èÌº—É.
-r	java:S117A"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡îÁ¢ûÿÿÿÿ8èÌº—É.
-M
-java:S1172K"0Remove this unused method parameter "recipient".(Äêñ“8èÌº—É.
-h	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8èÌº—É.
-L
-java:S3740"/Provide the parametrized type for this generic.(ŞÊÊ‰8èÌº—É.
-]	java:S125y"<This block of commented-out lines of code should be removed.(á´şúüÿÿÿÿ8èÌº—É.
 Q
 java:S3740""/Provide the parametrized type for this generic.(Ñúúÿÿÿÿ8èÌº—É.
+Q
+java:S3740"/Provide the parametrized type for this generic.(™à©ˆıÿÿÿÿ8èÌº—É.
+L
+java:S3740"/Provide the parametrized type for this generic.(ŞÊÊ‰8èÌº—É.
+M
+java:S1172K"0Remove this unused method parameter "recipient".(Äêñ“8èÌº—É.
+r	java:S117A"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡îÁ¢ûÿÿÿÿ8èÌº—É.
+]	java:S125\"<This block of commented-out lines of code should be removed.(˜¶ªèıÿÿÿÿ8èÌº—É.
+h	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8èÌº—É.

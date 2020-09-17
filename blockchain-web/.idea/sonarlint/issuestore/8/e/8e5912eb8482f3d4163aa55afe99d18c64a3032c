@@ -1,5 +1,15 @@
 
+Y
+java:S2589"7Remove this expression which always evaluates to "true"(¿şŸ›üÿÿÿÿ8ëûŸäÉ.
+D
+java:S1905""'Remove this unnecessary cast to "User".(¬ˆéØ8ëûŸäÉ.
 Q
-java:S3740"/Provide the parametrized type for this generic.(Ñúúÿÿÿÿ8ãÑÂ’Æ.
-Q
-java:S1066"/Merge this if statement with the enclosing one.(Â˜Ï—úÿÿÿÿ8º¡‚íÈ.
+java:S1066"/Merge this if statement with the enclosing one.(¿şŸ›üÿÿÿÿ8º¡‚íÈ.
+J
+java:S2789"(Remove this null-check of an "Optional".(¿şŸ›üÿÿÿÿ8ëûŸäÉ.
+T
+java:S3655""7Call "Optional#isPresent()" before accessing the value.(¬ˆéØ8ëûŸäÉ.
+X	java:S125"<This block of commented-out lines of code should be removed.(âİ‚8åöÊãÉ.
+Z
+java:S1128"=Remove this unused import 'by.it.academy.repository.UserDao'.(­£«ˆ8°ÎËãÉ.
+]	java:S125/"<This block of commented-out lines of code should be removed.(…Ì¤Èÿÿÿÿÿ8²şÍãÉ.

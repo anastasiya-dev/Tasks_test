@@ -83,12 +83,6 @@ Z
 *src/main/java/by/it/academy/MvcConfig.java,7\f\7ffb7e9dcf31c4829957011d27688131f8885b1b
 B
 blockchain-web.iml,7\4\7474ed6dfb4e13e4dda0f7da377fc1e63af2f26b
-d
-4src/main/java/by/it/academy/repository/BlockDao.java,e\4\e47134990bebb40bda2142440b050d0b5590670c
-_
-/src/main/java/by/it/academy/util/BlockUtil.java,4\d\4d5743bdd1e0c56365cf00cae4afa0eaf03a053e
-e
-5src/main/java/by/it/academy/service/BlockService.java,d\9\d98b6800e4a10cf21371c5c0af137f10720ecbe5
 j
 :src/main/java/by/it/academy/controller/HomeController.java,9\f\9ffbd1f7a411ed7fea6d38b8000fb3e6ea1554dc
 c
@@ -107,3 +101,9 @@ X
 (src/main/webapp/WEB-INF/jsp/sign-all.jsp,4\7\47c3f0f0e6f4e022e7da71689d63a5786b38da84
 `
 0src/main/webapp/WEB-INF/jsp/view-unconfirmed.jsp,a\a\aa1e9d9096610f04eba6ed5eaac9a6d70f9bc762
+d
+4src/main/java/by/it/academy/support/FilterInput.java,b\e\be1bac57d00de39b8c7703573f102aaaa4c19bd0
+n
+>src/main/java/by/it/academy/controller/DownloadController.java,7\2\72d431c890112f697e2c61d21d8b022211a06396
+j
+:src/main/java/by/it/academy/repository/UserRepository.java,c\d\cd7932be18bbfb452692760e8eb8ae23d9556a0f
