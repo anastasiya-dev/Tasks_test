@@ -5,7 +5,6 @@ import by.it.academy.pojo.Wallet;
 import by.it.academy.service.TransactionService;
 import by.it.academy.service.UserService;
 import by.it.academy.service.WalletService;
-import by.it.academy.util.WalletUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.Comparator;
 import java.util.List;
 
 @Controller
@@ -49,6 +49,9 @@ public class WalletController {
             wallet.setBalance(walletService.getBalance(wallet));
             sum += wallet.getBalance();
         }
+
+        wallets.sort(Comparator.comparingInt(w -> Integer.valueOf((int) (w.getBalance() * (-100.0)))));
+//        Comparator.reverseOrder().reversed();
 
         modelAndView.setViewName("wallet-all");
         modelAndView.addObject("wallets", wallets);

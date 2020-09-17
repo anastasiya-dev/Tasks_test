@@ -10,9 +10,9 @@
       </thead>
       <tbody>
         <tr>
-          <td>${sender}</td>
-          <td>${recipient}</td>
-          <td>${value}</td>
+          <td>${transaction.senderId}</td>
+          <td>${transaction.recipientId}</td>
+          <td>${transaction.value}</td>
         </tr>
       </tbody>
     </table>

@@ -3,9 +3,18 @@
 
 <jsp:include page="header.jsp"/>
 <a href="/blockchain-web/${userId}/wallet/${walletId}/unconfirmed/delete-all" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Delete all unconfirmed</a>
-<a href="/blockchain-web/${userId}/wallet/${walletId}/unconfirmed/sign-all" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Sign all unconfirmed</a>
 <a href="/blockchain-web/${userId}/wallet/${walletId}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Back to wallet</a>
-    <h1>Transactions:</h1>
+
+    <h1>Sign all:</h1>
+       <form action="/blockchain-web/${userId}/wallet/${walletId}/unconfirmed/sign-all" method="post">
+           <div class="form-group">
+              <label for="formGroupExampleInput2">Private key to confirm: </label>
+              <input type="text" class="form-control" name="privateKeyString" id="formGroupExampleInput1" placeholder="Private Key">
+           </div>
+           <button type="submit" class="btn btn-primary">Submit</button>
+           </form>
+
+    <h1>Unconfirmed transactions:</h1>
 
     <table class="table">
       <thead>
@@ -14,7 +23,6 @@
           <th scope="col">sender</th>
           <th scope="col">recipient</th>
           <th scope="col">value</th>
-          <th scope="col">date and time</th>
           <th scope="col"></th>
           <th scope="col"></th>
         </tr>
@@ -26,9 +34,8 @@
           <td>${transaction.senderId}</td>
           <td>${transaction.recipientId}</td>
           <td>${transaction.value}</td>
-          <td>${transaction.transactionDateTime}</td>
           <td><p><a href="/blockchain-web/${userId}/wallet/${walletId}/transaction/${transaction.transactionId}/sign-transaction" class="text-primary">Sign</a></p><td>
-          <td><p><a href="/blockchain-web/${userId}/wallet/${walletId}/transaction/${transaction.transactionId}/delete" class="text-primary">Delete</a></p><td>
+          <td><p><a href="/blockchain-web/${userId}/wallet/${walletId}/transaction/${transaction.transactionId}/delete-transaction" class="text-primary">Delete</a></p><td>
         </tr>
 </c:forEach>
       </tbody>

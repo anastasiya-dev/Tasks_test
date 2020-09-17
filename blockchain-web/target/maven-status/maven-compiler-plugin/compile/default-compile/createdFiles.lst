@@ -4,6 +4,7 @@ by\it\academy\controller\UserCabinetController.class
 by\it\academy\repository\BaseDao.class
 by\it\academy\pojo\User.class
 by\it\academy\controller\WalletController.class
+by\it\academy\controller\DownloadController.class
 by\it\academy\util\UserImageUtil.class
 by\it\academy\repository\WalletDao.class
 by\it\academy\util\UtxoUtil.class
@@ -21,6 +22,7 @@ by\it\academy\util\WalletUtil.class
 by\it\academy\ApplicationConfiguration.class
 by\it\academy\util\StringUtil.class
 by\it\academy\pojo\Block.class
+by\it\academy\support\FilterInput.class
 by\it\academy\controller\TransactionController.class
 by\it\academy\support\Login.class
 by\it\academy\service\UtxoService.class

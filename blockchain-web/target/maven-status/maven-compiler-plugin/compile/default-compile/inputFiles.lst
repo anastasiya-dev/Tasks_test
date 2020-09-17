@@ -6,6 +6,8 @@ C:\work\blockchain-web\src\main\java\by\it\academy\repository\BlockDao.java
 C:\work\blockchain-web\src\main\java\by\it\academy\util\WalletUtil.java
 C:\work\blockchain-web\src\main\java\by\it\academy\service\TransactionService.java
 C:\work\blockchain-web\src\main\java\by\it\academy\service\UserService.java
+C:\work\blockchain-web\src\main\java\by\it\academy\controller\DownloadController.java
+C:\work\blockchain-web\src\main\java\by\it\academy\support\FilterInput.java
 C:\work\blockchain-web\src\main\java\by\it\academy\util\UserImageUtil.java
 C:\work\blockchain-web\src\main\java\by\it\academy\repository\WalletDao.java
 C:\work\blockchain-web\src\main\java\by\it\academy\pojo\Block.java
