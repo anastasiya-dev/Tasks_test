@@ -4,11 +4,14 @@ import by.it.academy.pojo.Transaction;
 import by.it.academy.pojo.Utxo;
 import by.it.academy.pojo.Wallet;
 import by.it.academy.repository.BaseDao;
+import by.it.academy.support.TransactionStatus;
 import by.it.academy.util.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import java.security.PrivateKey;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -63,11 +66,12 @@ public class TransactionService {
         String publicKey = StringUtil.getStringFromKey(wallet.getPublicKey());
         ArrayList<Transaction> transactionsForWallet = new ArrayList<>();
         for (Transaction transaction : transactionsAll) {
-            if (transaction.getSenderId().equals(transaction.getRecipientId())){
+            if (transaction.getSenderId().equals(transaction.getRecipientId())) {
 //                    .equals(StringUtil.getStringFromKey(transaction.getSender()))) {
 //                transactionsForWallet.add(transaction);
 //                transaction.setValue(transaction.getValue() * Float.valueOf(-1));
 //                transactionsForWallet.add(transaction);
+            } else if (transaction.getTransactionStatus().equals(TransactionStatus.CREATED) && transaction.getRecipient().equals(walletId)) {
             } else if (StringUtil.getStringFromKey(transaction.getSender()).equals(publicKey)) {
                 transaction.setValue(transaction.getValue() * Float.valueOf(-1));
                 transactionsForWallet.add(transaction);
@@ -225,9 +229,18 @@ public class TransactionService {
         transaction.setRecipient(((Wallet) walletDao.findById(to)).publicKey);
         transaction.setRecipientId(to);
         transaction.setValue(value);
+        transaction.setTransactionStatus(TransactionStatus.CREATED);
         System.out.println("transaction formed: ");
         System.out.println(transaction);
         return transaction;
+    }
+
+    //Signs all the data we don't wish to be tampered with.
+    public void generateSignature(Transaction transaction, PrivateKey privateKey) {
+        String data = StringUtil.getStringFromKey(transaction.getSender()) + StringUtil.getStringFromKey(transaction.getRecipient()) + Float.toString(transaction.getValue());
+        transaction.setSignature(StringUtil.applyECDSASig(privateKey, data));
+        transaction.setTransactionDateTime(LocalDateTime.now());
+        transaction.setTransactionStatus(TransactionStatus.CONFIRMED);
     }
 
 }

@@ -2,6 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
 <jsp:include page="header.jsp"/>
+<a href="/blockchain-web/${userId}/wallet/${walletId}/unconfirmed" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">View unconfirmed</a>
     <h1>Transactions:</h1>
 
     <table class="table">
@@ -22,7 +23,7 @@
           <td>${transaction.senderId}</td>
           <td>${transaction.recipientId}</td>
           <td>${transaction.value}</td>
-          <td>TO BE DONE</td>
+          <td>${transaction.transactionStatus}</td>
           <td>${transaction.transactionDateTime}</td>
         </tr>
 </c:forEach>

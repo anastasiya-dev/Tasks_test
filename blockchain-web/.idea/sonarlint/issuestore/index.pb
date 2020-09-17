@@ -101,3 +101,9 @@ d
 4src/main/java/by/it/academy/service/UtxoService.java,a\b\ab86c0bb42b70f38da5a743f0ab12e980315c543
 j
 :src/main/java/by/it/academy/support/TransactionStatus.java,3\4\34f11ae0bcefc9e104523e72c5c2a46753336ebe
+Z
+*src/main/webapp/WEB-INF/jsp/delete-all.jsp,8\f\8ff093e493b6f489c52c931e8d5bdd5050864522
+X
+(src/main/webapp/WEB-INF/jsp/sign-all.jsp,4\7\47c3f0f0e6f4e022e7da71689d63a5786b38da84
+`
+0src/main/webapp/WEB-INF/jsp/view-unconfirmed.jsp,a\a\aa1e9d9096610f04eba6ed5eaac9a6d70f9bc762

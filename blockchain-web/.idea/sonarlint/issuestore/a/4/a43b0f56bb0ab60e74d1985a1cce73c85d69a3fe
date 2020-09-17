@@ -1,15 +1,19 @@
 
-U	java:S106^"9Replace this use of System.out or System.err by a logger.(š¸ßè8€à®—É.
-l
-java:S44882"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(ıîÿäıÿÿÿÿ8åû­—É.
-U	java:S106a"9Replace this use of System.out or System.err by a logger.(ÂÇèß8€à®—É.
 j
-java:S4488l"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ñ¦…©üÿÿÿÿ8åû­—É.
+java:S4488)"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ıîÿäıÿÿÿÿ8åû­—É.
+l
+java:S4488Q"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(Ñ¦…©üÿÿÿÿ8€à®—É.
+Z	java:S106>"9Replace this use of System.out or System.err by a logger.(Ãş–¾øÿÿÿÿ8¯òŠ¯É.
+l
+java:S44883"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(ıîÿäıÿÿÿÿ8åû­—É.
+U	java:S106J"9Replace this use of System.out or System.err by a logger.(Û†­8€à®—É.
+j
+java:S4488o"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ñ¦…©üÿÿÿÿ8åû­—É.
+Z	java:S106?"9Replace this use of System.out or System.err by a logger.(€Å³¡úÿÿÿÿ8é•Š¯É.
+[	java:S106€"9Replace this use of System.out or System.err by a logger.(‰˜áœüÿÿÿÿ8åû­—É.
+k
+java:S4488˜"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ñ¦…©üÿÿÿÿ8ƒ£¹¸É.
+U	java:S106a"9Replace this use of System.out or System.err by a logger.(š¸ßè8€à®—É.
+U	java:S106d"9Replace this use of System.out or System.err by a logger.(ÂÇèß8€à®—É.
 f
-java:S4488ƒ"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ä±8åû­—É.
-Z	java:S106}"9Replace this use of System.out or System.err by a logger.(‰˜áœüÿÿÿÿ8åû­—É.
-U	java:S106G"9Replace this use of System.out or System.err by a logger.(Û†­8€à®—É.
-l
-java:S4488N"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(Ñ¦…©üÿÿÿÿ8€à®—É.
-j
-java:S4488("HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ıîÿäıÿÿÿÿ8åû­—É.
+java:S4488†"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ä±8åû­—É.

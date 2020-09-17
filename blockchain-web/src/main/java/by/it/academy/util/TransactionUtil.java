@@ -35,11 +35,6 @@ public class TransactionUtil {
         );
     }
 
-    //Signs all the data we don't wish to be tampered with.
-    public static void generateSignature(Transaction transaction, PrivateKey privateKey) {
-        String data = StringUtil.getStringFromKey(transaction.getSender()) + StringUtil.getStringFromKey(transaction.getRecipient()) + Float.toString(transaction.getValue());
-        transaction.setSignature(StringUtil.applyECDSASig(privateKey, data));
-        transaction.setTransactionDateTime(LocalDateTime.now());
-    }
+
 
 }

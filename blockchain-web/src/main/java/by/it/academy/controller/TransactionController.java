@@ -2,14 +2,14 @@ package by.it.academy.controller;
 
 import by.it.academy.pojo.Transaction;
 import by.it.academy.pojo.Wallet;
-import by.it.academy.service.UtxoService;
 import by.it.academy.service.TransactionService;
 import by.it.academy.service.UserService;
+import by.it.academy.service.UtxoService;
 import by.it.academy.service.WalletService;
 import by.it.academy.support.PrivateKeyInput;
 import by.it.academy.support.TransactionStart;
+import by.it.academy.support.TransactionStatus;
 import by.it.academy.util.StringUtil;
-import by.it.academy.util.TransactionUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -20,6 +20,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.security.PrivateKey;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -99,7 +100,7 @@ public class TransactionController {
             System.out.println("#Not Enough funds to send transaction. Transaction Discarded.");
             return "redirect:/home";
         } else {
-            TransactionUtil.generateSignature(transaction, walletSender.privateKey);
+            transactionService.generateSignature(transaction, walletSender.privateKey);
             transactionService.createNewTransaction(transaction);
             Transaction signedTr = transactionService.findTransactionById(transaction.transactionId);
             walletService.sendFunds(walletSender, transaction.getRecipient(), transaction.getValue(), signedTr);
@@ -138,11 +139,38 @@ public class TransactionController {
         List<Transaction> transactions = transactionService.getAllForWallet(walletId);
         Float sum = 0.0f;
         for (Transaction transaction : transactions) {
-            sum += transaction.value;
+            if (!transaction.getTransactionStatus().equals(TransactionStatus.CREATED)) {
+                sum += transaction.value;
+            }
         }
         modelAndView.setViewName("transaction-all");
         modelAndView.addObject("transactions", transactions);
         modelAndView.addObject("sum", sum);
+        return modelAndView;
+    }
+
+    @RequestMapping(
+            value = "/{userId}/wallet/{walletId}/unconfirmed",
+            method = RequestMethod.GET)
+    public ModelAndView viewUnconfirmed(ModelAndView modelAndView,
+                                        @PathVariable String userId,
+                                        @PathVariable String walletId
+//            ,
+//                                        @PathVariable String transactionId,
+//                                        RedirectAttributes redirectAttributes,
+//                                        @ModelAttribute PrivateKeyInput privateKeyInput
+    ) {
+        List<Transaction> transactions = transactionService.getAllForWallet(walletId);
+        ArrayList<Transaction> unconfirmedTransactions = new ArrayList<>();
+        for (Transaction transaction : transactions) {
+            if (transaction.getTransactionStatus().equals(TransactionStatus.CREATED)
+                    && transaction.getSenderId().equals(walletId)) {
+                unconfirmedTransactions.add(transaction);
+            }
+        }
+        modelAndView.setViewName("view-unconfirmed");
+        modelAndView.addObject("transactions", unconfirmedTransactions);
+
         return modelAndView;
     }
 }

@@ -1,10 +1,10 @@
 
 j
 java:S4488"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ùƒşÿÿÿÿ8Œ“üğÆ.
-\
-java:S1128":Remove this unused import 'by.it.academy.util.WalletUtil'.(é‰çÂÿÿÿÿÿ8™É.
-X	java:S1258"<This block of commented-out lines of code should be removed.(ÎË˜š8¥³ŒÉ.
-e
-java:S4488B"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ğ“ñğ8Œ“üğÆ.
 j
 java:S4488+"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ÙÌÔ‚ùÿÿÿÿ8Œ“üğÆ.
+\
+java:S1128":Remove this unused import 'by.it.academy.util.WalletUtil'.(é‰çÂÿÿÿÿÿ8™É.
+e
+java:S4488B"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ğ“ñğ8Œ“üğÆ.
+X	java:S1258"<This block of commented-out lines of code should be removed.(ÎË˜š8¥³ŒÉ.
