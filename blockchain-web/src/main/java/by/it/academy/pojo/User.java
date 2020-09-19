@@ -8,8 +8,6 @@ import org.hibernate.annotations.GenericGenerator;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Getter
 @Setter
@@ -36,9 +34,6 @@ public class User {
 
     private String email;
     private String mobile;
-
-//    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-//    private List<Wallet> wallets = new ArrayList<>();
 
     @Override
     public String toString() {

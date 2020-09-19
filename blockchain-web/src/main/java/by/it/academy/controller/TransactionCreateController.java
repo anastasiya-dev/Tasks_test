@@ -76,8 +76,6 @@ public class TransactionCreateController {
                                   @ModelAttribute PrivateKeyInput privateKeyInput) {
 
         modelAndView.setViewName("sign-transaction");
-        System.out.println("Sending private key to user:");
-        System.out.println(StringUtil.getStringFromKey(walletService.findWalletById(walletId).getPrivateKey()));
 
         Wallet walletSender = walletService.findWalletById(walletId);
         PrivateKey privateKey = walletSender.getPrivateKey();
@@ -107,6 +105,9 @@ public class TransactionCreateController {
 
         Transaction transaction = transactionService.findTransactionById(transactionId);
         modelAndView.addObject("transaction", transaction);
+
+        System.out.println("Sending private key to user:");
+        System.out.println(StringUtil.getStringFromKey(walletService.findWalletById(walletId).getPrivateKey()));
 
         modelAndView.setViewName("sign-transaction");
         return modelAndView;

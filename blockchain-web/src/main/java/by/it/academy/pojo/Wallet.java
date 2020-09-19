@@ -1,12 +1,13 @@
 package by.it.academy.pojo;
 
-import by.it.academy.util.StringUtil;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.GenericGenerator;
 import org.springframework.stereotype.Component;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Transient;
 import java.security.PrivateKey;
 import java.security.PublicKey;
 

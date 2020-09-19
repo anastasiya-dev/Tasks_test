@@ -1,4 +1,6 @@
 
+I
+java:S1905",Remove this unnecessary cast to "ArrayList".(ÿá—ı8şÊŠªÊ.
 m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿá—ı8•’ˆÊ.
 M
 java:S1172#"0Remove this unused method parameter "recipient".(Äêñ“8‹û£‡Ê.

@@ -19,7 +19,7 @@ import java.util.Arrays;
 public class Transaction {
     @Id
     @Column(name = "transaction_id")
-    private String transactionId; // this is also the hash of the transaction.
+    private String transactionId;
     @Column(name = "transaction_status")
     private TransactionStatus transactionStatus;
     private PublicKey sender; // senders address/public key.

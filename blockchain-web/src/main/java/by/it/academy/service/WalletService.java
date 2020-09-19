@@ -21,7 +21,6 @@ public class WalletService {
 
     @Autowired
     WalletRepository walletRepository;
-
     @Autowired
     Wallet wallet;
 
@@ -51,6 +50,7 @@ public class WalletService {
 
     public Wallet createWallet(String userId) {
         wallet.setWalletId(userId + new Date().getTime());
+        wallet.setUserId(userId);
         generateKeyPair(wallet);
         return wallet;
     }

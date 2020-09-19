@@ -27,7 +27,6 @@ public class WalletController {
     public ModelAndView createWallet(ModelAndView modelAndView,
                                      @PathVariable String userId) {
         Wallet wallet = walletService.createWallet(userId);
-        wallet.setUserId(userId);
         walletService.saveWallet(wallet);
         modelAndView.addObject("wallet", wallet);
         modelAndView.setViewName("create-wallet");

@@ -45,6 +45,10 @@ public class TransactionUnconfirmedController {
             sum += transaction.getValue();
         }
 
+        System.out.println("Sending private key to user:");
+        System.out.println(StringUtil.getStringFromKey(walletService.findWalletById(walletId).getPrivateKey()));
+
+
         modelAndView.setViewName("view-unconfirmed");
         modelAndView.addObject("sum", sum);
         modelAndView.addObject("transactions", unconfirmedTransactions);
@@ -61,9 +65,6 @@ public class TransactionUnconfirmedController {
 
         Wallet walletSender = walletService.findWalletById(walletId);
         PrivateKey privateKey = walletSender.getPrivateKey();
-
-        System.out.println("Sending private key to user:");
-        System.out.println(StringUtil.getStringFromKey(walletService.findWalletById(walletId).getPrivateKey()));
 
         ArrayList<Transaction> unconfirmedTransactions = findUnconfirmed(walletId);
 

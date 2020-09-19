@@ -733,6 +733,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring-boot/blockchain-mining/src/main/java/by/it/academy/Genesis.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../hello-spring-boot/blockchain-mining/src/main/java/by/it/academy/GenesisCheck.java">
           <value>
             <set />
@@ -743,7 +748,32 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring-boot/blockchain-mining/src/main/java/by/it/academy/Starter.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../hello-spring-boot/blockchain-mining/src/main/java/by/it/academy/TransactionCheck.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring-boot/blockchain-mining/src/main/java/by/it/academy/management/BlockManagement.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring-boot/blockchain-mining/src/main/java/by/it/academy/management/TransactionManagement.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring-boot/blockchain-mining/src/main/java/by/it/academy/management/UtxoManagement.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring-boot/blockchain-mining/src/main/java/by/it/academy/management/WalletManagement.java">
           <value>
             <set />
           </value>
@@ -804,6 +834,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../hello-spring-boot/blockchain-mining/src/main/java/by/it/academy/support/TransactionStatus.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring-boot/blockchain-mining/src/main/java/by/it/academy/util/StringUtil.java">
           <value>
             <set />
           </value>
