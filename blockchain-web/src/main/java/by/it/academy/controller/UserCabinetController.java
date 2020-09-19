@@ -15,9 +15,6 @@ public class UserCabinetController {
     @Autowired
     UserService userService;
 
-    @Autowired
-    WalletService walletService;
-
     String userId;
 
     @GetMapping("/{userId}/user-cabinet")

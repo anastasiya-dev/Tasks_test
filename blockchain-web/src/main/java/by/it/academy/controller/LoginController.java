@@ -32,14 +32,12 @@ public class LoginController {
     ) {
         String name = login.getInputName();
         User userInput = userService.findUserByName(name);
-
         String id = null;
         try {
             id = userInput.getUserId();
         } catch (NullPointerException e) {
             return "redirect:/signup";
         }
-
         redirectAttributes.addAttribute("userId", id);
         if (userInput.getUserPassword().equals(login.getInputPassword())) {
             return "redirect:/{userId}/user-cabinet";

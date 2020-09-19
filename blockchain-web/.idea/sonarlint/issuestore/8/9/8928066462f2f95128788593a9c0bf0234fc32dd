@@ -1,42 +1,11 @@
 
-Q
-java:S3740"/Provide the parametrized type for this generic.(™à©ˆıÿÿÿÿ8Ñó³—É.
-n	java:S117¸"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ğ¤¸´8¼®Û˜É.
+T
+java:S3655"7Call "Optional#isPresent()" before accessing the value.(ğŒŸ8¹—†ŠÊ.
 
-java:S13192"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(€¡¯8Ñó³—É.
-V	java:S106¬"9Replace this use of System.out or System.err by a logger.(Ù…ù8¼®Û˜É.
-Y	java:S125Ö"<This block of commented-out lines of code should be removed.(İ½¥¹8¼®Û˜É.
-Y	java:S125ƒ"<This block of commented-out lines of code should be removed.(Üîæİ8Ñó³—É.
-J
-java:S1481¸",Remove this unused "BcUTXOs" local variable.(ğ¤¸´8­•ß˜É.
-Q
-java:S3740"/Provide the parametrized type for this generic.(Ï³ìÑşÿÿÿÿ8Ñó³—É.
-L
-java:S3740"/Provide the parametrized type for this generic.(ŞÊÊ‰8Ñó³—É.
-X
-java:S1068!"6Remove this unused "minimumTransaction" private field.(ÄÜÕÏùÿÿÿÿ8­•ß˜É.
-X	java:S125F"<This block of commented-out lines of code should be removed.(š¥ëø8“ôĞ³É.
-V	java:S106¯"9Replace this use of System.out or System.err by a logger.(úÚ¼²8¼®Û˜É.
+java:S1319""pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(€¡¯8ºôÂ†Ê.
 Y
-java:S1854¸";Remove this useless assignment to local variable "BcUTXOs".(ğ¤¸´8­•ß˜É.
-^	java:S125»"<This block of commented-out lines of code should be removed.(›Äï˜øÿÿÿÿ8­•ß˜É.
-[	java:S106§"9Replace this use of System.out or System.err by a logger.(ÁÑé‡øÿÿÿÿ8¼®Û˜É.
-[	java:S106³"9Replace this use of System.out or System.err by a logger.(¬©·çşÿÿÿÿ8¼®Û˜É.
-^	java:S125Ï"<This block of commented-out lines of code should be removed.(±êïúÿÿÿÿ8¼®Û˜É.
-[	java:S106é"9Replace this use of System.out or System.err by a logger.( ñ¶Œıÿÿÿÿ8ÛŠë®É.
-’
-java:S1319?"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Û“Ä©ûÿÿÿÿ8Ñó³—É.
-]	java:S125X"<This block of commented-out lines of code should be removed.(á´şúüÿÿÿÿ8Ñó³—É.
-X	java:S125Ç"<This block of commented-out lines of code should be removed.(‚«ÜS8¼®Û˜É.
-[	java:S106¦"9Replace this use of System.out or System.err by a logger.(àå¨Òıÿÿÿÿ8¼®Û˜É.
-n	java:S117›"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ğ¤¸´8Ñó³—É.
-X	java:S125V"<This block of commented-out lines of code should be removed.(·å°Ò8Ñó³—É.
-s
-java:S2159J"VRemove this call to "equals"; comparisons between unrelated types always return false.(ë›Œè8™éÁºÉ.
-]	java:S125d"<This block of commented-out lines of code should be removed.(í¥®ñıÿÿÿÿ8Ñó³—É.
-V	java:S106ê"9Replace this use of System.out or System.err by a logger.(Û†­8ÛŠë®É.
-W	java:S125s"<This block of commented-out lines of code should be removed.(‚«ÜS8Ñó³—É.
-[	java:S106­"9Replace this use of System.out or System.err by a logger.(°é‹øÿÿÿÿ8¼®Û˜É.
-X	java:S125g"<This block of commented-out lines of code should be removed.(ŞÒ•Ê8Ñó³—É.
-n	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ğ¤¸´8Ñó³—É.
-E	java:S108J")Either remove or fill this block of code.(ë›Œè8áğ¾ºÉ.
+java:S3655B"7Call "Optional#isPresent()" before accessing the value.(áèãÖûÿÿÿÿ8¹—†ŠÊ.
+Y
+java:S3655G"7Call "Optional#isPresent()" before accessing the value.(Ç¸Æïøÿÿÿÿ8¹—†ŠÊ.
+K
+java:S1905".Remove this unnecessary cast to "Transaction".(ğŒŸ8¹—†ŠÊ.

@@ -1,43 +1,37 @@
 package by.it.academy.pojo;
 
+import by.it.academy.util.StringUtil;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 import java.security.PrivateKey;
 import java.security.PublicKey;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Getter
 @Setter
+@Component
 public class Wallet {
 
     @Id
-    @GeneratedValue(generator = "system-uuid")
-    @GenericGenerator(name = "system-uuid", strategy = "uuid2")
-    @Column(name="wallet_id")
+    @Column(name = "wallet_id")
     private String walletId;
-
     @Column(name = "private_key")
-    public PrivateKey privateKey;
+    private PrivateKey privateKey;
     @Column(name = "private_key_string")
-    public String privateKeyString;
+    private String privateKeyString;
     @Column(name = "public_key")
-    public PublicKey publicKey;
+    private PublicKey publicKey;
     @Column(name = "public_key_string")
-    public String publicKeyString;
+    private String publicKeyString;
 
     @Transient
-    public float balance;
-
-//    @OneToMany(mappedBy = "wallet", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-//    public List<Utxo> UTXOs = new ArrayList<>(); //only UTXOs owned by this wallet.
-
-    @ManyToOne
-    private User user;
+    private float balance;
+    @Column(name = "user_id")
+    private String userId;
 
     @Override
     public String toString() {
@@ -45,8 +39,6 @@ public class Wallet {
                 "walletId='" + walletId + '\'' +
                 ", privateKeyString='" + privateKeyString + '\'' +
                 ", publicKeyString='" + publicKeyString + '\'' +
-//                ", UTXOs=" + UTXOs +
-//                ", user=" + user +
                 '}';
     }
 }

@@ -1,0 +1,11 @@
+
+j
+java:S4488k"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ñ¦…©üÿÿÿÿ8›Çô‹Ê.
+Z	java:S106A"9Replace this use of System.out or System.err by a logger.(Ñ½—ïúÿÿÿÿ8÷Àö—Ê.
+j
+java:S4488#"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ñ¦…©üÿÿÿÿ8êå®‹Ê.
+j
+java:S4488]"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ñ¦…©üÿÿÿÿ8›Çô‹Ê.
+Z	java:S106B"9Replace this use of System.out or System.err by a logger.(É½”Ûøÿÿÿÿ8÷Àö—Ê.
+l
+java:S44886"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(Ñ¦…©üÿÿÿÿ8›Çô‹Ê.

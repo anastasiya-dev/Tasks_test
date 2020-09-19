@@ -1,11 +1,9 @@
 package by.it.academy.service;
 
-import by.it.academy.pojo.Utxo;
 import by.it.academy.pojo.Transaction;
-import by.it.academy.repository.BaseDao;
-import by.it.academy.support.TransactionStatus;
+import by.it.academy.pojo.Utxo;
+import by.it.academy.repository.UtxoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -15,41 +13,45 @@ import java.util.Comparator;
 public class UtxoService {
 
     @Autowired
-    @Value("#{utxoDao}")
-    BaseDao utxoDao;
-
+    UtxoRepository utxoRepository;
     @Autowired
     TransactionService transactionService;
+    @Autowired
+    Utxo utxo;
 
-    public Utxo createBcUtxo(String inputTransactionId) {
-        Utxo utxo = new Utxo();
-        Transaction inputTr = transactionService.findTransactionById(inputTransactionId);
-        utxo.setRecipient(inputTr.getRecipient());
-        utxo.setValue(inputTr.getValue());
+    public Utxo createUtxo(String inputTransactionId) {
+        Transaction inputTransaction = transactionService.findTransactionById(inputTransactionId);
+        utxo.setValue(inputTransaction.getValue());
         utxo.setInputTransactionId(inputTransactionId);
-        ArrayList<Utxo> utxos = (ArrayList<Utxo>) utxoDao.findAll("");
+        ArrayList<Utxo> utxos = (ArrayList<Utxo>) utxoRepository.findAll();
         if (utxos.size() == 0) {
             utxo.setUtxoId("0");
         } else {
-            utxos.sort(Comparator.comparingInt(w -> Integer.valueOf(w.getUtxoId())));
-            utxo.setUtxoId(String.valueOf(Integer.valueOf(utxos.get(utxos.size() - 1).getUtxoId()) + 1));
+            utxos.sort(Comparator.comparingInt(w -> Integer.parseInt(w.getUtxoId())));
+            utxo.setUtxoId(String.valueOf(Integer.parseInt(utxos.get(utxos.size() - 1).getUtxoId()) + 1));
         }
         return utxo;
     }
 
     public ArrayList<Utxo> findAllUTXOs() {
-
-        return (ArrayList<Utxo>) utxoDao.findAll("");
+        return (ArrayList<Utxo>) utxoRepository.findAll();
     }
-
 
 
     public Utxo findUTXOById(String id) {
-        return (Utxo) utxoDao.findById(id);
+        return utxoRepository.findById(id).get();
     }
 
-    public boolean createNewUTXO(Utxo utxo) {
-        utxoDao.create(utxo);
+    public boolean saveUtxo(Utxo utxo) {
+        utxoRepository.save(utxo);
         return true;
+    }
+
+    public Utxo updateUtxo(Utxo utxoFromChain) {
+        Utxo utxoSaved = utxoRepository.findById(utxoFromChain.getUtxoId()).get();
+        utxoSaved.setWalletId(utxoFromChain.getWalletId());
+        utxoSaved.setOutputTransactionId(utxoFromChain.getOutputTransactionId());
+        utxoRepository.save(utxoSaved);
+        return utxoRepository.findById(utxoSaved.getUtxoId()).get();
     }
 }

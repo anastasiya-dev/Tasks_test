@@ -1,7 +1,7 @@
 package by.it.academy.controller;
 
+import by.it.academy.management.TransactionManagement;
 import by.it.academy.pojo.Transaction;
-import by.it.academy.service.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,7 +21,7 @@ import java.util.List;
 public class DownloadController {
 
     @Autowired
-    TransactionService transactionService;
+    TransactionManagement transactionManagement;
 
     @RequestMapping(value = "/{userId}/wallet/{walletId}/download")
     public void download(ModelAndView modelAndView,
@@ -42,7 +42,7 @@ public class DownloadController {
                 csvFileName);
         response.setHeader(headerKey, headerValue);
 
-        List<Transaction> transactions = transactionService.getAllForWallet(walletId);
+        List<Transaction> transactions = transactionManagement.getAllForWallet(walletId, false);
 
         // uses the Super CSV API to generate CSV data from the model data
         ICsvBeanWriter csvWriter = new CsvBeanWriter(response.getWriter(),

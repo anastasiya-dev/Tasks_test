@@ -1,9 +1,3 @@
 
 r
-java:S1104"UMake recipient a static final constant or non-public and provide accessors if needed.(ÊÞ„Ï8ú ±—É.
-s
-java:S1104"QMake value a static final constant or non-public and provide accessors if needed.(¼Á’Øýÿÿÿÿ8ú ±—É.
-o
-java:S1104"RMake sender a static final constant or non-public and provide accessors if needed.(ƒñúÑ8ú ±—É.
-r
-java:S1104 "UMake signature a static final constant or non-public and provide accessors if needed.(Ÿôàí8ú ±—É.
+java:S1104"UMake recipient a static final constant or non-public and provide accessors if needed.(ÊÞ„Ï8Üó—„Ê.

@@ -5,7 +5,7 @@
 <html>
   <head>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,100' rel='stylesheet' type='text/css'>
-<link href="<c:url value="/resources/css/styles.css" />" rel="stylesheet">
+<link href="<c:url value="/resources/css/home-styles.css" />" rel="stylesheet">
   </head>
  <body>
     <div class="header">

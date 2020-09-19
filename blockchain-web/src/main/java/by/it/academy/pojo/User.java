@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -15,17 +16,16 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Component
 public class User {
 
     @Id
     @GeneratedValue(generator = "system-uuid")
     @GenericGenerator(name = "system-uuid", strategy = "uuid2")
-    @Column(name="user_id")
+    @Column(name = "user_id")
     private String userId;
 
     @Column(name = "user_name")
-//    @Pattern(regexp = "[A-Z]+[a-z]+$",
-//            message = "Username must be alphabetic with no spaces and first capital")
     private String userName;
 
     @Column(name = "user_password")
@@ -37,8 +37,8 @@ public class User {
     private String email;
     private String mobile;
 
-    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    public List<Wallet> wallets = new ArrayList<>();
+//    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+//    private List<Wallet> wallets = new ArrayList<>();
 
     @Override
     public String toString() {
@@ -49,7 +49,6 @@ public class User {
                 ", confirmPassword='" + confirmPassword + '\'' +
                 ", email='" + email + '\'' +
                 ", mobile='" + mobile + '\'' +
-//                ", wallets=" + wallets +
                 '}';
     }
 }

@@ -2,41 +2,37 @@ package by.it.academy.pojo;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.GenericGenerator;
+import org.springframework.stereotype.Component;
 
-import javax.persistence.*;
-import java.security.PublicKey;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 @Setter
 @Getter
+@Component
 public class Utxo {
 
     @Id
-//    @GeneratedValue(generator = "system-uuid")
-//    @GenericGenerator(name = "system-uuid", strategy = "uuid2")
     @Column(name = "utxo_id")
-    public String utxoId;
-    public PublicKey recipient;
-    public float value;
+    private String utxoId;
+    private float value;
     @Column(name = "input_transaction_id")
-    public String inputTransactionId;
+    private String inputTransactionId;
     @Column(name = "output_transaction_id")
-    public String outputTransactionId;
-
-//    @ManyToOne
+    private String outputTransactionId;
     @Column(name = "wallet_id")
-    public String walletId;
+    private String walletId;
 
     @Override
     public String toString() {
         return "Utxo{" +
-                "UtxoId='" + utxoId + '\'' +
-                ", recipient=" + recipient +
+                "utxoId='" + utxoId + '\'' +
                 ", value=" + value +
                 ", inputTransactionId='" + inputTransactionId + '\'' +
                 ", outputTransactionId='" + outputTransactionId + '\'' +
-//                ", wallet=" + wallet +
+                ", walletId='" + walletId + '\'' +
                 '}';
     }
 }

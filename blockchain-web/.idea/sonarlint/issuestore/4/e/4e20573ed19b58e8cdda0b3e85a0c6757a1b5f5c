@@ -1,17 +1,0 @@
-
-l
-java:S1128	"ORemove this unused import 'org.springframework.beans.factory.annotation.Value'.(ìø›8ñº®É.
-W
-java:S1128"5Remove this unused import 'java.security.PrivateKey'.(‘äÄîúÿÿÿÿ8¤¾Ÿ¶É.
-_
-java:S1128"=Remove this unused import 'by.it.academy.repository.BaseDao'.(ØĞçÆûÿÿÿÿ8ñº®É.
-M
-java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8ñº®É.
-S
-java:S1144"1Remove this unused private "calulateHash" method.(–º»˜úÿÿÿÿ8«¼½—É.
-S
-java:S1128"6Remove this unused import 'by.it.academy.pojo.Wallet'.(¿Ò£ş8ñº®É.
-V
-java:S1128"4Remove this unused import 'java.time.LocalDateTime'.(æÃ§ƒüÿÿÿÿ8¤¾Ÿ¶É.
-V
-java:S1128"4Remove this unused import 'java.security.PublicKey'.(ºâú½üÿÿÿÿ8ñº®É.

@@ -1,8 +1,8 @@
 package by.it.academy.controller;
 
+import by.it.academy.management.WalletManagement;
 import by.it.academy.pojo.User;
 import by.it.academy.pojo.Wallet;
-import by.it.academy.service.TransactionService;
 import by.it.academy.service.UserService;
 import by.it.academy.service.WalletService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,21 +20,15 @@ public class WalletController {
 
     @Autowired
     WalletService walletService;
-
     @Autowired
-    TransactionService transactionService;
-
-    @Autowired
-    UserService userService;
+    WalletManagement walletManagement;
 
     @RequestMapping(value = "/{userId}/create-wallet", method = RequestMethod.GET)
     public ModelAndView createWallet(ModelAndView modelAndView,
                                      @PathVariable String userId) {
-        Wallet wallet = walletService.createWallet();
-        User user = userService.findUserById(userId);
-        wallet.setUser(user);
-        user.wallets.add(wallet);
-        walletService.createNewWallet(wallet);
+        Wallet wallet = walletService.createWallet(userId);
+        wallet.setUserId(userId);
+        walletService.saveWallet(wallet);
         modelAndView.addObject("wallet", wallet);
         modelAndView.setViewName("create-wallet");
         return modelAndView;
@@ -43,25 +37,17 @@ public class WalletController {
     @RequestMapping(value = "/{userId}/wallet-all", method = RequestMethod.GET)
     public ModelAndView viewAllTheWallets(ModelAndView modelAndView,
                                           @PathVariable String userId) {
-        List<Wallet> wallets = walletService.getAll(userId);
+        List<Wallet> wallets = walletService.getAllWalletsForUser(userId);
         Float sum = 0.0f;
         for (Wallet wallet : wallets) {
-            wallet.setBalance(walletService.getBalance(wallet));
+            wallet.setBalance(walletManagement.getBalance(wallet));
             sum += wallet.getBalance();
         }
 
-        wallets.sort(Comparator.comparingInt(w -> Integer.valueOf((int) (w.getBalance() * (-100.0)))));
-//        Comparator.reverseOrder().reversed();
+        wallets.sort(Comparator.comparingInt(w -> (int) (w.getBalance() * (-10.0))));
 
         modelAndView.setViewName("wallet-all");
         modelAndView.addObject("wallets", wallets);
-
-//        for (Wallet wallet : wallets) {
-//            List<Transaction> transactions = transactionService.getAllForWallet(wallet.getWalletId());
-//            for (Transaction transaction : transactions) {
-//                sum += transaction.value;
-//            }
-//        }
         modelAndView.addObject("sum", sum);
         return modelAndView;
     }

@@ -1,0 +1,8 @@
+
+Q
+java:S1066"/Merge this if statement with the enclosing one.(É™ÑŸşÿÿÿÿ8ø´†‘Ê.
+’
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(î÷ú¥úÿÿÿÿ8…Ù ˆÊ.
+m	java:S117+"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ø”‰8œŞˆÊ.
+I
+java:S1905+",Remove this unnecessary cast to "ArrayList".(ø”‰8á¾ıÊ.

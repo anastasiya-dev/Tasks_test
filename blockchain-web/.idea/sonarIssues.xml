@@ -278,6 +278,16 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/controller/HomeController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/controller/ImageController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/controller/LoginController.java">
           <value>
             <set />
@@ -289,6 +299,21 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/controller/TransactionController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/controller/TransactionCreateController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/controller/TransactionUnconfirmedController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/controller/TransactionViewController.java">
           <value>
             <set />
           </value>
@@ -314,6 +339,21 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/controller/_SignUpController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/management/TransactionManagement.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/management/UtxoManagement.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/management/WalletManagement.java">
           <value>
             <set />
           </value>
@@ -398,6 +438,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/repository/TransactionRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/repository/UserDao.java">
           <value>
             <set />
@@ -413,7 +458,17 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/repository/UtxoRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/repository/WalletDao.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/repository/WalletRepository.java">
           <value>
             <set />
           </value>
@@ -463,6 +518,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/support/Login.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/support/PrivateKeyInput.java">
           <value>
             <set />
@@ -508,6 +568,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/util/UserImageUtil.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/util/UtxoUtil.java">
           <value>
             <set />
@@ -533,6 +598,16 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/resources/liquibase-changeLog.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/resources/liquibase-changelog.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/_footer.jsp">
           <value>
             <set />
@@ -549,6 +624,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/create-wallet.jsp">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/footer.jsp">
           <value>
             <set />
           </value>
@@ -574,6 +654,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/sign-transaction.jsp">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/signup-header.jsp">
           <value>
             <set />
           </value>
@@ -609,6 +694,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/wallet-list.jsp">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/webapp/resources/css/signup-styles.css">
           <value>
             <set />
           </value>
@@ -683,6 +773,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring-boot/blockchain-mining/src/main/java/by/it/academy/repository/UserDao.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../hello-spring-boot/blockchain-mining/src/main/java/by/it/academy/service/BlockService.java">
           <value>
             <set />
@@ -748,7 +843,77 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring/src/main/java/by/it/academy/ApplicationConfiguration.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring/src/main/java/by/it/academy/controller/RegisterController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring/src/main/java/by/it/academy/pojo/AppRole.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring/src/main/java/by/it/academy/pojo/AppUser.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring/src/main/java/by/it/academy/repository/AppUserRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring/src/main/java/by/it/academy/repository/RecipientRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring/src/main/java/by/it/academy/repository/UserRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring/src/main/java/by/it/academy/security/SecurityConfiguration.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring/src/main/java/by/it/academy/service/AppUserService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring/src/main/java/by/it/academy/service/NotificationCommandExecutor.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring/src/main/java/by/it/academy/service/RecipientService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../hello-spring/src/main/webapp/WEB-INF/jsp/footer.jsp">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring/src/main/webapp/WEB-INF/jsp/header.jsp">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring/src/main/webapp/WEB-INF/jsp/register.jsp">
           <value>
             <set />
           </value>

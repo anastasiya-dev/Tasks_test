@@ -1,9 +1,11 @@
 
-X	java:S125;"<This block of commented-out lines of code should be removed.(ÎË˜š8¥³ŒÉ.
 e
-java:S4488E"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ð“ñð8Œ“üðÆ.
+java:S44887"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ð“ñð8ªž„Ê.
 j
-java:S4488"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ùƒþÿÿÿÿ8Œ“üðÆ.
-]	java:S1256"<This block of commented-out lines of code should be removed.(³ßÃÍýÿÿÿÿ8’†ÄÝÉ.
+java:S4488"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ùƒþÿÿÿÿ8åÞãƒÊ.
+Q
+java:S1128"4Remove this unused import 'by.it.academy.pojo.User'.(¯¡Ž»8•ðª‹Ê.
 j
-java:S4488+"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ÙÌÔ‚ùÿÿÿÿ8Œ“üðÆ.
+java:S4488%"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ÙÌÔ‚ùÿÿÿÿ8ÀÉíƒÊ.
+`
+java:S1128">Remove this unused import 'by.it.academy.service.UserService'.(ø–€þøÿÿÿÿ8È¾«‹Ê.
