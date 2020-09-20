@@ -4,6 +4,7 @@ import by.it.academy.management.TransactionManagement;
 import by.it.academy.pojo.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -15,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -27,6 +29,7 @@ public class DownloadController {
     public void download(ModelAndView modelAndView,
                          @PathVariable String userId,
                          @PathVariable String walletId,
+                         @ModelAttribute ArrayList<Transaction> filteredTransactions,
                          HttpServletResponse response) throws IOException {
 
         DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy_MM_dd-HH_mm_ss");

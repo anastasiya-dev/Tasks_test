@@ -16,7 +16,8 @@
         <tr>
           <td>${wallet.walletId}</td>
           <td>${wallet.balance}</td>
-          <td><p><a href="/blockchain-web/${userId}/wallet/${wallet.walletId}" class="text-primary">View wallet</a></p><td>
+          <td><p><a href="/blockchain-web/${userId}/wallet/${wallet.walletId}" class="text-primary">View</a></p><td>
+          <td><p><a href="/blockchain-web/${userId}/wallet/${wallet.walletId}/delete" class="text-primary">Delete</a></p><td>
         </tr>
 </c:forEach>
       </tbody>

@@ -1,2 +1,4 @@
 
-r	java:S117 "QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(èŠ³Œüÿÿÿÿ8æ†‘ŒÊ.
+r	java:S117#"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(èŠ³Œüÿÿÿÿ8æ†‘ŒÊ.
+¡
+java:S1319 "The type of the "filteredTransactions" object should be an interface such as "List" rather than the implementation "ArrayList".(ªÈÏìûÿÿÿÿ8¦Å¼Ê.

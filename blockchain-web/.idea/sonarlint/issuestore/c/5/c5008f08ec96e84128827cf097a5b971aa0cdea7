@@ -1,11 +1,11 @@
 
-j
-java:S4488$"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ÙÌÔ‚ùÿÿÿÿ8ÀÉíƒÊ.
 `
 java:S1128">Remove this unused import 'by.it.academy.service.UserService'.(ø–€şøÿÿÿÿ8È¾«‹Ê.
-e
-java:S44886"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ğ“ñğ8ª„Ê.
 Q
 java:S1128"4Remove this unused import 'by.it.academy.pojo.User'.(¯¡»8•ğª‹Ê.
 j
+java:S4488$"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ÙÌÔ‚ùÿÿÿÿ8ÀÉíƒÊ.
+j
 java:S4488"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ùƒşÿÿÿÿ8åŞãƒÊ.
+e
+java:S44886"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ğ“ñğ8ª„Ê.

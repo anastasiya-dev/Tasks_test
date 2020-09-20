@@ -74,7 +74,7 @@ public class TransactionViewController {
             }
         }
         modelAndView.setViewName("transaction-all");
-        modelAndView.addObject("transactions", transactionsFiltered);
+        modelAndView.addObject("transactionsFiltered", transactionsFiltered);
 
         modelAndView.addObject("sum", sum);
         return modelAndView;
