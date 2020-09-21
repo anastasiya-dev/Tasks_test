@@ -2,6 +2,7 @@ package by.it.academy.service;
 
 import by.it.academy.pojo.User;
 import by.it.academy.repository.UserRepository;
+import by.it.academy.support.ChangePassword;
 import by.it.academy.support.UserStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,6 +37,23 @@ public class UserService {
         } else {
             return userRepository.findByUserName(name);
         }
+    }
+
+    public User updateUser(User user) {
+        User userSaved = userRepository.findById(user.getUserId()).get();
+        userSaved.setUserName(user.getUserName());
+        userSaved.setEmail(user.getEmail());
+        userSaved.setMobile(user.getMobile());
+        userRepository.save(userSaved);
+        return userRepository.findById(userSaved.getUserId()).get();
+    }
+
+    public User updatePassword(String userId, ChangePassword changePassword) {
+        User userSaved = userRepository.findById(userId).get();
+        userSaved.setUserPassword(changePassword.getNewPassword());
+        userSaved.setConfirmPassword(changePassword.getConfirmPassword());
+        userRepository.save(userSaved);
+        return userRepository.findById(userId).get();
     }
 
 

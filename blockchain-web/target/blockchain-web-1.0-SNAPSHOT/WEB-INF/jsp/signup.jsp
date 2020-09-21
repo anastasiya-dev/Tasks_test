@@ -21,17 +21,18 @@
             <div class="myform form ">
                <form action="/blockchain-web/signup" method="post" name="login">
                   <div class="form-group">
-                     <input type="text" name="userName"  class="form-control my-input" id="name" placeholder="Name">
+                     <input type="text" pattern=".{1,}" name="userName"  class="form-control my-input" id="name" placeholder="Name">
                   </div>
                   <div class="form-group">
-                     <input type="email" name="email"  class="form-control my-input" id="email" placeholder="Email">
+                     <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name="email"  class="form-control my-input" id="email" placeholder="Email">
                      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                   </div>
                   <div class="form-group">
                      <input type="number" min="0" name="mobile" id="phone"  class="form-control my-input" placeholder="Phone">
                   </div>
                   <div class="form-group">
-                      <input type="password" min="0" name="userPassword" id="userPassword"  class="form-control my-input" placeholder="Password">
+                      <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" min="0" name="userPassword" id="userPassword"  class="form-control my-input" placeholder="Password">
+                        <small id="passwordRequirement" class="form-text text-muted">Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters</small>
                   </div>
                    <div class="form-group">
                        <input type="password" min="0" name="confirmPassword" id="confirmPassword"  class="form-control my-input" placeholder="Confirm password">

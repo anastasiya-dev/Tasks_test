@@ -1,3 +1,4 @@
+C:\work\blockchain-web\src\main\java\by\it\academy\controller\UserDeleteController.java
 C:\work\blockchain-web\src\main\java\by\it\academy\support\TransactionStart.java
 C:\work\blockchain-web\src\main\java\by\it\academy\support\TransactionStatus.java
 C:\work\blockchain-web\src\main\java\by\it\academy\controller\TransactionViewController.java
@@ -8,6 +9,7 @@ C:\work\blockchain-web\src\main\java\by\it\academy\service\UserService.java
 C:\work\blockchain-web\src\main\java\by\it\academy\controller\DownloadController.java
 C:\work\blockchain-web\src\main\java\by\it\academy\repository\UserRepository.java
 C:\work\blockchain-web\src\main\java\by\it\academy\support\FilterInput.java
+C:\work\blockchain-web\src\main\java\by\it\academy\support\ChangePassword.java
 C:\work\blockchain-web\src\main\java\by\it\academy\util\UserImageUtil.java
 C:\work\blockchain-web\src\main\java\by\it\academy\controller\ImageController.java
 C:\work\blockchain-web\src\main\java\by\it\academy\support\Login.java

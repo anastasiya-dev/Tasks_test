@@ -12,6 +12,8 @@ by\it\academy\util\UserImageUtil.class
 by\it\academy\management\UtxoManagement.class
 by\it\academy\support\TransactionStatus.class
 by\it\academy\controller\HomeController.class
+by\it\academy\controller\UserDeleteController.class
+by\it\academy\support\ChangePassword.class
 by\it\academy\controller\SignUpController.class
 by\it\academy\service\UserService.class
 by\it\academy\service\TransactionService.class

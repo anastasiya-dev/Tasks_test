@@ -1,3 +1,6 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+
 <!doctype html>
 <html lang="en">
    <head>
@@ -14,6 +17,7 @@
          height: 100%;
          position: relative;
          }
+
          .main-container {
          min-height: 100vh; /* will cover the 100% of viewport */
          overflow: hidden;
@@ -32,6 +36,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <!-- Bootstrap CSS -->
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+      <link href="<c:url value="/resources/css/background-styles.css" />" rel="stylesheet">
       <title>Blockchain</title>
    </head>
    <body>
@@ -49,7 +54,9 @@
                   Personal Info
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                     <a class="dropdown-item" href="/blockchain-web/${userId}/edit">Edit</a>
+                     <a class="dropdown-item" href="/blockchain-web/${userId}/statistics">Statistics</a>
+                     <a class="dropdown-item" href="/blockchain-web/${userId}/change-password">Change password</a>
+                      <div class="dropdown-divider"></div>
                      <a class="dropdown-item" href="/blockchain-web/${userId}/delete">Delete</a>
                   </div>
                </li>
