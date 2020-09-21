@@ -21,8 +21,10 @@ by\it\academy\controller\LoginController.class
 by\it\academy\support\TransactionStart.class
 by\it\academy\web\WebAppInitializer.class
 by\it\academy\ApplicationConfiguration.class
+by\it\academy\support\UserStatus.class
 by\it\academy\util\StringUtil.class
 by\it\academy\controller\TransactionUnconfirmedController.class
+by\it\academy\support\WalletStatus.class
 by\it\academy\support\FilterInput.class
 by\it\academy\support\Login.class
 by\it\academy\service\UtxoService.class

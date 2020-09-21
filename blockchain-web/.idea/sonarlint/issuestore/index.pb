@@ -111,3 +111,13 @@ u
 Esrc/main/java/by/it/academy/controller/TransactionViewController.java,6\0\605bd359745d8faaf9a7639376a7f6f82e9e6b93
 |
 Lsrc/main/java/by/it/academy/controller/TransactionUnconfirmedController.java,4\c\4c761c6141ab163fb4a5233fdb89b0788c25630b
+c
+3src/main/java/by/it/academy/support/UserStatus.java,c\6\c6741fa651beb61b737b5d1b5f556dfae65a7de1
+e
+5src/main/java/by/it/academy/support/WalletStatus.java,d\1\d15a4cb433a0cf885ff0bf6af6bf84607ee41ec9
+]
+-src/main/webapp/WEB-INF/jsp/delete-wallet.jsp,7\8\78fd42a3c1717739c23a6fc0cbc3d664f0df309e
+i
+9src/main/webapp/WEB-INF/jsp/delete-user-check-wallets.jsp,4\3\43c09bb2dec181963591d73188621ac4fd07a51d
+c
+3src/main/webapp/WEB-INF/jsp/delete-user-confirm.jsp,f\e\fecd36f4d0aa1634b77db21d077d6aac5bb0f2a8

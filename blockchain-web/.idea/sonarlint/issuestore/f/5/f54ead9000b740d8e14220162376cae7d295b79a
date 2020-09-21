@@ -1,3 +1,9 @@
 
-]
-java:S1128"@Remove this unused import 'by.it.academy.service.WalletService'.(Ñ¯ä§8èÏ³‡Ê.
+j
+java:S4488="HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ñ¦…©üÿÿÿÿ8õíœåÊ.
+j
+java:S44884"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ñ¦…©üÿÿÿÿ8·«çãÊ.
+j
+java:S4488H"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ñ¦…©üÿÿÿÿ8Îõ‰åÊ.
+j
+java:S4488&"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ñ¦…©üÿÿÿÿ8Öú³ãÊ.

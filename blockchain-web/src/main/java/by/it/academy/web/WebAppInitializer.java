@@ -13,6 +13,7 @@ import java.util.Set;
 public class WebAppInitializer implements ServletContainerInitializer {
     @Override
     public void onStartup(Set<Class<?>> c, ServletContext ctx) throws ServletException {
+        System.out.println("starting blockchain app");
         AnnotationConfigWebApplicationContext context =
                 new AnnotationConfigWebApplicationContext();
         context.register(ApplicationConfiguration.class);

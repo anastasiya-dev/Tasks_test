@@ -28,7 +28,7 @@
         </tr>
       </thead>
       <tbody>
-<c:forEach items="${transactions}" var="transaction">
+<c:forEach items="${transactionsFiltered}" var="transaction">
         <tr>
           <td>${transaction.transactionId}</td>
           <td>${transaction.senderId}</td>

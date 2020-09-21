@@ -49,8 +49,8 @@
                   Personal Info
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                     <a class="dropdown-item" href="/blockchain/${userId}/edit">Edit</a>
-                     <a class="dropdown-item" href="/blockchain/${userId}/delete">Delete</a>
+                     <a class="dropdown-item" href="/blockchain-web/${userId}/edit">Edit</a>
+                     <a class="dropdown-item" href="/blockchain-web/${userId}/delete">Delete</a>
                   </div>
                </li>
                <li class="nav-item dropdown">

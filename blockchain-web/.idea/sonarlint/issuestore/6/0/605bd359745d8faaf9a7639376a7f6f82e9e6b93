@@ -1,11 +1,11 @@
 
-l
-java:S4488S"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(¤ï¡ÿÿÿÿÿ8òñ–ŒÊ.
-o
-java:S3776"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(ÉİÄŞ8¹œ’Ê.
 e
-java:S4488"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ä±8òñ–ŒÊ.
+java:S4488"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ä±8òñ–ŒÊ.
 N
-java:S1481X"1Remove this unused "transactions" local variable.(©äÊê8‹š­—Ê.
+java:S1481\"1Remove this unused "transactions" local variable.(©äÊê8‹š­—Ê.
 ]
-java:S1854X"@Remove this useless assignment to local variable "transactions".(©äÊê8‹š­—Ê.
+java:S1854\"@Remove this useless assignment to local variable "transactions".(©äÊê8‹š­—Ê.
+o
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(ÉİÄŞ8¹œ’Ê.
+l
+java:S4488W"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(¤ï¡ÿÿÿÿÿ8òñ–ŒÊ.

@@ -48,9 +48,10 @@ public class WalletManagement {
             utxoFromChain.setOutputTransactionId(transaction.getTransactionId());
             utxoFromChain.setWalletId("");
             utxoService.updateUtxo(utxoFromChain);
-            transactionManagement.processTransaction(transaction);
             if (total > value) break;
         }
+
+        transactionManagement.processTransaction(transaction);
         return transaction;
     }
 }

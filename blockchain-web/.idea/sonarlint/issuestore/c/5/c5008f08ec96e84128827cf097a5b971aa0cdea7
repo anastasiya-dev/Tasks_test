@@ -1,11 +1,13 @@
 
-`
-java:S1128">Remove this unused import 'by.it.academy.service.UserService'.(ø–€şøÿÿÿÿ8È¾«‹Ê.
-Q
-java:S1128"4Remove this unused import 'by.it.academy.pojo.User'.(¯¡»8•ğª‹Ê.
 j
-java:S4488$"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ÙÌÔ‚ùÿÿÿÿ8ÀÉíƒÊ.
+java:S44880"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ÙÌÔ‚ùÿÿÿÿ8ÀÉíƒÊ.
 j
-java:S4488"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ùƒşÿÿÿÿ8åŞãƒÊ.
+java:S4488p"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ñ¦…©üÿÿÿÿ8Ù“õßÊ.
+l
+java:S4488K"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(Ñ¦…©üÿÿÿÿ8Ù“õßÊ.
+j
+java:S4488&"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ùƒşÿÿÿÿ8åŞãƒÊ.
 e
-java:S44886"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ğ“ñğ8ª„Ê.
+java:S4488B"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ğ“ñğ8ª„Ê.
+Z	java:S106x"9Replace this use of System.out or System.err by a logger.(Ñ½—ïúÿÿÿÿ8Ù“õßÊ.
+Z	java:S106y"9Replace this use of System.out or System.err by a logger.(É½”Ûøÿÿÿÿ8Ù“õßÊ.

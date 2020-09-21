@@ -1,4 +1,9 @@
 
+p
+java:S1128"SRemove this unused import 'org.springframework.web.bind.annotation.ModelAttribute'.(®ùæé8§‘¢çÊ.
 r	java:S117#"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(èŠ³Œüÿÿÿÿ8æ†‘ŒÊ.
-¡
-java:S1319 "The type of the "filteredTransactions" object should be an interface such as "List" rather than the implementation "ArrayList".(ªÈÏìûÿÿÿÿ8¦Å¼Ê.
+M
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8›İçÊ.
+X	java:S1250"<This block of commented-out lines of code should be removed.(ò®›‹8øÃçÊ.
+[
+java:S1128">Remove this unused import 'by.it.academy.support.FilterInput'.(¹‡áö8§‘¢çÊ.

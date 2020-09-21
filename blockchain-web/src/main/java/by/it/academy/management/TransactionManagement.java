@@ -40,28 +40,33 @@ public class TransactionManagement {
 
     public float getOutputsValue(Transaction transaction) {
         float total = 0;
-        ArrayList<Utxo> utxOs = utxoService.findAllUTXOs();
-        for (Utxo i : utxOs) {
+        ArrayList<Utxo> UTXOs = utxoService.findAllUTXOs();
+        for (Utxo i : UTXOs) {
             if (i.getOutputTransactionId() != null && i.getOutputTransactionId().equals(transaction.getTransactionId())) {
                 total += i.getValue();
             }
         }
+        System.out.println("total utxo: " + total);
         return total;
     }
 
     //Returns true if new transaction could be created.
     public void processTransaction(Transaction transaction) {
 
-        final float leftOver = getOutputsValue(transaction) - transaction.getValue(); //get value of inputs then the left over change:
-
-        utxoService.createUtxo(
+        Utxo utxoActual = utxoService.createUtxo(
                 transaction.getTransactionId(),
                 transaction.getValue(),
                 transaction.getRecipientId());
 
-        utxoService.createUtxo(
+        System.out.println(utxoActual);
+
+        float leftOver = getOutputsValue(transaction) - transaction.getValue(); //get value of inputs then the left over change:
+
+        Utxo utxoLeftOver = utxoService.createUtxo(
                 transaction.getTransactionId(),
                 leftOver,
                 transaction.getSenderId());
+
+        System.out.println("utxo left-over: " + utxoLeftOver);
     }
 }

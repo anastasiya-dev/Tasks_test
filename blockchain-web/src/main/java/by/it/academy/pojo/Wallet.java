@@ -1,5 +1,6 @@
 package by.it.academy.pojo;
 
+import by.it.academy.support.WalletStatus;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.stereotype.Component;
@@ -20,6 +21,8 @@ public class Wallet {
     @Id
     @Column(name = "wallet_id")
     private String walletId;
+    @Column(name = "wallet_status")
+    private WalletStatus walletStatus;
     @Column(name = "private_key")
     private PrivateKey privateKey;
     @Column(name = "private_key_string")

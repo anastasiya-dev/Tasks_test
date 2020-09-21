@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -22,12 +23,15 @@ public class TransactionViewController {
     @Autowired
     TransactionManagement transactionManagement;
 
+    static ArrayList<Transaction> staticTransactionsFiltered = new ArrayList<>();
+
     @RequestMapping(value = "/{userId}/wallet/{walletId}/transaction-all", method = RequestMethod.GET)
     public ModelAndView viewAllTransactions(ModelAndView modelAndView,
                                             @PathVariable String userId,
                                             @PathVariable String walletId,
-                                            @ModelAttribute FilterInput filterInput) {
-
+                                            @ModelAttribute FilterInput filterInput,
+                                            RedirectAttributes redirectAttributes) {
+        staticTransactionsFiltered.clear();
         List<Transaction> transactions = transactionManagement.getAllForWallet(walletId, false);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
         ArrayList<Transaction> transactionsFiltered = new ArrayList<>();
@@ -57,7 +61,6 @@ public class TransactionViewController {
             valueMax = Float.parseFloat(filterInput.getValueMax());
         }
 
-
         float sum = 0.0f;
         for (Transaction transaction : transactions) {
 
@@ -75,6 +78,7 @@ public class TransactionViewController {
         }
         modelAndView.setViewName("transaction-all");
         modelAndView.addObject("transactionsFiltered", transactionsFiltered);
+        staticTransactionsFiltered.addAll(transactionsFiltered);
 
         modelAndView.addObject("sum", sum);
         return modelAndView;

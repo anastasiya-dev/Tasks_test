@@ -1,3 +1,8 @@
 
 Y
-java:S3655"7Call "Optional#isPresent()" before accessing the value.(˜Ãùõúÿÿÿÿ8ëûŸäÉ.
+java:S3655."7Call "Optional#isPresent()" before accessing the value.(¼ö¯„şÿÿÿÿ8êƒöãÊ.
+Y
+java:S3655"7Call "Optional#isPresent()" before accessing the value.(˜Ãùõúÿÿÿÿ8ëûŸäÉ.
+U	java:S106""9Replace this use of System.out or System.err by a logger.(Ø“ö8œĞâäÊ.
+T
+java:S3655+"7Call "Optional#isPresent()" before accessing the value.(ƒ¤²İ8×‹òãÊ.

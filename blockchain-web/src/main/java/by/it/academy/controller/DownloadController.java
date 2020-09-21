@@ -2,6 +2,7 @@ package by.it.academy.controller;
 
 import by.it.academy.management.TransactionManagement;
 import by.it.academy.pojo.Transaction;
+import by.it.academy.support.FilterInput;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -29,7 +30,6 @@ public class DownloadController {
     public void download(ModelAndView modelAndView,
                          @PathVariable String userId,
                          @PathVariable String walletId,
-                         @ModelAttribute ArrayList<Transaction> filteredTransactions,
                          HttpServletResponse response) throws IOException {
 
         DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy_MM_dd-HH_mm_ss");
@@ -45,7 +45,7 @@ public class DownloadController {
                 csvFileName);
         response.setHeader(headerKey, headerValue);
 
-        List<Transaction> transactions = transactionManagement.getAllForWallet(walletId, false);
+//        List<Transaction> transactions = transactionManagement.getAllForWallet(walletId, false);
 
         // uses the Super CSV API to generate CSV data from the model data
         ICsvBeanWriter csvWriter = new CsvBeanWriter(response.getWriter(),
@@ -56,9 +56,10 @@ public class DownloadController {
 
         csvWriter.writeHeader(header);
 
-        for (Transaction transaction : transactions) {
+        for (Transaction transaction : TransactionViewController.staticTransactionsFiltered) {
             csvWriter.write(transaction, header);
         }
         csvWriter.close();
+        TransactionViewController.staticTransactionsFiltered.clear();
     }
 }

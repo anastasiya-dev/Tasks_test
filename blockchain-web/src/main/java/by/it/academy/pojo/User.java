@@ -1,5 +1,7 @@
 package by.it.academy.pojo;
 
+import by.it.academy.support.UserStatus;
+import by.it.academy.support.WalletStatus;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,7 +24,8 @@ public class User {
     @GenericGenerator(name = "system-uuid", strategy = "uuid2")
     @Column(name = "user_id")
     private String userId;
-
+    @Column(name = "user_status")
+    private UserStatus userStatus;
     @Column(name = "user_name")
     private String userName;
 

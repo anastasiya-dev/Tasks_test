@@ -2,6 +2,7 @@ package by.it.academy.controller;
 
 import by.it.academy.pojo.User;
 import by.it.academy.service.UserService;
+import by.it.academy.support.UserStatus;
 import by.it.academy.util.UserImageUtil;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +35,7 @@ public class SignUpController {
 //            @RequestParam("image") MultipartFile file,
             RedirectAttributes redirectAttributes
     ) {
-        if (userService.findUserByName(user.getUserName()) != null) {
+        if (userService.findUserByName(user.getUserName(), UserStatus.ACTIVE) != null) {
             return "redirect:login";
         }
         if (!user.getConfirmPassword().equals(user.getUserPassword())) {

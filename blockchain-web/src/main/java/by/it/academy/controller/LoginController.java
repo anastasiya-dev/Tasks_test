@@ -3,6 +3,7 @@ package by.it.academy.controller;
 import by.it.academy.pojo.User;
 import by.it.academy.service.UserService;
 import by.it.academy.support.Login;
+import by.it.academy.support.UserStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,7 +32,7 @@ public class LoginController {
             RedirectAttributes redirectAttributes
     ) {
         String name = login.getInputName();
-        User userInput = userService.findUserByName(name);
+        User userInput = userService.findUserByName(name, UserStatus.ACTIVE);
         String id = null;
         try {
             id = userInput.getUserId();

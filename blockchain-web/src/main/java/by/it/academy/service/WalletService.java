@@ -2,6 +2,7 @@ package by.it.academy.service;
 
 import by.it.academy.pojo.Wallet;
 import by.it.academy.repository.WalletRepository;
+import by.it.academy.support.WalletStatus;
 import by.it.academy.util.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,11 +33,11 @@ public class WalletService {
         return true;
     }
 
-    public List<Wallet> getAllWalletsForUser(String userId) {
+    public List<Wallet> getAllWalletsForUser(String userId, WalletStatus walletStatus) {
         List<Wallet> all = walletRepository.findAll();
         List<Wallet> wallets = new ArrayList<>();
         for (Wallet wallet : all) {
-            if (wallet.getUserId().equals(userId)) {
+            if (wallet.getUserId().equals(userId) && wallet.getWalletStatus().equals(walletStatus)) {
                 wallets.add(wallet);
             }
         }
@@ -51,6 +52,7 @@ public class WalletService {
     public Wallet createWallet(String userId) {
         wallet.setWalletId(userId + new Date().getTime());
         wallet.setUserId(userId);
+        wallet.setWalletStatus(WalletStatus.ACTIVE);
         generateKeyPair(wallet);
         return wallet;
     }
@@ -71,5 +73,12 @@ public class WalletService {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public Wallet delete(String walletId) {
+        Wallet walletSaved = walletRepository.findById(walletId).get();
+        walletSaved.setWalletStatus(WalletStatus.DELETED);
+        walletRepository.save(walletSaved);
+        return walletRepository.findById(walletId).get();
     }
 }

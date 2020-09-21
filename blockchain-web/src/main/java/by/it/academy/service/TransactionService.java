@@ -70,4 +70,11 @@ public class TransactionService {
         transactionRepository.save(transactionSaved);
         return transactionRepository.findById(transactionSaved.getTransactionId()).get();
     }
+
+    public Transaction walletDeleteTransaction(Transaction transaction) {
+        Transaction transactionSaved = transactionRepository.findById(transaction.getTransactionId()).get();
+        transactionSaved.setBlockId("wallet deletion");
+        transactionRepository.save(transactionSaved);
+        return transactionRepository.findById(transactionSaved.getTransactionId()).get();
+    }
 }

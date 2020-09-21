@@ -2,6 +2,7 @@ C:\work\blockchain-web\src\main\java\by\it\academy\support\TransactionStart.java
 C:\work\blockchain-web\src\main\java\by\it\academy\support\TransactionStatus.java
 C:\work\blockchain-web\src\main\java\by\it\academy\controller\TransactionViewController.java
 C:\work\blockchain-web\src\main\java\by\it\academy\pojo\Transaction.java
+C:\work\blockchain-web\src\main\java\by\it\academy\support\UserStatus.java
 C:\work\blockchain-web\src\main\java\by\it\academy\service\TransactionService.java
 C:\work\blockchain-web\src\main\java\by\it\academy\service\UserService.java
 C:\work\blockchain-web\src\main\java\by\it\academy\controller\DownloadController.java
@@ -20,6 +21,7 @@ C:\work\blockchain-web\src\main\java\by\it\academy\controller\UserCabinetControl
 C:\work\blockchain-web\src\main\java\by\it\academy\management\UtxoManagement.java
 C:\work\blockchain-web\src\main\java\by\it\academy\repository\WalletRepository.java
 C:\work\blockchain-web\src\main\java\by\it\academy\controller\SignUpController.java
+C:\work\blockchain-web\src\main\java\by\it\academy\support\WalletStatus.java
 C:\work\blockchain-web\src\main\java\by\it\academy\util\StringUtil.java
 C:\work\blockchain-web\src\main\java\by\it\academy\controller\HomeController.java
 C:\work\blockchain-web\src\main\java\by\it\academy\controller\LoginController.java

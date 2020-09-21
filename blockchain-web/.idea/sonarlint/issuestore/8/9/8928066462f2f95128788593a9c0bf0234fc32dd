@@ -1,11 +1,15 @@
 
+
+java:S1319""pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(€¡¯8ºôÂ†Ê.
+Y
+java:S3655K"7Call "Optional#isPresent()" before accessing the value.(áèãÖûÿÿÿÿ8ã÷ïáÊ.
+K
+java:S1905".Remove this unnecessary cast to "Transaction".(ğŒŸ8¹—†ŠÊ.
+Y
+java:S3655B"7Call "Optional#isPresent()" before accessing the value.(áèãÖûÿÿÿÿ8¹—†ŠÊ.
 Y
 java:S3655G"7Call "Optional#isPresent()" before accessing the value.(Ç¸Æïøÿÿÿÿ8¹—†ŠÊ.
 Y
-java:S3655B"7Call "Optional#isPresent()" before accessing the value.(áèãÖûÿÿÿÿ8¹—†ŠÊ.
-
-java:S1319""pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(€¡¯8ºôÂ†Ê.
-K
-java:S1905".Remove this unnecessary cast to "Transaction".(ğŒŸ8¹—†ŠÊ.
+java:S3655N"7Call "Optional#isPresent()" before accessing the value.(Ç¸Æïøÿÿÿÿ8ã÷ïáÊ.
 T
 java:S3655"7Call "Optional#isPresent()" before accessing the value.(ğŒŸ8¹—†ŠÊ.
