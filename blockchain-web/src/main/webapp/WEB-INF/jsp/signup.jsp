@@ -37,6 +37,13 @@
                    <div class="form-group">
                        <input type="password" min="0" name="confirmPassword" id="confirmPassword"  class="form-control my-input" placeholder="Confirm password">
                    </div>
+        <p>
+          <label for="role" class="sr-only">Please select role</label>
+          <select class="form-control" name="roles[0].roleName" id="role">
+            <option>USER</option>
+            <option>ADMIN</option>
+          </select>
+        </p>
                   <div class="text-center ">
                      <button type="submit" class=" btn btn-block send-button tx-tfm">Create Your Account</button>
                   </div>

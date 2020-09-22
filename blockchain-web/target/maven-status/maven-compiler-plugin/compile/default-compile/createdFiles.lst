@@ -30,7 +30,6 @@ by\it\academy\support\WalletStatus.class
 by\it\academy\support\FilterInput.class
 by\it\academy\support\Login.class
 by\it\academy\service\UtxoService.class
-by\it\academy\controller\ImageController.class
 by\it\academy\pojo\Transaction.class
 by\it\academy\pojo\Wallet.class
 by\it\academy\repository\UtxoRepository.class

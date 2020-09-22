@@ -1,11 +1,11 @@
 
-
-java:S1488"]Immediately return this expression instead of assigning it to the temporary variable "saved".(ÎõóÓşÿÿÿÿ8íã¾´Ê.
-
-java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ñÜöå8ÏÄò‡Ê.
-S
-java:S3655'"7Call "Optional#isPresent()" before accessing the value.(­Éèi8İÿó‰Ê.
 Y
 java:S3655""7Call "Optional#isPresent()" before accessing the value.(‚¼Ò†ÿÿÿÿÿ8İÿó‰Ê.
+
+java:S1488"]Immediately return this expression instead of assigning it to the temporary variable "saved".(ÎõóÓşÿÿÿÿ8íã¾´Ê.
 Y
 java:S3655+"7Call "Optional#isPresent()" before accessing the value.(ğíâóÿÿÿÿÿ8İÿó‰Ê.
+S
+java:S3655'"7Call "Optional#isPresent()" before accessing the value.(­Éèi8İÿó‰Ê.
+
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ñÜöå8ÏÄò‡Ê.

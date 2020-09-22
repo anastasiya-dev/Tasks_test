@@ -10,8 +10,8 @@
  <body>
     <div class="header">
       <div class="container">
-        <h1>Innovation Cloud</h1>
-        <p>Connect your ideas globally</p>
+        <h1>BlockChain</h1>
+        <p>Shape the future of finance and technology with us</p>
         <a class="btn" href="#">Learn More</a>
       </div>
     </div>
@@ -19,23 +19,24 @@
     <div class="nav">
       <div class="container">
         <ul>
-          <li>Register</li>
-          <li>Schedule</li>
-          <li>Sponsors</li>
-          <li>About</li>
-          <li>Contact</li>
+   <li><a class="btn" href="/blockchain-web/signup">Signup</a></li>
+    <li><a class="btn" href="/blockchain-web/login">Login</a></li>
+    <li><a class="btn" href="#">About</a></li>
+    <li><a class="btn" href="#">Contacts</a></li>
         </ul>
       </div>
     </div>
 
     <div class="main">
       <div class="container">
-        <img src="https://s3.amazonaws.com/codecademy-content/projects/innovation-cloud/cloud.svg" height="128" width="196">
-        <h2>The Innovation Cloud Conference</h2>
-        <p>Connect with the best minds across a wide range of industries to share ideas and brainstorm new solutions to challenging problems.</p>
-        <p>Hear industry leaders talk about what worked (and what didn't) so that you can save time on your most challenging projects.</p>
-        <p>Learn about the latest research and technologies that you can use immediately to invent the future.</p>
-      </div>
+        <h2>How blockchain works - in  simple words</h2>
+        <p>Blockchain is the technology the underpins digital currency. The tech allows digital information to be distributed, but not copied. That means each individual piece of data can only have one owner.</p>
+        <p>You may hear it described as a "digital ledger" stored in a distributed network.</p>
+        <p>There is a good analogy to help understand how Blockchain works:</p>
+        <p>"Picture a spreadsheet that is duplicated thousands of times across a network of computers.
+         <br>Then imagine that this network is designed to regularly update this spreadsheet
+         <br>and you have a basic understanding of the blockchain."</p>
+        </div>
     </div>
 
     <div class="jumbotron">
@@ -48,7 +49,7 @@
 
     <div class="footer">
       <div class="container">
-        <p>&copy; Innovation Cloud Conference</p>
+        <p>&copy; BlockChain. Anastasiya Kalach</p>
       </div>
     </div>
   </body>

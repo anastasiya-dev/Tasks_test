@@ -10,6 +10,8 @@ import org.hibernate.annotations.GenericGenerator;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -37,6 +39,9 @@ public class User {
 
     private String email;
     private String mobile;
+//
+//    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+//    private List<AppRole> roles = new ArrayList<>();
 
     @Override
     public String toString() {

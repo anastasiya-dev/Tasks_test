@@ -1,9 +1,6 @@
 
-j
-java:S4488="HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ñ¦…©üÿÿÿÿ8õíœåÊ.
-j
-java:S44884"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ñ¦…©üÿÿÿÿ8·«çãÊ.
-j
-java:S4488H"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ñ¦…©üÿÿÿÿ8Îõ‰åÊ.
-j
-java:S4488&"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ñ¦…©üÿÿÿÿ8Öú³ãÊ.
+J	java:S108x")Either remove or fill this block of code.(ðæ£„þÿÿÿÿ8€ï¹„Ë.
+b
+java:S46849"@Replace this persistent entity with a simple POJO or DTO object.(ÛÝ†­ùÿÿÿÿ8ÀÉðýÊ.
+c
+java:S3518t"AMake sure "totalIncome" can't be zero before doing this division.(³ÎÑéûÿÿÿÿ8€ï¹„Ë.

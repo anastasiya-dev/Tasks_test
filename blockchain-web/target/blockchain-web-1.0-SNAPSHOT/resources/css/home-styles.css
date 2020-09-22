@@ -15,9 +15,9 @@ body {
 }
 
 .header {
-  background: url(http://s3.amazonaws.com/codecademy-content/projects/innovation-cloud/bg.jpg) no-repeat center center;
+  background: url(https://www.tibco.com/blog/wp-content/uploads/2018/02/enterprise-blockchain.png) no-repeat center center;
   background-size: cover;
-  height: 800px;
+  height: 600px;
   text-align: center;
 }
 
@@ -82,7 +82,7 @@ body {
 }
 
 .btn:hover, .nav ul li:hover {
-  background: #117bff;
+  background: #00142E;
   cursor: pointer;
   transition: background .5s;
 }
@@ -97,7 +97,7 @@ body {
 }
 
 .jumbotron {
-  background: url(http://s3.amazonaws.com/codecademy-content/projects/innovation-cloud/jumbotron_bg.jpg) center center;
+  background: url(https://www.sit.fraunhofer.de/fileadmin/_processed_/b/c/csm_Blockchain-slide_dc0a04ac4a.png?_=1530271213) center center;
   background-size: cover;
   height: 600px;
 }
