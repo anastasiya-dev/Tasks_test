@@ -26,6 +26,7 @@ C:\work\blockchain-web\src\main\java\by\it\academy\security\AuthenticationServic
 C:\work\blockchain-web\src\main\java\by\it\academy\management\UtxoManagement.java
 C:\work\blockchain-web\src\main\java\by\it\academy\repository\WalletRepository.java
 C:\work\blockchain-web\src\main\java\by\it\academy\controller\SignUpController.java
+C:\work\blockchain-web\src\main\java\by\it\academy\security\MySimpleUrlAuthenticationSuccessHandler.java
 C:\work\blockchain-web\src\main\java\by\it\academy\support\WalletStatus.java
 C:\work\blockchain-web\src\main\java\by\it\academy\util\StringUtil.java
 C:\work\blockchain-web\src\main\java\by\it\academy\controller\HomeController.java

@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
-
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!doctype html>
 <html lang="en">
    <head>
@@ -69,6 +69,24 @@
                      <a class="dropdown-item" href="/blockchain-web/${userId}/wallet-all">View all</a>
                   </div>
                </li>
+
+                  <sec:authorize access="isAuthenticated()">
+                  <li><a class="btn" href="/blockchain-web/logout">Logout</a></li>
+                  </sec:authorize>
+
+
+
             </ul>
+
+             </ul>
+
+                      <sec:authorize access="hasRole('USER')">
+                        <a href="#">Welcome user, <b><sec:authentication property="principal.username"/></b>!</a>
+                      </sec:authorize>
+                      <sec:authorize access="hasRole('ADMIN')">
+                        <a href="#">Welcome Administrator, <b><sec:authentication property="principal.username"/></b>!</a>
+                      </sec:authorize>
+
+                    </ul>
          </div>
       </nav>

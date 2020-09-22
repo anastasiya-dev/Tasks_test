@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
-
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -19,11 +19,19 @@
     <div class="nav">
       <div class="container">
         <ul>
+   <sec:authorize access="isAuthenticated()">
+   <li><a class="btn" href="/blockchain-web/logout">Logout</a></li>
+   </sec:authorize>
+
+   <sec:authorize access="!isAuthenticated()">
    <li><a class="btn" href="/blockchain-web/signup">Signup</a></li>
     <li><a class="btn" href="/blockchain-web/login">Login</a></li>
+    </sec:authorize>
+
     <li><a class="btn" href="#">About</a></li>
     <li><a class="btn" href="#">Contacts</a></li>
-        </ul>
+
+
       </div>
     </div>
 

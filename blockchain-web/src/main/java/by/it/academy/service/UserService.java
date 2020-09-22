@@ -5,6 +5,7 @@ import by.it.academy.repository.UserRepository;
 import by.it.academy.support.ChangePassword;
 import by.it.academy.support.UserStatus;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,11 +15,18 @@ public class UserService {
 
     @Autowired
     UserRepository userRepository;
+    @Autowired
+    PasswordEncoder passwordEncoder;
+
 
     public boolean saveUser(User user) {
         if (user.getUserId() != null && userRepository.findById(user.getUserId()).isPresent()) {
             return false;
         }
+
+        final String encodedPassword = passwordEncoder.encode(user.getUserPassword());
+        user.setUserPassword(encodedPassword);
+
         user.setUserStatus(UserStatus.ACTIVE);
         userRepository.save(user);
         return true;

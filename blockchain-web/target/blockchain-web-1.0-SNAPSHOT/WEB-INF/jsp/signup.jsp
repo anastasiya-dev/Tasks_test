@@ -11,17 +11,14 @@
             <h1 class="wv-heading--title">
                Welcome!
             </h1>
-            <h2 class="wv-heading--subtitle">
-               And here the future of finance begins...
-            </h2>
          </div>
       </div>
       <div class="row">
          <div class="col-md-4 mx-auto">
             <div class="myform form ">
-               <form action="/blockchain-web/signup" method="post" name="login">
+               <form class="form-signin" action="/blockchain-web/signup" method="post">
                   <div class="form-group">
-                     <input type="text" pattern=".{1,}" name="userName"  class="form-control my-input" id="name" placeholder="Name">
+                     <input type="text" pattern=".{1,}" name="userName"  class="form-control my-input" id="username" placeholder="Name">
                   </div>
                   <div class="form-group">
                      <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name="email"  class="form-control my-input" id="email" placeholder="Email">
@@ -44,8 +41,9 @@
             <option>ADMIN</option>
           </select>
         </p>
+
                   <div class="text-center ">
-                     <button type="submit" class=" btn btn-block send-button tx-tfm">Create Your Account</button>
+                     <button type="submit" class=" btn btn-block send-button tx-tfm">Create Account</button>
                   </div>
                   <p class="small mt-3">By signing up, you are indicating that you have read and agree to the <a href="#" class="ps-hero__content__link">Terms of use</a> and <a href="#">Privacy policy</a>.
                   </p>

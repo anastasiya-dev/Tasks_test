@@ -493,6 +493,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/security/MySimpleUrlAuthenticationSuccessHandler.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/security/SecurityConfiguration.java">
           <value>
             <set />

@@ -1,5 +1,6 @@
 by\it\academy\pojo\Utxo.class
 by\it\academy\controller\UserCabinetController.class
+by\it\academy\security\SecurityConfiguration.class
 by\it\academy\pojo\User.class
 by\it\academy\repository\UserRepository.class
 by\it\academy\controller\TransactionViewController.class
@@ -8,6 +9,7 @@ by\it\academy\repository\WalletRepository.class
 by\it\academy\controller\DownloadController.class
 by\it\academy\controller\TransactionCreateController.class
 by\it\academy\repository\TransactionRepository.class
+by\it\academy\security\SecurityInitializer.class
 by\it\academy\util\UserImageUtil.class
 by\it\academy\management\UtxoManagement.class
 by\it\academy\support\TransactionStatus.class
@@ -23,12 +25,14 @@ by\it\academy\controller\LoginController.class
 by\it\academy\support\TransactionStart.class
 by\it\academy\web\WebAppInitializer.class
 by\it\academy\ApplicationConfiguration.class
+by\it\academy\security\AuthenticationService.class
 by\it\academy\support\UserStatus.class
 by\it\academy\util\StringUtil.class
 by\it\academy\controller\TransactionUnconfirmedController.class
 by\it\academy\support\WalletStatus.class
 by\it\academy\support\FilterInput.class
 by\it\academy\support\Login.class
+by\it\academy\pojo\AppRole.class
 by\it\academy\service\UtxoService.class
 by\it\academy\pojo\Transaction.class
 by\it\academy\pojo\Wallet.class

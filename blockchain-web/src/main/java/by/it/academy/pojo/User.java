@@ -39,9 +39,9 @@ public class User {
 
     private String email;
     private String mobile;
-//
-//    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-//    private List<AppRole> roles = new ArrayList<>();
+
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<AppRole> roles = new ArrayList<>();
 
     @Override
     public String toString() {
