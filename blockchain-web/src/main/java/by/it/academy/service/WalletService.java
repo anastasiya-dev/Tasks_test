@@ -4,6 +4,8 @@ import by.it.academy.pojo.Wallet;
 import by.it.academy.repository.WalletRepository;
 import by.it.academy.support.WalletStatus;
 import by.it.academy.util.StringUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -25,10 +27,15 @@ public class WalletService {
     @Autowired
     Wallet wallet;
 
+    private static final Logger log = LoggerFactory.getLogger(WalletService.class);
+
     public boolean saveWallet(Wallet wallet) {
+        log.info("Saving wallet: " + wallet);
         if (wallet.getWalletId() != null && walletRepository.findById(wallet.getWalletId()).isPresent()) {
+            log.warn("Denied. Already exists");
             return false;
         }
+        log.info("Accepted");
         walletRepository.save(wallet);
         return true;
     }
@@ -41,10 +48,12 @@ public class WalletService {
                 wallets.add(wallet);
             }
         }
+        log.info("Extracting all the wallets for the user: " + userId + " with the status " + walletStatus);
         return wallets;
     }
 
     public Wallet findWalletById(String id) {
+        log.info("Extracting wallet from repository - by id: " + id);
         return walletRepository.findById(id).get();
     }
 
@@ -54,6 +63,7 @@ public class WalletService {
         wallet.setUserId(userId);
         wallet.setWalletStatus(WalletStatus.ACTIVE);
         generateKeyPair(wallet);
+        log.info("New wallet created: " + wallet);
         return wallet;
     }
 
@@ -70,6 +80,7 @@ public class WalletService {
             wallet.setPrivateKeyString(StringUtil.getStringFromKey(wallet.getPrivateKey()));
             wallet.setPublicKey(keyPair.getPublic());
             wallet.setPublicKeyString(StringUtil.getStringFromKey(wallet.getPublicKey()));
+            log.info("New key pair for the wallet generated: " + wallet);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -79,6 +90,7 @@ public class WalletService {
         Wallet walletSaved = walletRepository.findById(walletId).get();
         walletSaved.setWalletStatus(WalletStatus.DELETED);
         walletRepository.save(walletSaved);
+        log.info("Wallet deleted: " + walletId);
         return walletRepository.findById(walletId).get();
     }
 }

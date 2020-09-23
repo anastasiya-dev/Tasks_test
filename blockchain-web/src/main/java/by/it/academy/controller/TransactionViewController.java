@@ -3,6 +3,8 @@ package by.it.academy.controller;
 import by.it.academy.management.TransactionManagement;
 import by.it.academy.pojo.Transaction;
 import by.it.academy.support.FilterInput;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -23,6 +25,8 @@ public class TransactionViewController {
     @Autowired
     TransactionManagement transactionManagement;
 
+    private static final Logger log = LoggerFactory.getLogger(TransactionViewController.class);
+
     static ArrayList<Transaction> staticTransactionsFiltered = new ArrayList<>();
 
     @RequestMapping(value = "/{userId}/wallet/{walletId}/transaction-all", method = RequestMethod.GET)
@@ -31,7 +35,10 @@ public class TransactionViewController {
                                             @PathVariable String walletId,
                                             @ModelAttribute FilterInput filterInput,
                                             RedirectAttributes redirectAttributes) {
+
         staticTransactionsFiltered.clear();
+        log.info("Cleared transactions filtered: " + staticTransactionsFiltered);
+        log.info("Received filter requirement " + filterInput + " for wallet " + walletId);
         List<Transaction> transactions = transactionManagement.getAllForWallet(walletId, false);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
         ArrayList<Transaction> transactionsFiltered = new ArrayList<>();
@@ -79,7 +86,7 @@ public class TransactionViewController {
         modelAndView.setViewName("transaction-all");
         modelAndView.addObject("transactionsFiltered", transactionsFiltered);
         staticTransactionsFiltered.addAll(transactionsFiltered);
-
+        log.info("Extracted transactions filtered: " + staticTransactionsFiltered);
         modelAndView.addObject("sum", sum);
         return modelAndView;
     }

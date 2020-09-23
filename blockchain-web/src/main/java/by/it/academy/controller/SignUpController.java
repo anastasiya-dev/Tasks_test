@@ -36,7 +36,7 @@ public class SignUpController {
             RedirectAttributes redirectAttributes
     ) {
         log.info("Signing up new user");
-        if (userService.findUserByName(user.getUserName(), UserStatus.ACTIVE) != null) {
+        if (userService.findUserByName(user.getUserName()) != null) {
             log.warn("User " + user.getUserName() + " attempted signup though already exists");
             return "redirect:login";
         }
@@ -47,7 +47,7 @@ public class SignUpController {
             userService.saveUser(user);
             redirectAttributes.addAttribute("userId", user.getUserId());
             log.info("Saving new user: " + user);
-            return "redirect:/{userId}/user-cabinet";
+            return "redirect:/{userId}/wallet-all";
         }
     }
 

@@ -2,37 +2,36 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
 <jsp:include page="header.jsp"/>
-<a href="/blockchain-web/${userId}/wallet/${walletId}/unconfirmed/delete-all" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Delete all unconfirmed</a>
-<a href="/blockchain-web/${userId}/wallet/${walletId}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Back to wallet</a>
+<br>
+<br>
+<form action="/blockchain-web/${userId}/wallet/${walletId}/unconfirmed/delete-all" method="get" >
+   <button type="submit" class="btn send-button">Delete all unconfirmed</button>
+</form>
 
-    <h1>Sign all:</h1>
-       <form action="/blockchain-web/${userId}/wallet/${walletId}/unconfirmed/sign-all" method="post">
-           <div class="form-group">
-              <label for="formGroupExampleInput2">Private key to confirm: </label>
-              <input type="text" class="form-control" name="privateKeyString" id="formGroupExampleInput1" placeholder="Private Key">
-           </div>
-           <button type="submit" class="btn btn-primary">Submit</button>
-           </form>
+    <h3>Sign all:</h3>
+<form action="/blockchain-web/${userId}/wallet/${walletId}/unconfirmed/sign-all" method="post" >
+    <label for="privateKeyString">Private key</label><br>
+     <input type="text" id="privateKeyString" name="privateKeyString"><br>
 
-    <h1>Unconfirmed transactions:</h1>
+   <button type="submit" class="btn send-button-small">Submit</button>
+</form>
 
+    <h3>Unconfirmed transactions:</h3>
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">transaction id</th>
-          <th scope="col">sender</th>
-          <th scope="col">recipient</th>
-          <th scope="col">value</th>
-          <th scope="col"></th>
-          <th scope="col"></th>
+          <th style="text-align:center" scope="col">Transaction Id</th>
+          <th style="text-align:center" scope="col">Sender</th>
+          <th style="text-align:center" scope="col">Recipient</th>
+          <th style="text-align:center" scope="col">Value</th>
         </tr>
       </thead>
       <tbody>
 <c:forEach items="${transactions}" var="transaction">
         <tr>
-          <td>${transaction.transactionId}</td>
-          <td>${transaction.senderId}</td>
-          <td>${transaction.recipientId}</td>
+          <td style="text-align:left" >${transaction.transactionId}</td>
+          <td style="text-align:left">${transaction.senderId}</td>
+          <td style="text-align:left">${transaction.recipientId}</td>
           <td>${transaction.value}</td>
           <td><p><a href="/blockchain-web/${userId}/wallet/${walletId}/transaction/${transaction.transactionId}/sign-transaction" class="text-primary">Sign</a></p><td>
           <td><p><a href="/blockchain-web/${userId}/wallet/${walletId}/transaction/${transaction.transactionId}/delete-transaction" class="text-primary">Delete</a></p><td>
@@ -40,10 +39,10 @@
 </c:forEach>
       </tbody>
           <tfoot>
-            <td>Total</td>
+            <td><b>Total</b></td>
             <td></td>
             <td></td>
-            <td>${sum}</td>
+            <td><b>${sum}</b></td>
             <td></td>
             <td></td>
           </tfoot>

@@ -1,6 +1,10 @@
 <jsp:include page="header.jsp"/>
-<h3>By pressing the button below you confirm that your profile in Blockchain will be deleted </h3>
-<br>
-<a href="/blockchain-web/${userId}/delete-user-confirm-process" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Confirm profile deletion</a>
-<br>
+
+<h2 style="margin-top: 2cm;">By pressing the button below you confirm that your profile in BlockChain will be deleted</h2>
+
+<form action="/blockchain-web/${userId}/delete-user-confirm-process" method="get" >
+   <button type="submit" class="btn send-button">Confirm</button>
+</form>
+
+
 <jsp:include page="footer.jsp"/>

@@ -32,12 +32,12 @@
 
                    <div class="input-group form-group">
 
-                           <input type="text" id="username" class="form-control my-input" name="username" placeholder="username">
+                           <input type="text" id="username" class="form-control my-input" name="username" placeholder="Username">
                            </div>
 
 <div class="input-group form-group">
 
-                           <input type="password" id="password" class="form-control my-input" name="password" placeholder="password">
+                           <input type="password" id="password" class="form-control my-input" name="password" placeholder="Password">
                            </div>
 
                 <div class="form-actions">

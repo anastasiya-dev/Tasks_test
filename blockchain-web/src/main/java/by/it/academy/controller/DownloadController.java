@@ -3,6 +3,8 @@ package by.it.academy.controller;
 import by.it.academy.management.TransactionManagement;
 import by.it.academy.pojo.Transaction;
 import by.it.academy.support.FilterInput;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -25,6 +27,8 @@ public class DownloadController {
 
     @Autowired
     TransactionManagement transactionManagement;
+
+    private static final Logger log = LoggerFactory.getLogger(DownloadController.class);
 
     @RequestMapping(value = "/{userId}/wallet/{walletId}/download")
     public void download(ModelAndView modelAndView,
@@ -60,6 +64,8 @@ public class DownloadController {
             csvWriter.write(transaction, header);
         }
         csvWriter.close();
+        log.info("Saved " + TransactionViewController.staticTransactionsFiltered);
+        log.info("Location file name: " + csvFileName);
         TransactionViewController.staticTransactionsFiltered.clear();
     }
 }

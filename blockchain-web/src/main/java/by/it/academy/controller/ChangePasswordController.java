@@ -6,6 +6,7 @@ import by.it.academy.support.ChangePassword;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -19,6 +20,8 @@ public class ChangePasswordController {
 
     @Autowired
     UserService userService;
+    @Autowired
+    PasswordEncoder passwordEncoder;
 
     private static final Logger log = LoggerFactory.getLogger(ChangePasswordController.class);
 
@@ -38,17 +41,22 @@ public class ChangePasswordController {
             RedirectAttributes redirectAttributes,
             @ModelAttribute ChangePassword changePassword
     ) {
+        log.info("Changing password for user " + userId);
         modelAndView.addObject("user", userService.findUserById(userId));
         User user = userService.findUserById(userId);
-        if (!changePassword.getOldPassword().equals(user.getUserPassword())) {
+
+        if (!passwordEncoder.matches(changePassword.getOldPassword(), user.getUserPassword())) {
             redirectAttributes.addAttribute("userId", userId);
+            log.warn("Denied. Incorrect old password");
             return "redirect:/{userId}/change-password";
         } else if (!changePassword.getNewPassword().equals(changePassword.getConfirmPassword())) {
+            log.warn("Denied. Unconfirmed new password");
             return "redirect:/unconfirmed-password";
         } else {
             userService.updatePassword(userId, changePassword);
             redirectAttributes.addAttribute("userId", userId);
-            return "redirect:/{userId}/user-cabinet";
+            log.info("Accepted");
+            return "redirect:/{userId}/wallet-all";
         }
     }
 }

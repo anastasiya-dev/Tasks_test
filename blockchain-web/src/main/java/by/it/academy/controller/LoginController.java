@@ -26,6 +26,6 @@ public class LoginController {
         String userId = AuthenticationService.userId;
         log.info("User with the id " + userId + " authorized and redirected to the cabinet");
         redirectAttributes.addAttribute("userId", userId);
-        return "redirect:/{userId}/user-cabinet";
+        return "redirect:/{userId}/wallet-all";
     }
 }

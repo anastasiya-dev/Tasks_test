@@ -8,6 +8,8 @@ import by.it.academy.service.WalletService;
 import by.it.academy.support.PrivateKeyInput;
 import by.it.academy.support.TransactionStart;
 import by.it.academy.util.StringUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -29,6 +31,8 @@ public class TransactionCreateController {
     @Autowired
     WalletManagement walletManagement;
 
+    private static final Logger log = LoggerFactory.getLogger(TransactionCreateController.class);
+
     @RequestMapping(value = "/{userId}/wallet/{walletId}/create-transaction",
             method = RequestMethod.GET)
     public ModelAndView transactionPage(ModelAndView modelAndView,
@@ -47,23 +51,41 @@ public class TransactionCreateController {
                                     @ModelAttribute TransactionStart transactionStart,
                                     RedirectAttributes redirectAttributes
     ) {
-
+        log.info("User " + userId + " via wallet " + walletId + " is starting transaction: ");
+        log.info(String.valueOf(transactionStart));
         Wallet walletSender = walletService.findWalletById(walletId);
 
-        Transaction transaction
-                = transactionService.createTransaction(
-                walletSender.getWalletId(),
-                transactionStart.getRecipient(),
-                Float.parseFloat(transactionStart.getValue())
-        );
-
-        transactionService.saveTransaction(transaction);
-
-        String transactionId = transaction.getTransactionId();
-        redirectAttributes.addAttribute("transactionId", transactionId);
-        modelAndView.setViewName("create-transaction");
-        return "redirect:/{userId}/wallet/{walletId}/transaction/{transactionId}/sign-transaction";
+        try {
+            Transaction transaction
+                    = transactionService.createTransaction(
+                    walletSender.getWalletId(),
+                    transactionStart.getRecipient(),
+                    Float.parseFloat(transactionStart.getValue())
+            );
+            log.info("Transaction saved");
+            transactionService.saveTransaction(transaction);
+            String transactionId = transaction.getTransactionId();
+            redirectAttributes.addAttribute("transactionId", transactionId);
+            modelAndView.setViewName("create-transaction");
+            return "redirect:/{userId}/wallet/{walletId}/transaction/{transactionId}/sign-transaction";
+        }
+        catch (Exception e){
+            {
+                log.warn("Incorrect transaction input");
+                return "redirect:/{userId}/wallet/{walletId}/transaction/incorrect-input";
+            }
+        }
     }
+
+    @RequestMapping(value = "/{userId}/wallet/{walletId}/transaction/incorrect-input",
+            method = RequestMethod.GET)
+    public ModelAndView incorrectTransactionInput(ModelAndView modelAndView,
+                                                  @PathVariable String userId,
+                                                  @PathVariable String walletId) {
+        modelAndView.setViewName("incorrect-input");
+        return modelAndView;
+    }
+
 
     @RequestMapping(
             value = "/{userId}/wallet/{walletId}/transaction/{transactionId}/sign-transaction",
@@ -80,17 +102,42 @@ public class TransactionCreateController {
         Wallet walletSender = walletService.findWalletById(walletId);
         PrivateKey privateKey = walletSender.getPrivateKey();
         Transaction transaction = transactionService.findTransactionById(transactionId);
+
+        log.info("User " + userId + " via wallet " + walletId + " is signing transaction: ");
+        log.info(String.valueOf(transaction));
+
         if (!privateKeyInput.getPrivateKeyString()
                 .equals(StringUtil.getStringFromKey(privateKey))) {
-            return "redirect:/unauthorized-transaction";
+            log.warn("Denied. Unauthorized");
+            return "redirect:/{userId}/wallet/{walletId}/unauthorized-transaction";
         } else if (walletManagement.getBalance(walletSender) < transaction.getValue()) {
-            return "redirect:/not-enough-funds";
+            log.warn("Denied. Not enough funds");
+            return "redirect:/{userId}/wallet/{walletId}/not-enough-funds";
         } else {
             transactionService.generateSignature(transaction, walletSender.getPrivateKey());
             Transaction signedTransaction = transactionService.updateTransaction(transaction);
             walletManagement.sendFunds(walletSender, transaction.getRecipient(), transaction.getValue(), signedTransaction);
-            return "redirect:/{userId}/wallet/{walletId}";
+            log.info("Accepted");
+            return "redirect:/{userId}/wallet-all";
         }
+    }
+
+    @RequestMapping(value = "/{userId}/wallet/{walletId}/unauthorized-transaction",
+            method = RequestMethod.GET)
+    public ModelAndView unauthorizedTransaction(ModelAndView modelAndView,
+                                                  @PathVariable String userId,
+                                                  @PathVariable String walletId) {
+        modelAndView.setViewName("unauthorized-transaction");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/{userId}/wallet/{walletId}/not-enough-funds",
+            method = RequestMethod.GET)
+    public ModelAndView notEnoughFunds(ModelAndView modelAndView,
+                                                @PathVariable String userId,
+                                                @PathVariable String walletId) {
+        modelAndView.setViewName("not-enough-funds");
+        return modelAndView;
     }
 
     @RequestMapping(
@@ -106,8 +153,8 @@ public class TransactionCreateController {
         Transaction transaction = transactionService.findTransactionById(transactionId);
         modelAndView.addObject("transaction", transaction);
 
-        System.out.println("Sending private key to user:");
-        System.out.println(StringUtil.getStringFromKey(walletService.findWalletById(walletId).getPrivateKey()));
+        log.info("Sending private key to user:");
+        log.info(StringUtil.getStringFromKey(walletService.findWalletById(walletId).getPrivateKey()));
 
         modelAndView.setViewName("sign-transaction");
         return modelAndView;

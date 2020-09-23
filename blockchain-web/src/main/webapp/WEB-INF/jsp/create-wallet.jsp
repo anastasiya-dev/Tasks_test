@@ -1,6 +1,6 @@
 <jsp:include page="header.jsp"/>
 
-<h2 style="margin-top: 4cm;">Your new wallet is created:</h2>
+<h2 style="margin-top: 2cm;">Your new wallet is created:</h2>
 <div style="overflow-x:auto;">
 <table class="table">
       <thead>

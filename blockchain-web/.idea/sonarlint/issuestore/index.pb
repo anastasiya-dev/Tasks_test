@@ -5,8 +5,6 @@ f
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 T
 $src/main/webapp/WEB-INF/jsp/home.jsp,5\9\59666227893021ff0f8b6fbb8c015ef116e9498f
-^
-.src/main/java/by/it/academy/support/Login.java,a\e\ae4d564bb7c743dd7c9ed3fc7336dbf6d6446441
 U
 %src/main/webapp/WEB-INF/jsp/login.jsp,5\8\582bc84275d5b626d3b0f12b82e66269f2fac2a7
 V
@@ -21,8 +19,6 @@ d
 4src/main/java/by/it/academy/service/UserService.java,8\e\8e5912eb8482f3d4163aa55afe99d18c64a3032c
 Z
 *src/main/java/by/it/academy/pojo/User.java,8\d\8d588b6bab1214a1d2da105bb5076c141e57e228
-c
-3src/main/java/by/it/academy/util/UserImageUtil.java,f\8\f850b6f157893d32d1f812bc9db83aef200ac574
 \
 ,src/main/java/by/it/academy/pojo/Wallet.java,0\c\0c37c3ae00d7f4d7e44e56d12748d5c2672f5987
 a
@@ -51,8 +47,6 @@ i
 9src/main/java/by/it/academy/support/TransactionStart.java,4\1\41744ad9ab5bf62b4eef994b37cfd283b2253ae0
 b
 2src/main/webapp/WEB-INF/jsp/create-transaction.jsp,2\c\2cfb07f911e7171dbb9295c7328c16b3fdfba022
-l
-<src/main/java/by/it/academy/controller/WalletController.java,c\5\c5008f08ec96e84128827cf097a5b971aa0cdea7
 k
 ;src/main/java/by/it/academy/service/TransactionService.java,8\9\8928066462f2f95128788593a9c0bf0234fc32dd
 h

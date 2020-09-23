@@ -8,6 +8,8 @@ import by.it.academy.service.TransactionService;
 import by.it.academy.service.WalletService;
 import by.it.academy.support.PrivateKeyInput;
 import by.it.academy.util.StringUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -32,6 +34,8 @@ public class TransactionUnconfirmedController {
     @Autowired
     WalletManagement walletManagement;
 
+    private static final Logger log = LoggerFactory.getLogger(TransactionUnconfirmedController.class);
+
     @RequestMapping(
             value = "/{userId}/wallet/{walletId}/unconfirmed",
             method = RequestMethod.GET)
@@ -44,10 +48,9 @@ public class TransactionUnconfirmedController {
         for (Transaction transaction : unconfirmedTransactions) {
             sum += transaction.getValue();
         }
-
-        System.out.println("Sending private key to user:");
-        System.out.println(StringUtil.getStringFromKey(walletService.findWalletById(walletId).getPrivateKey()));
-
+        log.info("Presenting unconfirmed transactions for wallet: " + walletId);
+        log.info("Sending private key to user:");
+        log.info(StringUtil.getStringFromKey(walletService.findWalletById(walletId).getPrivateKey()));
 
         modelAndView.setViewName("view-unconfirmed");
         modelAndView.addObject("sum", sum);
@@ -70,14 +73,17 @@ public class TransactionUnconfirmedController {
 
         float sum = 0.0f;
         for (Transaction transaction : unconfirmedTransactions) {
-            sum += transaction.getValue();
+            sum -= transaction.getValue();
         }
 
+        log.info("Signing all unconfirmed transactions for wallet: " + walletId);
         if (!privateKeyInput.getPrivateKeyString()
                 .equals(StringUtil.getStringFromKey(privateKey))) {
-            return "redirect:/unauthorized-transaction";
+            log.warn("Denied. Unauthorized");
+            return "redirect:/{userId}/wallet/{walletId}/unauthorized-transaction";
         } else if (walletManagement.getBalance(walletSender) < sum) {
-            return "redirect:/not-enough-funds";
+            log.warn("Denied. Not enough funds");
+            return "redirect:/{userId}/wallet/{walletId}/not-enough-funds";
         } else {
 
             for (Transaction transaction : unconfirmedTransactions) {
@@ -86,8 +92,9 @@ public class TransactionUnconfirmedController {
                 transactionService.saveTransaction(transaction);
                 Transaction signedTransaction = transactionService.findTransactionById(transaction.getTransactionId());
                 walletManagement.sendFunds(walletSender, transaction.getRecipient(), transaction.getValue(), signedTransaction);
+                log.info("Accepted");
             }
-            return "redirect:/{userId}/wallet/{walletId}";
+            return "redirect:/{userId}/wallet-all";
         }
     }
 
@@ -102,7 +109,7 @@ public class TransactionUnconfirmedController {
         for (Transaction transaction : unconfirmedTransactions) {
             transactionService.deleteTransaction(transaction.getTransactionId());
         }
-        return "redirect:/{userId}/wallet/{walletId}";
+        return "redirect:/{userId}/wallet-all";
     }
 
     @RequestMapping(
@@ -115,11 +122,14 @@ public class TransactionUnconfirmedController {
     ) {
         Transaction transaction = transactionService.findTransactionById(transactionId);
         modelAndView.setViewName("view-unconfirmed");
+        log.info("Deleting unconfirmed transaction " + transactionId + " for wallet " + walletId);
         transactionService.deleteTransaction(transaction.getTransactionId());
+
         return "redirect:/{userId}/wallet/{walletId}/unconfirmed";
     }
 
     private ArrayList<Transaction> findUnconfirmed(String walletId) {
+        log.info("Extracting unconfirmed transactions for wallet " + walletId);
         List<Transaction> filteredTransactions = transactionManagement.getAllForWallet(walletId, true);
         ArrayList<Transaction> unconfirmedTransactions = new ArrayList<>();
         for (Transaction transaction : filteredTransactions) {

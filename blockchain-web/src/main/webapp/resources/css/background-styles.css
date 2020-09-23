@@ -101,13 +101,13 @@ th, td {
 th {
 background-color: #00142E;
   color: white;
-  height: 50px;
+  height: 30px;
   text-align: left;
 
 }
 
 td {
-  height: 50px;
+  height: 30px;
   text-align: right;
 
 }
@@ -126,6 +126,18 @@ padding: 8px 25px;
 width: 25em;
 height: 4em;
 vertical-align: center;
+cursor: pointer;
+}
+
+.send-button-small{
+background: #00142E;
+font-weight: 600;
+color:#fff;
+padding: 4px 12px;
+width: 12em;
+height: 2em;
+vertical-align: center;
+cursor: pointer;
 }
 
 input[type=text] {
@@ -135,9 +147,23 @@ input[type=text] {
   box-sizing: border-box;
 }
 
+input[type=password] {
+  width: 25em;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+
+
 input[type=text]:focus {
   background-color: lightblue;
    border: 3px solid #555;
+}
+
+/*other */
+.text-muted {
+    color: #6c757d!important;
 }
 
 /*footer */

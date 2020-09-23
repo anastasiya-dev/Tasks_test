@@ -1,11 +1,13 @@
 <jsp:include page="header.jsp"/>
-<h1>Transaction: </h1>
+<br>
+<br>
+<h2 >Your are going to confirm the following transaction:</h2>
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">wallet sender</th>
-          <th scope="col">wallet recipient</th>
-          <th scope="col">value</th>
+          <th scope="col">Sender</th>
+          <th scope="col">Recipient</th>
+          <th scope="col">Value</th>
         </tr>
       </thead>
       <tbody>
@@ -16,18 +18,13 @@
         </tr>
       </tbody>
     </table>
-
-    <form action="/blockchain-web/${userId}/wallet/${walletId}/transaction/${transactionId}/sign-transaction" method="post">
-       <div class="form-group">
-          <label for="formGroupExampleInput2">Private key to confirm: </label>
-          <input type="text" class="form-control" name="privateKeyString" id="formGroupExampleInput1" placeholder="Private Key">
-       </div>
-       <button type="submit" class="btn btn-primary">Submit</button>
-       </form>
-
 <br>
-<a href="/blockchain-web/${userId}/wallet/${walletId}/create-transaction" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Back to transaction</a>
-<br>
-<a href="/blockchain-web/${userId}/user-cabinet" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Back to user cabinet</a>
+<form action="/blockchain-web/${userId}/wallet/${walletId}/transaction/${transactionId}/sign-transaction" method="post" >
+    <label for="privateKeyString">Private key</label><br>
+     <input type="text" id="privateKeyString" name="privateKeyString"><br>
+
+   <button type="submit" class="btn send-button">Submit</button>
+</form>
+
 
 <jsp:include page="footer.jsp"/>

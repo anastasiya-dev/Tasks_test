@@ -1,6 +1,15 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+
 <!DOCTYPE HTML>
 <html>
 <head>
+
+      <link href="
+      <c:url value="/resources/css/background-styles.css" />
+      " rel="stylesheet">
+
 <script>
 window.onload = function() {
 
@@ -34,6 +43,6 @@ chart.render();
 <div id="chartContainer" style="height: 300px; width: 100%;"></div>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 <h4>Thank you for being with <a href="/blockchain-web/home" class="text-primary">Blockchain</a>! :)</h4>
-<p><a href="/blockchain-web/${userId}/user-cabinet" class="text-primary">Back to cabinet</a></p>
+<p><a href="/blockchain-web/${userId}/wallet-all" class="text-primary">Back to cabinet</a></p>
 </body>
 </html>

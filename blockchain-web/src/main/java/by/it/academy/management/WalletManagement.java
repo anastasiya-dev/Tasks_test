@@ -4,6 +4,8 @@ import by.it.academy.pojo.Transaction;
 import by.it.academy.pojo.Utxo;
 import by.it.academy.pojo.Wallet;
 import by.it.academy.service.UtxoService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,7 +22,10 @@ public class WalletManagement {
     @Autowired
     TransactionManagement transactionManagement;
 
+    private static final Logger log = LoggerFactory.getLogger(WalletManagement.class);
+
     public float getBalance(Wallet wallet) {
+        log.info("Calculating balance for wallet " + wallet.getWalletId());
         float total = 0;
         ArrayList<Utxo> UTXOs = (ArrayList<Utxo>) utxoService.findAllUTXOs();
         for (Utxo UTXO : UTXOs) {
@@ -28,6 +33,7 @@ public class WalletManagement {
                 total += UTXO.getValue();
             }
         }
+        log.info("Result: " + total);
         return total;
     }
 
@@ -43,6 +49,8 @@ public class WalletManagement {
         }
         float total = 0;
         for (Utxo UTXO : walletUTXOs) {
+            log.info("Wallet " + wallet.getWalletId() + " is paying for transaction " + transaction.getTransactionId());
+            log.info(String.valueOf(UTXO));
             total += UTXO.getValue();
             Utxo utxoFromChain = utxoService.findUTXOById(UTXO.getUtxoId());
             utxoFromChain.setOutputTransactionId(transaction.getTransactionId());
@@ -50,7 +58,6 @@ public class WalletManagement {
             utxoService.updateUtxo(utxoFromChain);
             if (total > value) break;
         }
-
         transactionManagement.processTransaction(transaction);
         return transaction;
     }

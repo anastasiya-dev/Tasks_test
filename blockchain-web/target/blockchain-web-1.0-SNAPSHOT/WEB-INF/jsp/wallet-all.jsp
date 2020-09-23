@@ -2,13 +2,19 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
 <jsp:include page="header.jsp"/>
-    <h2 style="margin-top: 4cm;">Please see all your wallets below:</h2>
+<h2 style="margin-top: 2cm;"></h2>
+<form action="/blockchain-web/${userId}/create-wallet" method="get" >
+   <button type="submit" class="btn send-button-small">Create wallet</button>
+</form>
+
+    <br>
+    <h2>Please see all your wallets below:</h2>
 
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">Wallet Id</th>
-          <th scope="col">Wallet balance</th>
+          <th style="text-align:center"scope="col">Wallet Id</th>
+          <th style="text-align:center" scope="col">Wallet balance</th>
         </tr>
       </thead>
       <tbody>
@@ -16,7 +22,9 @@
         <tr>
           <td style="text-align:left">${wallet.walletId}</td>
           <td>${wallet.balance}</td>
-          <td style="border-collapse: collapse"><a href="/blockchain-web/${userId}/wallet/${wallet.walletId}">View</a><td>
+          <td style="border-collapse: collapse"><a href="/blockchain-web/${userId}/wallet/${wallet.walletId}/create-transaction">New transaction</a><td>
+          <td style="border-collapse: collapse"><a href="/blockchain-web/${userId}/wallet/${wallet.walletId}/transaction-all">View processed</a><td>
+          <td style="border-collapse: collapse"><a href="/blockchain-web/${userId}/wallet/${wallet.walletId}/unconfirmed">View unconfirmed </a><td>
           <td style="border-collapse: collapse"><a href="/blockchain-web/${userId}/wallet/${wallet.walletId}/delete">Delete</a><td>
         </tr>
 </c:forEach>

@@ -11,6 +11,8 @@ import by.it.academy.support.TransactionStatus;
 import by.it.academy.support.UserStatus;
 import by.it.academy.support.WalletStatus;
 import by.it.academy.util.StringUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -33,6 +35,7 @@ public class WalletDeleteController {
     @Autowired
     UserService userService;
 
+    private static final Logger log = LoggerFactory.getLogger(WalletDeleteController.class);
 
     @RequestMapping(
             value = "/{userId}/wallet/{walletId}/delete",
@@ -42,32 +45,44 @@ public class WalletDeleteController {
                                @PathVariable String walletId,
                                @ModelAttribute PrivateKeyInput privateKeyInput) {
 
+        log.info("User " + userId + " is going to delete the wallet " + walletId);
         modelAndView.setViewName("delete-wallet");
-        Transaction transaction
-                = transactionService.createTransaction(
-                walletId,
-                walletService.getAllWalletsForUser
-                        (
-                                userService.findUserByName("Genesis1", UserStatus.ACTIVE).getUserId(),
-                                WalletStatus.ACTIVE
-                        ).get(0).getWalletId(),
-                walletManagement.getBalance(walletService.findWalletById(walletId))
-        );
 
-        Wallet walletSender = walletService.findWalletById(walletId);
-        PrivateKey privateKey = walletSender.getPrivateKey();
-        if (!privateKeyInput.getPrivateKeyString()
-                .equals(StringUtil.getStringFromKey(privateKey))) {
-            return "redirect:/unauthorized-transaction";
+        if (userService.findUserById(walletService.findWalletById(walletId).getUserId()).getUserName().contains("Genesis")) {
+            log.warn("Attempting to delete genesis wallet. Denied");
+            return "redirect:/{userId}/wallet-all";
         } else {
-            transactionService.saveTransaction(transaction);
-            transactionService.generateSignature(transaction, walletSender.getPrivateKey());
-            transaction.setTransactionStatus(TransactionStatus.WALLET_DELETION);
-            Transaction signedTransaction = transactionService.updateTransaction(transaction);
-            transactionService.walletDeleteTransaction(signedTransaction);
-            walletManagement.sendFunds(walletSender, transaction.getRecipient(), transaction.getValue(), signedTransaction);
-            walletService.delete(walletId);
-            return "redirect:/{userId}/wallet/{walletId}";
+            Transaction transaction
+                    = transactionService.createTransaction(
+                    walletId,
+                    walletService.getAllWalletsForUser
+                            (
+                                    userService.findUserByName("Genesis1").getUserId(),
+                                    WalletStatus.ACTIVE
+                            ).get(0).getWalletId(),
+                    walletManagement.getBalance(walletService.findWalletById(walletId))
+            );
+
+            Wallet walletSender = walletService.findWalletById(walletId);
+            PrivateKey privateKey = walletSender.getPrivateKey();
+            log.info("Sending private key to user:");
+            log.info(StringUtil.getStringFromKey(walletService.findWalletById(walletId).getPrivateKey()));
+            if (!privateKeyInput.getPrivateKeyString()
+                    .equals(StringUtil.getStringFromKey(privateKey))) {
+                log.warn("Denied. Unauthorized");
+                return "redirect:/unauthorized-transaction";
+            } else {
+                transactionService.saveTransaction(transaction);
+                transactionService.generateSignature(transaction, walletSender.getPrivateKey());
+                transaction.setTransactionStatus(TransactionStatus.WALLET_DELETION);
+                Transaction signedTransaction = transactionService.updateTransaction(transaction);
+                transactionService.walletDeleteTransaction(signedTransaction);
+                walletManagement.sendFunds(walletSender, transaction.getRecipient(), transaction.getValue(), signedTransaction);
+                walletService.delete(walletId);
+                log.info("Accepted");
+                log.info("Clearing transaction: " + transaction);
+                return "redirect:/{userId}/wallet-all";
+            }
         }
     }
 
@@ -79,8 +94,8 @@ public class WalletDeleteController {
                                          @PathVariable String walletId,
                                          @ModelAttribute PrivateKeyInput privateKeyInput) {
 
-        System.out.println("Sending private key to user:");
-        System.out.println(StringUtil.getStringFromKey(walletService.findWalletById(walletId).getPrivateKey()));
+        log.info("Sending private key to user:");
+        log.info(StringUtil.getStringFromKey(walletService.findWalletById(walletId).getPrivateKey()));
         modelAndView.addObject("balance",
                 walletManagement.getBalance(walletService.findWalletById(walletId)));
         modelAndView.setViewName("delete-wallet");

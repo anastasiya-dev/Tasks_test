@@ -26,7 +26,7 @@ public class AuthenticationService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         log.info("Calling loadUserByUserName: {}", username);
-        by.it.academy.pojo.User appUser = userService.findUserByName(username, UserStatus.ACTIVE);
+        by.it.academy.pojo.User appUser = userService.findUserByName(username);
         log.info("found appUser:" + appUser);
         if (appUser == null) throw new UsernameNotFoundException("User not found: " + username);
         userId = appUser.getUserId();

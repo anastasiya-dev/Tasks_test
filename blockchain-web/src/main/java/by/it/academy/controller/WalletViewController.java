@@ -4,6 +4,8 @@ import by.it.academy.management.WalletManagement;
 import by.it.academy.pojo.Wallet;
 import by.it.academy.service.WalletService;
 import by.it.academy.support.WalletStatus;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,11 +24,15 @@ public class WalletViewController {
     @Autowired
     WalletManagement walletManagement;
 
+    private static final Logger log = LoggerFactory.getLogger(WalletViewController.class);
+
     @RequestMapping(value = "/{userId}/create-wallet", method = RequestMethod.GET)
     public ModelAndView createWallet(ModelAndView modelAndView,
                                      @PathVariable String userId) {
         Wallet wallet = walletService.createWallet(userId);
         walletService.saveWallet(wallet);
+        log.info("User " + userId + " created new wallet" );
+        log.info(String.valueOf(wallet));
         modelAndView.addObject("wallet", wallet);
         modelAndView.setViewName("create-wallet");
         return modelAndView;
@@ -43,18 +49,10 @@ public class WalletViewController {
         }
 
         wallets.sort(Comparator.comparingInt(w -> (int) (w.getBalance() * (-10.0))));
-
+        log.info("Showing all the wallets of the user " + userId);
         modelAndView.setViewName("wallet-all");
         modelAndView.addObject("wallets", wallets);
         modelAndView.addObject("sum", sum);
-        return modelAndView;
-    }
-
-    @RequestMapping(value = "/{userId}/wallet/{walletId}", method = RequestMethod.GET)
-    public ModelAndView viewIndWallet(ModelAndView modelAndView,
-                                      @PathVariable String userId,
-                                      @PathVariable String walletId) {
-        modelAndView.setViewName("ind-wallet");
         return modelAndView;
     }
 }
