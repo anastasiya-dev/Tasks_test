@@ -143,3 +143,7 @@ r
 Bsrc/main/java/by/it/academy/controller/WalletDeleteController.java,d\e\debc752b7e7845a76cf77d7fc8c0e277dbd3c8c4
 p
 @src/main/java/by/it/academy/controller/WalletViewController.java,7\3\730bdc4d7290a27012666e53f53b59713dadd8b0
+_
+/src/main/webapp/WEB-INF/jsp/incorrect-input.jsp,6\5\65dcec153815d429256e1c60d4dc2a77638aeb9b
+]
+-src/main/java/by/it/academy/pojo/Approle.java,3\2\320ea6f3b2e71ed9354704cdb6bc2d0520d920a8

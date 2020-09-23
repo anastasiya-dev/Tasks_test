@@ -1,9 +1,18 @@
 
-p
-java:S1128"SRemove this unused import 'org.springframework.web.bind.annotation.ModelAttribute'.(®ùæé8§‘¢çÊ.
-r	java:S117#"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(èŠ³Œüÿÿÿÿ8æ†‘ŒÊ.
-M
-java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8›İçÊ.
-X	java:S1250"<This block of commented-out lines of code should be removed.(ò®›‹8øÃçÊ.
 [
 java:S1128">Remove this unused import 'by.it.academy.support.FilterInput'.(¹‡áö8§‘¢çÊ.
+Y
+java:S2629C"7Use the built-in formatting to construct this argument.(ÁÒŞ¸úÿÿÿÿ8‘ÈˆÔË.
+M
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8›İçÊ.
+c
+java:S3457C"AFormat specifiers should be used instead of string concatenation.(ÁÒŞ¸úÿÿÿÿ8‘ÈˆÔË.
+p
+java:S1128
+"SRemove this unused import 'org.springframework.web.bind.annotation.ModelAttribute'.(®ùæé8§‘¢çÊ.
+X	java:S1254"<This block of commented-out lines of code should be removed.(ò®›‹8øÃçÊ.
+r	java:S117'"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(èŠ³Œüÿÿÿÿ8æ†‘ŒÊ.
+T
+java:S2629D"7Use the built-in formatting to construct this argument.(Š½¿¾8ºÄÔË.
+^
+java:S3457D"AFormat specifiers should be used instead of string concatenation.(Š½¿¾8ºÄÔË.

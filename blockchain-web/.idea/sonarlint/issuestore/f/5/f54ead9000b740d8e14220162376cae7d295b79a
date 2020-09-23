@@ -1,11 +1,15 @@
 
-]
-java:S1128"@Remove this unused import 'by.it.academy.service.WalletService'.(Ñ¯ä§8 ŠÂ²Ë.
-g
-java:S1128"ERemove this unused import 'by.it.academy.service.TransactionService'.(¯–Ö“úÿÿÿÿ8 ŠÂ²Ë.
-b
-java:S46841"@Replace this persistent entity with a simple POJO or DTO object.(ÛÝ†­ùÿÿÿÿ8ÀÉðýÊ.
+~
+java:S2629,"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(ôÃ¢âÿÿÿÿÿ8€ŸÕÐË.
 c
-java:S1128"ARemove this unused import 'by.it.academy.support.ChangePassword'.( Šÿ·ùÿÿÿÿ8è’Ã²Ë.
-x
-java:S1128"[Remove this unused import 'org.springframework.web.servlet.mvc.support.RedirectAttributes'.(ìçÚË8è’Ã²Ë.
+java:S3457,"AFormat specifiers should be used instead of string concatenation.(ôÃ¢âÿÿÿÿÿ8Ý‡ÔÐË.
+b
+java:S4684'"@Replace this persistent entity with a simple POJO or DTO object.(ÛÝ†­ùÿÿÿÿ8ÀÉðýÊ.
+c
+java:S3457"AFormat specifiers should be used instead of string concatenation.(™ìµ»ûÿÿÿÿ8®ŠÓÐË.
+Y
+java:S2629"7Use the built-in formatting to construct this argument.(™ìµ»ûÿÿÿÿ8®ŠÓÐË.
+c
+java:S3457-"AFormat specifiers should be used instead of string concatenation.(¥çÓ¤üÿÿÿÿ8‡çÕÐË.
+Y
+java:S2629-"7Use the built-in formatting to construct this argument.(¥çÓ¤üÿÿÿÿ8ú–ÖÐË.

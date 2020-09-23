@@ -1,9 +1,30 @@
 
-Z	java:S106="9Replace this use of System.out or System.err by a logger.(îú“ˆıÿÿÿÿ8é††éÊ.
+T
+java:S2629/"7Use the built-in formatting to construct this argument.(àãÈ£8ñéµÕË.
 ’
-java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(î÷ú¥úÿÿÿÿ8…Ù ˆÊ.
-U	java:S106F"9Replace this use of System.out or System.err by a logger.(ñ»·Æ8œïˆéÊ.
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(î÷ú¥úÿÿÿÿ8…Ù ˆÊ.
+Y
+java:S26297"7Use the built-in formatting to construct this argument.(šÈä‹ûÿÿÿÿ8õÍ¶ÕË.
+^
+java:S3457/"AFormat specifiers should be used instead of string concatenation.(àãÈ£8ñéµÕË.
+c
+java:S34577"AFormat specifiers should be used instead of string concatenation.(šÈä‹ûÿÿÿÿ8õÍ¶ÕË.
+^
+java:S3457C"AFormat specifiers should be used instead of string concatenation.(«Ì£8ü¿±ÕË.
+c
+java:S3457L"AFormat specifiers should be used instead of string concatenation.(û‰Ñûÿÿÿÿ8ÚÇ³ÕË.
 Q
-java:S1066"/Merge this if statement with the enclosing one.(É™ÑŸşÿÿÿÿ8ø´†‘Ê.
-r	java:S117+"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(âóÆÿÿÿÿÿ8½î£éÊ.
-Z	java:S1061"9Replace this use of System.out or System.err by a logger.(‰Ä‰äıÿÿÿÿ8Ì·„éÊ.
+java:S1066"/Merge this if statement with the enclosing one.(É™ÑŸşÿÿÿÿ8ø´†‘Ê.
+^
+java:S3457="AFormat specifiers should be used instead of string concatenation.(¡ŒÜñ8µå²ÕË.
+r	java:S1171"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(âóÆÿÿÿÿÿ8½î£éÊ.
+Y
+java:S2629L"7Use the built-in formatting to construct this argument.(û‰Ñûÿÿÿÿ8ÚÇ³ÕË.
+T
+java:S2629C"7Use the built-in formatting to construct this argument.(«Ì£8ü¿±ÕË.
+Y
+java:S2629"7Use the built-in formatting to construct this argument.(–ç¥÷ùÿÿÿÿ8Å÷¸ÕË.
+T
+java:S2629="7Use the built-in formatting to construct this argument.(¡ŒÜñ8µå²ÕË.
+c
+java:S3457"AFormat specifiers should be used instead of string concatenation.(–ç¥÷ùÿÿÿÿ8Å÷¸ÕË.

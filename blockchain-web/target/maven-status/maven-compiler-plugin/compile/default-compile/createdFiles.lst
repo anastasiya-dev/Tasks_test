@@ -1,5 +1,6 @@
 by\it\academy\pojo\Utxo.class
 by\it\academy\controller\UserCabinetController.class
+by\it\academy\pojo\Approle.class
 by\it\academy\security\SecurityConfiguration.class
 by\it\academy\pojo\User.class
 by\it\academy\repository\UserRepository.class
@@ -32,7 +33,6 @@ by\it\academy\support\WalletStatus.class
 by\it\academy\controller\ChangePasswordController.class
 by\it\academy\support\FilterInput.class
 by\it\academy\controller\WalletViewController.class
-by\it\academy\pojo\AppRole.class
 by\it\academy\service\UtxoService.class
 by\it\academy\controller\StatisticsController.class
 by\it\academy\pojo\Transaction.class

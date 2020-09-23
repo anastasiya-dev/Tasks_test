@@ -1,7 +1,15 @@
 
+Y
+java:S26294"7Use the built-in formatting to construct this argument.(Íü–½ûÿÿÿÿ8¼’öĞË.
+^
+java:S3457""AFormat specifiers should be used instead of string concatenation.(åĞöÈ8»ÊôĞË.
+T
+java:S2629""7Use the built-in formatting to construct this argument.(åĞöÈ8»ÊôĞË.
+F
+java:S2629#"$Invoke method(s) only conditionally.(‡¨Ìıøÿÿÿÿ8¶–õĞË.
 j
-java:S4488#"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ÙÌÔ‚ùÿÿÿÿ8ÀÉíƒÊ.
-e
-java:S44885"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ğ“ñğ8ª„Ê.
+java:S4488"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ùƒşÿÿÿÿ8åŞãƒÊ.
+c
+java:S34574"AFormat specifiers should be used instead of string concatenation.(Íü–½ûÿÿÿÿ8¼’öĞË.
 j
-java:S4488"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ùƒşÿÿÿÿ8åŞãƒÊ.
+java:S4488)"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ÙÌÔ‚ùÿÿÿÿ8ÀÉíƒÊ.

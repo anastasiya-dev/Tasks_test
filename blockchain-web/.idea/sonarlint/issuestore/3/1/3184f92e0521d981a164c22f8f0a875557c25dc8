@@ -1,9 +1,17 @@
 
 j
-java:S4488("HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ñ¦…©üÿÿÿÿ8›ü©ýÊ.
+java:S44887"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ñ¦…©üÿÿÿÿ8›ü©ýÊ.
 j
-java:S44881"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ñ¦…©üÿÿÿÿ8›ü©ýÊ.
+java:S4488"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ñ¦…©üÿÿÿÿ8›ü©ýÊ.
 j
-java:S4488"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ñ¦…©üÿÿÿÿ8›ü©ýÊ.
+java:S4488."HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ñ¦…©üÿÿÿÿ8›ü©ýÊ.
+Y
+java:S2629#"7Use the built-in formatting to construct this argument.(õ¥¤Ùþÿÿÿÿ8·ë‹ÑË.
+c
+java:S3457#"AFormat specifiers should be used instead of string concatenation.(õ¥¤Ùþÿÿÿÿ8·ë‹ÑË.
 j
-java:S4488<"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ñ¦…©üÿÿÿÿ8›ü©ýÊ.
+java:S4488C"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ñ¦…©üÿÿÿÿ8›ü©ýÊ.
+]
+java:S3457="AFormat specifiers should be used instead of string concatenation.(Íàœ8Æ‘ÑË.
+S
+java:S2629="7Use the built-in formatting to construct this argument.(Íàœ8Æ‘ÑË.

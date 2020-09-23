@@ -1,11 +1,29 @@
 
 l
-java:S4488*"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(ıîÿäıÿÿÿÿ8‘îÿ†Ê.
-j
-java:S4488 "HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ıîÿäıÿÿÿÿ8‘îÿ†Ê.
-j
-java:S4488`"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ñ¦…©üÿÿÿÿ8‘îÿ†Ê.
+java:S4488Z"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(Ñ¦…©üÿÿÿÿ8‘îÿ†Ê.
+c
+java:S3457j"AFormat specifiers should be used instead of string concatenation.(ş®Üğüÿÿÿÿ8íÜ™ĞË.
+k
+java:S4488†"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ß·»øıÿÿÿÿ8êğªĞË.
 l
-java:S4488D"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(Ñ¦…©üÿÿÿÿ8‘îÿ†Ê.
-Z	java:S106n"9Replace this use of System.out or System.err by a logger.(É½”Ûøÿÿÿÿ8‡øŒ²Ê.
-Z	java:S106m"9Replace this use of System.out or System.err by a logger.(Ñ½—ïúÿÿÿÿ8‡øŒ²Ê.
+java:S4488."JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(ıîÿäıÿÿÿÿ8‘îÿ†Ê.
+O
+java:S1199I"-Extract this nested code block into a method.(ÒÌâ–øÿÿÿÿ8ãµ×Ë.
+j
+java:S4488$"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ıîÿäıÿÿÿÿ8‘îÿ†Ê.
+e
+java:S4488}"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(™€ñœ8şÓ¦ĞË.
+k
+java:S4488"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ñ¦…©üÿÿÿÿ8‘îÿ†Ê.
+F
+java:S2629k"$Invoke method(s) only conditionally.(§öÏùùÿÿÿÿ8õ™ĞË.
+j
+java:S4488P"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Àßë’ùÿÿÿÿ8Û™şÏË.
+F
+java:S26297"$Invoke method(s) only conditionally.(öÃÆøÿÿÿÿ8µ¯’ĞË.
+Y
+java:S2629j"7Use the built-in formatting to construct this argument.(ş®Üğüÿÿÿÿ8íÜ™ĞË.
+T
+java:S26296"7Use the built-in formatting to construct this argument.(„Ìæã8¬ùĞË.
+^
+java:S34576"AFormat specifiers should be used instead of string concatenation.(„Ìæã8¬ùĞË.

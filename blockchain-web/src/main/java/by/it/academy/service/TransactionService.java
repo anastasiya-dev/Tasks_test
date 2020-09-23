@@ -60,6 +60,7 @@ public class TransactionService {
         transaction.setRecipientId(to);
         transaction.setValue((float) Math.round(value * 10.0) / 10.0f);
         transaction.setTransactionStatus(TransactionStatus.CREATED);
+        transaction.setBlockId("n/a");
         log.info("Creating transaction: " + transaction);
         return transaction;
     }

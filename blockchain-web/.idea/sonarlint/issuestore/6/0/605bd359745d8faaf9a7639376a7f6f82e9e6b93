@@ -1,11 +1,23 @@
 
-e
-java:S4488"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ä±8òñ–ŒÊ.
-N
-java:S1481\"1Remove this unused "transactions" local variable.(©äÊê8‹š­—Ê.
 ]
-java:S1854\"@Remove this useless assignment to local variable "transactions".(©äÊê8‹š­—Ê.
-o
-java:S3776"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(ÉİÄŞ8¹œ’Ê.
+java:S1854c"@Remove this useless assignment to local variable "transactions".(©äÊê8ê­©ÔË.
+e
+java:S4488 "HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ä±8òñ–ŒÊ.
+N
+java:S1481c"1Remove this unused "transactions" local variable.(©äÊê8ê­©ÔË.
+^
+java:S3457("AFormat specifiers should be used instead of string concatenation.(–Ú÷ñ8›±¨ÔË.
+T
+java:S2629)"7Use the built-in formatting to construct this argument.(Â´°‹8ê­©ÔË.
+^
+java:S3457)"AFormat specifiers should be used instead of string concatenation.(Â´°‹8ê­©ÔË.
 l
-java:S4488W"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(¤ï¡ÿÿÿÿÿ8òñ–ŒÊ.
+java:S4488^"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(¤ï¡ÿÿÿÿÿ8ê­©ÔË.
+]
+java:S3457Y"AFormat specifiers should be used instead of string concatenation.(ä‹›R8ê­©ÔË.
+o
+java:S3776!"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(ÉİÄŞ8¹œ’Ê.
+T
+java:S2629("7Use the built-in formatting to construct this argument.(–Ú÷ñ8›±¨ÔË.
+S
+java:S2629Y"7Use the built-in formatting to construct this argument.(ä‹›R8ê­©ÔË.

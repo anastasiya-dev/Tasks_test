@@ -1,7 +1,6 @@
 package by.it.academy.pojo;
 
 import by.it.academy.support.UserStatus;
-import by.it.academy.support.WalletStatus;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -41,7 +40,7 @@ public class User {
     private String mobile;
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<AppRole> roles = new ArrayList<>();
+    private List<Approle> roles = new ArrayList<>();
 
     @Override
     public String toString() {

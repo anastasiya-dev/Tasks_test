@@ -1,6 +1,16 @@
 
+^
+java:S3457$"AFormat specifiers should be used instead of string concatenation.(„‡öä8¸ôËÔË.
+F
+java:S26295"$Invoke method(s) only conditionally.(èéÚîÿÿÿÿÿ8¬óÒÔË.
+c
+java:S3457"AFormat specifiers should be used instead of string concatenation.(ÊÙŠ üÿÿÿÿ8òåÊÔË.
+^
+java:S34574"AFormat specifiers should be used instead of string concatenation.(§¿˜à8¬óÒÔË.
+T
+java:S2629$"7Use the built-in formatting to construct this argument.(„‡öä8¸ôËÔË.
 M
-java:S1172#"0Remove this unused method parameter "recipient".(Äêñ“8‹û£‡Ê.
-m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿá—ı8•’ˆÊ.
+java:S1172)"0Remove this unused method parameter "recipient".(Äêñ“8‹û£‡Ê.
+m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿá—ı8•’ˆÊ.
 I
-java:S1905",Remove this unnecessary cast to "ArrayList".(ÿá—ı8şÊŠªÊ.
+java:S1905",Remove this unnecessary cast to "ArrayList".(ÿá—ı8şÊŠªÊ.
