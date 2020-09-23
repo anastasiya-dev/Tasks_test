@@ -10,12 +10,10 @@ C:\work\blockchain-web\src\main\java\by\it\academy\service\UserService.java
 C:\work\blockchain-web\src\main\java\by\it\academy\controller\DownloadController.java
 C:\work\blockchain-web\src\main\java\by\it\academy\repository\UserRepository.java
 C:\work\blockchain-web\src\main\java\by\it\academy\support\FilterInput.java
+C:\work\blockchain-web\src\main\java\by\it\academy\controller\WalletViewController.java
 C:\work\blockchain-web\src\main\java\by\it\academy\security\SecurityConfiguration.java
 C:\work\blockchain-web\src\main\java\by\it\academy\support\ChangePassword.java
-C:\work\blockchain-web\src\main\java\by\it\academy\util\UserImageUtil.java
-C:\work\blockchain-web\src\main\java\by\it\academy\support\Login.java
 C:\work\blockchain-web\src\main\java\by\it\academy\repository\TransactionRepository.java
-C:\work\blockchain-web\src\main\java\by\it\academy\controller\WalletController.java
 C:\work\blockchain-web\src\main\java\by\it\academy\pojo\Utxo.java
 C:\work\blockchain-web\src\main\java\by\it\academy\pojo\AppRole.java
 C:\work\blockchain-web\src\main\java\by\it\academy\web\WebAppInitializer.java
@@ -24,9 +22,9 @@ C:\work\blockchain-web\src\main\java\by\it\academy\repository\UtxoRepository.jav
 C:\work\blockchain-web\src\main\java\by\it\academy\controller\UserCabinetController.java
 C:\work\blockchain-web\src\main\java\by\it\academy\security\AuthenticationService.java
 C:\work\blockchain-web\src\main\java\by\it\academy\management\UtxoManagement.java
+C:\work\blockchain-web\src\main\java\by\it\academy\controller\StatisticsController.java
 C:\work\blockchain-web\src\main\java\by\it\academy\repository\WalletRepository.java
 C:\work\blockchain-web\src\main\java\by\it\academy\controller\SignUpController.java
-C:\work\blockchain-web\src\main\java\by\it\academy\security\MySimpleUrlAuthenticationSuccessHandler.java
 C:\work\blockchain-web\src\main\java\by\it\academy\support\WalletStatus.java
 C:\work\blockchain-web\src\main\java\by\it\academy\util\StringUtil.java
 C:\work\blockchain-web\src\main\java\by\it\academy\controller\HomeController.java
@@ -38,6 +36,8 @@ C:\work\blockchain-web\src\main\java\by\it\academy\service\WalletService.java
 C:\work\blockchain-web\src\main\java\by\it\academy\controller\TransactionUnconfirmedController.java
 C:\work\blockchain-web\src\main\java\by\it\academy\ApplicationConfiguration.java
 C:\work\blockchain-web\src\main\java\by\it\academy\controller\TransactionCreateController.java
+C:\work\blockchain-web\src\main\java\by\it\academy\controller\WalletDeleteController.java
 C:\work\blockchain-web\src\main\java\by\it\academy\management\TransactionManagement.java
 C:\work\blockchain-web\src\main\java\by\it\academy\MvcConfig.java
 C:\work\blockchain-web\src\main\java\by\it\academy\service\UtxoService.java
+C:\work\blockchain-web\src\main\java\by\it\academy\controller\ChangePasswordController.java

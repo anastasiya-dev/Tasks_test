@@ -2,7 +2,7 @@
 <table class="table">
      <tr>
              <th>Id</th>
-             <td>${user.userId}</td>
+             <td style="text-align:left">${user.userId}</td>
              </tr>
 </table>
 <form action="/blockchain-web/${user.userId}/user-cabinet/update" method="post">

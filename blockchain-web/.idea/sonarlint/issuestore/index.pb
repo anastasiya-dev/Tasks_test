@@ -141,3 +141,11 @@ o
 ?src/main/java/by/it/academy/security/SecurityConfiguration.java,1\5\15f400b1d7019c28ff90a73b21b3637e98f7dc2c
 m
 =src/main/java/by/it/academy/security/SecurityInitializer.java,1\2\1217aeebeb2c3208c9b357f73a69179b8136d2b9
+p
+@src/main/java/by/it/academy/controller/StatisticsController.java,e\9\e9d856b8a4223e240522575a440255223d32dc80
+t
+Dsrc/main/java/by/it/academy/controller/ChangePasswordController.java,c\0\c002aa2da0ae54f97b12a6a808f15d4866c1e4b3
+r
+Bsrc/main/java/by/it/academy/controller/WalletDeleteController.java,d\e\debc752b7e7845a76cf77d7fc8c0e277dbd3c8c4
+p
+@src/main/java/by/it/academy/controller/WalletViewController.java,7\3\730bdc4d7290a27012666e53f53b59713dadd8b0

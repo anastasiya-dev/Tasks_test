@@ -1,22 +1,29 @@
 <jsp:include page="header.jsp"/>
-<h1>wallet created: </h1>
+
+<h2 style="margin-top: 4cm;">Your new wallet is created:</h2>
+<div style="overflow-x:auto;">
 <table class="table">
       <thead>
+
         <tr>
-          <th scope="col">wallet id</th>
-          <th scope="col">private key</th>
+          <th scope="col">Wallet id</th>
+          <th scope="col">Private key</th>
         </tr>
       </thead>
       <tbody>
 
         <tr>
-          <td>${wallet.walletId}</td>
-          <td>${wallet.privateKeyString}</td>
+          <td style="text-align:left">${wallet.walletId}</td>
+          <td style="text-align:right">${wallet.privateKeyString}</td>
         </tr>
       </tbody>
     </table>
-    <h2>Save your private key and don't share it with anyone!</h2>
+    </div>
     <br>
-    <h2>It will be used for transactions confirmation</h2>
-<a href="/blockchain-web/${userId}/user-cabinet" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Get back to the cabinet</a>
+    <br>
+    <p style="color:red">Save your private key and don't share it with anyone!</p>
+    <p>It will be used for transactions confirmation.</p>
+    <br>
+    <br>
+
 <jsp:include page="footer.jsp"/>

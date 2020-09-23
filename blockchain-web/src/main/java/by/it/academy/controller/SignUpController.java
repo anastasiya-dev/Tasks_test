@@ -37,14 +37,16 @@ public class SignUpController {
     ) {
         log.info("Signing up new user");
         if (userService.findUserByName(user.getUserName(), UserStatus.ACTIVE) != null) {
-            log.warn("Existing user attemped signup");
+            log.warn("User " + user.getUserName() + " attempted signup though already exists");
             return "redirect:login";
         }
         if (!user.getConfirmPassword().equals(user.getUserPassword())) {
+            log.warn("User " + user.getUserName() + " hasn't confirmed the password upon sign up");
             return "redirect:unconfirmed-password";
         } else {
             userService.saveUser(user);
             redirectAttributes.addAttribute("userId", user.getUserId());
+            log.info("Saving new user: " + user);
             return "redirect:/{userId}/user-cabinet";
         }
     }

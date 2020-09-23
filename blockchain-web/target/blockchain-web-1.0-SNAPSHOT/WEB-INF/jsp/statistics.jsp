@@ -34,6 +34,6 @@ chart.render();
 <div id="chartContainer" style="height: 300px; width: 100%;"></div>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 <h4>Thank you for being with <a href="/blockchain-web/home" class="text-primary">Blockchain</a>! :)</h4>
-<p><a href="/blockchain-web/${userId}/user-cabinet" class="text-primary">Back to cabinet</a></p4>
+<p><a href="/blockchain-web/${userId}/user-cabinet" class="text-primary">Back to cabinet</a></p>
 </body>
 </html>

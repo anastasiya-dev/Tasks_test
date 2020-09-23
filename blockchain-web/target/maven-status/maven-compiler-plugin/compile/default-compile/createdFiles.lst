@@ -4,13 +4,11 @@ by\it\academy\security\SecurityConfiguration.class
 by\it\academy\pojo\User.class
 by\it\academy\repository\UserRepository.class
 by\it\academy\controller\TransactionViewController.class
-by\it\academy\controller\WalletController.class
 by\it\academy\repository\WalletRepository.class
 by\it\academy\controller\DownloadController.class
 by\it\academy\controller\TransactionCreateController.class
 by\it\academy\repository\TransactionRepository.class
 by\it\academy\security\SecurityInitializer.class
-by\it\academy\util\UserImageUtil.class
 by\it\academy\management\UtxoManagement.class
 by\it\academy\support\TransactionStatus.class
 by\it\academy\controller\HomeController.class
@@ -18,6 +16,7 @@ by\it\academy\controller\UserDeleteController.class
 by\it\academy\support\ChangePassword.class
 by\it\academy\controller\SignUpController.class
 by\it\academy\service\UserService.class
+by\it\academy\controller\WalletDeleteController.class
 by\it\academy\service\TransactionService.class
 by\it\academy\support\PrivateKeyInput.class
 by\it\academy\management\WalletManagement.class
@@ -30,10 +29,12 @@ by\it\academy\support\UserStatus.class
 by\it\academy\util\StringUtil.class
 by\it\academy\controller\TransactionUnconfirmedController.class
 by\it\academy\support\WalletStatus.class
+by\it\academy\controller\ChangePasswordController.class
 by\it\academy\support\FilterInput.class
-by\it\academy\support\Login.class
+by\it\academy\controller\WalletViewController.class
 by\it\academy\pojo\AppRole.class
 by\it\academy\service\UtxoService.class
+by\it\academy\controller\StatisticsController.class
 by\it\academy\pojo\Transaction.class
 by\it\academy\pojo\Wallet.class
 by\it\academy\repository\UtxoRepository.class

@@ -1,21 +1,25 @@
 <jsp:include page="header.jsp"/>
-<table class="table">
+<table class="table" style="margin-top: 4cm;">
 
         <tr>
-        <th>Id</th>
-        <td>${user.userId}</td>
+        <th style="width: 10em">Id</th>
+        <td style="text-align:left; width: 25em">${user.userId}</td>
+
         </tr>
         <tr>
-        <th>Name</th>
-          <td>${user.userName}</td>
+        <th style="width: 10em">Name</th>
+          <td style="text-align:left; width: 25em">${user.userName}</td>
+
          </tr>
-         <tr>
+         <tr style="width: 10em">
          <th>Email</th>
-          <td>${user.email}</td>
+          <td style="text-align:left; width: 25em">${user.email}</td>
+
           </tr>
-          <tr>
+          <tr style="width: 10em">
           <th>Phone</th>
-          <td>${user.mobile}</td>
+          <td style="text-align:left; width: 25em">${user.mobile}</td>
+
           </tr>
       </table>
 <a href="/blockchain-web/${userId}/user-cabinet/edit" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Edit</a>

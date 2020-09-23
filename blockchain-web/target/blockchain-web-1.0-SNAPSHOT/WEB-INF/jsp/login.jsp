@@ -25,7 +25,6 @@
         <form name="f" th:action="@{/login}" method="post">
             <fieldset>
                 <div th:if="${param.error}" class="alert alert-error">
-                    Invalid username and password.
                 </div>
                 <div th:if="${param.logout}" class="alert alert-success">
                     You have been logged out.
