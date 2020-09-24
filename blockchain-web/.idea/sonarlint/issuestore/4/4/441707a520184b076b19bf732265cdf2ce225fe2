@@ -1,11 +1,11 @@
 
-]
-java:S4684""@Replace this persistent entity with a simple POJO or DTO object.(ÿÄùÚ8ÄÍ­ªË.
-c
-java:S34571"AFormat specifiers should be used instead of string concatenation.(Á®ùüÿÿÿÿ8ñğ²Ë.
-Y
-java:S26291"7Use the built-in formatting to construct this argument.(Á®ùüÿÿÿÿ8ñğ²Ë.
 ^
 java:S3457("AFormat specifiers should be used instead of string concatenation.(‹ˆÀÙ8şÍü±Ë.
 ^
 java:S3457,"AFormat specifiers should be used instead of string concatenation.(÷ÁŒ™8ãÜı±Ë.
+c
+java:S34571"AFormat specifiers should be used instead of string concatenation.(Á®ùüÿÿÿÿ8ñğ²Ë.
+Y
+java:S26291"7Use the built-in formatting to construct this argument.(Á®ùüÿÿÿÿ8ñğ²Ë.
+]
+java:S4684""@Replace this persistent entity with a simple POJO or DTO object.(ÿÄùÚ8ÄÍ­ªË.

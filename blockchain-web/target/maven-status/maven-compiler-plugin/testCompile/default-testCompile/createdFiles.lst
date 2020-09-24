@@ -1,1 +1,7 @@
+by\it\academy\controller\ChangePasswordControllerTest.class
 by\it\academy\controller\HomeControllerTest.class
+by\it\academy\service\UserServiceTest.class
+by\it\academy\controller\DownloadControllerTest.class
+by\it\academy\controller\LoginControllerTest.class
+by\it\academy\controller\SignUpControllerTest.class
+by\it\academy\controller\StatisticsControllerTest.class

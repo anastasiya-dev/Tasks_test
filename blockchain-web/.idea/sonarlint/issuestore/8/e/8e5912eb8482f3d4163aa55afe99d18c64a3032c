@@ -1,16 +1,43 @@
 
-Y
-java:S3655H"7Call "Optional#isPresent()" before accessing the value.(¼ö¯„şÿÿÿÿ8êƒöãÊ.
-T
-java:S36553"7Call "Optional#isPresent()" before accessing the value.(ƒ¤²İ8ïËº‚Ë.
-T
-java:S3655@"7Call "Optional#isPresent()" before accessing the value.(–àÒ¡8Ù€§‚Ë.
 T
 java:S3655E"7Call "Optional#isPresent()" before accessing the value.(ƒ¤²İ8×‹òãÊ.
-U	java:S106+"9Replace this use of System.out or System.err by a logger.(Ø“ö8œĞâäÊ.
 Y
-java:S36558"7Call "Optional#isPresent()" before accessing the value.(¼ö¯„şÿÿÿÿ8şÅúıÊ.
+java:S3655`"7Call "Optional#isPresent()" before accessing the value.(¼ö¯„şÿÿÿÿ8şÅúıÊ.
 Y
-java:S3655$"7Call "Optional#isPresent()" before accessing the value.(˜Ãùõúÿÿÿÿ8ëûŸäÉ.
+java:S3655Q"7Call "Optional#isPresent()" before accessing the value.(º¯ï÷ùÿÿÿÿ8¢Å¼‚Ë.
+T
+java:S3655]"7Call "Optional#isPresent()" before accessing the value.(ƒ¤²İ8ïËº‚Ë.
+T
+java:S3655W"7Call "Optional#isPresent()" before accessing the value.(–àÒ¡8Ù€§‚Ë.
 Y
-java:S3655<"7Call "Optional#isPresent()" before accessing the value.(º¯ï÷ùÿÿÿÿ8¢Å¼‚Ë.
+java:S3655*"7Call "Optional#isPresent()" before accessing the value.(˜Ãùõúÿÿÿÿ8ëûŸäÉ.
+Y
+java:S3655L"7Call "Optional#isPresent()" before accessing the value.(¼ö¯„şÿÿÿÿ8êƒöãÊ.
+Y
+java:S2629"7Use the built-in formatting to construct this argument.(ïõœşıÿÿÿÿ8ğÕíƒÌ.
+Y
+java:S2629)"7Use the built-in formatting to construct this argument.(£ŠÄñúÿÿÿÿ8ğÕíƒÌ.
+T
+java:S2629/"7Use the built-in formatting to construct this argument.(ß¼¯¶8ğÕíƒÌ.
+Y
+java:S2629F"7Use the built-in formatting to construct this argument.(ùş‰òøÿÿÿÿ8ğÕíƒÌ.
+T
+java:S2629G"7Use the built-in formatting to construct this argument.(Ç¿ğï8ğÕíƒÌ.
+Y
+java:S2629P"7Use the built-in formatting to construct this argument.(­®İùüÿÿÿÿ8ğÕíƒÌ.
+T
+java:S2629\"7Use the built-in formatting to construct this argument.(÷õ¥¾8ğÕíƒÌ.
+c
+java:S3457"AFormat specifiers should be used instead of string concatenation.(ïõœşıÿÿÿÿ8ğÕíƒÌ.
+c
+java:S3457)"AFormat specifiers should be used instead of string concatenation.(£ŠÄñúÿÿÿÿ8ğÕíƒÌ.
+^
+java:S3457/"AFormat specifiers should be used instead of string concatenation.(ß¼¯¶8ğÕíƒÌ.
+c
+java:S3457F"AFormat specifiers should be used instead of string concatenation.(ùş‰òøÿÿÿÿ8ğÕíƒÌ.
+^
+java:S3457G"AFormat specifiers should be used instead of string concatenation.(Ç¿ğï8ğÕíƒÌ.
+c
+java:S3457P"AFormat specifiers should be used instead of string concatenation.(­®İùüÿÿÿÿ8ğÕíƒÌ.
+^
+java:S3457\"AFormat specifiers should be used instead of string concatenation.(÷õ¥¾8ğÕíƒÌ.

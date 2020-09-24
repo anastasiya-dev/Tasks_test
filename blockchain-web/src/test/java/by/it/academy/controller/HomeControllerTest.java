@@ -33,10 +33,6 @@ public class HomeControllerTest {
         mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
     }
 
-    @After
-    public void tearDown() throws Exception {
-    }
-
     @Test
     public void homePage() throws Exception {
         assertEquals("home",

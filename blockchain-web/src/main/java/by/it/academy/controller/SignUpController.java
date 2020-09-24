@@ -2,7 +2,6 @@ package by.it.academy.controller;
 
 import by.it.academy.pojo.User;
 import by.it.academy.service.UserService;
-import by.it.academy.support.UserStatus;
 import lombok.SneakyThrows;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,6 +24,7 @@ public class SignUpController {
 
     @GetMapping(value = "/signup")
     public ModelAndView signUpPage(ModelAndView modelAndView) {
+        modelAndView.setViewName("signup");
         return modelAndView;
     }
 
@@ -53,6 +53,7 @@ public class SignUpController {
 
     @GetMapping(value = "/unconfirmed-password")
     public ModelAndView unconfirmedPasswordError(ModelAndView modelAndView) {
+        modelAndView.setViewName("unconfirmed-password");
         return modelAndView;
     }
 }

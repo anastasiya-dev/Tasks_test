@@ -888,7 +888,37 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/by/it/academy/controller/ChangePasswordControllerTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/by/it/academy/controller/DownloadControllerTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/test/java/by/it/academy/controller/HomeControllerTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/by/it/academy/controller/LoginControllerTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/by/it/academy/controller/SignUpControllerTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/by/it/academy/controller/StatisticsControllerTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/by/it/academy/service/UserServiceTest.java">
           <value>
             <set />
           </value>
@@ -904,6 +934,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../hello-spring-boot/bank-account/src/main/java/by/it/academy/ApplicationConfiguration.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring-boot/bc-mining/src/main/java/by/it/academy/Consistency.java">
           <value>
             <set />
           </value>

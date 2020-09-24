@@ -143,3 +143,15 @@ _
 /src/main/webapp/WEB-INF/jsp/incorrect-input.jsp,6\5\65dcec153815d429256e1c60d4dc2a77638aeb9b
 ]
 -src/main/java/by/it/academy/pojo/Approle.java,3\2\320ea6f3b2e71ed9354704cdb6bc2d0520d920a8
+o
+?src/test/java/by/it/academy/controller/LoginControllerTest.java,1\c\1c9fcc505368b8cceb3bbd165b3c864d828d325e
+x
+Hsrc/test/java/by/it/academy/controller/ChangePasswordControllerTest.java,f\1\f151e503270cf5940fa5bb572fea20d2b89a54c4
+r
+Bsrc/test/java/by/it/academy/controller/DownloadControllerTest.java,d\4\d422da358d97967503be4a8da077fe37700c9d4e
+p
+@src/test/java/by/it/academy/controller/SignUpControllerTest.java,e\2\e2b9bddcda07c101d48e372736606636226b742f
+t
+Dsrc/test/java/by/it/academy/controller/StatisticsControllerTest.java,2\3\23e5bb90fac5cb4fe63db2c454af005a7f803d0d
+h
+8src/test/java/by/it/academy/service/UserServiceTest.java,c\d\cd435efce6d4ee255c682c85b6e09e7a71ae5c65
