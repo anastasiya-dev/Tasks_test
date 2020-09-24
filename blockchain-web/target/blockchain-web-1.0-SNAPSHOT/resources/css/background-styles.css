@@ -7,6 +7,7 @@
                   font-family: 'Roboto', sans-serif;
                              font-weight: 100;
                              z-index:1;
+
          }
 
 /* navigation bar*/
@@ -44,6 +45,7 @@
            background-color: inherit;
            font-family: inherit; /* Important for vertical align on mobile phones */
            margin: 0; /* Important for vertical align on mobile phones */
+           cursor: pointer;
          }
 
          /* Add a red background color to navbar links on hover */
@@ -59,6 +61,11 @@
            min-width: 160px;
            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
            z-index: 2;
+
+
+               padding: 10px 40px;
+               text-decoration: none;
+               transition: background .5s;
          }
 
          /* Links inside the dropdown */

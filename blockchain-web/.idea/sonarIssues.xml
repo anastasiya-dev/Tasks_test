@@ -958,6 +958,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring-boot/blockchain-mining/src/main/java/by/it/academy/controller/BlockController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../hello-spring-boot/blockchain-mining/src/main/java/by/it/academy/management/BlockManagement.java">
           <value>
             <set />
@@ -1019,6 +1024,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../hello-spring-boot/blockchain-mining/src/main/java/by/it/academy/repository/ApproleRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring-boot/blockchain-mining/src/main/java/by/it/academy/repository/BlockRepository.java">
           <value>
             <set />
           </value>

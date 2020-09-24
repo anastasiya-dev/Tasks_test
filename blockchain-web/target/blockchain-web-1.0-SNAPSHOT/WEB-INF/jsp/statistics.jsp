@@ -6,6 +6,8 @@
 <html>
 <head>
 
+<title>BlockChain</title>
+
       <link href="
       <c:url value="/resources/css/background-styles.css" />
       " rel="stylesheet">
@@ -42,7 +44,7 @@ chart.render();
 <body>
 <div id="chartContainer" style="height: 300px; width: 100%;"></div>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-<h4>Thank you for being with <a href="/blockchain-web/home" class="text-primary">Blockchain</a>! :)</h4>
+<h4>Thank you for being with <a href="/blockchain-web/home" class="text-primary">BlockChain</a>! :)</h4>
 <p><a href="/blockchain-web/${userId}/wallet-all" class="text-primary">Back to cabinet</a></p>
 </body>
 </html>

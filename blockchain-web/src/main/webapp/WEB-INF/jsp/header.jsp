@@ -12,7 +12,7 @@
       <link href="
       <c:url value="/resources/css/background-styles.css" />
       " rel="stylesheet">
-      <title>Blockchain</title>
+      <title>BlockChain</title>
    </head>
    <body>
          <div class="navbar">

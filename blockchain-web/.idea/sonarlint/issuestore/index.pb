@@ -29,8 +29,6 @@ l
 <src/main/java/by/it/academy/controller/SignUpController.java,4\4\441707a520184b076b19bf732265cdf2ce225fe2
 k
 ;src/main/java/by/it/academy/controller/LoginController.java,4\f\4f72bba64c2fce8b54b5aff78fbc97abac463689
-\
-,src/main/webapp/WEB-INF/jsp/user-cabinet.jsp,e\f\efe72481dff4cb543aa356cb7d776183b8cc59ac
 ]
 -src/main/webapp/WEB-INF/jsp/create-wallet.jsp,3\e\3e99d4c8b3ba0e819fb021bf17c91ce6891d5c19
 q
@@ -41,8 +39,6 @@ Z
 *src/main/webapp/WEB-INF/jsp/wallet-all.jsp,d\4\d4f7a3ff3d4105eaa0f86a3c9f41c9b73ea466d3
 `
 0src/main/java/by/it/academy/util/StringUtil.java,e\6\e6c0229a32f338effe1c70edd3051a3c7eb24e09
-Z
-*src/main/webapp/WEB-INF/jsp/ind-wallet.jsp,4\c\4c96cc44e4253da006fecbb4eeffa5829ddca926
 i
 9src/main/java/by/it/academy/support/TransactionStart.java,4\1\41744ad9ab5bf62b4eef994b37cfd283b2253ae0
 b

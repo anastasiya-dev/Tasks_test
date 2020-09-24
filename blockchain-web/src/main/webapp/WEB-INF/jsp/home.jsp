@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+  <title>BlockChain</title>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,100' rel='stylesheet' type='text/css'>
 <link href="<c:url value="/resources/css/home-styles.css" />" rel="stylesheet">
   </head>
@@ -24,8 +25,7 @@
    </sec:authorize>
 
    <sec:authorize access="!isAuthenticated()">
-   <li><a class="btn" href="/blockchain-web/signup">Signup</a></li>
-    <li><a class="btn" href="/blockchain-web/login">Login</a></li>
+    <li><a class="btn" href="/blockchain-web/login">MyBlockChain</a></li>
     </sec:authorize>
 
     <li><a class="btn" href="#">About</a></li>
