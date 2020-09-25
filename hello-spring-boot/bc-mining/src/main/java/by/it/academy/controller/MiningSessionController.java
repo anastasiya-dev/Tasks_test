@@ -46,11 +46,10 @@ public class MiningSessionController {
     public ResponseEntity startMiningSession(@RequestBody MiningSession miningSession) throws IOException {
 
         logger.info("Received inquiry for mining session for wallet id: " + miningSession.getWalletId());
-        boolean result = miningSessionService.createNewMiningSession(miningSession);
+        boolean result = miningSessionService.saveMiningSession(miningSession);
 
         if (result) {
-            genesis.genesis(difficulty);
-            blockGenerator.generateBlockchain(difficulty);
+            blockGenerator.generateBlockchain(difficulty, miningSession);
             consistency.isChainValid(difficulty);
             return new ResponseEntity(miningSession, HttpStatus.OK);
         } else {

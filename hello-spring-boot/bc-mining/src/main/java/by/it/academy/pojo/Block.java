@@ -22,6 +22,7 @@ public class Block {
     private long timeStamp;
     private int nonce;
 
+    private String miningSessionId;
     private String minerId;
 
     @Override
@@ -33,6 +34,8 @@ public class Block {
                 ", merkleRoot='" + merkleRoot + '\'' +
                 ", timeStamp=" + timeStamp +
                 ", nonce=" + nonce +
+                ", miningSessionId='" + miningSessionId + '\'' +
+                ", minerId='" + minerId + '\'' +
                 '}';
     }
 }

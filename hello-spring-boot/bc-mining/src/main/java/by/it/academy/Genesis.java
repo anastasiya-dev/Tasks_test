@@ -27,6 +27,8 @@ public class Genesis {
     UtxoService utxoService;
     @Autowired
     BlockManagement blockManagement;
+    @Autowired
+    MiningSessionService miningSessionService;
 
     public void genesis(int difficulty) throws IOException {
 
@@ -41,10 +43,6 @@ public class Genesis {
             Wallet genesisWallet = walletService.createAndSaveWallet(genesisUser.getUserId());
             logger.info("Genesis0 user: " + genesisUser);
             logger.info("Genesis0 user wallet: " + genesisWallet);
-
-//            logger.info("Creating security user");
-//            User securityUser = userService.createAndSaveUser("user", "password");
-//            userService.appRoleAssignment(securityUser.getUserId(), "USER");
 
             User firstActualUser = userService.createAndSaveUser("Genesis1", "111");
             userService.appRoleAssignment(firstActualUser.getUserId(), "USER");
@@ -68,10 +66,13 @@ public class Genesis {
             logger.info("Genesis UTXO: " + utxo);
 
             Block genesisBlock = blockService.createBlock("0");
+            MiningSession genesisMiningSession = miningSessionService.createMiningSession();
+            genesisMiningSession.setWalletId(genesisWallet.getWalletId());
+            miningSessionService.saveMiningSession(genesisMiningSession);
             logger.info("Genesis block created: " + genesisBlock);
             blockManagement.addTransaction(genesisBlock, genesisTransaction);
             logger.info("Genesis block filled with transactions: " + genesisBlock);
-            blockManagement.mineBlock(genesisBlock, difficulty);
+            blockManagement.mineBlock(genesisBlock, difficulty, genesisMiningSession);
             logger.info("Genesis block mined: " + genesisBlock);
         }
     }

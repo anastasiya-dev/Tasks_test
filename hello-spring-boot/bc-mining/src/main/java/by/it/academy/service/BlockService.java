@@ -16,12 +16,8 @@ import java.util.logging.Logger;
 @Service
 public class BlockService {
 
-    static int sequence = 0;
-
     @Autowired
     BlockRepository blockRepository;
-    @Autowired
-    TransactionService transactionService;
     @Autowired
     Block block;
 
@@ -37,13 +33,19 @@ public class BlockService {
 
     //Block Constructor.
     public Block createBlock(String previousHash) {
-        block.setBlockId(String.valueOf(sequence));
+        ArrayList<Block> allBlocks = findAllBlocks();
+        if (allBlocks.isEmpty()) {
+            block.setBlockId("0");
+        } else {
+            block.setBlockId(String.valueOf(allBlocks.size()));
+        }
+
         block.setPreviousHash(previousHash);
         block.setTimeStamp(new Date().getTime());
         block.setHash(calculateHash(block));
         Block saved = blockRepository.save(block);
         logger.info("Creating block: " + block);
-        sequence++;
+
         return saved;
     }
 
@@ -76,15 +78,15 @@ public class BlockService {
         }
     }
 
-    public ArrayList<Block> findBlockByMinerId(String minerId) {
-        logger.info("Extracting block by miner id: " + minerId);
-        try {
-            return blockRepository.findByMinerId(minerId);
-        } catch (NoSuchElementException e) {
-            logger.warning("No such block exists");
-            return null;
-        }
-    }
+//    public ArrayList<Block> findBlockByMiningSessionId(String minerId) {
+//        logger.info("Extracting block by miner id: " + minerId);
+//        try {
+//            return blockRepository.findByMinerId(minerId);
+//        } catch (NoSuchElementException e) {
+//            logger.warning("No such block exists");
+//            return null;
+//        }
+//    }
 
     public boolean saveBlock(Block block) {
         logger.info("Saving block: " + block);

@@ -8,7 +8,6 @@ import org.springframework.stereotype.Component;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import java.time.LocalDateTime;
 
 @Entity
 @Component
@@ -17,18 +16,18 @@ import java.time.LocalDateTime;
 public class MiningSession {
 
     @Id
-    private String minerId;
+    private String miningSessionId;
     private String walletId;
     private String blockId;
-    private String minerReward;
+    private float minerReward;
     private String sessionStart;
     private String sessionEnd;
-    private String miningSessionStatus;
+    private MiningSessionStatus miningSessionStatus;
 
     @Override
     public String toString() {
         return "MiningSession{" +
-                "minerId='" + minerId + '\'' +
+                "miningSessionId='" + miningSessionId + '\'' +
                 ", walletId='" + walletId + '\'' +
                 ", blockId='" + blockId + '\'' +
                 ", minerReward=" + minerReward +

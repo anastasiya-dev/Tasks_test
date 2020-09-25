@@ -41,9 +41,9 @@ public class BlockController {
         return blockService.findBlockById(blockId);
     }
 
-    @GetMapping("/blocks-by-miner/{minerId}")
-    public ArrayList<Block> blockByMinerId(@PathVariable String minerId) {
-        logger.info("Returning block to server - by miner id: " + minerId);
-        return blockService.findBlockByMinerId(minerId);
-    }
+//    @GetMapping("/blocks-by-miner/{miningSessionId}")
+//    public ArrayList<Block> blockByMinerId(@PathVariable String minerId) {
+//        logger.info("Returning block to server - by miner id: " + minerId);
+//        return blockService.findBlockByMinerId(minerId);
+//    }
 }

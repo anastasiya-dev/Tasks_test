@@ -1,10 +1,8 @@
 package by.it.academy.management;
 
-import by.it.academy.pojo.Block;
-import by.it.academy.pojo.Transaction;
-import by.it.academy.pojo.Utxo;
-import by.it.academy.pojo.Wallet;
+import by.it.academy.pojo.*;
 import by.it.academy.service.*;
+import by.it.academy.support.MiningSessionStatus;
 import by.it.academy.support.TransactionStatus;
 import by.it.academy.support.WalletStatus;
 import by.it.academy.util.LoggerUtil;
@@ -13,8 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Random;
 import java.util.logging.Logger;
 
 @Service
@@ -30,9 +29,12 @@ public class BlockManagement {
     UserService userService;
     @Autowired
     UtxoService utxoService;
+    @Autowired
+    MiningSessionService miningSessionService;
 
     float minerReward = 0.05f;
     float senderReward = 0.01f;
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
     Logger logger;
 
@@ -51,7 +53,7 @@ public class BlockManagement {
         logger.info(transaction.getTransactionId());
     }
 
-    public void mineBlock(Block block, int difficulty) {
+    public void mineBlock(Block block, int difficulty, MiningSession miningSession) {
         ArrayList<Transaction> blockTransactions = findTransactionsForBlock(block);
         block.setMerkleRoot(StringUtil.getMerkleRoot(blockTransactions));
         String target = new String(new char[difficulty]).replace('\0', '0'); //Create a string with difficulty * "0"
@@ -61,9 +63,16 @@ public class BlockManagement {
             block.setHash(blockService.calculateHash(block));
         }
         logger.info("Block Mined: " + block);
-        String minerId = sendRewards(blockTransactions);
-        block.setMinerId(minerId);
+        float minerRewardTotalSum = sendRewards(blockTransactions, miningSession);
+        block.setMiningSessionId(miningSession.getMiningSessionId());
+        block.setMinerId(miningSession.getWalletId());
         blockService.saveBlock(block);
+
+        miningSession.setBlockId(block.getBlockId());
+        miningSession.setMiningSessionStatus(MiningSessionStatus.SUCCESS);
+        miningSession.setMinerReward(minerRewardTotalSum);
+        miningSession.setSessionEnd(LocalDateTime.now().format(formatter));
+        miningSessionService.updateSession(miningSession);
     }
 
     private ArrayList<Transaction> findTransactionsForBlock(Block block) {
@@ -79,33 +88,39 @@ public class BlockManagement {
         return blockTransactions;
     }
 
-    private String sendRewards(ArrayList<Transaction> blockTransactions) {
+    private float sendRewards(ArrayList<Transaction> blockTransactions, MiningSession miningSession) {
         logger.info("Sending rewards");
-        ArrayList<Wallet> allWallets = walletService.findAllWallets(WalletStatus.ACTIVE);
-        Random rnd = new Random();
-        int walletChosen = rnd.nextInt(allWallets.size());
-        String minerId = allWallets.get(walletChosen).getWalletId();
+        float minerRewardTotalSum = 0.0f;
+        String genesisWalletId = walletService.getAllWalletsForUser(
+                userService.findUserByName("Genesis1").getUserId(), WalletStatus.ACTIVE)
+                .get(0).getWalletId();
 
         for (Transaction transaction : blockTransactions) {
             transaction.setTransactionStatus(TransactionStatus.MINED);
             transactionService.updateTransaction(transaction);
             if (!walletService.findWalletById(transaction.getSenderId()).getWalletStatus().equals(WalletStatus.DELETED)) {
                 makeRewardTransaction(transaction.getSenderId(), transaction, senderReward);
-                logger.info("Ordinary reward: " + transaction);
+                logger.info("Ordinary reward: " + transaction.getTransactionId());
             } else {
-                makeRewardTransaction(
-                        walletService.getAllWalletsForUser(
-                                userService.findUserByName("Genesis1").getUserId(), WalletStatus.ACTIVE)
-                                .get(0).getWalletId(), transaction, senderReward);
-                logger.info("Genesis reward for deleted: " + transaction);
+                makeRewardTransaction(genesisWalletId, transaction, senderReward);
+                logger.info("Genesis reward for deleted: " + transaction.getTransactionId());
             }
-            makeRewardTransaction(minerId, transaction, minerReward);
+
+            Transaction minerRewardTransaction = null;
+            if (!walletService.findWalletById(miningSession.getWalletId()).getWalletStatus().equals(WalletStatus.DELETED)) {
+                minerRewardTransaction = makeRewardTransaction(miningSession.getWalletId(), transaction, minerReward);
+                logger.info("Ordinary reward: " + transaction.getTransactionId());
+            } else {
+                minerRewardTransaction = makeRewardTransaction(genesisWalletId, transaction, minerReward);
+                logger.info("Genesis reward for deleted: " + transaction.getTransactionId());
+            }
+            minerRewardTotalSum += minerRewardTransaction.getValue();
         }
-        return minerId;
+        return minerRewardTotalSum;
     }
 
 
-    public void makeRewardTransaction(String walletId, Transaction transaction, float rate) {
+    public Transaction makeRewardTransaction(String walletId, Transaction transaction, float rate) {
         logger.info("Technical calculation of reward with the inputs:" +
                 " walletId, transactionId, rate: " + walletId + " "
                 + transaction.getTransactionId() + " " + rate);
@@ -128,5 +143,6 @@ public class BlockManagement {
         utxo.setWalletId(walletId);
         utxo.setInputTransactionId(description);
         utxoService.saveUtxo(utxo);
+        return transactionReward;
     }
 }

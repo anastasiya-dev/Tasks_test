@@ -6,5 +6,5 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.ArrayList;
 
 public interface BlockRepository extends CrudRepository<Block, String> {
-    ArrayList<Block> findByMinerId(String minerId);
+//    ArrayList<Block> findByMinerId(String minerId);
 }

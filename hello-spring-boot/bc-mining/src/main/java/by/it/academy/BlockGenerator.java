@@ -2,6 +2,7 @@ package by.it.academy;
 
 import by.it.academy.management.BlockManagement;
 import by.it.academy.pojo.Block;
+import by.it.academy.pojo.MiningSession;
 import by.it.academy.pojo.Transaction;
 import by.it.academy.service.BlockService;
 import by.it.academy.service.TransactionService;
@@ -27,7 +28,7 @@ public class BlockGenerator {
     @Autowired
     BlockManagement blockManagement;
 
-    public void generateBlockchain(int difficulty) throws IOException {
+    public void generateBlockchain(int difficulty, MiningSession miningSession) throws IOException {
 
         Logger logger = LoggerUtil.startLogging(BlockGenerator.class.getName());
         logger.info("Starting block generation task");
@@ -48,7 +49,7 @@ public class BlockGenerator {
                 blockManagement.addTransaction(block, transaction);
             }
             logger.info("Mining block (id, difficulty): " + block.getBlockId() + ", " + difficulty);
-            blockManagement.mineBlock(block, difficulty);
+            blockManagement.mineBlock(block, difficulty, miningSession);
         }
     }
 
