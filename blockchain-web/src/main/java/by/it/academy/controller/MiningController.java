@@ -37,9 +37,9 @@ public class MiningController {
         StringBuilder sb = new StringBuilder();
         sb.append("{\n" +
                 "  \"blockId\": \"none\",\n" +
-                "  \"minerId\": \"none\",\n" +
-                "  \"minerReward\": \"none\",\n" +
-                "  \"miningSessionStatus\": \"none\",\n" +
+                "  \"minerReward\": \"0.0\",\n" +
+                "  \"miningSessionId\": \"none\",\n" +
+                "  \"miningSessionStatus\": \"IN_PROCESS\",\n" +
                 "  \"sessionEnd\": \"none\",\n" +
                 "  \"sessionStart\": \"none\",\n" +
                 "  \"walletId\": \"");

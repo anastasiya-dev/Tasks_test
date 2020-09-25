@@ -958,6 +958,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring-boot/bc-mining/src/main/java/by/it/academy/BlockGenerator.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../hello-spring-boot/bc-mining/src/main/java/by/it/academy/Consistency.java">
           <value>
             <set />
@@ -983,6 +988,16 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring-boot/bc-mining/src/main/java/by/it/academy/management/BlockManagement.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring-boot/bc-mining/src/main/java/by/it/academy/pojo/Block.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../hello-spring-boot/bc-mining/src/main/java/by/it/academy/pojo/Miner.java">
           <value>
             <set />
@@ -993,7 +1008,17 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring-boot/bc-mining/src/main/java/by/it/academy/repository/BlockRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../hello-spring-boot/bc-mining/src/main/java/by/it/academy/repository/MinerRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring-boot/bc-mining/src/main/java/by/it/academy/service/BlockService.java">
           <value>
             <set />
           </value>

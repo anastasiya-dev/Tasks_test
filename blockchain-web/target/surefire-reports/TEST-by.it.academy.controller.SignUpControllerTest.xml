@@ -67,6 +67,6 @@
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
   <testcase classname="by.it.academy.controller.SignUpControllerTest" name="unconfirmedPasswordError" time="0"/>
-  <testcase classname="by.it.academy.controller.SignUpControllerTest" name="signUpPage" time="0.016"/>
-  <testcase classname="by.it.academy.controller.SignUpControllerTest" name="signUpUser" time="0"/>
+  <testcase classname="by.it.academy.controller.SignUpControllerTest" name="signUpPage" time="0"/>
+  <testcase classname="by.it.academy.controller.SignUpControllerTest" name="signUpUser" time="0.016"/>
 </testsuite>
