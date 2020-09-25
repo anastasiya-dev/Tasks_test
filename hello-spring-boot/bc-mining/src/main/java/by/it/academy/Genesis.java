@@ -47,7 +47,7 @@ public class Genesis {
 //            userService.appRoleAssignment(securityUser.getUserId(), "USER");
 
             User firstActualUser = userService.createAndSaveUser("Genesis1", "111");
-            userService.appRoleAssignment(firstActualUser.getUserId(), "ADMIN");
+            userService.appRoleAssignment(firstActualUser.getUserId(), "USER");
             Wallet firstActualWallet = walletService.createAndSaveWallet(firstActualUser.getUserId());
             logger.info("Genesis1 user: " + firstActualUser);
             logger.info("Genesis1 user wallet: " + firstActualWallet);

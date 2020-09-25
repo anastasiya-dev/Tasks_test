@@ -36,7 +36,6 @@ public class UserService {
         user.setUserName(userName);
         String encodedPassword = passwordEncoder.encode(userPassword);
         user.setUserPassword(encodedPassword);
-//        user.setUserPassword(userPassword);
         user.setUserStatus(UserStatus.ACTIVE);
         sequence++;
         return userRepository.save(user);

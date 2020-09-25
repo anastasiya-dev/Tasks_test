@@ -1,3 +1,4 @@
+C:\work\hello-spring-boot\bc-mining\src\main\java\by\it\academy\controller\MiningSessionController.java
 C:\work\hello-spring-boot\bc-mining\src\main\java\by\it\academy\management\UtxoManagement.java
 C:\work\hello-spring-boot\bc-mining\src\main\java\by\it\academy\service\BlockService.java
 C:\work\hello-spring-boot\bc-mining\src\main\java\by\it\academy\Consistency.java
@@ -23,12 +24,16 @@ C:\work\hello-spring-boot\bc-mining\src\main\java\by\it\academy\service\UserServ
 C:\work\hello-spring-boot\bc-mining\src\main\java\by\it\academy\service\TransactionService.java
 C:\work\hello-spring-boot\bc-mining\src\main\java\by\it\academy\service\UtxoService.java
 C:\work\hello-spring-boot\bc-mining\src\main\java\by\it\academy\pojo\Transaction.java
+C:\work\hello-spring-boot\bc-mining\src\main\java\by\it\academy\support\MiningSessionStatus.java
 C:\work\hello-spring-boot\bc-mining\src\main\java\by\it\academy\util\StringUtil.java
 C:\work\hello-spring-boot\bc-mining\src\main\java\by\it\academy\pojo\Utxo.java
 C:\work\hello-spring-boot\bc-mining\src\main\java\by\it\academy\pojo\Block.java
 C:\work\hello-spring-boot\bc-mining\src\main\java\by\it\academy\repository\UserRepository.java
 C:\work\hello-spring-boot\bc-mining\src\main\java\by\it\academy\repository\BlockRepository.java
+C:\work\hello-spring-boot\bc-mining\src\main\java\by\it\academy\repository\MiningSessionRepository.java
+C:\work\hello-spring-boot\bc-mining\src\main\java\by\it\academy\pojo\MiningSession.java
 C:\work\hello-spring-boot\bc-mining\src\main\java\by\it\academy\ApplicationConfiguration.java
+C:\work\hello-spring-boot\bc-mining\src\main\java\by\it\academy\service\MiningSessionService.java
 C:\work\hello-spring-boot\bc-mining\src\main\java\by\it\academy\support\UserStatus.java
 C:\work\hello-spring-boot\bc-mining\src\main\java\by\it\academy\management\TransactionManagement.java
 C:\work\hello-spring-boot\bc-mining\src\main\java\by\it\academy\service\WalletService.java

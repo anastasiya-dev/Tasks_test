@@ -1,17 +1,23 @@
 
-‹
-java:S1319@"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(öÌ’Áþÿÿÿÿ
-‹
-java:S1319O"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(š³Í”ùÿÿÿÿ
-M
-java:S2629<"7Use the built-in formatting to construct this argument.(×¤‚¬
-R
-java:S2629F"7Use the built-in formatting to construct this argument.(ìàƒûÿÿÿÿ
-R
-java:S2629P"7Use the built-in formatting to construct this argument.(ôÒ¾Ãþÿÿÿÿ
 t
 java:S1171"YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ
-L
-java:S2696."6Make the enclosing method "static" or remove this set.(Ë¥çü
 A
 java:S1168U"+Return an empty collection instead of null.(¥¹ï
+T
+java:S3655H"7Call "Optional#isPresent()" before accessing the value.(ãàˆ²8ÉšÑŠÌ.
+‹
+java:S1319O"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(š³Í”ùÿÿÿÿ
+Y
+java:S2629-"7Use the built-in formatting to construct this argument.(äÌƒþÿÿÿÿ8ÉšÑŠÌ.
+‹
+java:S1319@"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(öÌ’Áþÿÿÿÿ
+R
+java:S2629P"7Use the built-in formatting to construct this argument.(ôÒ¾Ãþÿÿÿÿ
+L
+java:S2696."6Make the enclosing method "static" or remove this set.(Ë¥çü
+R
+java:S2629F"7Use the built-in formatting to construct this argument.(ìàƒûÿÿÿÿ
+M
+java:S2629<"7Use the built-in formatting to construct this argument.(×¤‚¬
+Y
+java:S2629Z"7Use the built-in formatting to construct this argument.(üÂß×üÿÿÿÿ8ÉšÑŠÌ.

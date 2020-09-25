@@ -1,6 +1,5 @@
 package by.it.academy;
 
-import by.it.academy.util.LoggerUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -15,8 +14,6 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import java.util.logging.Logger;
-
 @Configuration
 @ComponentScan
 @EnableAutoConfiguration
@@ -25,19 +22,13 @@ public class ApplicationConfiguration extends WebSecurityConfigurerAdapter imple
 
     @Autowired
     Genesis genesis;
-    @Autowired
-    BlockGenerator blockGenerator;
-    @Autowired
-    Consistency consistency;
-    @Autowired
-    BalanceTest balanceTest;
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 
         auth.inMemoryAuthentication()
-                .withUser("user")
-                .password(new BCryptPasswordEncoder().encode("password"))
+                .withUser("Genesis1")
+                .password(new BCryptPasswordEncoder().encode("111"))
                 .roles("USER");
     }
 
@@ -45,12 +36,14 @@ public class ApplicationConfiguration extends WebSecurityConfigurerAdapter imple
     protected void configure(HttpSecurity http) throws Exception {
         http.httpBasic().and()
                 .authorizeRequests()
-                .antMatchers("/**").hasRole("USER")
-                .antMatchers("/swagger-ui").permitAll()
-                .antMatchers("/swagger-resources/**").permitAll()
-                .and()
-                .formLogin().disable()
-                .csrf().disable()
+//                .antMatchers("/**").hasRole("USER")
+//                .antMatchers("/swagger-ui").permitAll()
+//                .antMatchers("/swagger-resources/**").permitAll()
+//                .and()
+//                .formLogin().disable()
+//                .csrf().disable()
+                .antMatchers("/*").permitAll()
+                .and().csrf().disable()
         ;
 
         http.authorizeRequests().antMatchers("/register").permitAll();
@@ -62,19 +55,10 @@ public class ApplicationConfiguration extends WebSecurityConfigurerAdapter imple
     }
 
     int difficulty = 3;
-    float threshold = 100_000f;
 
     @Override
     public void run(String... args) throws Exception {
-        Logger logger = LoggerUtil.startLogging(ApplicationConfiguration.class.getName());
         this.genesis.genesis(difficulty);
-        while (balanceTest.balance() < threshold) {
-            this.blockGenerator.generateBlockchain(difficulty);
-            this.consistency.isChainValid(difficulty);
-            logger.info("Starting 2 minute sleep in main");
-            Thread.sleep(1000 * 60 * 2);
-            logger.info("Ending 2 minute sleep in main");
-        }
     }
 
     @Bean
