@@ -155,3 +155,5 @@ t
 Dsrc/test/java/by/it/academy/controller/StatisticsControllerTest.java,2\3\23e5bb90fac5cb4fe63db2c454af005a7f803d0d
 h
 8src/test/java/by/it/academy/service/UserServiceTest.java,c\d\cd435efce6d4ee255c682c85b6e09e7a71ae5c65
+l
+<src/main/java/by/it/academy/controller/MiningController.java,5\2\521c9872753f85295db6533a15f25e571de3067d

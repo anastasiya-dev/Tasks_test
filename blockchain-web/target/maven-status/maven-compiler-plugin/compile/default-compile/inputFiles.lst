@@ -13,6 +13,7 @@ C:\work\blockchain-web\src\main\java\by\it\academy\support\FilterInput.java
 C:\work\blockchain-web\src\main\java\by\it\academy\controller\WalletViewController.java
 C:\work\blockchain-web\src\main\java\by\it\academy\security\SecurityConfiguration.java
 C:\work\blockchain-web\src\main\java\by\it\academy\support\ChangePassword.java
+C:\work\blockchain-web\src\main\java\by\it\academy\controller\MiningController.java
 C:\work\blockchain-web\src\main\java\by\it\academy\repository\TransactionRepository.java
 C:\work\blockchain-web\src\main\java\by\it\academy\pojo\Utxo.java
 C:\work\blockchain-web\src\main\java\by\it\academy\pojo\Approle.java

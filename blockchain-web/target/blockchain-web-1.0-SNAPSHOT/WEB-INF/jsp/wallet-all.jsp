@@ -26,6 +26,7 @@
           <td style="border-collapse: collapse"><a href="/blockchain-web/${userId}/wallet/${wallet.walletId}/transaction-all">View processed</a><td>
           <td style="border-collapse: collapse"><a href="/blockchain-web/${userId}/wallet/${wallet.walletId}/unconfirmed">View unconfirmed </a><td>
           <td style="border-collapse: collapse"><a href="/blockchain-web/${userId}/wallet/${wallet.walletId}/delete">Delete</a><td>
+          <td style="border-collapse: collapse"><a href="/blockchain-web/${userId}/wallet/${wallet.walletId}/mining">Mining</a><td>
         </tr>
 </c:forEach>
       </tbody>

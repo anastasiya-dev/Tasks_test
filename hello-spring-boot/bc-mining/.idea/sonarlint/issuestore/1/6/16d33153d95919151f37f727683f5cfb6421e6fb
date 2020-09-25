@@ -1,0 +1,14 @@
+
+…
+java:S1319T"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(•Ç†
+R
+java:S26294"7Use the built-in formatting to construct this argument.(Š†¼Âøÿÿÿÿ
+`	java:S112P"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+t
+java:S1171"YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ
+U
+java:S1117+":Rename "wallet" which hides the field declared at line 26.(ğ”¤ûÿÿÿÿ
+T
+java:S4426E">Use a key length of at least 224 bits for EC cipher algorithm.(—Ñ“½
+U
+java:S1117X":Rename "wallet" which hides the field declared at line 26.(ğ”¤ûÿÿÿÿ

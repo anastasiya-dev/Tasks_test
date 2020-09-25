@@ -31,18 +31,14 @@
                   <a style="color:#0066ff; float:right" href="#">
                      Welcome,
                      <b>
-                        <sec:authentication property="principal.username"/>
-                     </b>
-                     !
+                        <sec:authentication property="principal.username"/></b>!
                   </a>
                </sec:authorize>
                <sec:authorize access="hasRole('ADMIN')">
                   <a style="color:#0066ff; float:right" href="#">
-                     Welcome Administrator,
+                     Welcome Admin,
                      <b>
-                        <sec:authentication property="principal.username"/>
-                     </b>
-                     !
+                        <sec:authentication property="principal.username"/></b>!
                   </a>
                </sec:authorize>
 

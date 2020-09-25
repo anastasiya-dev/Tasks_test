@@ -16,7 +16,7 @@
          .navbar {
            overflow: hidden;
            background-color: #333;
-           font-family: Arial;
+
          }
 
          /* Links inside the navbar */
@@ -61,11 +61,6 @@
            min-width: 160px;
            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
            z-index: 2;
-
-
-               padding: 10px 40px;
-               text-decoration: none;
-               transition: background .5s;
          }
 
          /* Links inside the dropdown */
@@ -182,8 +177,8 @@ input[type=text]:focus {
 .footer p {
   color: #000;
   font-size: 14px;
-  height: 80px;
-  line-height: 80px;
+  /*height: 80px;
+  line-height: 80px;*/
   margin: 0;
 }
 

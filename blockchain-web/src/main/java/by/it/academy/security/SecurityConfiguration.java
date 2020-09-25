@@ -24,12 +24,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .authorizeRequests()
+//                .antMatchers("/**").permitAll();
                 .antMatchers("/resources/**").permitAll()
                 .antMatchers("/home").permitAll()
                 .antMatchers("/unconfirmed-password").permitAll()
                 .antMatchers("/signup").permitAll()
                 .antMatchers("/swagger-ui").permitAll()
                 .antMatchers("/swagger-resources/**").permitAll()
+                .antMatchers("/blockchain-mining/new-session").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()

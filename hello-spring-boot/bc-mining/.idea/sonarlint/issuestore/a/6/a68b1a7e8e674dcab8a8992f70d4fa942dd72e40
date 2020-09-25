@@ -1,0 +1,7 @@
+
+…
+java:S46011"jReorder the URL patterns from most to less specific, the pattern "/swagger-ui" should occurs before "/**".(š¼Úúûÿÿÿÿ
+
+java:S46012"tReorder the URL patterns from most to less specific, the pattern "/swagger-resources/**" should occurs before "/**".(çˆ§’üÿÿÿÿ
+a
+java:S2184K"FCast one of the operands of this multiplication operation to a "long".(Ğ‘‡Ëûÿÿÿÿ
