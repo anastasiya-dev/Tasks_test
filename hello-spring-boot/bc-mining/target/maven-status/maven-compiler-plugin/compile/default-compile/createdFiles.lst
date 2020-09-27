@@ -1,5 +1,7 @@
+by\it\academy\service\TransactionPackageService.class
 by\it\academy\pojo\Utxo.class
 by\it\academy\pojo\Approle.class
+by\it\academy\repository\TransactionPackageRepository.class
 by\it\academy\pojo\User.class
 by\it\academy\repository\UserRepository.class
 by\it\academy\repository\WalletRepository.class
@@ -17,6 +19,7 @@ by\it\academy\repository\MiningSessionRepository.class
 by\it\academy\service\UserService.class
 by\it\academy\service\TransactionService.class
 by\it\academy\management\WalletManagement.class
+by\it\academy\MiningAlgorithm.class
 by\it\academy\Genesis.class
 by\it\academy\ApplicationConfiguration.class
 by\it\academy\util\LoggerUtil.class
@@ -30,9 +33,11 @@ by\it\academy\management\BlockManagement.class
 by\it\academy\pojo\Block.class
 by\it\academy\service\UtxoService.class
 by\it\academy\support\MiningSessionStatus.class
+by\it\academy\pojo\TransactionPackage.class
 by\it\academy\BlockGenerator.class
 by\it\academy\pojo\Transaction.class
 by\it\academy\pojo\Wallet.class
 by\it\academy\repository\UtxoRepository.class
 by\it\academy\management\TransactionManagement.class
+by\it\academy\BalanceTest.class
 by\it\academy\service\WalletService.class

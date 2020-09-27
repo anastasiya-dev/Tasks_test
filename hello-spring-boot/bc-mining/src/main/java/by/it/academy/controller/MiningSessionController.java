@@ -1,8 +1,5 @@
 package by.it.academy.controller;
 
-import by.it.academy.BlockGenerator;
-import by.it.academy.Consistency;
-import by.it.academy.Genesis;
 import by.it.academy.pojo.MiningSession;
 import by.it.academy.service.MiningSessionService;
 import by.it.academy.util.LoggerUtil;
@@ -20,22 +17,14 @@ import java.util.logging.Logger;
 @RestController
 public class MiningSessionController {
 
-    int difficulty = 3;
-
     @Autowired
     MiningSessionService miningSessionService;
-    @Autowired
-    Genesis genesis;
-    @Autowired
-    BlockGenerator blockGenerator;
-    @Autowired
-    Consistency consistency;
 
     Logger logger;
 
     {
         try {
-            logger = LoggerUtil.startLogging(BlockController.class.getName());
+            logger = LoggerUtil.startLogging(MiningSessionController.class.getName());
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -47,13 +36,8 @@ public class MiningSessionController {
 
         logger.info("Received inquiry for mining session for wallet id: " + miningSession.getWalletId());
         boolean result = miningSessionService.saveMiningSession(miningSession);
-
-        if (result) {
-            blockGenerator.generateBlockchain(difficulty, miningSession);
-            consistency.isChainValid(difficulty);
-            return new ResponseEntity(miningSession, HttpStatus.OK);
-        } else {
-            return new ResponseEntity(miningSession, HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+        return (result ?
+                new ResponseEntity(miningSession, HttpStatus.OK) :
+                new ResponseEntity(miningSession, HttpStatus.INTERNAL_SERVER_ERROR));
     }
 }

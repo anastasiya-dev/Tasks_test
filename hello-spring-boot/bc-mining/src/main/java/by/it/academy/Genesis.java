@@ -8,13 +8,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.logging.Logger;
 
 @Component
 public class Genesis {
 
-    @Autowired
-    Transaction genesisTransaction;
     @Autowired
     BlockService blockService;
     @Autowired
@@ -29,6 +30,9 @@ public class Genesis {
     BlockManagement blockManagement;
     @Autowired
     MiningSessionService miningSessionService;
+    @Autowired
+    Consistency consistency;
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
     public void genesis(int difficulty) throws IOException {
 
@@ -50,7 +54,7 @@ public class Genesis {
             logger.info("Genesis1 user: " + firstActualUser);
             logger.info("Genesis1 user wallet: " + firstActualWallet);
 
-            genesisTransaction = transactionService.createTransaction(
+            Transaction genesisTransaction = transactionService.createTransaction(
                     genesisWallet.getWalletId(),
                     firstActualWallet.getWalletId(),
                     1000f
@@ -65,15 +69,24 @@ public class Genesis {
             utxoService.saveUtxo(utxo);
             logger.info("Genesis UTXO: " + utxo);
 
-            Block genesisBlock = blockService.createBlock("0");
+
             MiningSession genesisMiningSession = miningSessionService.createMiningSession();
+            genesisMiningSession.setSessionStart(LocalDateTime.now().format(formatter));
+            logger.info("Genesis mining session created: " + genesisMiningSession);
+            Block genesisBlock = blockService.createBlock("0",genesisMiningSession.getMiningSessionId());
+
             genesisMiningSession.setWalletId(genesisWallet.getWalletId());
             miningSessionService.saveMiningSession(genesisMiningSession);
             logger.info("Genesis block created: " + genesisBlock);
             blockManagement.addTransaction(genesisBlock, genesisTransaction);
             logger.info("Genesis block filled with transactions: " + genesisBlock);
-            blockManagement.mineBlock(genesisBlock, difficulty, genesisMiningSession);
+            ArrayList<Block> blockchain = new ArrayList<>();
+            blockManagement.mineBlock(genesisBlock, difficulty, genesisMiningSession, blockchain);
             logger.info("Genesis block mined: " + genesisBlock);
+            logger.info("Genesis confirmation");
+            System.out.println(consistency.isChainValid(ApplicationConfiguration.difficulty));;
+            genesisMiningSession.setConsistencyConfirmation(LocalDateTime.now().format(formatter));
+            miningSessionService.updateSession(genesisMiningSession);
         }
     }
 }

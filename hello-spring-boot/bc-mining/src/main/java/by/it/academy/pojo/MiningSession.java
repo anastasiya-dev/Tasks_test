@@ -20,9 +20,11 @@ public class MiningSession {
     private String walletId;
     private String blockId;
     private float minerReward;
+    private String sessionRequest;
     private String sessionStart;
     private String sessionEnd;
     private MiningSessionStatus miningSessionStatus;
+    private String consistencyConfirmation;
 
     @Override
     public String toString() {
@@ -31,9 +33,11 @@ public class MiningSession {
                 ", walletId='" + walletId + '\'' +
                 ", blockId='" + blockId + '\'' +
                 ", minerReward=" + minerReward +
-                ", sessionStart=" + sessionStart +
-                ", sessionEnd=" + sessionEnd +
+                ", sessionRequest='" + sessionRequest + '\'' +
+                ", sessionStart='" + sessionStart + '\'' +
+                ", sessionEnd='" + sessionEnd + '\'' +
                 ", miningSessionStatus=" + miningSessionStatus +
+                ", consistencyConfirmation='" + consistencyConfirmation + '\'' +
                 '}';
     }
 }

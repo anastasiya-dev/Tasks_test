@@ -1,3 +1,17 @@
 
-S
-java:S2696"6Make the enclosing method "static" or remove this set.(Ë¥çü8ê´ÔŠÌ.
+{
+java:S1171"YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ8äÜÎÌ.
+
+java:S1319B"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(‚ñ–œ8äÜÎÌ.
+h
+java:S1128"FRemove this unused import 'by.it.academy.support.MiningSessionStatus'.(”«µŠøÿÿÿÿ8äÜÎÌ.
+T
+java:S3655*"7Call "Optional#isPresent()" before accessing the value.(«îâƒ8äÜÎÌ.
+D
+java:S2201*"'The return value of "get" must be used.(«îâƒ8äÜÎÌ.
+]
+java:S1128";Remove this unused import 'by.it.academy.pojo.Transaction'.(ë…ûâøÿÿÿÿ8äÜÎÌ.
+Y
+java:S2629K"7Use the built-in formatting to construct this argument.(€ç­ûÿÿÿÿ8äÜÎÌ.
+Y
+java:S2629J"7Use the built-in formatting to construct this argument.(È…Õ–ıÿÿÿÿ8äÜÎÌ.

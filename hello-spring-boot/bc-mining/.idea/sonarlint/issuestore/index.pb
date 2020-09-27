@@ -77,3 +77,5 @@ c
 3src/main/java/by/it/academy/pojo/MiningSession.java,3\6\360632fb8491f39c0d5f95190e667c359a0e04a2
 s
 Csrc/main/java/by/it/academy/repository/MiningSessionRepository.java,6\1\613e93aaa147a687a2ca3431c1f66b5407363d65
+`
+0src/main/java/by/it/academy/MiningAlgorithm.java,a\4\a4fb2c6ad55db387b01755833e6924968f6ff43a

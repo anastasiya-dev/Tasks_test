@@ -32,12 +32,12 @@ public class BlockService {
     }
 
     //Block Constructor.
-    public Block createBlock(String previousHash) {
+    public Block createBlock(String previousHash, String miningSessionId) {
         ArrayList<Block> allBlocks = findAllBlocks();
         if (allBlocks.isEmpty()) {
-            block.setBlockId("0");
+            block.setBlockId("0" + "_" + miningSessionId);
         } else {
-            block.setBlockId(String.valueOf(allBlocks.size()));
+            block.setBlockId(String.valueOf(allBlocks.size()) + "_" + miningSessionId);
         }
 
         block.setPreviousHash(previousHash);
@@ -58,8 +58,8 @@ public class BlockService {
                         block.getMerkleRoot()
 
         );
-        logger.info("calculating hash for block: " + block.getBlockId());
-        logger.info("Result: " + calculatedhash);
+//        logger.info("calculating hash for block: " + block.getBlockId());
+//        logger.info("Result: " + calculatedhash);
         return calculatedhash;
     }
 

@@ -1,8 +1,6 @@
 package by.it.academy.service;
 
-import by.it.academy.controller.BlockController;
 import by.it.academy.pojo.MiningSession;
-import by.it.academy.pojo.Transaction;
 import by.it.academy.repository.MiningSessionRepository;
 import by.it.academy.support.MiningSessionStatus;
 import by.it.academy.util.LoggerUtil;
@@ -25,7 +23,7 @@ public class MiningSessionService {
 
     {
         try {
-            logger = LoggerUtil.startLogging(BlockController.class.getName());
+            logger = LoggerUtil.startLogging(MiningSessionService.class.getName());
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -47,10 +45,10 @@ public class MiningSessionService {
             ArrayList<MiningSession> miningSessions = findAllMiningSessions();
             if (miningSessions.isEmpty()) {
                 miningSession.setMiningSessionId("0");
-                miningSession.setSessionStart(LocalDateTime.now().format(formatter));
             } else {
                 miningSession.setMiningSessionId(String.valueOf(miningSessions.size()));
             }
+            miningSession.setSessionRequest(LocalDateTime.now().format(formatter));
             logger.info("Accept");
             miningSessionRepository.save(miningSession);
             return true;
@@ -58,12 +56,14 @@ public class MiningSessionService {
     }
 
 
-    public MiningSession createMiningSession () {
+    public MiningSession createMiningSession() {
+        logger.info("Creating mining session");
         miningSession.setMiningSessionId("genesis");
         return miningSession;
     }
 
     public ArrayList<MiningSession> findAllMiningSessions() {
+        logger.info("Extracting all mining sessions");
         return (ArrayList<MiningSession>) miningSessionRepository.findAll();
     }
 
@@ -80,8 +80,16 @@ public class MiningSessionService {
             savedMiningSession.setMiningSessionStatus(miningSession.getMiningSessionStatus());
             savedMiningSession.setMinerReward(miningSession.getMinerReward());
             savedMiningSession.setSessionEnd(miningSession.getSessionEnd());
+            savedMiningSession.setConsistencyConfirmation(miningSession.getConsistencyConfirmation());
+            savedMiningSession.setSessionStart(miningSession.getSessionStart());
+            savedMiningSession.setConsistencyConfirmation(miningSession.getConsistencyConfirmation());
             miningSessionRepository.save(savedMiningSession);
         }
         return miningSessionRepository.findById(id).orElseThrow();
+    }
+
+    public ArrayList<MiningSession> findAllMiningSessionsByStatus(MiningSessionStatus miningSessionStatus) {
+        logger.info("Extracting all mining sessions for particular status: " + miningSessionStatus);
+        return (ArrayList<MiningSession>) miningSessionRepository.findAllByMiningSessionStatus(miningSessionStatus);
     }
 }

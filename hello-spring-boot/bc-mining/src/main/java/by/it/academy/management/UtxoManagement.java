@@ -12,7 +12,7 @@ import java.util.logging.Logger;
 public class UtxoManagement {
 
     public boolean isMine(Utxo utxo, Wallet wallet) throws IOException {
-        Logger logger = LoggerUtil.startLogging(WalletManagement.class.getName());
+        Logger logger = LoggerUtil.startLogging(UtxoManagement.class.getName());
         logger.info("Verifying utxo " + utxo + " for wallet " + wallet.getWalletId());
 
         if (utxo.getWalletId() == null) {

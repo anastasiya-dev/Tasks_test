@@ -1,5 +1,9 @@
 package by.it.academy;
 
+import by.it.academy.pojo.MiningSession;
+import by.it.academy.service.MiningSessionService;
+import by.it.academy.support.MiningSessionStatus;
+import by.it.academy.util.LoggerUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -14,6 +18,10 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.logging.Logger;
+
 @Configuration
 @ComponentScan
 @EnableAutoConfiguration
@@ -22,6 +30,21 @@ public class ApplicationConfiguration extends WebSecurityConfigurerAdapter imple
 
     @Autowired
     Genesis genesis;
+    @Autowired
+    BalanceTest balanceTest;
+    @Autowired
+    MiningSessionService miningSessionService;
+
+    Logger logger;
+
+    {
+        try {
+            logger = LoggerUtil.startLogging(ApplicationConfiguration.class.getName());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -43,10 +66,10 @@ public class ApplicationConfiguration extends WebSecurityConfigurerAdapter imple
 //                .formLogin().disable()
 //                .csrf().disable()
                 .antMatchers("/*").permitAll()
+//.antMatchers(HttpMethod.POST).permitAll()
                 .and().csrf().disable()
         ;
 
-        http.authorizeRequests().antMatchers("/register").permitAll();
         super.configure(http);
     }
 
@@ -54,11 +77,28 @@ public class ApplicationConfiguration extends WebSecurityConfigurerAdapter imple
         SpringApplication.run(ApplicationConfiguration.class);
     }
 
-    int difficulty = 3;
+    public static int difficulty = 5;
+    static float threshold = 1_000_000;
 
     @Override
     public void run(String... args) throws Exception {
         this.genesis.genesis(difficulty);
+
+        while (balanceTest.balance() < threshold) {
+            logger.info("Checking mining session pool");
+            try {
+                ArrayList<MiningSession> allMiningSessionsByStatus
+                        = miningSessionService.findAllMiningSessionsByStatus(MiningSessionStatus.IN_PROCESS);
+                for (MiningSession miningSession : allMiningSessionsByStatus) {
+                    logger.info("Starting thread for mining session " + miningSession.getMiningSessionId());
+                    new MiningAlgorithm(miningSession).start();
+                }
+            } catch (NullPointerException e) {
+                logger.info("Mining session pool empty");
+            }
+            logger.info("Letting mining session pool to be filled");
+            Thread.sleep(1000 * 2 * 60);
+        }
     }
 
     @Bean
