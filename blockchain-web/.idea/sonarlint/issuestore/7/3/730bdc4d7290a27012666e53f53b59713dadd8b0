@@ -1,15 +1,31 @@
 
+j
+java:S4488 "HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ùƒşÿÿÿÿ8åŞãƒÊ.
+g
+java:S4488?"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(¾åÈÍ8òû¦ÜÌ.
 ^
-java:S3457""AFormat specifiers should be used instead of string concatenation.(åĞöÈ8»ÊôĞË.
-j
-java:S4488)"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ÙÌÔ‚ùÿÿÿÿ8ÀÉíƒÊ.
-j
-java:S4488"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ùƒşÿÿÿÿ8åŞãƒÊ.
-F
-java:S2629#"$Invoke method(s) only conditionally.(‡¨Ìıøÿÿÿÿ8¶–õĞË.
-c
-java:S34574"AFormat specifiers should be used instead of string concatenation.(Íü–½ûÿÿÿÿ8¼’öĞË.
+java:S3457V"AFormat specifiers should be used instead of string concatenation.(–®®Ï8òû¦ÜÌ.
 Y
-java:S26294"7Use the built-in formatting to construct this argument.(Íü–½ûÿÿÿÿ8¼’öĞË.
+java:S2629C"7Use the built-in formatting to construct this argument.(‰ô˜½ûÿÿÿÿ8òû¦ÜÌ.
+S
+java:S26960"6Make the enclosing method "static" or remove this set.(ÈÂ«í8ÃÀ¯ÜÌ.
 T
-java:S2629""7Use the built-in formatting to construct this argument.(åĞöÈ8»ÊôĞË.
+java:S2629V"7Use the built-in formatting to construct this argument.(–®®Ï8òû¦ÜÌ.
+c
+java:S34578"AFormat specifiers should be used instead of string concatenation.(Íü–½ûÿÿÿÿ8¼’öĞË.
+T
+java:S2629%"7Use the built-in formatting to construct this argument.(åĞöÈ8»ÊôĞË.
+F
+java:S2629&"$Invoke method(s) only conditionally.(‡¨Ìıøÿÿÿÿ8¶–õĞË.
+Y
+java:S26298"7Use the built-in formatting to construct this argument.(Íü–½ûÿÿÿÿ8¼’öĞË.
+c
+java:S3457C"AFormat specifiers should be used instead of string concatenation.(‰ô˜½ûÿÿÿÿ8òû¦ÜÌ.
+^
+java:S3457%"AFormat specifiers should be used instead of string concatenation.(åĞöÈ8»ÊôĞË.
+F
+java:S2629D"$Invoke method(s) only conditionally.(çÓÂƒøÿÿÿÿ8Æä¶ÜÌ.
+j
+java:S4488,"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ÙÌÔ‚ùÿÿÿÿ8ÀÉíƒÊ.
+j
+java:S4488S"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ñ—É¼ùÿÿÿÿ8òû¦ÜÌ.

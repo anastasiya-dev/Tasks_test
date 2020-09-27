@@ -2,9 +2,14 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
 <jsp:include page="header.jsp"/>
-<h2 style="margin-top: 2cm;"></h2>
+<h2></h2>
+
 <form action="/blockchain-web/${userId}/create-wallet" method="get" >
    <button type="submit" class="btn send-button-small">Create wallet</button>
+</form>
+<h4></h4>
+<form action="/blockchain-web/${userId}/mining-launch" method="get" >
+<button type="submit" class="btn send-button-small">Mining</button>
 </form>
 
     <br>

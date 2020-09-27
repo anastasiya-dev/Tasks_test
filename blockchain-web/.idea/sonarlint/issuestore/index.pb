@@ -155,5 +155,11 @@ t
 Dsrc/test/java/by/it/academy/controller/StatisticsControllerTest.java,2\3\23e5bb90fac5cb4fe63db2c454af005a7f803d0d
 h
 8src/test/java/by/it/academy/service/UserServiceTest.java,c\d\cd435efce6d4ee255c682c85b6e09e7a71ae5c65
-l
-<src/main/java/by/it/academy/controller/MiningController.java,5\2\521c9872753f85295db6533a15f25e571de3067d
+V
+&src/main/webapp/WEB-INF/jsp/mining.jsp,8\8\88b08f54fa23f4ac606ffc6b6f299d1d6295cfe5
+d
+4src/main/java/by/it/academy/support/MinerChoice.java,1\5\157d111632d0ed51f3cf6e2b36033b10e4fe11ee
+r
+Bsrc/main/java/by/it/academy/controller/MiningLaunchController.java,a\9\a91c44fce3d12dae74afab21ef0c088e1b5b7152
+]
+-src/main/webapp/WEB-INF/jsp/mining-launch.jsp,9\9\9953736bfffc54920815f960f2dc48262222304f

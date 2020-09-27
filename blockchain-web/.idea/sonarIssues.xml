@@ -278,6 +278,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/controller/ChooseMiningWalletController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/controller/CreateWalletController.java">
           <value>
             <set />
@@ -304,6 +309,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/controller/MiningController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/controller/MiningLaunchController.java">
           <value>
             <set />
           </value>
@@ -623,6 +633,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/support/MinerChoice.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/support/PrivateKeyInput.java">
           <value>
             <set />
@@ -803,6 +818,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/mining-launch.jsp">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/mining.jsp">
           <value>
             <set />
@@ -973,6 +993,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring-boot/bc-mining/src/main/java/by/it/academy/MiningAlgorithm.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../hello-spring-boot/bc-mining/src/main/java/by/it/academy/controller/BlockController.java">
           <value>
             <set />
@@ -993,6 +1018,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring-boot/bc-mining/src/main/java/by/it/academy/management/UtxoManagement.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../hello-spring-boot/bc-mining/src/main/java/by/it/academy/pojo/Block.java">
           <value>
             <set />
@@ -1008,12 +1038,32 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring-boot/bc-mining/src/main/java/by/it/academy/pojo/TransactionPackage.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../hello-spring-boot/bc-mining/src/main/java/by/it/academy/repository/BlockRepository.java">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../hello-spring-boot/bc-mining/src/main/java/by/it/academy/repository/MinerRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring-boot/bc-mining/src/main/java/by/it/academy/repository/MiningSessionRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring-boot/bc-mining/src/main/java/by/it/academy/repository/TransactionPackageRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring-boot/bc-mining/src/main/java/by/it/academy/repository/UserRepository.java">
           <value>
             <set />
           </value>
@@ -1029,6 +1079,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../hello-spring-boot/bc-mining/src/main/java/by/it/academy/service/MiningSessionService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring-boot/bc-mining/src/main/java/by/it/academy/service/TransactionPackageService.java">
           <value>
             <set />
           </value>

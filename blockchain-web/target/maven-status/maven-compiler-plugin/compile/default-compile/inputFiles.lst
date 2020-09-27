@@ -13,7 +13,7 @@ C:\work\blockchain-web\src\main\java\by\it\academy\support\FilterInput.java
 C:\work\blockchain-web\src\main\java\by\it\academy\controller\WalletViewController.java
 C:\work\blockchain-web\src\main\java\by\it\academy\security\SecurityConfiguration.java
 C:\work\blockchain-web\src\main\java\by\it\academy\support\ChangePassword.java
-C:\work\blockchain-web\src\main\java\by\it\academy\controller\MiningController.java
+C:\work\blockchain-web\src\main\java\by\it\academy\support\MinerChoice.java
 C:\work\blockchain-web\src\main\java\by\it\academy\repository\TransactionRepository.java
 C:\work\blockchain-web\src\main\java\by\it\academy\pojo\Utxo.java
 C:\work\blockchain-web\src\main\java\by\it\academy\pojo\Approle.java
@@ -36,6 +36,7 @@ C:\work\blockchain-web\src\main\java\by\it\academy\pojo\User.java
 C:\work\blockchain-web\src\main\java\by\it\academy\service\WalletService.java
 C:\work\blockchain-web\src\main\java\by\it\academy\controller\TransactionUnconfirmedController.java
 C:\work\blockchain-web\src\main\java\by\it\academy\ApplicationConfiguration.java
+C:\work\blockchain-web\src\main\java\by\it\academy\controller\MiningLaunchController.java
 C:\work\blockchain-web\src\main\java\by\it\academy\controller\TransactionCreateController.java
 C:\work\blockchain-web\src\main\java\by\it\academy\controller\WalletDeleteController.java
 C:\work\blockchain-web\src\main\java\by\it\academy\management\TransactionManagement.java

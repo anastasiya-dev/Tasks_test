@@ -1,13 +1,0 @@
-
-D
-java:S1068"'Remove this unused "log" private field.(ÔÍ´ı8Ç·•Ì.
-]
-java:S1854"@Remove this useless assignment to local variable "httpResponse".(ç½±Ó8‹æ­Ì.
-
-java:S1488-"dImmediately return this expression instead of assigning it to the temporary variable "httpResponse".(ÔÏ¥ğ8‹æ­Ì.
-j
-java:S4488"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ó—şØøÿÿÿÿ8ßº”Ì.
-V
-java:S3400#"9Remove this method and declare a constant for this value.(±±â‡8‹æ­Ì.
-N
-java:S1481"1Remove this unused "httpResponse" local variable.(ç½±Ó8‹æ­Ì.
