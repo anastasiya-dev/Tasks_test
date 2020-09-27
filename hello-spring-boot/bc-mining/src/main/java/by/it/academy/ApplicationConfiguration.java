@@ -34,6 +34,10 @@ public class ApplicationConfiguration extends WebSecurityConfigurerAdapter imple
     BalanceTest balanceTest;
     @Autowired
     MiningSessionService miningSessionService;
+    //    @Autowired
+//    ApplicationContext applicationContext;
+    @Autowired
+    MiningHead miningHead;
 
     Logger logger;
 
@@ -89,10 +93,7 @@ public class ApplicationConfiguration extends WebSecurityConfigurerAdapter imple
             try {
                 ArrayList<MiningSession> allMiningSessionsByStatus
                         = miningSessionService.findAllMiningSessionsByStatus(MiningSessionStatus.IN_PROCESS);
-                for (MiningSession miningSession : allMiningSessionsByStatus) {
-                    logger.info("Starting thread for mining session " + miningSession.getMiningSessionId());
-                    new MiningAlgorithm(miningSession).start();
-                }
+                miningHead.miningRunner(allMiningSessionsByStatus);
             } catch (NullPointerException e) {
                 logger.info("Mining session pool empty");
             }

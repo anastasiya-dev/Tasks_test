@@ -1,6 +1,7 @@
 package by.it.academy.service;
 
 import by.it.academy.pojo.Block;
+import by.it.academy.pojo.BlockTemporary;
 import by.it.academy.repository.BlockRepository;
 import by.it.academy.util.LoggerUtil;
 import by.it.academy.util.StringUtil;
@@ -43,10 +44,10 @@ public class BlockService {
         block.setPreviousHash(previousHash);
         block.setTimeStamp(new Date().getTime());
         block.setHash(calculateHash(block));
-        Block saved = blockRepository.save(block);
+//        Block saved = blockRepository.save(block);
         logger.info("Creating block: " + block);
-
-        return saved;
+        return block;
+//        return saved;
     }
 
     public String calculateHash(Block block) {
@@ -92,5 +93,19 @@ public class BlockService {
         logger.info("Saving block: " + block);
         blockRepository.save(block);
         return true;
+    }
+
+    public Block transformFromTemporary(BlockTemporary blockTemporary) {
+        block.setMinerId(blockTemporary.getMinerId());
+        block.setBlockId(blockTemporary.getBlockId());
+        block.setMerkleRoot(blockTemporary.getMerkleRoot());
+        block.setHash(blockTemporary.getHash());
+        block.setNonce(blockTemporary.getNonce());
+        block.setTimeStamp(blockTemporary.getTimeStamp());
+        block.setMiningSessionId(blockTemporary.getMiningSessionId());
+        block.setMinerId(blockTemporary.getMinerId());
+        block.setPreviousHash(blockTemporary.getPreviousHash());
+        Block saved = blockRepository.save(block);
+        return saved;
     }
 }

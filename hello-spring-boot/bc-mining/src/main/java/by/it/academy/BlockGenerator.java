@@ -2,9 +2,11 @@ package by.it.academy;
 
 import by.it.academy.management.BlockManagement;
 import by.it.academy.pojo.Block;
+import by.it.academy.pojo.BlockTemporary;
 import by.it.academy.pojo.MiningSession;
 import by.it.academy.pojo.Transaction;
 import by.it.academy.service.BlockService;
+import by.it.academy.service.BlockTemporaryService;
 import by.it.academy.service.TransactionService;
 import by.it.academy.support.TransactionStatus;
 import by.it.academy.util.LoggerUtil;
@@ -28,6 +30,8 @@ public class BlockGenerator {
     TransactionService transactionService;
     @Autowired
     BlockManagement blockManagement;
+    @Autowired
+    BlockTemporaryService blockTemporaryService;
 
     public void generateBlockchain(int difficulty, MiningSession miningSession) throws IOException {
 
@@ -44,17 +48,21 @@ public class BlockGenerator {
             logger.info("No transactions for block found");
             return;
         } else {
-            Block block = blockService.createBlock(blockchain.get(blockchain.size() - 1).getHash(), miningSession.getMiningSessionId());
-//            for (Transaction transaction : transactionsToAdd) {
-//                logger.info("Adding to block " + block.getBlockId());
-//                logger.info(transaction.getTransactionId());
-//                blockManagement.addTransaction(block, transaction);
-//            }
+//            Block block = blockService.createBlock(blockchain.get(blockchain.size() - 1).getHash(), miningSession.getMiningSessionId());
+
+            BlockTemporary blockTemporary = blockTemporaryService.createBlockTemporary(blockchain.get(blockchain.size() - 1).getHash(), miningSession.getMiningSessionId());
+
+
+                        for (Transaction transaction : transactionsToAdd) {
+                logger.info("Adding to block " + blockTemporary.getBlockId());
+                logger.info(transaction.getTransactionId());
+                blockManagement.addTransaction(blockTemporary, transaction);
+            }
             logger.info("Mining block (id, difficulty, miningSession): "
-                    + block.getBlockId() + ", "
+                    + blockTemporary.getBlockId() + ", "
                     + difficulty + ", "
                     + miningSession.getMiningSessionId());
-            blockManagement.mineBlock(block, difficulty, miningSession, blockchain);
+            blockManagement.mineBlock(blockTemporary, difficulty, miningSession, blockchain);
         }
     }
 

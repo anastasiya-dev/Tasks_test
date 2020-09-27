@@ -58,7 +58,7 @@ public class MiningSessionService {
 
     public MiningSession createMiningSession() {
         logger.info("Creating mining session");
-        miningSession.setMiningSessionId("genesis");
+        miningSession.setMiningSessionId("0");
         return miningSession;
     }
 
@@ -90,6 +90,17 @@ public class MiningSessionService {
 
     public ArrayList<MiningSession> findAllMiningSessionsByStatus(MiningSessionStatus miningSessionStatus) {
         logger.info("Extracting all mining sessions for particular status: " + miningSessionStatus);
-        return (ArrayList<MiningSession>) miningSessionRepository.findAllByMiningSessionStatus(miningSessionStatus);
+        ArrayList<MiningSession> miningSessionsAll = findAllMiningSessions();
+        ArrayList<MiningSession> miningSessionsByStatus = new ArrayList<>();
+        for (MiningSession miningSession : miningSessionsAll) {
+            if (miningSession.getMiningSessionStatus().equals(miningSessionStatus)) {
+                miningSessionsByStatus.add(miningSession);
+            }
+        }
+        return miningSessionsByStatus;
+    }
+
+    public MiningSession findById(String miningSessionId) {
+        return miningSessionRepository.findById(miningSessionId).get();
     }
 }
