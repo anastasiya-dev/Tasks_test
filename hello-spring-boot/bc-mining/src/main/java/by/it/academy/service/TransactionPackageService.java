@@ -31,8 +31,9 @@ public class TransactionPackageService {
         }
     }
 
-    @Lock(LockModeType.PESSIMISTIC_WRITE)
+//    @Lock(LockModeType.PESSIMISTIC_WRITE)
     public TransactionPackage createTransactionPackage(String blockId, String transactionId) {
+        transactionPackage.setTransactionPackageId(blockId + "/" + transactionId);
         transactionPackage.setBlockId(blockId);
         transactionPackage.setTransactionId(transactionId);
         TransactionPackage saved = transactionPackageRepository.save(transactionPackage);

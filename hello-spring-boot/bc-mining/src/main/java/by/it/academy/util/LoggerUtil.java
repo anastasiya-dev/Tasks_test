@@ -15,7 +15,7 @@ public final class LoggerUtil {
         Logger logger = Logger.getLogger(className);
 
         // Configure logger location
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy_MM_dd_HH_mm_ss");
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy_MM_dd_HH_mm_ss_SSS");
         LocalDateTime now = LocalDateTime.now();
         String dateFormatted = dtf.format(now);
 

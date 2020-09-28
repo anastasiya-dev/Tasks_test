@@ -91,14 +91,14 @@ public class BlockService {
         return minerBlocks;
     }
 
-    @Lock(LockModeType.PESSIMISTIC_WRITE)
+//    @Lock(LockModeType.PESSIMISTIC_WRITE)
     public boolean saveBlock(Block block) {
         logger.info("Saving block: " + block);
         blockRepository.save(block);
         return true;
     }
 
-    @Lock(LockModeType.PESSIMISTIC_WRITE)
+//    @Lock(LockModeType.PESSIMISTIC_WRITE)
     public Block transformFromTemporary(BlockTemporary blockTemporary) {
         block.setBlockId(blockTemporary.getBlockId());
         block.setMerkleRoot(blockTemporary.getMerkleRoot());

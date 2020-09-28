@@ -79,7 +79,7 @@ public class ApplicationConfiguration extends WebSecurityConfigurerAdapter imple
         SpringApplication.run(ApplicationConfiguration.class);
     }
 
-    public static int DIFFICULTY = 3;
+    public static int DIFFICULTY = 5;
     public static float THRESHOLD = 1_000_000;
     public static DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss:SSS");
 

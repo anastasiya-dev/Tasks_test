@@ -1,7 +1,9 @@
 
-†
-java:S1319,"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ñÜöå
+Y
+java:S2629;"7Use the built-in formatting to construct this argument.(˜‹¶ûÿÿÿÿ8ÓĞİœÍ.
 R
-java:S26293"7Use the built-in formatting to construct this argument.(í ›µúÿÿÿÿ
+java:S26295"7Use the built-in formatting to construct this argument.(í ›µúÿÿÿÿ
 t
-java:S1171"YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ
+java:S1171"YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ
+Y
+java:S2629+"7Use the built-in formatting to construct this argument.(¥•Â§øÿÿÿÿ8ÓĞİœÍ.

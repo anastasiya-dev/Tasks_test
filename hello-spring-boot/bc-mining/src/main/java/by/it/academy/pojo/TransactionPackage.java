@@ -14,13 +14,15 @@ import javax.persistence.Id;
 public class TransactionPackage {
 
     @Id
+    private String transactionPackageId;
     private String blockId;
     private String transactionId;
 
     @Override
     public String toString() {
         return "TransactionPackage{" +
-                "blockId='" + blockId + '\'' +
+                "transactionPackageId='" + transactionPackageId + '\'' +
+                ", blockId='" + blockId + '\'' +
                 ", transactionId='" + transactionId + '\'' +
                 '}';
     }

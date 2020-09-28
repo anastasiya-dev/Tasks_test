@@ -1,14 +1,13 @@
 package by.it.academy.service;
 
+import by.it.academy.pojo.Block;
 import by.it.academy.pojo.BlockTemporary;
 import by.it.academy.repository.BlockTemporaryRepository;
 import by.it.academy.util.LoggerUtil;
 import by.it.academy.util.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Lock;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.LockModeType;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -22,6 +21,8 @@ public class BlockTemporaryService {
     BlockTemporaryRepository blockTemporaryRepository;
     @Autowired
     BlockTemporary blockTemporary;
+    @Autowired
+    BlockService blockService;
 
     Logger logger;
 
@@ -33,9 +34,9 @@ public class BlockTemporaryService {
         }
     }
 
-    @Lock(LockModeType.PESSIMISTIC_WRITE)
+    //    @Lock(LockModeType.PESSIMISTIC_WRITE)
     public BlockTemporary createBlockTemporary(String previousHash, String miningSessionId) {
-        ArrayList<BlockTemporary> allBlocks = findAllBlocksTemporary();
+        ArrayList<Block> allBlocks = blockService.findAllBlocks();
         if (allBlocks.isEmpty()) {
             blockTemporary.setBlockId("0" + "_" + miningSessionId);
         } else {
@@ -72,7 +73,7 @@ public class BlockTemporaryService {
         return blockTemporaryRepository.findById(blockId).get();
     }
 
-    @Lock(LockModeType.PESSIMISTIC_WRITE)
+    //    @Lock(LockModeType.PESSIMISTIC_WRITE)
     public BlockTemporary updateBlockTemporary(BlockTemporary blockTemporary) {
         logger.info("Updating blockTemporary");
         String id = blockTemporary.getBlockId();

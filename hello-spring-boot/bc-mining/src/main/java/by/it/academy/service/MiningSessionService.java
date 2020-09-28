@@ -35,7 +35,7 @@ public class MiningSessionService {
     @Autowired
     MiningSession miningSession;
 
-    @Lock(LockModeType.PESSIMISTIC_WRITE)
+//    @Lock(LockModeType.PESSIMISTIC_WRITE)
     public boolean saveMiningSession(MiningSession miningSession) {
         logger.info("Processing mining session creation");
         try {
@@ -69,7 +69,7 @@ public class MiningSessionService {
         return (ArrayList<MiningSession>) miningSessionRepository.findAll();
     }
 
-    @Lock(LockModeType.PESSIMISTIC_WRITE)
+//    @Lock(LockModeType.PESSIMISTIC_WRITE)
     public MiningSession updateSession(MiningSession miningSession) {
         logger.info("Updating mining session");
         String id = miningSession.getMiningSessionId();

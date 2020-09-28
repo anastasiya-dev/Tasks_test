@@ -89,9 +89,11 @@ r
 Bsrc/main/java/by/it/academy/service/TransactionPackageService.java,f\4\f4520f1f0c2f7b40738ac01f9733b1b560f1ce05
 n
 >src/main/java/by/it/academy/service/BlockTemporaryService.java,5\e\5ec393fc27fd834ed8795809875ea48f0b3c7caf
-[
-+src/main/java/by/it/academy/MiningHead.java,9\4\94b8b7e5ca1c3d233657f085176524752d11e509
-e
-5src/main/java/by/it/academy/pojo/MiningAlgorithm.java,a\5\a5ff2adfaf1f40e00bb49a3050ff4b74e82d2122
-g
-7src/main/java/by/it/academy/MiningAlgorithmService.java,5\a\5abcb9689301fff41bb26aa31e475460da832db1
+l
+<src/main/java/by/it/academy/support/MiningSessionStatus.java,e\3\e350e320a10e27e4708a3bcb55b939ae250e8e9b
+n
+>src/main/java/by/it/academy/multithreading/MiningLauncher.java,b\9\b9b082231cefad7da6f7f087b83d24d986f8953d
+o
+?src/main/java/by/it/academy/multithreading/MiningAlgorithm.java,c\c\cc2c44b989d6f3e0581bff08fa421c0123573e4f
+v
+Fsrc/main/java/by/it/academy/multithreading/MiningAlgorithmService.java,6\0\60fcbbf77ed639b4b30f4442ddf2817d39c022df

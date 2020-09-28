@@ -1,10 +1,19 @@
 
-L
-java:S2696)"6Make the enclosing method "static" or remove this set.(Ë¥çü
-G
-java:S1172;"1Remove this unused method parameter "userStatus".(÷íº‘
+T
+java:S2629D"7Use the built-in formatting to construct this argument.(Õ›ÏÄ8…ª½œÍ.
 S
-java:S1117>"8Rename "user" which hides the field declared at line 24.(èı²İüÿÿÿÿ
-V
-java:S1126G"AReplace this if-then-else statement by a single return statement.(ÀêŒ
-V	java:S125'"<This block of commented-out lines of code should be removed.(¾¬÷şÿÿÿÿ
+java:S1117P"8Rename "user" which hides the field declared at line 28.(èı²İüÿÿÿÿ
+L
+java:S26967"6Make the enclosing method "static" or remove this set.(Ë¥çü
+S
+java:S2629Y"7Use the built-in formatting to construct this argument.(à¥Œ98±¦ÃœÍ.
+T
+java:S2629d"7Use the built-in formatting to construct this argument.(šË”Ó8ğùÇœÍ.
+Y
+java:S26298"7Use the built-in formatting to construct this argument.(Œ²…øÿÿÿÿ8õË¼œÍ.
+Y
+java:S2629H"7Use the built-in formatting to construct this argument.(Æ…«ˆüÿÿÿÿ8œù¿œÍ.
+{
+java:S1171'"YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ8¸Â¹œÍ.
+Y
+java:S2629M"7Use the built-in formatting to construct this argument.(ä—„úÿÿÿÿ8ÎÁœÍ.

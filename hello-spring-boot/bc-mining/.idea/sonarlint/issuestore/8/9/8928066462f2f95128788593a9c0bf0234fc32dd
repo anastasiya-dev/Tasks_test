@@ -1,21 +1,19 @@
 
 Y
-java:S2629;"7Use the built-in formatting to construct this argument.(…¯óûÿÿÿÿ8Óİ’‰Ì.
-T
-java:S2629e"7Use the built-in formatting to construct this argument.(òÁ’¯8Óİ’‰Ì.
-T
-java:S2629("7Use the built-in formatting to construct this argument.(Ê°ø“8Óİ’‰Ì.
-T
-java:S2629<"7Use the built-in formatting to construct this argument.(òÁ’¯8Óİ’‰Ì.
-t
-java:S1171"YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ
+java:S2629j"7Use the built-in formatting to construct this argument.(…¯óûÿÿÿÿ8Óİ’‰Ì.
 Y
-java:S2629d"7Use the built-in formatting to construct this argument.(…¯óûÿÿÿÿ8Óİ’‰Ì.
+java:S2629@"7Use the built-in formatting to construct this argument.(…¯óûÿÿÿÿ8Óİ’‰Ì.
 R
-java:S2629."7Use the built-in formatting to construct this argument.(Àäˆâÿÿÿÿÿ
-†
-java:S13192"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(€¡¯
+java:S26292"7Use the built-in formatting to construct this argument.(Àäˆâÿÿÿÿÿ
 Y
-java:S2629]"7Use the built-in formatting to construct this argument.(’ÿÇÛùÿÿÿÿ8Óİ’‰Ì.
+java:S2629W"7Use the built-in formatting to construct this argument.(×à¡ƒÿÿÿÿÿ8Óİ’‰Ì.
+T
+java:S2629,"7Use the built-in formatting to construct this argument.(Ê°ø“8Óİ’‰Ì.
 Y
-java:S2629R"7Use the built-in formatting to construct this argument.(×à¡ƒÿÿÿÿÿ8Óİ’‰Ì.
+java:S2629b"7Use the built-in formatting to construct this argument.(’ÿÇÛùÿÿÿÿ8Óİ’‰Ì.
+T
+java:S2629k"7Use the built-in formatting to construct this argument.(òÁ’¯8Óİ’‰Ì.
+t
+java:S1171""YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ
+T
+java:S2629A"7Use the built-in formatting to construct this argument.(òÁ’¯8Óİ’‰Ì.

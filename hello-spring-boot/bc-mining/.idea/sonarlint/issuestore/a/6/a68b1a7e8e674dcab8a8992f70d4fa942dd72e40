@@ -1,10 +1,23 @@
 
+q
+java:S3008S"TRename this field "THRESHOLD" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ø§ô 8ØëæœÍ.
+q
+java:S3008T"TRename this field "FORMATTER" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×èÈÒ8º¬çœÍ.
 c
 java:S2184e"FCast one of the operands of this multiplication operation to a "long".(¾İ”É8§°ŠÍ.
+r
+java:S1104T"UMake FORMATTER a static final constant or non-public and provide accessors if needed.(×èÈÒ8º¬çœÍ.
+L
+java:S1444T"/Make this "public static FORMATTER" field final(×èÈÒ8º¬çœÍ.
 {
 java:S1171,"YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ8§°ŠÍ.
-x
-java:S1104T"VMake difficulty a static final constant or non-public and provide accessors if needed.(öÙ‚¥şÿÿÿÿ8§°ŠÍ.
-]	java:S125&"<This block of commented-out lines of code should be removed.(å¥ƒ—úÿÿÿÿ8ÀÀ´Í.
+r
+java:S1104S"UMake THRESHOLD a static final constant or non-public and provide accessors if needed.(ø§ô 8ØëæœÍ.
+L
+java:S1444S"/Make this "public static THRESHOLD" field final(ø§ô 8ØëæœÍ.
+w
+java:S3008R"URename this field "DIFFICULTY" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ü¾ôûÿÿÿÿ8åÔåœÍ.
 R
-java:S1444T"0Make this "public static difficulty" field final(öÙ‚¥şÿÿÿÿ8§°ŠÍ.
+java:S1444R"0Make this "public static DIFFICULTY" field final(ü¾ôûÿÿÿÿ8åÔåœÍ.
+x
+java:S1104R"VMake DIFFICULTY a static final constant or non-public and provide accessors if needed.(ü¾ôûÿÿÿÿ8åÔåœÍ.

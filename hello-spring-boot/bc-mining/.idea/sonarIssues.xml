@@ -18,6 +18,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../../blockchain-web/src/main/java/by/it/academy/controller/DownloadController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../../blockchain-web/src/main/java/by/it/academy/controller/MiningController.java">
           <value>
             <set />
