@@ -19,7 +19,6 @@
            <a href="/blockchain-web/home">Home</a>
 
             <a href="/blockchain-web/${userId}/wallet-all">MyBlockChain</a>
-            <a href="/blockchain-web/${userId}/statistics">Statistics</a>
 
 <sec:authorize access="isAuthenticated()">
 
@@ -54,6 +53,17 @@
                <a href="/blockchain-web/${userId}/delete">Delete</a>
              </div>
            </div>
+
+           <div class="dropdown">
+                        <button class="dropbtn">Mining
+                          <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content" style="overflow:visible;">
+
+                          <a href="/blockchain-web/${userId}/mining-sessions">View sessions</a>
+                           <a href="/blockchain-web/${userId}/statistics">Statistics</a>
+                        </div>
+                      </div>
 
 
 

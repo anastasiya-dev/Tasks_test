@@ -428,6 +428,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/pojo/MiningSession.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/pojo/Transaction.java">
           <value>
             <set />
@@ -484,6 +489,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/repository/BlockchainUtxoDao.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/repository/MiningSessionRepository.java">
           <value>
             <set />
           </value>
@@ -584,6 +594,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/service/BlockchainUtxoService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/service/MiningSessionService.java">
           <value>
             <set />
           </value>
@@ -823,6 +838,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/mining-session-all.jsp">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/mining.jsp">
           <value>
             <set />
@@ -998,6 +1018,16 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring-boot/bc-mining/src/main/java/by/it/academy/MiningAlgorithmService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring-boot/bc-mining/src/main/java/by/it/academy/MiningHead.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../hello-spring-boot/bc-mining/src/main/java/by/it/academy/controller/BlockController.java">
           <value>
             <set />
@@ -1023,12 +1053,42 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring-boot/bc-mining/src/main/java/by/it/academy/multithreading/MiningAlgorithm.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring-boot/bc-mining/src/main/java/by/it/academy/multithreading/MiningAlgorithmService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring-boot/bc-mining/src/main/java/by/it/academy/multithreading/MiningHead.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring-boot/bc-mining/src/main/java/by/it/academy/multithreading/MiningLauncher.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../hello-spring-boot/bc-mining/src/main/java/by/it/academy/pojo/Block.java">
           <value>
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring-boot/bc-mining/src/main/java/by/it/academy/pojo/BlockTemporary.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../hello-spring-boot/bc-mining/src/main/java/by/it/academy/pojo/Miner.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring-boot/bc-mining/src/main/java/by/it/academy/pojo/MiningAlgorithm.java">
           <value>
             <set />
           </value>
@@ -1043,7 +1103,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring-boot/bc-mining/src/main/java/by/it/academy/pojo/User.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring-boot/bc-mining/src/main/java/by/it/academy/pojo/Wallet.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../hello-spring-boot/bc-mining/src/main/java/by/it/academy/repository/BlockRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring-boot/bc-mining/src/main/java/by/it/academy/repository/BlockTemporaryRepository.java">
           <value>
             <set />
           </value>
@@ -1073,6 +1148,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring-boot/bc-mining/src/main/java/by/it/academy/service/BlockTemporaryService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../hello-spring-boot/bc-mining/src/main/java/by/it/academy/service/MinerService.java">
           <value>
             <set />
@@ -1088,12 +1168,32 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring-boot/bc-mining/src/main/java/by/it/academy/service/TransactionService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../hello-spring-boot/bc-mining/src/main/java/by/it/academy/service/UserService.java">
           <value>
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring-boot/bc-mining/src/main/java/by/it/academy/service/UtxoService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring-boot/bc-mining/src/main/java/by/it/academy/service/WalletService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../hello-spring-boot/bc-mining/src/main/java/by/it/academy/support/MiningSessionStatus.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring-boot/bc-mining/src/main/java/by/it/academy/util/LoggerUtil.java">
           <value>
             <set />
           </value>

@@ -8,8 +8,8 @@
    <button type="submit" class="btn send-button-small">Create wallet</button>
 </form>
 <h4></h4>
-<form action="/blockchain-web/${userId}/mining-launch" method="get" >
-<button type="submit" class="btn send-button-small">Mining</button>
+<form action="/blockchain-web/${userId}/mining-request" method="get" >
+<button type="submit" class="btn send-button-small">Launch mining</button>
 </form>
 
     <br>
@@ -31,7 +31,6 @@
           <td style="border-collapse: collapse"><a href="/blockchain-web/${userId}/wallet/${wallet.walletId}/transaction-all">View processed</a><td>
           <td style="border-collapse: collapse"><a href="/blockchain-web/${userId}/wallet/${wallet.walletId}/unconfirmed">View unconfirmed </a><td>
           <td style="border-collapse: collapse"><a href="/blockchain-web/${userId}/wallet/${wallet.walletId}/delete">Delete</a><td>
-          <td style="border-collapse: collapse"><a href="/blockchain-web/${userId}/wallet/${wallet.walletId}/mining">Mining</a><td>
         </tr>
 </c:forEach>
       </tbody>

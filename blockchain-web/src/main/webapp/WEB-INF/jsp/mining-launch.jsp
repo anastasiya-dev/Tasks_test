@@ -1,6 +1,9 @@
 <%@taglib uri = "http://www.springframework.org/tags/form" prefix = "form"%>
 <jsp:include page="header.jsp"/>
 
+<br>
+<br>
+<br>
 <div style="align:center">
    <h3>Please select wallet to start mining: </h3>
       <form:form method = "POST" action = "/blockchain-web/${userId}/mining-launch">
@@ -12,10 +15,12 @@
                      <form:option value = "NONE" label = "Select"/>
                      <form:options items = "${walletList}" />
                   </form:select>
+</tr>
 
-              <button type="submit" class="btn send-button-small">Go!</button>
 
          </table>
+         <br>
+         <button type="submit" class="btn send-button-small">Go!</button>
       </form:form>
 <p style="color:red">Important: you can mine only for one wallet at a time!</p>
 </div>

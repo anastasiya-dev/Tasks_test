@@ -16,6 +16,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import javax.sql.DataSource;
+import java.time.format.DateTimeFormatter;
 import java.util.Properties;
 
 @Configuration
@@ -24,6 +25,8 @@ import java.util.Properties;
 @EnableWebMvc
 @EnableJpaRepositories(basePackages = "by.it.academy.repository")
 public class ApplicationConfiguration {
+
+    public static DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss:SSS");
 
     @Bean
     public DataSource dataSource() {
