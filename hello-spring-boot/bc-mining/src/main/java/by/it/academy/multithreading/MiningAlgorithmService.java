@@ -1,6 +1,8 @@
-package by.it.academy;
+package by.it.academy.multithreading;
 
-import by.it.academy.pojo.MiningAlgorithm;
+import by.it.academy.ApplicationConfiguration;
+import by.it.academy.BlockGenerator;
+import by.it.academy.Consistency;
 import by.it.academy.pojo.MiningSession;
 import by.it.academy.service.MiningSessionService;
 import by.it.academy.util.LoggerUtil;
@@ -16,16 +18,12 @@ import java.util.logging.Logger;
 @Service
 public class MiningAlgorithmService {
 
-//    @Autowired
-//    MiningSession miningSession;
     @Autowired
     BlockGenerator blockGenerator;
     @Autowired
     Consistency consistency;
     @Autowired
     MiningSessionService miningSessionService;
-//    @Autowired
-//    MiningAlgorithm miningAlgorithm;
 
     Logger logger;
 
@@ -37,20 +35,14 @@ public class MiningAlgorithmService {
         }
     }
 
-    int difficulty = ApplicationConfiguration.difficulty;
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-
-//    private void starting(String miningSessionId){
-//        miningAlgorithm.setMiningSessionId(miningSessionId);
-//    }
+    int difficulty = ApplicationConfiguration.DIFFICULTY;
+    DateTimeFormatter formatter = ApplicationConfiguration.FORMATTER;
 
     @SneakyThrows
     public void run(MiningSession miningSession) {
 
-//        this.setName(String.valueOf(miningAlgorithm));
-//        System.out.println("Id mining: " + miningAlgorithm);
         miningSession.setSessionStart(LocalDateTime.now().format(formatter));
-        logger.info("Run method invocation");
+        logger.info("Run method invocation for session: " + miningSession.getMiningSessionId());
         blockGenerator.generateBlockchain(difficulty, miningSession);
         if (consistency.isChainValid(difficulty)) {
             logger.info("Blockchain confirmed by session " + miningSession.getMiningSessionId());

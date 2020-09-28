@@ -1,6 +1,5 @@
-package by.it.academy;
+package by.it.academy.multithreading;
 
-import by.it.academy.pojo.MiningAlgorithm;
 import by.it.academy.pojo.MiningSession;
 import by.it.academy.util.LoggerUtil;
 import org.springframework.beans.BeansException;
@@ -13,7 +12,7 @@ import java.util.ArrayList;
 import java.util.logging.Logger;
 
 @Service
-public class MiningHead implements ApplicationContextAware {
+public class MiningLauncher implements ApplicationContextAware {
 
     Logger logger;
 
@@ -21,21 +20,20 @@ public class MiningHead implements ApplicationContextAware {
 
     {
         try {
-            logger = LoggerUtil.startLogging(MiningAlgorithmService.class.getName());
+            logger = LoggerUtil.startLogging(MiningLauncher.class.getName());
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
 
-    public void miningRunner(ArrayList<MiningSession> allMiningSessionsByStatus) {
+    public void launch(ArrayList<MiningSession> allMiningSessionsByStatus) {
         for (MiningSession miningSession : allMiningSessionsByStatus) {
             logger.info("Starting thread for mining session " + miningSession.getMiningSessionId());
             MiningAlgorithm taskJob = new MiningAlgorithm(miningSession.getMiningSessionId());
             Thread taskThread = new Thread(taskJob);
             context.getAutowireCapableBeanFactory().autowireBean(taskJob);
             taskThread.start();
-//                    applicationContext.getAutowireCapableBeanFactory().autowireBean(taskJob);
         }
     }
 
