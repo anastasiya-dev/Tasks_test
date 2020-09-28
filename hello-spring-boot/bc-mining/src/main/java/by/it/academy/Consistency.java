@@ -52,17 +52,17 @@ public class Consistency {
             }
             //compare registered hash and calculated hash:
             if (!currentBlock.getHash().equals(blockService.calculateHash(currentBlock))) {
-                logger.warning("#Current Hashes not equal for block " + currentBlock.getBlockId());
+                logger.warning("Current Hashes not equal for block " + currentBlock.getBlockId());
                 return false;
             }
             //compare previous hash and registered previous hash
             if (!previousBlock.getHash().equals(currentBlock.getPreviousHash())) {
-                logger.warning("#Previous Hashes not equal for block " + currentBlock.getBlockId());
+                logger.warning("Previous Hashes not equal for block " + currentBlock.getBlockId());
                 return false;
             }
             //check if hash is solved
             if (!currentBlock.getHash().substring(0, difficulty).equals(hashTarget)) {
-                logger.warning("#This block hasn't been mined " + currentBlock.getBlockId());
+                logger.warning("This block hasn't been mined " + currentBlock.getBlockId());
                 return false;
             }
 
@@ -73,12 +73,12 @@ public class Consistency {
                     break;
                 }
                 if (!transactionManagement.verifySignature(currentTransaction)) {
-                    logger.warning("#Signature on Transaction is Invalid: " + currentTransaction.getTransactionId());
+                    logger.warning("Signature on Transaction is Invalid: " + currentTransaction.getTransactionId());
                     return false;
                 }
                 if (transactionManagement.getInputsValue(currentTransaction) !=
                         transactionManagement.getOutputsValue(currentTransaction)) {
-                    logger.warning("#Inputs are note equal to outputs on Transaction: " + currentTransaction.getTransactionId());
+                    logger.warning("Inputs are note equal to outputs on Transaction: " + currentTransaction.getTransactionId());
                     return false;
                 }
             }

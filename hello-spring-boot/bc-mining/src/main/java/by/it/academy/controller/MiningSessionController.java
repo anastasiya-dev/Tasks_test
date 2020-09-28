@@ -3,7 +3,6 @@ package by.it.academy.controller;
 import by.it.academy.pojo.MiningSession;
 import by.it.academy.service.MiningSessionService;
 import by.it.academy.util.LoggerUtil;
-import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,14 +29,13 @@ public class MiningSessionController {
         }
     }
 
-    @SneakyThrows
     @PostMapping("/new-session")
-    public ResponseEntity startMiningSession(@RequestBody MiningSession miningSession) throws IOException {
+    public ResponseEntity<MiningSession> startMiningSession(@RequestBody MiningSession miningSession) {
 
         logger.info("Received inquiry for mining session for wallet id: " + miningSession.getWalletId());
         boolean result = miningSessionService.saveMiningSession(miningSession);
         return (result ?
-                new ResponseEntity(miningSession, HttpStatus.OK) :
-                new ResponseEntity(miningSession, HttpStatus.INTERNAL_SERVER_ERROR));
+                new ResponseEntity<>(miningSession, HttpStatus.OK) :
+                new ResponseEntity<>(miningSession, HttpStatus.INTERNAL_SERVER_ERROR));
     }
 }

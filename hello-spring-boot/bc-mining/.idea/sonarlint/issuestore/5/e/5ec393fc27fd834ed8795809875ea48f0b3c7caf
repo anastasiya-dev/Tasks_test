@@ -1,0 +1,20 @@
+
+]	java:S125D"<This block of commented-out lines of code should be removed.(å­á‰şÿÿÿÿ8×ºƒÍ.
+{
+java:S1171"YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ8äÉã„Í.
+]	java:S1251"<This block of commented-out lines of code should be removed.(ú¦¹Áúÿÿÿÿ8®¸ı‚Í.
+ƒ
+java:S1488="fImmediately return this expression instead of assigning it to the temporary variable "calculatedhash".(­üŒÈ8×ºƒÍ.
+Y
+java:S2629Q"7Use the built-in formatting to construct this argument.(Ô“ñ¬úÿÿÿÿ8ÕÄå„Í.
+T
+java:S3655J"7Call "Optional#isPresent()" before accessing the value.(øí´8ß¸±ƒÍ.
+a
+java:S1128"ERemove this unused import 'by.it.academy.management.BlockManagement'.(Ãã	8“æã„Í.
+]	java:S1253"<This block of commented-out lines of code should be removed.(Íá½ûÿÿÿÿ8ôâú‚Í.
+T
+java:S2629R"7Use the built-in formatting to construct this argument.(Ñ´¿§8Üå„Í.
+]
+java:S1128";Remove this unused import 'by.it.academy.pojo.Transaction'.(ë…ûâøÿÿÿÿ8ãºä„Í.
+
+java:S14880"]Immediately return this expression instead of assigning it to the temporary variable "saved".(ØË»Æüÿÿÿÿ8øšş‚Í.

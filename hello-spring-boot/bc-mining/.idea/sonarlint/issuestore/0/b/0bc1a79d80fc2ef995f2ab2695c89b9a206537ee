@@ -1,7 +1,8 @@
 
+Y
+java:S2629="7Use the built-in formatting to construct this argument.(ı—”şÿÿÿÿ8”ú…„Í.
 m
-java:S1104"WMake maxQuantity a static final constant or non-public and provide accessors if needed.(›†â°
-@
-java:S26290"$Invoke method(s) only conditionally.(ªÔ¡8ñ¯ûÍÌ.
-T
-java:S26293"7Use the built-in formatting to construct this argument.(‰›·8ñ¯ûÍÌ.
+java:S1104"WMake maxQuantity a static final constant or non-public and provide accessors if needed.(›†â°
+8
+java:S36261"Remove this redundant jump.(ûÁİ…8ÿçŞ÷Ì.
+X	java:S1253"<This block of commented-out lines of code should be removed.(ˆ¨…±8ğ×‹ƒÍ.

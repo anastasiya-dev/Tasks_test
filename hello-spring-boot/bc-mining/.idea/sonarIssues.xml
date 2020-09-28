@@ -13,6 +13,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../../blockchain-web/src/main/java/by/it/academy/ApplicationConfiguration.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../../blockchain-web/src/main/java/by/it/academy/controller/MiningController.java">
           <value>
             <set />
@@ -28,12 +33,32 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../../blockchain-web/src/main/java/by/it/academy/controller/TransactionViewController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../../blockchain-web/src/main/java/by/it/academy/controller/WalletViewController.java">
           <value>
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../../blockchain-web/src/main/java/by/it/academy/pojo/MiningSession.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../blockchain-web/src/main/java/by/it/academy/repository/MiningSessionRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../../blockchain-web/src/main/java/by/it/academy/security/SecurityConfiguration.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../blockchain-web/src/main/java/by/it/academy/service/MiningSessionService.java">
           <value>
             <set />
           </value>
@@ -58,7 +83,17 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../../blockchain-web/src/main/webapp/WEB-INF/jsp/mining-session-all.jsp">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../../blockchain-web/src/main/webapp/WEB-INF/jsp/mining.jsp">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../blockchain-web/src/main/webapp/WEB-INF/jsp/transaction-all.jsp">
           <value>
             <set />
           </value>
@@ -143,6 +178,26 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/multithreading/MiningAlgorithm.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/multithreading/MiningAlgorithmService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/multithreading/MiningHead.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/multithreading/MiningLauncher.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/pojo/Block.java">
           <value>
             <set />
@@ -169,6 +224,16 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/pojo/TransactionPackage.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/pojo/User.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/pojo/Wallet.java">
           <value>
             <set />
           </value>
@@ -228,12 +293,32 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/service/TransactionService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/service/UserService.java">
           <value>
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/service/UtxoService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/service/WalletService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/support/MiningSessionStatus.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/util/LoggerUtil.java">
           <value>
             <set />
           </value>

@@ -1,5 +1,6 @@
 package by.it.academy;
 
+import by.it.academy.multithreading.MiningLauncher;
 import by.it.academy.pojo.MiningSession;
 import by.it.academy.service.MiningSessionService;
 import by.it.academy.support.MiningSessionStatus;
@@ -19,6 +20,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.io.IOException;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.logging.Logger;
 
@@ -34,10 +36,8 @@ public class ApplicationConfiguration extends WebSecurityConfigurerAdapter imple
     BalanceTest balanceTest;
     @Autowired
     MiningSessionService miningSessionService;
-    //    @Autowired
-//    ApplicationContext applicationContext;
     @Autowired
-    MiningHead miningHead;
+    MiningLauncher miningLauncher;
 
     Logger logger;
 
@@ -48,7 +48,6 @@ public class ApplicationConfiguration extends WebSecurityConfigurerAdapter imple
             e.printStackTrace();
         }
     }
-
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -70,7 +69,6 @@ public class ApplicationConfiguration extends WebSecurityConfigurerAdapter imple
 //                .formLogin().disable()
 //                .csrf().disable()
                 .antMatchers("/*").permitAll()
-//.antMatchers(HttpMethod.POST).permitAll()
                 .and().csrf().disable()
         ;
 
@@ -81,19 +79,21 @@ public class ApplicationConfiguration extends WebSecurityConfigurerAdapter imple
         SpringApplication.run(ApplicationConfiguration.class);
     }
 
-    public static int difficulty = 5;
-    static float threshold = 1_000_000;
+    public static int DIFFICULTY = 3;
+    public static float THRESHOLD = 1_000_000;
+    public static DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss:SSS");
 
     @Override
     public void run(String... args) throws Exception {
-        this.genesis.genesis(difficulty);
+        this.genesis.genesis(DIFFICULTY);
 
-        while (balanceTest.balance() < threshold) {
+        while (balanceTest.balance() < THRESHOLD) {
             logger.info("Checking mining session pool");
             try {
                 ArrayList<MiningSession> allMiningSessionsByStatus
                         = miningSessionService.findAllMiningSessionsByStatus(MiningSessionStatus.IN_PROCESS);
-                miningHead.miningRunner(allMiningSessionsByStatus);
+                miningLauncher.launch(allMiningSessionsByStatus);
+                logger.info("Starting mining multithreading");
             } catch (NullPointerException e) {
                 logger.info("Mining session pool empty");
             }

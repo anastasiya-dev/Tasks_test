@@ -5,14 +5,17 @@ import by.it.academy.pojo.Utxo;
 import by.it.academy.repository.UtxoRepository;
 import by.it.academy.util.LoggerUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Lock;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.LockModeType;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.logging.Logger;
 
 @Service
+//@Transactional
 public class UtxoService {
 
     @Autowired
@@ -42,7 +45,6 @@ public class UtxoService {
     }
 
     public ArrayList<Utxo> findAllUTXOs() {
-
         logger.info("Extracting all utxo-s");
         return (ArrayList<Utxo>) utxoRepository.findAll();
     }
@@ -52,6 +54,7 @@ public class UtxoService {
         return utxoRepository.findById(id).orElse(null);
     }
 
+    @Lock(LockModeType.PESSIMISTIC_WRITE)
     public boolean saveUtxo(Utxo utxo) {
         logger.info("Saving utxo: " + utxo);
         utxoRepository.save(utxo);

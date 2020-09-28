@@ -35,7 +35,7 @@ public class Genesis {
     @Autowired
     BlockTemporaryService blockTemporaryService;
 
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+    DateTimeFormatter formatter = ApplicationConfiguration.FORMATTER;
 
     public void genesis(int difficulty) throws IOException {
 
@@ -72,27 +72,23 @@ public class Genesis {
             utxoService.saveUtxo(utxo);
             logger.info("Genesis UTXO: " + utxo);
 
-
             MiningSession genesisMiningSession = miningSessionService.createMiningSession();
             genesisMiningSession.setSessionStart(LocalDateTime.now().format(formatter));
-            logger.info("Genesis mining session created: " + genesisMiningSession);
             Block genesisBlock = blockService.createBlock("0", genesisMiningSession.getMiningSessionId());
-
             genesisMiningSession.setWalletId(genesisWallet.getWalletId());
             miningSessionService.saveMiningSession(genesisMiningSession);
+            logger.info("Genesis mining session created: " + genesisMiningSession);
             logger.info("Genesis block created: " + genesisBlock);
-
 
             BlockTemporary genesisBlockTemporary = blockTemporaryService.createBlockTemporary("0", genesisMiningSession.getMiningSessionId());
             blockManagement.addTransaction(genesisBlockTemporary, genesisTransaction);
-            logger.info("Genesis block filled with transactions: " + genesisBlock);
+            logger.info("Genesis block filled with transactions");
             ArrayList<Block> blockchain = new ArrayList<>();
 
             blockManagement.mineBlock(genesisBlockTemporary, difficulty, genesisMiningSession, blockchain);
             logger.info("Genesis block mined: " + genesisBlock);
             logger.info("Genesis confirmation");
-            System.out.println(consistency.isChainValid(ApplicationConfiguration.difficulty));
-            ;
+            logger.info(String.valueOf(consistency.isChainValid(ApplicationConfiguration.DIFFICULTY)));
             genesisMiningSession.setConsistencyConfirmation(LocalDateTime.now().format(formatter));
             miningSessionService.updateSession(genesisMiningSession);
         }

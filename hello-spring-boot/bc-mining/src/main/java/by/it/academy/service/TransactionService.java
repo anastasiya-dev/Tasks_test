@@ -7,8 +7,10 @@ import by.it.academy.support.TransactionStatus;
 import by.it.academy.util.LoggerUtil;
 import by.it.academy.util.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Lock;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.LockModeType;
 import java.io.IOException;
 import java.security.PrivateKey;
 import java.time.LocalDateTime;
@@ -17,6 +19,7 @@ import java.util.Date;
 import java.util.logging.Logger;
 
 @Service
+//@Transactional
 public class TransactionService {
 
     @Autowired
@@ -36,6 +39,7 @@ public class TransactionService {
         }
     }
 
+    @Lock(LockModeType.PESSIMISTIC_WRITE)
     public boolean saveTransaction(Transaction transaction) {
         logger.info("Saving transaction: " + transaction);
         transactionRepository.save(transaction);
@@ -52,6 +56,7 @@ public class TransactionService {
         return (ArrayList<Transaction>) transactionRepository.findAll();
     }
 
+    @Lock(LockModeType.PESSIMISTIC_WRITE)
     public Transaction updateTransaction(Transaction transaction) {
         logger.info("Updating transaction");
         String id = transaction.getTransactionId();
@@ -78,7 +83,7 @@ public class TransactionService {
         transaction.setRecipientId(to);
         transaction.setValue((float) Math.round(value * 10.0) / 10.0f);
         transaction.setTransactionStatus(TransactionStatus.CREATED);
-        transaction.setBlockId("n/a");
+        transaction.setBlockId("not mined");
         logger.info("Creating transaction: " + transaction);
         return transaction;
     }
@@ -93,6 +98,7 @@ public class TransactionService {
         logger.info("Generating signature for transaction: " + transaction);
     }
 
+    @Lock(LockModeType.PESSIMISTIC_WRITE)
     public Transaction updateTransaction(Block block, Transaction transaction) {
         logger.info("Updating transaction");
         String id = transaction.getTransactionId();

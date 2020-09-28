@@ -1,21 +1,21 @@
 package by.it.academy.service;
 
-import by.it.academy.management.BlockManagement;
-import by.it.academy.pojo.Block;
 import by.it.academy.pojo.BlockTemporary;
-import by.it.academy.pojo.Transaction;
 import by.it.academy.repository.BlockTemporaryRepository;
 import by.it.academy.util.LoggerUtil;
 import by.it.academy.util.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Lock;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.LockModeType;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.logging.Logger;
 
 @Service
+//@Transactional
 public class BlockTemporaryService {
 
     @Autowired
@@ -33,7 +33,7 @@ public class BlockTemporaryService {
         }
     }
 
-    //Block Constructor.
+    @Lock(LockModeType.PESSIMISTIC_WRITE)
     public BlockTemporary createBlockTemporary(String previousHash, String miningSessionId) {
         ArrayList<BlockTemporary> allBlocks = findAllBlocksTemporary();
         if (allBlocks.isEmpty()) {
@@ -46,34 +46,33 @@ public class BlockTemporaryService {
         blockTemporary.setTimeStamp(new Date().getTime());
         blockTemporary.setHash(calculateHash(blockTemporary));
         BlockTemporary saved = blockTemporaryRepository.save(blockTemporary);
-//        logger.info("Creating block: " + block);
+        logger.info("Creating block temporary: " + blockTemporary);
         return saved;
-//        return saved;
     }
 
     private ArrayList<BlockTemporary> findAllBlocksTemporary() {
+        logger.info("Extracting all blocks temporary");
         return (ArrayList<BlockTemporary>) blockTemporaryRepository.findAll();
     }
 
 
     public String calculateHash(BlockTemporary blockTemporary) {
 
-        String calculatedhash = StringUtil.applySha256(
+        String calculatedHash = StringUtil.applySha256(
                 blockTemporary.getPreviousHash() +
                         Long.toString(blockTemporary.getTimeStamp()) +
                         Integer.toString(blockTemporary.getNonce()) +
                         blockTemporary.getMerkleRoot()
 
         );
-//        logger.info("calculating hash for block: " + block.getBlockId());
-//        logger.info("Result: " + calculatedhash);
-        return calculatedhash;
+        return calculatedHash;
     }
 
     public BlockTemporary findBlockTemporaryById(String blockId) {
         return blockTemporaryRepository.findById(blockId).get();
     }
 
+    @Lock(LockModeType.PESSIMISTIC_WRITE)
     public BlockTemporary updateBlockTemporary(BlockTemporary blockTemporary) {
         logger.info("Updating blockTemporary");
         String id = blockTemporary.getBlockId();
@@ -86,8 +85,6 @@ public class BlockTemporaryService {
             savedBlockTemporary.setHash(blockTemporary.getHash());
             savedBlockTemporary.setMerkleRoot(blockTemporary.getMerkleRoot());
             savedBlockTemporary.setNonce(blockTemporary.getNonce());
-            savedBlockTemporary.setMinerId(blockTemporary.getMinerId());
-            savedBlockTemporary.setMiningSessionId(blockTemporary.getMiningSessionId());
             blockTemporaryRepository.save(savedBlockTemporary);
         }
         return blockTemporaryRepository.findById(id).orElseThrow();

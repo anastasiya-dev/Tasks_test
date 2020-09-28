@@ -1,5 +1,10 @@
 
-R
-java:S1444:"0Make this "public static difficulty" field final(öÙ‚¥şÿÿÿÿ8Ìë‰ŞÌ.
+c
+java:S2184e"FCast one of the operands of this multiplication operation to a "long".(¾İ”É8§°ŠÍ.
+{
+java:S1171,"YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ8§°ŠÍ.
 x
-java:S1104:"VMake difficulty a static final constant or non-public and provide accessors if needed.(öÙ‚¥şÿÿÿÿ8Ìë‰ŞÌ.
+java:S1104T"VMake difficulty a static final constant or non-public and provide accessors if needed.(öÙ‚¥şÿÿÿÿ8§°ŠÍ.
+]	java:S125&"<This block of commented-out lines of code should be removed.(å¥ƒ—úÿÿÿÿ8ÀÀ´Í.
+R
+java:S1444T"0Make this "public static difficulty" field final(öÙ‚¥şÿÿÿÿ8§°ŠÍ.

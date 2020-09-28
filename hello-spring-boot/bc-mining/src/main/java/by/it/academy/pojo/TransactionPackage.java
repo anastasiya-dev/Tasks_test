@@ -16,4 +16,12 @@ public class TransactionPackage {
     @Id
     private String blockId;
     private String transactionId;
+
+    @Override
+    public String toString() {
+        return "TransactionPackage{" +
+                "blockId='" + blockId + '\'' +
+                ", transactionId='" + transactionId + '\'' +
+                '}';
+    }
 }

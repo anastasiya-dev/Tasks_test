@@ -22,9 +22,6 @@ public class BlockTemporary {
     private long timeStamp;
     private int nonce;
 
-    private String miningSessionId;
-    private String minerId;
-
     @Override
     public String toString() {
         return "Block{" +
@@ -34,8 +31,6 @@ public class BlockTemporary {
                 ", merkleRoot='" + merkleRoot + '\'' +
                 ", timeStamp=" + timeStamp +
                 ", nonce=" + nonce +
-                ", miningSessionId='" + miningSessionId + '\'' +
-                ", minerId='" + minerId + '\'' +
                 '}';
     }
 }

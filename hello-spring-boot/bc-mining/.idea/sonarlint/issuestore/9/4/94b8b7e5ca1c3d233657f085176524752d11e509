@@ -1,0 +1,8 @@
+
+§
+java:S1319"„The type of the "allMiningSessionsByStatus" object should be an interface such as "List" rather than the implementation "ArrayList".(ÒŒœ¶úÿÿÿÿ8ß¹óÍ.
+X	java:S125&"<This block of commented-out lines of code should be removed.(Ñş…˜8ÒõÍ.
+{
+java:S1171"YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ8­öÍ.
+
+java:S1130+"sRemove the declaration of thrown exception 'org.springframework.beans.BeansException' which is a runtime exception.(¯¶…œ8ŒŒ€‚Í.

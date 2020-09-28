@@ -1,13 +1,13 @@
 
-]
-java:S4684#"@Replace this persistent entity with a simple POJO or DTO object.(Ààò8ğ¯ûÍÌ.
-{
-java:S1171"YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ8ğ¯ûÍÌ.
-‰
-java:S1130#"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(Ààò8›½ŞÌ.
-L
-java:S3740'"/Provide the parametrized type for this generic.(öşÁÑ8ğ¯ûÍÌ.
-L
-java:S3740'"/Provide the parametrized type for this generic.(öşÁÑ8åìŞÌ.
 L
 java:S3740#"/Provide the parametrized type for this generic.(Ààò8ğ¯ûÍÌ.
+K
+java:S3740("/Provide the parametrized type for this generic.(š×Øf8åìŞÌ.
+]
+java:S4684#"@Replace this persistent entity with a simple POJO or DTO object.(Ààò8ğ¯ûÍÌ.
+L
+java:S3740)"/Provide the parametrized type for this generic.(¬„Á•8ğ¯ûÍÌ.
+‰
+java:S1130#"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(Ààò8›½ŞÌ.
+{
+java:S1171"YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ8ğ¯ûÍÌ.

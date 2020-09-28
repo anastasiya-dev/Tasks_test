@@ -1,23 +1,21 @@
 
+W	java:S125/"<This block of commented-out lines of code should be removed.(í‹ğv8®ºÇ‚Í.
+]	java:S125>"<This block of commented-out lines of code should be removed.(å­á‰şÿÿÿÿ8¥øšüÌ.
 t
-java:S1171"YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ
-A
-java:S1168U"+Return an empty collection instead of null.(¥¹ï
+java:S1171"YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ
+‹
+java:S1319C"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(öÌ’Áşÿÿÿÿ
+R
+java:S2629I"7Use the built-in formatting to construct this argument.(ìàƒûÿÿÿÿ
+X	java:S125R"<This block of commented-out lines of code should be removed.(Ë•›İ8¹èöøÌ.
+Y
+java:S2629]"7Use the built-in formatting to construct this argument.(üÂß×üÿÿÿÿ8ÉšÑŠÌ.
+ƒ
+java:S14887"fImmediately return this expression instead of assigning it to the temporary variable "calculatedhash".(­üŒÈ8¥øšüÌ.
 T
-java:S3655H"7Call "Optional#isPresent()" before accessing the value.(ãàˆ²8ÉšÑŠÌ.
-‹
-java:S1319O"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(š³Í”ùÿÿÿÿ
+java:S3655K"7Call "Optional#isPresent()" before accessing the value.(ãàˆ²8ÉšÑŠÌ.
+]	java:S1252"<This block of commented-out lines of code should be removed.(Íá½ûÿÿÿÿ8îõÇ‚Í.
 Y
-java:S2629-"7Use the built-in formatting to construct this argument.(äÌƒşÿÿÿÿ8ÉšÑŠÌ.
-‹
-java:S1319@"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(öÌ’Áşÿÿÿÿ
-R
-java:S2629P"7Use the built-in formatting to construct this argument.(ôÒ¾Ãşÿÿÿÿ
-L
-java:S2696."6Make the enclosing method "static" or remove this set.(Ë¥çü
-R
-java:S2629F"7Use the built-in formatting to construct this argument.(ìàƒûÿÿÿÿ
-M
-java:S2629<"7Use the built-in formatting to construct this argument.(×¤‚¬
-Y
-java:S2629Z"7Use the built-in formatting to construct this argument.(üÂß×üÿÿÿÿ8ÉšÑŠÌ.
+java:S26290"7Use the built-in formatting to construct this argument.(äÌƒşÿÿÿÿ8ÉšÑŠÌ.
+z
+java:S1488l"]Immediately return this expression instead of assigning it to the temporary variable "saved".(öáãõ8ıõ§ƒÍ.

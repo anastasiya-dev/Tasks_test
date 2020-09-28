@@ -39,9 +39,9 @@ public class User {
     public String toString() {
         return "User{" +
                 "userId='" + userId + '\'' +
+                ", userStatus=" + userStatus +
                 ", userName='" + userName + '\'' +
                 ", userPassword='" + userPassword + '\'' +
-                ", confirmPassword='" + confirmPassword + '\'' +
                 ", email='" + email + '\'' +
                 ", mobile='" + mobile + '\'' +
                 '}';

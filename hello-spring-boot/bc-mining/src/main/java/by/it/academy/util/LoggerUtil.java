@@ -32,7 +32,6 @@ public final class LoggerUtil {
         // Create a file handler object
         FileHandler handler = new FileHandler(logFile.getAbsolutePath());
 
-
         // Add file handler as handler of logs
         logger.addHandler(handler);
 

@@ -1,0 +1,12 @@
+
+z
+java:S1488"]Immediately return this expression instead of assigning it to the temporary variable "saved".(¼äšë8èû¡ıÌ.
+X	java:S125"<This block of commented-out lines of code should be removed.(ŞŞ÷¿8®ášıÌ.
+
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Í“ñô8®ášıÌ.
+X	java:S125("<This block of commented-out lines of code should be removed.(ŞŞ÷¿8°¢ŞıÌ.
+h
+java:S1117"FRename "transactionPackage" which hides the field declared at line 15.(ï×ãúÿÿÿÿ8…‘áıÌ.
+’
+java:S1319'"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Âàö¬ÿÿÿÿÿ8°¢ŞıÌ.
+]	java:S125"<This block of commented-out lines of code should be removed.(ú¦¹Áúÿÿÿÿ8ŠŞ¡ıÌ.

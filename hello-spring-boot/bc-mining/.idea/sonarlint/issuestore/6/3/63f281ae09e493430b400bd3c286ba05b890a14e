@@ -1,2 +1,24 @@
 
-V	java:S125-"<This block of commented-out lines of code should be removed.(ßÃ¡òıÿÿÿÿ
+>
+java:S1116_"Remove this empty statement.(Åñ­õşÿÿÿÿ8ÒßõıÌ.
+Y
+java:S2629C"7Use the built-in formatting to construct this argument.(ŞÃó’ûÿÿÿÿ8€›ıüÌ.
+Y
+java:S2629S"7Use the built-in formatting to construct this argument.(ÅÜ÷Šûÿÿÿÿ8øÅİøÌ.
+Y
+java:S2629N"7Use the built-in formatting to construct this argument.(ÅòêÁúÿÿÿÿ8ÔÜ”ùÌ.
+Y
+java:S2629I"7Use the built-in formatting to construct this argument.(Ÿ…‡Æıÿÿÿÿ8øÅİøÌ.
+Y
+java:S26299"7Use the built-in formatting to construct this argument.(ˆ±—Âıÿÿÿÿ8øÅİøÌ.
+Y
+java:S2629X"7Use the built-in formatting to construct this argument.(ğ­ú¦øÿÿÿÿ8ş•„Í.
+S
+java:S26293"7Use the built-in formatting to construct this argument.(¡Ï‡p8øÅİøÌ.
+S
+java:S2629:"7Use the built-in formatting to construct this argument.(ŠªÎw8øÅİøÌ.
+Z	java:S106^"9Replace this use of System.out or System.err by a logger.(ûÓçˆüÿÿÿÿ8ÒßõıÌ.
+T
+java:S26294"7Use the built-in formatting to construct this argument.(Ğ½¤Ì8øÅİøÌ.
+T
+java:S2629\"7Use the built-in formatting to construct this argument.(Ş”şé8øÅİøÌ.

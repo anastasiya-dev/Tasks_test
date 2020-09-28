@@ -22,7 +22,7 @@ import java.util.logging.Logger;
 @Service
 public class BlockGenerator {
 
-    public int maxQuantity = 5;
+    public int maxQuantity = 3;
 
     @Autowired
     BlockService blockService;
@@ -42,18 +42,15 @@ public class BlockGenerator {
         blockchain.sort(Comparator.comparingLong(Block::getTimeStamp));
 
         ArrayList<Transaction> allTransactions = transactionService.findAllTransactions();
-        ArrayList<Transaction> transactionsToAdd = formTransactionsPackage(allTransactions);
+        ArrayList<Transaction> transactionsToAdd = formTransactionsSetForBlock(allTransactions);
 
         if (transactionsToAdd.isEmpty()) {
             logger.info("No transactions for block found");
             return;
         } else {
-//            Block block = blockService.createBlock(blockchain.get(blockchain.size() - 1).getHash(), miningSession.getMiningSessionId());
-
             BlockTemporary blockTemporary = blockTemporaryService.createBlockTemporary(blockchain.get(blockchain.size() - 1).getHash(), miningSession.getMiningSessionId());
 
-
-                        for (Transaction transaction : transactionsToAdd) {
+            for (Transaction transaction : transactionsToAdd) {
                 logger.info("Adding to block " + blockTemporary.getBlockId());
                 logger.info(transaction.getTransactionId());
                 blockManagement.addTransaction(blockTemporary, transaction);
@@ -66,7 +63,7 @@ public class BlockGenerator {
         }
     }
 
-    private ArrayList<Transaction> formTransactionsPackage(ArrayList<Transaction> allTransactions) {
+    private ArrayList<Transaction> formTransactionsSetForBlock(ArrayList<Transaction> allTransactions) {
         ArrayList<Transaction> transactionsToAdd = new ArrayList<>();
         Collections.shuffle(allTransactions);
         int counter = 0;

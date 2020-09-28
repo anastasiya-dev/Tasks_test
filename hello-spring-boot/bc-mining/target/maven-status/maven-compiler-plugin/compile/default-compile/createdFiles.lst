@@ -1,5 +1,5 @@
 by\it\academy\pojo\Utxo.class
-by\it\academy\MiningHead.class
+by\it\academy\multithreading\MiningLauncher.class
 by\it\academy\pojo\Approle.class
 by\it\academy\repository\TransactionPackageRepository.class
 by\it\academy\pojo\User.class
@@ -17,6 +17,7 @@ by\it\academy\repository\MiningSessionRepository.class
 by\it\academy\service\UserService.class
 by\it\academy\repository\BlockTemporaryRepository.class
 by\it\academy\service\TransactionService.class
+by\it\academy\multithreading\MiningAlgorithm.class
 by\it\academy\Genesis.class
 by\it\academy\ApplicationConfiguration.class
 by\it\academy\util\LoggerUtil.class
@@ -37,12 +38,11 @@ by\it\academy\service\TransactionPackageService.class
 by\it\academy\repository\BlockRepository.class
 by\it\academy\repository\TransactionRepository.class
 by\it\academy\Consistency.class
-by\it\academy\MiningAlgorithmService.class
 by\it\academy\management\WalletManagement.class
 by\it\academy\pojo\BlockTemporary.class
 by\it\academy\pojo\Block.class
 by\it\academy\service\UtxoService.class
 by\it\academy\support\MiningSessionStatus.class
-by\it\academy\pojo\MiningAlgorithm.class
+by\it\academy\multithreading\MiningAlgorithmService.class
 by\it\academy\pojo\Transaction.class
 by\it\academy\repository\UtxoRepository.class

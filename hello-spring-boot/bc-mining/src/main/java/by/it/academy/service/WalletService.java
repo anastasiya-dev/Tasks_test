@@ -19,6 +19,7 @@ import java.util.List;
 import java.util.logging.Logger;
 
 @Service
+//@Transactional
 public class WalletService {
 
     @Autowired
@@ -84,13 +85,13 @@ public class WalletService {
     public ArrayList<Wallet> findAllWallets(WalletStatus walletStatus) {
         logger.info("Extracting all wallets with the status " + walletStatus);
         List<Wallet> allWallets = (List<Wallet>) walletRepository.findAll();
-        List<Wallet> activeWallets = new ArrayList<>();
+        ArrayList<Wallet> activeWallets = new ArrayList<>();
         for (Wallet wallet : allWallets) {
             if (wallet.getWalletStatus().equals(WalletStatus.ACTIVE)) {
                 activeWallets.add(wallet);
             }
         }
-        return (ArrayList<Wallet>) activeWallets;
+        return activeWallets;
     }
 
 }

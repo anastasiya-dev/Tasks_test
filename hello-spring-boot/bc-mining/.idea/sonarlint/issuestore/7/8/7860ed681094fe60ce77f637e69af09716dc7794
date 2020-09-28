@@ -1,9 +1,19 @@
 
-T
-java:S2629A"7Use the built-in formatting to construct this argument.(ƒÏù¸8ö¯ûÍÌ.
 Z
-java:S3655€"7Call "Optional#isPresent()" before accessing the value.(â…üãúÿÿÿÿ8ö¯ûÍÌ.
-T
-java:S2629|"7Use the built-in formatting to construct this argument.(¢Üå×8ö¯ûÍÌ.
+java:S3655Â"7Call "Optional#isPresent()" before accessing the value.(â…üãúÿÿÿÿ8ÒñÑƒÍ.
 t
-java:S1171)"YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ
+java:S11711"YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ
+—
+java:S1319B"uThe type of the "blockchain" object should be an interface such as "List" rather than the implementation "ArrayList".(ù¨ÆÖÿÿÿÿÿ8Ğ·ú÷Ì.
+U	java:S106["9Replace this use of System.out or System.err by a logger.(à¼šâ8İ¡ŞúÌ.
+]	java:S125<"<This block of commented-out lines of code should be removed.(¸­Úôüÿÿÿÿ8Ìç×ıÌ.
+T
+java:S2629Q"7Use the built-in formatting to construct this argument.(½È­›8úŸ¬ƒÍ.
+U
+java:S2629¾"7Use the built-in formatting to construct this argument.(¢Üå×8ÒñÑƒÍ.
+Q
+java:S1066K"/Merge this if statement with the enclosing one.(şÏ‡îúÿÿÿÿ8ÙÃŠøÌ.
+f
+java:S1854¯"CRemove this useless assignment to local variable "minerRewardItem".(±‰É´ûÿÿÿÿ8•ëÌûÌ.
+[
+java:S1155V">Use isEmpty() to check whether the collection is empty or not.(Ó®„²8à©Ş‚Í.

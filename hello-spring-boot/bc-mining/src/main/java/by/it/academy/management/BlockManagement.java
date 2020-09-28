@@ -1,6 +1,6 @@
 package by.it.academy.management;
 
-import by.it.academy.Consistency;
+import by.it.academy.ApplicationConfiguration;
 import by.it.academy.pojo.*;
 import by.it.academy.service.*;
 import by.it.academy.support.MiningSessionStatus;
@@ -34,15 +34,14 @@ public class BlockManagement {
     @Autowired
     MiningSessionService miningSessionService;
     @Autowired
-    Consistency consistency;
-    @Autowired
     TransactionPackageService transactionPackageService;
     @Autowired
     BlockTemporaryService blockTemporaryService;
 
     float minerReward = 0.05f;
     float senderReward = 0.01f;
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+    DateTimeFormatter formatter = ApplicationConfiguration.FORMATTER;
+    int checkFlag = 100_000;
 
     Logger logger;
 
@@ -57,9 +56,6 @@ public class BlockManagement {
     public void addTransaction(BlockTemporary blockToAdd, Transaction transaction) {
         transactionPackageService.createTransactionPackage(blockToAdd.getBlockId(), transaction.getTransactionId());
         logger.info("Adding transactions to block " + blockToAdd.getBlockId());
-//        transaction.setBlockId(blockToAdd.getBlockId());
-//        transactionService.updateTransaction(blockToAdd, transaction);
-//        logger.info(transaction.getTransactionId());
     }
 
     public void mineBlock(BlockTemporary blockTemporary, int difficulty, MiningSession miningSession,
@@ -71,33 +67,34 @@ public class BlockManagement {
         while (!blockTemporary.getHash().substring(0, difficulty).equals(target)) {
             blockTemporary.setNonce(blockTemporary.getNonce() + 1);
             blockTemporary.setHash(blockTemporaryService.calculateHash(blockTemporary));
-            if (blockTemporary.getNonce() % 50_000 == 0) {
+            if (blockTemporary.getNonce() % checkFlag == 0) {
+                logger.info("Nonce+block: " + blockTemporary.getNonce() + " + " + blockTemporary.getBlockId());
                 if (checkIfCurrentBlockAlreadyMined(blockchain, blockTemporary)) {
                     logger.info("Breaking nonce search as block mined by another thread");
                     break;
                 }
             }
         }
-        logger.info("Block Mined: " + blockTemporary);
+        logger.info("Mining finished: " + blockTemporary);
         blockTemporaryService.updateBlockTemporary(blockTemporary);
 
         ArrayList<Block> currentBlockchain = blockService.findAllBlocks();
         currentBlockchain.sort(Comparator.comparingLong(Block::getTimeStamp));
-        if (currentBlockchain.size() == 0 || currentBlockchain.get(currentBlockchain.size() - 1).getHash().equals(blockTemporary.getPreviousHash())) {
-            logger.info("Setting blockId for transactions");
+        if (currentBlockchain.isEmpty() || currentBlockchain.get(currentBlockchain.size() - 1).getHash().equals(blockTemporary.getPreviousHash())) {
+            logger.info("Setting blockId on transactions for successful session (blockId): " + blockTemporary.getBlockId());
             Block block = blockService.transformFromTemporary(blockTemporary);
 
-            for (Transaction transaction : blockTransactions) {
-                System.out.println("Adding actual block Id in system: " + transaction.getTransactionId());
-                addTransaction(blockTemporary, transaction);
-            }
-            blockAndSessionSaving(block, miningSession);
+//            for (Transaction transaction : blockTransactions) {
+//                logger.info("Adding actual block Id in system: " + transaction.getTransactionId());
+//                addTransaction(blockTemporary, transaction);
+//            }
+            miningSuccessHandler(block, miningSession);
         } else {
-            miningSessionDiscard(miningSession);
+            miningFailureHandler(miningSession);
         }
     }
 
-    private void miningSessionDiscard(MiningSession miningSession) {
+    private void miningFailureHandler(MiningSession miningSession) {
         logger.info("Mining session discard: " + miningSession.getMiningSessionId());
         miningSession.setBlockId("none");
         miningSession.setMiningSessionStatus(MiningSessionStatus.FAILURE);
@@ -106,7 +103,7 @@ public class BlockManagement {
         miningSessionService.updateSession(miningSession);
     }
 
-    private void blockAndSessionSaving(Block block, MiningSession miningSession) {
+    private void miningSuccessHandler(Block block, MiningSession miningSession) {
 
         logger.info("Mining session success: " + miningSession.getMiningSessionId());
         float minerRewardTotalSum = sendRewards(block.getBlockId(), miningSession);
@@ -132,20 +129,6 @@ public class BlockManagement {
         }
     }
 
-    private ArrayList<Transaction> findTransactionsForBlock(BlockTemporary blockTemporary) {
-        logger.info("Making transaction package for block " + blockTemporary.getBlockId());
-
-        ArrayList<TransactionPackage> transactionPackages = transactionPackageService.findAllTransactionPackagesByBlockId(blockTemporary.getBlockId());
-
-        ArrayList<Transaction> blockTransactions = new ArrayList<>();
-        for (TransactionPackage transactionPackage : transactionPackages) {
-            if (transactionPackage.getBlockId() != null && transactionPackage.getBlockId().equals(blockTemporary.getBlockId())) {
-                blockTransactions.add(transactionService.findTransactionById(transactionPackage.getTransactionId()));
-                logger.info(transactionPackage.getTransactionId());
-            }
-        }
-        return blockTransactions;
-    }
 
     private float sendRewards(String blockId, MiningSession miningSession) {
         logger.info("Sending rewards");
@@ -159,8 +142,6 @@ public class BlockManagement {
         for (Transaction transactionInPackage : blockTransactions) {
             transactionInPackage.setTransactionStatus(TransactionStatus.MINED);
             transactionService.updateTransaction(transactionInPackage);
-
-
             transactionService.findTransactionById(transactionInPackage.getTransactionId()).setBlockId(blockId);
             transactionService.updateTransaction(blockService.findBlockById(blockId), transactionInPackage);
 
@@ -211,5 +192,20 @@ public class BlockManagement {
         utxo.setInputTransactionId(description);
         utxoService.saveUtxo(utxo);
         return transactionReward.getValue();
+    }
+
+    private ArrayList<Transaction> findTransactionsForBlock(BlockTemporary blockTemporary) {
+        logger.info("Making transaction package for block " + blockTemporary.getBlockId());
+
+        ArrayList<TransactionPackage> transactionPackages = transactionPackageService.findAllTransactionPackagesByBlockId(blockTemporary.getBlockId());
+
+        ArrayList<Transaction> blockTransactions = new ArrayList<>();
+        for (TransactionPackage transactionPackage : transactionPackages) {
+            if (transactionPackage.getBlockId() != null && transactionPackage.getBlockId().equals(blockTemporary.getBlockId())) {
+                blockTransactions.add(transactionService.findTransactionById(transactionPackage.getTransactionId()));
+                logger.info(transactionPackage.getTransactionId());
+            }
+        }
+        return blockTransactions;
     }
 }

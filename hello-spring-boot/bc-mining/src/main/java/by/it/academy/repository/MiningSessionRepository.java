@@ -5,5 +5,4 @@ import by.it.academy.support.MiningSessionStatus;
 import org.springframework.data.repository.CrudRepository;
 
 public interface MiningSessionRepository extends CrudRepository<MiningSession, String> {
-    Object findAllByMiningSessionStatus(MiningSessionStatus miningSessionStatus);
 }
