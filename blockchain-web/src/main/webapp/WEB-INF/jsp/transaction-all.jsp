@@ -24,6 +24,7 @@
    </form>
 
     <h3>Transactions:</h3>
+    <c:set value="${transactionList}" var="transactionPageList" />
     <table class="table">
       <thead>
         <tr>
@@ -36,7 +37,7 @@
         </tr>
       </thead>
       <tbody>
-<c:forEach items="${transactionsFiltered}" var="transaction">
+<c:forEach items="${transactionPageList.pageList}" var="transaction">
         <tr>
           <td>${transaction.transactionId}</td>
           <td style="text-align:left">${transaction.senderId}</td>
@@ -56,4 +57,38 @@
             <td></td>
           </tfoot>
     </table>
+<br>
+    <c:choose>
+      <%-- Show Prev as link if not on first page --%>
+      <c:when test="${transactionPageList.firstPage}">
+        <span>Prev</span>
+      </c:when>
+      <c:otherwise>
+        <c:url value="/${userId}/wallet/${walletId}/transaction-all/prev" var="url" />
+        <a href='<c:out value="${url}" />'>Prev</a>
+      </c:otherwise>
+    </c:choose>
+    <c:forEach begin="1" end="${transactionPageList.pageCount}" step="1"  varStatus="tagStatus">
+      <c:choose>
+        <%-- In PagedListHolder page count starts from 0 --%>
+        <c:when test="${(transactionPageList.page + 1) == tagStatus.index}">
+          <span>${tagStatus.index}</span>
+        </c:when>
+        <c:otherwise>
+          <c:url value="/${userId}/wallet/${walletId}/transaction-all/${tagStatus.index}" var="url" />
+          <a href='<c:out value="${url}" />'>${tagStatus.index}</a>
+        </c:otherwise>
+      </c:choose>
+    </c:forEach>
+    <c:choose>
+      <%-- Show Next as link if not on last page --%>
+      <c:when test="${transactionPageList.lastPage}">
+        <span>Next</span>
+      </c:when>
+      <c:otherwise>
+        <c:url value="/${userId}/wallet/${walletId}/transaction-all/next" var="url" />
+        <a href='<c:out value="${url}" />'>Next</a>
+      </c:otherwise>
+    </c:choose>
+<br>
 <jsp:include page="footer.jsp"/>

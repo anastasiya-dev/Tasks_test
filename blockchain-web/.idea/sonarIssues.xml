@@ -353,6 +353,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/controller/UserController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/controller/UserDeleteController.java">
           <value>
             <set />
@@ -873,6 +878,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/transaction-all-paged.jsp">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/transaction-all.jsp">
           <value>
             <set />
@@ -1044,6 +1054,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../hello-spring-boot/bc-mining/src/main/java/by/it/academy/controller/MiningSessionController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring-boot/bc-mining/src/main/java/by/it/academy/controller/MiningSessionLaunchController.java">
           <value>
             <set />
           </value>

@@ -38,6 +38,7 @@ by\it\academy\controller\UserDeleteController.class
 by\it\academy\controller\WalletDeleteController.class
 by\it\academy\support\PrivateKeyInput.class
 by\it\academy\management\WalletManagement.class
+by\it\academy\controller\UserController.class
 by\it\academy\controller\TransactionUnconfirmedController.class
 by\it\academy\controller\ChangePasswordController.class
 by\it\academy\support\FilterInput.class

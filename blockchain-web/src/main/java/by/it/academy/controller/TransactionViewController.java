@@ -6,20 +6,23 @@ import by.it.academy.support.FilterInput;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.support.PagedListHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
 @Controller
+@RequestMapping(value = "/{userId}/wallet/{walletId}/transaction-all")
 public class TransactionViewController {
 
     @Autowired
@@ -29,16 +32,21 @@ public class TransactionViewController {
 
     static ArrayList<Transaction> transactionsForDownload = new ArrayList<>();
 
-    @RequestMapping(value = "/{userId}/wallet/{walletId}/transaction-all", method = RequestMethod.GET)
-    public ModelAndView viewAllTransactions(ModelAndView modelAndView,
-                                            @PathVariable String userId,
-                                            @PathVariable String walletId,
-                                            @ModelAttribute FilterInput filterInput,
-                                            RedirectAttributes redirectAttributes) {
+    @RequestMapping(value = {"", "/{page}"}, method = RequestMethod.GET)
+    public ModelAndView viewAllTransactions(
+            @PathVariable String userId,
+            @PathVariable String walletId,
+            @ModelAttribute FilterInput filterInput,
+            @PathVariable(required = false, name = "page") String page,
+            HttpServletRequest request,
+            HttpServletResponse response) {
 
         transactionsForDownload.clear();
         log.info("Cleared transactions filtered: " + transactionsForDownload);
         log.info("Received filter requirement " + filterInput + " for wallet " + walletId);
+
+        ModelAndView modelAndView = new ModelAndView();
+
         List<Transaction> transactions = transactionManagement.getAllForWallet(walletId, false);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
         ArrayList<Transaction> transactionsFiltered = new ArrayList<>();
@@ -84,14 +92,41 @@ public class TransactionViewController {
             }
         }
         modelAndView.setViewName("transaction-all");
-        modelAndView.addObject("transactionsFiltered", transactionsFiltered);
+//        modelAndView.addObject("transactionsFiltered", transactionsFiltered);
         transactionsForDownload.addAll(transactionsFiltered);
         log.info("Extracted transactions filtered: " + transactionsForDownload);
         modelAndView.addObject("sum", sum);
+
+        PagedListHolder<Transaction> transactionList;
+        if (page == null) {
+            transactionList = new PagedListHolder<Transaction>();
+//            List<Transaction> usersList = transactionsFiltered;
+            // Setting the source for PagedListHolder
+            transactionList.setSource(transactionsFiltered);
+            transactionList.setPageSize(5);
+            // Setting PagedListHolder instance to session
+            request.getSession().setAttribute("transactionList", transactionList);
+        } else if (page.equals("prev")) {
+            // get the user list from session
+            transactionList = (PagedListHolder<Transaction>) request.getSession().getAttribute("transactionList");
+            // switch to previous page
+            transactionList.previousPage();
+        } else if (page.equals("next")) {
+            transactionList = (PagedListHolder<Transaction>) request.getSession().getAttribute("transactionList");
+            // switch to next page
+            transactionList.nextPage();
+        } else {
+            int pageNum = Integer.parseInt(page);
+            transactionList = (PagedListHolder<Transaction>) request.getSession().getAttribute("transactionList");
+            // set the current page number
+            // page number starts from zero in PagedListHolder that's why subtracting 1
+            transactionList.setPage(pageNum - 1);
+        }
+
         return modelAndView;
     }
 
-    @RequestMapping(value = "/{userId}/wallet/{walletId}/transaction-all", method = RequestMethod.POST)
+    @RequestMapping(value = {"", "/{page}"}, method = RequestMethod.POST)
     public ModelAndView filterTransactions(ModelAndView modelAndView,
                                            @PathVariable String userId,
                                            @PathVariable String walletId,
