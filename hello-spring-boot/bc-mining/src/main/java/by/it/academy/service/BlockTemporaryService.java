@@ -2,12 +2,15 @@ package by.it.academy.service;
 
 import by.it.academy.pojo.Block;
 import by.it.academy.pojo.BlockTemporary;
+import by.it.academy.pojo.MiningSession;
 import by.it.academy.repository.BlockTemporaryRepository;
 import by.it.academy.util.LoggerUtil;
 import by.it.academy.util.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Lock;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.LockModeType;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -23,6 +26,8 @@ public class BlockTemporaryService {
     BlockTemporary blockTemporary;
     @Autowired
     BlockService blockService;
+    @Autowired
+    MiningSessionService miningSessionService;
 
     Logger logger;
 
@@ -34,16 +39,18 @@ public class BlockTemporaryService {
         }
     }
 
-    //    @Lock(LockModeType.PESSIMISTIC_WRITE)
-    public BlockTemporary createBlockTemporary(String previousHash, String miningSessionId) {
-        ArrayList<Block> allBlocks = blockService.findAllBlocks();
-        if (allBlocks.isEmpty()) {
-            blockTemporary.setBlockId("0" + "_" + miningSessionId);
-        } else {
-            blockTemporary.setBlockId(String.valueOf(allBlocks.size()) + "_" + miningSessionId);
-        }
+    public BlockTemporary createBlockTemporary(String miningSessionId) {
+        logger.info("Session id in creation: " + miningSessionId);
+        MiningSession miningSession = miningSessionService.findById(miningSessionId);
+        String previousBlockId = String.valueOf(Integer.parseInt(miningSession.getBlockIdAttempted()) - 1);
+        Block previousBlock = blockService.findBlockById(previousBlockId);
 
-        blockTemporary.setPreviousHash(previousHash);
+        blockTemporary.setBlockTemporaryId(miningSession.getBlockIdAttempted() + "_" + miningSessionId);
+        try {
+            blockTemporary.setPreviousHash(previousBlock.getHash());
+        } catch (NullPointerException e) {
+            blockTemporary.setPreviousHash("0");
+        }
         blockTemporary.setTimeStamp(new Date().getTime());
         blockTemporary.setHash(calculateHash(blockTemporary));
         BlockTemporary saved = blockTemporaryRepository.save(blockTemporary);
@@ -76,7 +83,7 @@ public class BlockTemporaryService {
     //    @Lock(LockModeType.PESSIMISTIC_WRITE)
     public BlockTemporary updateBlockTemporary(BlockTemporary blockTemporary) {
         logger.info("Updating blockTemporary");
-        String id = blockTemporary.getBlockId();
+        String id = blockTemporary.getBlockTemporaryId();
         BlockTemporary savedBlockTemporary = blockTemporaryRepository.findById(id).orElseThrow();
         logger.info("Initial: " + savedBlockTemporary);
         logger.info("New: " + blockTemporary);
@@ -86,6 +93,7 @@ public class BlockTemporaryService {
             savedBlockTemporary.setHash(blockTemporary.getHash());
             savedBlockTemporary.setMerkleRoot(blockTemporary.getMerkleRoot());
             savedBlockTemporary.setNonce(blockTemporary.getNonce());
+            savedBlockTemporary.setBlockId(blockTemporary.getBlockId());
             blockTemporaryRepository.save(savedBlockTemporary);
         }
         return blockTemporaryRepository.findById(id).orElseThrow();

@@ -98,6 +98,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../../blockchain-web/src/main/webapp/WEB-INF/jsp/signup.jsp">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../../blockchain-web/src/main/webapp/WEB-INF/jsp/transaction-all.jsp">
           <value>
             <set />

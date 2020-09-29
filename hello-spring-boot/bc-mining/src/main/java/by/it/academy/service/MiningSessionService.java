@@ -79,7 +79,8 @@ public class MiningSessionService {
         if (savedMiningSession.equals(miningSession)) {
             return savedMiningSession;
         } else {
-            savedMiningSession.setBlockId(miningSession.getBlockId());
+            savedMiningSession.setBlockIdActual(miningSession.getBlockIdActual());
+            savedMiningSession.setBlockIdAttempted(miningSession.getBlockIdAttempted());
             savedMiningSession.setMiningSessionStatus(miningSession.getMiningSessionStatus());
             savedMiningSession.setMinerReward(miningSession.getMinerReward());
             savedMiningSession.setSessionEnd(miningSession.getSessionEnd());

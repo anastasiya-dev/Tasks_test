@@ -74,23 +74,23 @@ public class Genesis {
 
             MiningSession genesisMiningSession = miningSessionService.createMiningSession();
             genesisMiningSession.setSessionStart(LocalDateTime.now().format(formatter));
-            Block genesisBlock = blockService.createBlock("0", genesisMiningSession.getMiningSessionId());
+//            Block genesisBlock = blockService.createBlock("0", genesisMiningSession.getMiningSessionId());
             genesisMiningSession.setWalletId(genesisWallet.getWalletId());
+            genesisMiningSession.setBlockIdAttempted("0");
             miningSessionService.saveMiningSession(genesisMiningSession);
             logger.info("Genesis mining session created: " + genesisMiningSession);
-            logger.info("Genesis block created: " + genesisBlock);
+//            logger.info("Genesis block created: " + genesisBlock);
 
-            BlockTemporary genesisBlockTemporary = blockTemporaryService.createBlockTemporary("0", genesisMiningSession.getMiningSessionId());
-            blockManagement.addTransaction(genesisBlockTemporary, genesisTransaction);
+            BlockTemporary genesisBlockTemporary = blockTemporaryService.createBlockTemporary(genesisMiningSession.getMiningSessionId());
+            blockManagement.addTransaction(genesisMiningSession, genesisTransaction);
             logger.info("Genesis block filled with transactions");
-            ArrayList<Block> blockchain = new ArrayList<>();
 
-            blockManagement.mineBlock(genesisBlockTemporary, difficulty, genesisMiningSession, blockchain);
-            logger.info("Genesis block mined: " + genesisBlock);
+            MiningSession miningSessionProcessed = blockManagement.mineBlock(genesisBlockTemporary, difficulty, genesisMiningSession);
+//            logger.info("Genesis block mined: " + genesisBlock);
             logger.info("Genesis confirmation");
             logger.info(String.valueOf(consistency.isChainValid(ApplicationConfiguration.DIFFICULTY)));
-            genesisMiningSession.setConsistencyConfirmation(LocalDateTime.now().format(formatter));
-            miningSessionService.updateSession(genesisMiningSession);
+            miningSessionProcessed.setConsistencyConfirmation(LocalDateTime.now().format(formatter));
+            miningSessionService.updateSession(miningSessionProcessed);
         }
     }
 }

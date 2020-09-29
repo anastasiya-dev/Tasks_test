@@ -15,15 +15,17 @@ public class TransactionPackage {
 
     @Id
     private String transactionPackageId;
-    private String blockId;
+    private String blockAttemptedId;
     private String transactionId;
+    private String miningSessionId;
 
     @Override
     public String toString() {
         return "TransactionPackage{" +
                 "transactionPackageId='" + transactionPackageId + '\'' +
-                ", blockId='" + blockId + '\'' +
+                ", blockAttemptedId='" + blockAttemptedId + '\'' +
                 ", transactionId='" + transactionId + '\'' +
+                ", miningSessionId='" + miningSessionId + '\'' +
                 '}';
     }
 }

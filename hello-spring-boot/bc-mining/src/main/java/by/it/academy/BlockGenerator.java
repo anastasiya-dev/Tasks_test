@@ -38,8 +38,8 @@ public class BlockGenerator {
         Logger logger = LoggerUtil.startLogging(BlockGenerator.class.getName());
         logger.info("Starting block generation task");
 
-        ArrayList<Block> blockchain = blockService.findAllBlocks();
-        blockchain.sort(Comparator.comparingLong(Block::getTimeStamp));
+//        ArrayList<Block> blockchain = blockService.findAllBlocks();
+//        blockchain.sort(Comparator.comparingLong(Block::getTimeStamp));
 
         ArrayList<Transaction> allTransactions = transactionService.findAllTransactions();
         ArrayList<Transaction> transactionsToAdd = formTransactionsSetForBlock(allTransactions);
@@ -48,18 +48,19 @@ public class BlockGenerator {
             logger.info("No transactions for block found");
             return;
         } else {
-            BlockTemporary blockTemporary = blockTemporaryService.createBlockTemporary(blockchain.get(blockchain.size() - 1).getHash(), miningSession.getMiningSessionId());
+            logger.info("Session id in generator: " + miningSession.getMiningSessionId());
+            BlockTemporary blockTemporary = blockTemporaryService.createBlockTemporary(miningSession.getMiningSessionId());
 
             for (Transaction transaction : transactionsToAdd) {
                 logger.info("Adding to block " + blockTemporary.getBlockId());
                 logger.info(transaction.getTransactionId());
-                blockManagement.addTransaction(blockTemporary, transaction);
+                blockManagement.addTransaction(miningSession, transaction);
             }
             logger.info("Mining block (id, difficulty, miningSession): "
                     + blockTemporary.getBlockId() + ", "
                     + difficulty + ", "
                     + miningSession.getMiningSessionId());
-            blockManagement.mineBlock(blockTemporary, difficulty, miningSession, blockchain);
+            blockManagement.mineBlock(blockTemporary, difficulty, miningSession);
         }
     }
 

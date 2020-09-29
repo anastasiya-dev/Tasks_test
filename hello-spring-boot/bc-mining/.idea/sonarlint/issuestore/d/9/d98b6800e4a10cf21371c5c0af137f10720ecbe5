@@ -1,17 +1,17 @@
 
-T
-java:S3655K"7Call "Optional#isPresent()" before accessing the value.(ãàˆ²8ÉšÑŠÌ.
 R
 java:S2629I"7Use the built-in formatting to construct this argument.(ìàƒûÿÿÿÿ
-Y
-java:S2629`"7Use the built-in formatting to construct this argument.(üÂß×üÿÿÿÿ8ÉšÑŠÌ.
-z
-java:S1488m"]Immediately return this expression instead of assigning it to the temporary variable "saved".(öáãõ8ıõ§ƒÍ.
-Y
-java:S26293"7Use the built-in formatting to construct this argument.(äÌƒşÿÿÿÿ8ÉšÑŠÌ.
 ˆ
 java:S14889"fImmediately return this expression instead of assigning it to the temporary variable "calculatedHash".(¯úÏÂúÿÿÿÿ8şŠÍ.
 t
 java:S1171 "YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ
 T
+java:S3655K"7Call "Optional#isPresent()" before accessing the value.(ãàˆ²8ÉšÑŠÌ.
+T
 java:S2629S"7Use the built-in formatting to construct this argument.(€¨ï‡8™õÍ.
+Y
+java:S2629`"7Use the built-in formatting to construct this argument.(üÂß×üÿÿÿÿ8ÉšÑŠÌ.
+Y
+java:S26293"7Use the built-in formatting to construct this argument.(äÌƒşÿÿÿÿ8ÉšÑŠÌ.
+z
+java:S1488m"]Immediately return this expression instead of assigning it to the temporary variable "saved".(öáãõ8ıõ§ƒÍ.

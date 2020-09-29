@@ -13,6 +13,7 @@ import javax.persistence.Id;
 @Setter
 public class BlockTemporary {
     @Id
+    private String blockTemporaryId;
     private String blockId;
 
     private String hash;
@@ -24,8 +25,9 @@ public class BlockTemporary {
 
     @Override
     public String toString() {
-        return "Block{" +
-                "blockId='" + blockId + '\'' +
+        return "BlockTemporary{" +
+                "blockTemporaryId='" + blockTemporaryId + '\'' +
+                ", blockId='" + blockId + '\'' +
                 ", hash='" + hash + '\'' +
                 ", previousHash='" + previousHash + '\'' +
                 ", merkleRoot='" + merkleRoot + '\'' +

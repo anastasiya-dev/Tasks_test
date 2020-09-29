@@ -18,7 +18,8 @@ public class MiningSession {
     @Id
     private String miningSessionId;
     private String walletId;
-    private String blockId;
+    private String blockIdAttempted;
+    private String blockIdActual;
     private float minerReward;
     private String sessionRequest;
     private String sessionStart;
@@ -31,7 +32,8 @@ public class MiningSession {
         return "MiningSession{" +
                 "miningSessionId='" + miningSessionId + '\'' +
                 ", walletId='" + walletId + '\'' +
-                ", blockId='" + blockId + '\'' +
+                ", blockIdAttempted='" + blockIdAttempted + '\'' +
+                ", blockIdActual='" + blockIdActual + '\'' +
                 ", minerReward=" + minerReward +
                 ", sessionRequest='" + sessionRequest + '\'' +
                 ", sessionStart='" + sessionStart + '\'' +

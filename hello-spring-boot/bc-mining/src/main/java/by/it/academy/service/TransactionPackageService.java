@@ -32,10 +32,11 @@ public class TransactionPackageService {
     }
 
 //    @Lock(LockModeType.PESSIMISTIC_WRITE)
-    public TransactionPackage createTransactionPackage(String blockId, String transactionId) {
-        transactionPackage.setTransactionPackageId(blockId + "/" + transactionId);
-        transactionPackage.setBlockId(blockId);
+    public TransactionPackage createTransactionPackage(String blockAttemptedId, String transactionId, String miningSessionId) {
+        transactionPackage.setTransactionPackageId(blockAttemptedId + " / " + transactionId + " / " + miningSessionId);
+        transactionPackage.setBlockAttemptedId(blockAttemptedId);
         transactionPackage.setTransactionId(transactionId);
+        transactionPackage.setMiningSessionId(miningSessionId);
         TransactionPackage saved = transactionPackageRepository.save(transactionPackage);
         logger.info("Creating transaction package: " + transactionPackage);
         return saved;
@@ -46,7 +47,7 @@ public class TransactionPackageService {
         ArrayList<TransactionPackage> allPackages = findAll();
         ArrayList<TransactionPackage> packagesByBlockId = new ArrayList<>();
         for (TransactionPackage transactionPackageIterating : allPackages) {
-            if (transactionPackageIterating.getBlockId().equals(blockId)) {
+            if (transactionPackageIterating.getBlockAttemptedId().equals(blockId)) {
                 packagesByBlockId.add(transactionPackageIterating);
             }
         }

@@ -37,20 +37,21 @@ public class BlockService {
         }
     }
 
-    public Block createBlock(String previousHash, String miningSessionId) {
-        ArrayList<Block> allBlocks = findAllBlocks();
-        if (allBlocks.isEmpty()) {
-            block.setBlockId("0" + "_" + miningSessionId);
-        } else {
-            block.setBlockId(allBlocks.size() + "_" + miningSessionId);
-        }
-
-        block.setPreviousHash(previousHash);
-        block.setTimeStamp(new Date().getTime());
-        block.setHash(calculateHash(block));
-        logger.info("Creating block: " + block);
-        return block;
-    }
+//    public Block createBlock(String previousHash, String miningSessionId) {
+//
+//        ArrayList<Block> allBlocks = findAllBlocks();
+//        if (allBlocks.isEmpty()) {
+//            block.setBlockId("0" + "_" + miningSessionId);
+//        } else {
+//            block.setBlockId(allBlocks.size() + "_" + miningSessionId);
+//        }
+//
+//        block.setPreviousHash(previousHash);
+//        block.setTimeStamp(new Date().getTime());
+//        block.setHash(calculateHash(block));
+//        logger.info("Creating block: " + block);
+//        return block;
+//    }
 
     public String calculateHash(Block block) {
 
@@ -107,6 +108,7 @@ public class BlockService {
         block.setTimeStamp(blockTemporary.getTimeStamp());
         block.setPreviousHash(blockTemporary.getPreviousHash());
         Block saved = blockRepository.save(block);
+        logger.info("Transformed temporary to actual: " + saved);
         return saved;
     }
 }

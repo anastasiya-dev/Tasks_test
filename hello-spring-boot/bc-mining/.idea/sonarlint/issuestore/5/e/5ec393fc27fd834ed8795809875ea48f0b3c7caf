@@ -1,15 +1,15 @@
 
 Y
-java:S26292"7Use the built-in formatting to construct this argument.(Ñàïˆùÿÿÿÿ8÷€€Í.
-Y
-java:S2629Q"7Use the built-in formatting to construct this argument.(Ô“ñ¬úÿÿÿÿ8ÕÄå„Í.
-ˆ
-java:S1488>"fImmediately return this expression instead of assigning it to the temporary variable "calculatedHash".(¯úÏÂúÿÿÿÿ8”£ƒÍ.
-{
-java:S1171"YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ8äÉã„Í.
+java:S26294"7Use the built-in formatting to construct this argument.(Ñàïˆùÿÿÿÿ8÷€€Í.
 ]
-java:S11446";Remove this unused private "findAllBlocksTemporary" method.(Æš‘ÿÿÿÿÿ8óİŞ¨Í.
+java:S11448";Remove this unused private "findAllBlocksTemporary" method.(Æš‘ÿÿÿÿÿ8óİŞ¨Í.
+Y
+java:S2629S"7Use the built-in formatting to construct this argument.(Ô“ñ¬úÿÿÿÿ8ÕÄå„Í.
 T
-java:S2629R"7Use the built-in formatting to construct this argument.(Ñ´¿§8Üå„Í.
+java:S2629T"7Use the built-in formatting to construct this argument.(Ñ´¿§8Üå„Í.
+ˆ
+java:S1488@"fImmediately return this expression instead of assigning it to the temporary variable "calculatedHash".(¯úÏÂúÿÿÿÿ8”£ƒÍ.
 T
-java:S3655I"7Call "Optional#isPresent()" before accessing the value.(øí´8ß¸±ƒÍ.
+java:S3655K"7Call "Optional#isPresent()" before accessing the value.(øí´8ß¸±ƒÍ.
+{
+java:S1171"YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ8äÉã„Í.
