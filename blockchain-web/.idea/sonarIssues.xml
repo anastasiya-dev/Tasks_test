@@ -973,6 +973,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring-boot/bank-account/Dockerfile">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../hello-spring-boot/bank-account/pom.xml">
           <value>
             <set />
@@ -1583,7 +1588,27 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring/src/main/java/by/it/academy/Main.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring/src/main/java/by/it/academy/controller/NewRecipientController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring/src/main/java/by/it/academy/controller/RecipientController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../hello-spring/src/main/java/by/it/academy/controller/RegisterController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../hello-spring/src/main/java/by/it/academy/json/JsonExample.java">
           <value>
             <set />
           </value>

@@ -163,3 +163,15 @@ r
 Bsrc/main/java/by/it/academy/controller/MiningLaunchController.java,a\9\a91c44fce3d12dae74afab21ef0c088e1b5b7152
 ]
 -src/main/webapp/WEB-INF/jsp/mining-launch.jsp,9\9\9953736bfffc54920815f960f2dc48262222304f
+l
+<src/main/java/by/it/academy/support/MiningSessionStatus.java,e\3\e350e320a10e27e4708a3bcb55b939ae250e8e9b
+s
+Csrc/main/java/by/it/academy/repository/MiningSessionRepository.java,6\1\613e93aaa147a687a2ca3431c1f66b5407363d65
+c
+3src/main/java/by/it/academy/pojo/MiningSession.java,3\6\360632fb8491f39c0d5f95190e667c359a0e04a2
+m
+=src/main/java/by/it/academy/service/MiningSessionService.java,3\a\3ab7457c54633a39e7c00d77c01d1e67f19a9d19
+b
+2src/main/webapp/WEB-INF/jsp/mining-session-all.jsp,d\5\d5c05a991c03c98e316e26cc9eeab14cf8996b4f
+l
+<src/main/java/by/it/academy/controller/MiningController.java,5\2\521c9872753f85295db6533a15f25e571de3067d

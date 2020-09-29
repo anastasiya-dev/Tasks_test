@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -85,7 +86,8 @@ public class MiningController {
         log.info("Mining sessions view for user: " + userId);
         float sum = 0.0f;
         ArrayList<MiningSession> miningSessionsForUser = miningSessionService.findAllMiningSessionsForUser(userId);
-        for(MiningSession miningSession: miningSessionsForUser){
+        Collections.sort(miningSessionsForUser, Collections.reverseOrder());
+        for (MiningSession miningSession : miningSessionsForUser) {
             sum += (float) Math.round(miningSession.getMinerReward() * 10.0) / 10.0f;
         }
         modelAndView.setViewName("mining-session-all");

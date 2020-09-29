@@ -23,8 +23,10 @@ public class MiningSession {
     private String miningSessionId;
     @Column(name = "wallet_id")
     private String walletId;
-    @Column(name = "block_id")
-    private String blockId;
+    @Column(name = "block_id_attempted")
+    private String blockIdAttempted;
+    @Column(name = "block_id_actual")
+    private String blockIdActual;
     @Column(name = "miner_reward")
     private float minerReward;
     @Column(name = "session_request")
@@ -38,12 +40,14 @@ public class MiningSession {
     @Column(name = "consistency_confirmation")
     private String consistencyConfirmation;
 
+
     @Override
     public String toString() {
         return "MiningSession{" +
                 "miningSessionId='" + miningSessionId + '\'' +
                 ", walletId='" + walletId + '\'' +
-                ", blockId='" + blockId + '\'' +
+                ", blockIdAttempted='" + blockIdAttempted + '\'' +
+                ", blockIdActual='" + blockIdActual + '\'' +
                 ", minerReward=" + minerReward +
                 ", sessionRequest='" + sessionRequest + '\'' +
                 ", sessionStart='" + sessionStart + '\'' +

@@ -20,7 +20,7 @@
 <c:forEach items="${miningSessionsForUser}" var="ms">
         <tr>
           <td style="text-align:left">${ms.miningSessionId}</td>
-          <td style="text-align:left">${ms.blockId}</td>
+          <td style="text-align:left">${ms.blockIdActual}</td>
           <td>${ms.minerReward}</td>
           <td>${ms.miningSessionStatus}</td>
           <td>${ms.sessionRequest}</td>

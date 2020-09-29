@@ -27,7 +27,7 @@ public class TransactionViewController {
 
     private static final Logger log = LoggerFactory.getLogger(TransactionViewController.class);
 
-    static ArrayList<Transaction> staticTransactionsFiltered = new ArrayList<>();
+    static ArrayList<Transaction> transactionsForDownload = new ArrayList<>();
 
     @RequestMapping(value = "/{userId}/wallet/{walletId}/transaction-all", method = RequestMethod.GET)
     public ModelAndView viewAllTransactions(ModelAndView modelAndView,
@@ -36,8 +36,8 @@ public class TransactionViewController {
                                             @ModelAttribute FilterInput filterInput,
                                             RedirectAttributes redirectAttributes) {
 
-        staticTransactionsFiltered.clear();
-        log.info("Cleared transactions filtered: " + staticTransactionsFiltered);
+        transactionsForDownload.clear();
+        log.info("Cleared transactions filtered: " + transactionsForDownload);
         log.info("Received filter requirement " + filterInput + " for wallet " + walletId);
         List<Transaction> transactions = transactionManagement.getAllForWallet(walletId, false);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
@@ -85,8 +85,8 @@ public class TransactionViewController {
         }
         modelAndView.setViewName("transaction-all");
         modelAndView.addObject("transactionsFiltered", transactionsFiltered);
-        staticTransactionsFiltered.addAll(transactionsFiltered);
-        log.info("Extracted transactions filtered: " + staticTransactionsFiltered);
+        transactionsForDownload.addAll(transactionsFiltered);
+        log.info("Extracted transactions filtered: " + transactionsForDownload);
         modelAndView.addObject("sum", sum);
         return modelAndView;
     }

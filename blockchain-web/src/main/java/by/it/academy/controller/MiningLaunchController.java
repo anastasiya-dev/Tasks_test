@@ -36,7 +36,8 @@ public class MiningLaunchController {
     private String createPostBody(String walletId) {
         StringBuilder sb = new StringBuilder();
         sb.append("{\n" +
-                "  \"blockId\": \"none\",\n" +
+                "  \"blockIdActual\": \"none\",\n" +
+                "  \"blockIdAttempted\": \"none\",\n" +
                 "  \"consistencyConfirmation\": \"none\",\n" +
                 "  \"minerReward\": \"0.0\",\n" +
                 "  \"miningSessionId\": \"none\",\n" +

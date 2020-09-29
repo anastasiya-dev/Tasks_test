@@ -18,7 +18,7 @@
             <div class="myform form ">
                <form class="form-signin" action="/blockchain-web/signup" method="post">
                   <div class="form-group">
-                     <input type="text" pattern=".{1,}" name="userName"  class="form-control my-input" id="username" placeholder="Name">
+                     <input type="text" pattern=".+" name="userName"  class="form-control my-input" id="username" placeholder="Name">
                   </div>
                   <div class="form-group">
                      <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name="email"  class="form-control my-input" id="email" placeholder="Email">
