@@ -3,7 +3,9 @@ package by.it.academy;
 import by.it.academy.multithreading.MiningLauncher;
 import by.it.academy.pojo.MiningSession;
 import by.it.academy.service.MiningSessionService;
+import by.it.academy.service.TransactionService;
 import by.it.academy.support.MiningSessionStatus;
+import by.it.academy.support.TransactionStatus;
 import by.it.academy.util.LoggerUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -38,6 +40,8 @@ public class ApplicationConfiguration extends WebSecurityConfigurerAdapter imple
     MiningSessionService miningSessionService;
     @Autowired
     MiningLauncher miningLauncher;
+    @Autowired
+    TransactionService transactionService;
 
 
     public static int DIFFICULTY = 5;
@@ -98,7 +102,9 @@ public class ApplicationConfiguration extends WebSecurityConfigurerAdapter imple
             try {
                 ArrayList<MiningSession> allMiningSessionsByStatus
                         = miningSessionService.findAllMiningSessionsByStatus(MiningSessionStatus.IN_PROCESS);
-                miningLauncher.launch(allMiningSessionsByStatus);
+                if(!transactionService.findAllTransactionsByStatus(TransactionStatus.CONFIRMED).isEmpty()){
+                    miningLauncher.launch(allMiningSessionsByStatus);
+                }
                 logger.info("Starting mining multithreading");
             } catch (NullPointerException e) {
                 logger.info("Mining session pool empty");

@@ -13,13 +13,13 @@ public class UtxoManagement {
 
     public boolean isMine(Utxo utxo, Wallet wallet) throws IOException {
         Logger logger = LoggerUtil.startLogging(UtxoManagement.class.getName());
-        logger.info("Verifying utxo " + utxo + " for wallet " + wallet.getWalletId());
+//        logger.info("Verifying utxo " + utxo + " for wallet " + wallet.getWalletId());
 
         if (utxo.getWalletId() == null) {
-            logger.info("Ownership rejected");
+//            logger.info("Ownership rejected");
             return false;
         } else {
-            logger.info("Ownership confirmed");
+//            logger.info("Ownership confirmed");
             return (wallet.getWalletId().equals(utxo.getWalletId()));
         }
     }

@@ -7,10 +7,8 @@ import by.it.academy.support.TransactionStatus;
 import by.it.academy.util.LoggerUtil;
 import by.it.academy.util.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Lock;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.LockModeType;
 import java.io.IOException;
 import java.security.PrivateKey;
 import java.time.LocalDateTime;
@@ -108,5 +106,17 @@ public class TransactionService {
             transactionRepository.save(savedTransaction);
         }
         return transactionRepository.findById(id).orElseThrow();
+    }
+
+    public ArrayList<Transaction> findAllTransactionsByStatus(TransactionStatus transactionStatus) {
+        logger.info("Extracting all by status " + transactionStatus);
+        ArrayList<Transaction> allTransactions = findAllTransactions();
+        ArrayList<Transaction> selectedTransactions = new ArrayList<>();
+        for (Transaction transaction : allTransactions) {
+            if (transaction.getTransactionStatus().equals(transactionStatus)) {
+                selectedTransactions.add(transaction);
+            }
+        }
+        return selectedTransactions;
     }
 }

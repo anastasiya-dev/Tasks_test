@@ -23,6 +23,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../../blockchain-web/src/main/java/by/it/academy/controller/HomeController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../../blockchain-web/src/main/java/by/it/academy/controller/MiningController.java">
           <value>
             <set />
@@ -43,7 +48,27 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../../blockchain-web/src/main/java/by/it/academy/controller/UserCabinetController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../blockchain-web/src/main/java/by/it/academy/controller/UserController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../../blockchain-web/src/main/java/by/it/academy/controller/WalletViewController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../blockchain-web/src/main/java/by/it/academy/management/UtxoManagement.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../blockchain-web/src/main/java/by/it/academy/management/WalletManagement.java">
           <value>
             <set />
           </value>
@@ -53,7 +78,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../../blockchain-web/src/main/java/by/it/academy/pojo/Wallet.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../../blockchain-web/src/main/java/by/it/academy/repository/MiningSessionRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../blockchain-web/src/main/java/by/it/academy/repository/UserRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../blockchain-web/src/main/java/by/it/academy/security/AuthenticationService.java">
           <value>
             <set />
           </value>
@@ -68,12 +108,52 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../../blockchain-web/src/main/java/by/it/academy/service/UserService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../../blockchain-web/src/main/java/by/it/academy/web/WebAppInitializer.java">
           <value>
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../../blockchain-web/src/main/webapp/WEB-INF/jsp/change-password.jsp">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../blockchain-web/src/main/webapp/WEB-INF/jsp/create-transaction.jsp">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../blockchain-web/src/main/webapp/WEB-INF/jsp/delete-user-check-wallets.jsp">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../blockchain-web/src/main/webapp/WEB-INF/jsp/delete-wallet.jsp">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../blockchain-web/src/main/webapp/WEB-INF/jsp/footer.jsp">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../../blockchain-web/src/main/webapp/WEB-INF/jsp/header.jsp">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../blockchain-web/src/main/webapp/WEB-INF/jsp/home.jsp">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../blockchain-web/src/main/webapp/WEB-INF/jsp/login.jsp">
           <value>
             <set />
           </value>
@@ -98,12 +178,42 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../../blockchain-web/src/main/webapp/WEB-INF/jsp/not-enough-funds.jsp">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../../blockchain-web/src/main/webapp/WEB-INF/jsp/signup.jsp">
           <value>
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../../blockchain-web/src/main/webapp/WEB-INF/jsp/transaction-all-paged.jsp">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../../blockchain-web/src/main/webapp/WEB-INF/jsp/transaction-all.jsp">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../blockchain-web/src/main/webapp/WEB-INF/jsp/unauthorized-transaction.jsp">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../blockchain-web/src/main/webapp/WEB-INF/jsp/unconfirmed-password.jsp">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../blockchain-web/src/main/webapp/WEB-INF/jsp/user-edit.jsp">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../blockchain-web/src/main/webapp/WEB-INF/jsp/view-unconfirmed.jsp">
           <value>
             <set />
           </value>
@@ -114,6 +224,16 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../../blockchain-web/src/main/webapp/resources/css/background-styles.css">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../blockchain-web/src/main/webapp/resources/css/signup-styles.css">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../blockchain-web/src/test/java/by/it/academy/controller/HomeControllerTest.java">
           <value>
             <set />
           </value>
