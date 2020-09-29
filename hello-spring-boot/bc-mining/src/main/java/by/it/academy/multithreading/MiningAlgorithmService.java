@@ -3,9 +3,7 @@ package by.it.academy.multithreading;
 import by.it.academy.ApplicationConfiguration;
 import by.it.academy.BlockGenerator;
 import by.it.academy.Consistency;
-import by.it.academy.pojo.Block;
 import by.it.academy.pojo.MiningSession;
-import by.it.academy.service.BlockService;
 import by.it.academy.service.MiningSessionService;
 import by.it.academy.util.LoggerUtil;
 import lombok.SneakyThrows;
@@ -15,7 +13,6 @@ import org.springframework.stereotype.Service;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.logging.Logger;
 
 @Service
@@ -27,8 +24,6 @@ public class MiningAlgorithmService {
     Consistency consistency;
     @Autowired
     MiningSessionService miningSessionService;
-    @Autowired
-    BlockService blockService;
 
     Logger logger;
 
@@ -45,8 +40,6 @@ public class MiningAlgorithmService {
 
     @SneakyThrows
     public void run(MiningSession miningSession) {
-//        ArrayList<Block> allBlocks = blockService.findAllBlocks();
-//        miningSession.setBlockIdAttempted(String.valueOf(allBlocks.size()));
         miningSession.setSessionStart(LocalDateTime.now().format(formatter));
         miningSessionService.updateSession(miningSession);
         logger.info("Run method invocation for session: " + miningSession.getMiningSessionId());

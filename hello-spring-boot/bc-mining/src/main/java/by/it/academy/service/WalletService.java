@@ -19,7 +19,6 @@ import java.util.List;
 import java.util.logging.Logger;
 
 @Service
-//@Transactional
 public class WalletService {
 
     @Autowired

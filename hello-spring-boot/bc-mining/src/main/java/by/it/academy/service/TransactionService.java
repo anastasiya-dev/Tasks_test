@@ -19,7 +19,6 @@ import java.util.Date;
 import java.util.logging.Logger;
 
 @Service
-//@Transactional
 public class TransactionService {
 
     @Autowired
@@ -39,7 +38,6 @@ public class TransactionService {
         }
     }
 
-//    @Lock(LockModeType.PESSIMISTIC_WRITE)
     public boolean saveTransaction(Transaction transaction) {
         logger.info("Saving transaction: " + transaction);
         transactionRepository.save(transaction);
@@ -56,7 +54,6 @@ public class TransactionService {
         return (ArrayList<Transaction>) transactionRepository.findAll();
     }
 
-//    @Lock(LockModeType.PESSIMISTIC_WRITE)
     public Transaction updateTransaction(Transaction transaction) {
         logger.info("Updating transaction");
         String id = transaction.getTransactionId();
@@ -98,7 +95,6 @@ public class TransactionService {
         logger.info("Generating signature for transaction: " + transaction);
     }
 
-//    @Lock(LockModeType.PESSIMISTIC_WRITE)
     public Transaction updateTransaction(Block block, Transaction transaction) {
         logger.info("Updating transaction");
         String id = transaction.getTransactionId();

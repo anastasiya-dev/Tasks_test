@@ -8,12 +8,12 @@ import org.springframework.data.jpa.repository.Lock;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.LockModeType;
+import javax.transaction.Transactional;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.Logger;
 
 @Service
-//@Transactional
 public class TransactionPackageService {
 
     @Autowired
@@ -31,7 +31,8 @@ public class TransactionPackageService {
         }
     }
 
-//    @Lock(LockModeType.PESSIMISTIC_WRITE)
+    @Transactional
+    @Lock(LockModeType.PESSIMISTIC_WRITE)
     public TransactionPackage createTransactionPackage(String blockAttemptedId, String transactionId, String miningSessionId) {
         transactionPackage.setTransactionPackageId(blockAttemptedId + " / " + transactionId + " / " + miningSessionId);
         transactionPackage.setBlockAttemptedId(blockAttemptedId);

@@ -15,6 +15,7 @@ public class BlockTemporary {
     @Id
     private String blockTemporaryId;
     private String blockId;
+    private String miningSessionId;
 
     private String hash;
     private String previousHash;
@@ -28,6 +29,7 @@ public class BlockTemporary {
         return "BlockTemporary{" +
                 "blockTemporaryId='" + blockTemporaryId + '\'' +
                 ", blockId='" + blockId + '\'' +
+                ", miningSessionId='" + miningSessionId + '\'' +
                 ", hash='" + hash + '\'' +
                 ", previousHash='" + previousHash + '\'' +
                 ", merkleRoot='" + merkleRoot + '\'' +

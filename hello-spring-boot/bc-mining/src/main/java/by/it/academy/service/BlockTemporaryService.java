@@ -7,17 +7,14 @@ import by.it.academy.repository.BlockTemporaryRepository;
 import by.it.academy.util.LoggerUtil;
 import by.it.academy.util.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Lock;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.LockModeType;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.logging.Logger;
 
 @Service
-//@Transactional
 public class BlockTemporaryService {
 
     @Autowired
@@ -52,6 +49,7 @@ public class BlockTemporaryService {
             blockTemporary.setPreviousHash("0");
         }
         blockTemporary.setTimeStamp(new Date().getTime());
+        blockTemporary.setMiningSessionId(miningSessionId);
         blockTemporary.setHash(calculateHash(blockTemporary));
         BlockTemporary saved = blockTemporaryRepository.save(blockTemporary);
         logger.info("Creating block temporary: " + blockTemporary);
@@ -97,5 +95,9 @@ public class BlockTemporaryService {
             blockTemporaryRepository.save(savedBlockTemporary);
         }
         return blockTemporaryRepository.findById(id).orElseThrow();
+    }
+
+    public BlockTemporary findByMiningSessionId(String miningSessionId) {
+        return blockTemporaryRepository.findByMiningSessionId(miningSessionId);
     }
 }

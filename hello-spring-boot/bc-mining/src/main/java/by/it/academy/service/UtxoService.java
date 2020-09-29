@@ -15,7 +15,6 @@ import java.util.Date;
 import java.util.logging.Logger;
 
 @Service
-//@Transactional
 public class UtxoService {
 
     @Autowired
@@ -54,7 +53,6 @@ public class UtxoService {
         return utxoRepository.findById(id).orElse(null);
     }
 
-    @Lock(LockModeType.PESSIMISTIC_WRITE)
     public boolean saveUtxo(Utxo utxo) {
         logger.info("Saving utxo: " + utxo);
         utxoRepository.save(utxo);

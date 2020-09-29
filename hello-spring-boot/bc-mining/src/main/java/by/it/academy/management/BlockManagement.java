@@ -40,10 +40,10 @@ public class BlockManagement {
     @Autowired
     BlockTemporaryService blockTemporaryService;
 
-    float minerReward = 0.05f;
-    float senderReward = 0.01f;
+    float minerReward = ApplicationConfiguration.MINER_REWARD;
+    float senderReward = ApplicationConfiguration.SENDER_REWARD;
     DateTimeFormatter formatter = ApplicationConfiguration.FORMATTER;
-    int checkFlag = 100_000;
+    int checkFlag = ApplicationConfiguration.CHECK_FLAG;
 
     Logger logger;
 
@@ -53,11 +53,6 @@ public class BlockManagement {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public void addTransaction(MiningSession miningSession, Transaction transaction) {
-        transactionPackageService.createTransactionPackage(miningSession.getBlockIdAttempted(), transaction.getTransactionId(), miningSession.getMiningSessionId());
-//        logger.info("Adding transactions to block " + blockToAdd.getBlockId());
     }
 
     public MiningSession mineBlock(BlockTemporary blockTemporary, int difficulty, MiningSession miningSession) {
@@ -78,9 +73,6 @@ public class BlockManagement {
         }
         logger.info("Mining finished: " + blockTemporary);
         blockTemporaryService.updateBlockTemporary(blockTemporary);
-
-//        ArrayList<Block> currentBlockchain = blockService.findAllBlocks();
-//        currentBlockchain.sort(Comparator.comparingLong(Block::getTimeStamp));
         return resultingChanges(blockTemporary.getBlockTemporaryId(), miningSession.getMiningSessionId());
     }
 
@@ -93,12 +85,11 @@ public class BlockManagement {
             logger.info("Setting blockId on transactions for successful session (blockId): " + blockTemporary.getBlockId());
             blockTemporary.setBlockId(miningSession.getBlockIdAttempted());
             blockTemporaryService.updateBlockTemporary(blockTemporary);
-            Block block = blockService.transformFromTemporary(blockTemporary);
+            blockService.transformFromTemporary(blockTemporary);
             return miningSuccessHandler(miningSession.getMiningSessionId());
         } else {
             return miningFailureHandler(miningSession.getMiningSessionId());
         }
-//        return miningSession;
     }
 
     private boolean successCheck(BlockTemporary blockTempChecked) {
@@ -144,7 +135,7 @@ public class BlockManagement {
 
     private boolean checkIfCurrentBlockAlreadyMined(String blockIdAttempted, BlockTemporary blockTemporary) {
         logger.info("Check if current block already mined");
-        if (blockTemporary.getBlockTemporaryId().equals("0_0_0") || String.valueOf(blockService.findAllBlocks().size()).equals(blockIdAttempted)) {
+        if (blockTemporary.getBlockTemporaryId().equals("0_0") || String.valueOf(blockService.findAllBlocks().size()).equals(blockIdAttempted)) {
             logger.info("No");
             return false;
         } else {

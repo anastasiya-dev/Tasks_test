@@ -39,6 +39,16 @@ public class ApplicationConfiguration extends WebSecurityConfigurerAdapter imple
     @Autowired
     MiningLauncher miningLauncher;
 
+
+    public static int DIFFICULTY = 5;
+    public static float THRESHOLD = 1_000_000;
+    public static DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss:SSS");
+    public static int MAX_QUANTITY = 3;
+    public static float MINER_REWARD = 0.05f;
+    public static float SENDER_REWARD = 0.01f;
+    public static int CHECK_FLAG = 100_000;
+
+
     Logger logger;
 
     {
@@ -78,10 +88,6 @@ public class ApplicationConfiguration extends WebSecurityConfigurerAdapter imple
     public static void main(String[] args) {
         SpringApplication.run(ApplicationConfiguration.class);
     }
-
-    public static int DIFFICULTY = 5;
-    public static float THRESHOLD = 1_000_000;
-    public static DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss:SSS");
 
     @Override
     public void run(String... args) throws Exception {

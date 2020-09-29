@@ -6,10 +6,8 @@ import by.it.academy.repository.MiningSessionRepository;
 import by.it.academy.support.MiningSessionStatus;
 import by.it.academy.util.LoggerUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Lock;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.LockModeType;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -17,7 +15,6 @@ import java.util.NoSuchElementException;
 import java.util.logging.Logger;
 
 @Service
-//@Transactional
 public class MiningSessionService {
 
     Logger logger;
@@ -35,7 +32,6 @@ public class MiningSessionService {
     @Autowired
     MiningSession miningSession;
 
-//    @Lock(LockModeType.PESSIMISTIC_WRITE)
     public boolean saveMiningSession(MiningSession miningSession) {
         logger.info("Processing mining session creation");
         try {
@@ -69,7 +65,6 @@ public class MiningSessionService {
         return (ArrayList<MiningSession>) miningSessionRepository.findAll();
     }
 
-//    @Lock(LockModeType.PESSIMISTIC_WRITE)
     public MiningSession updateSession(MiningSession miningSession) {
         logger.info("Updating mining session");
         String id = miningSession.getMiningSessionId();

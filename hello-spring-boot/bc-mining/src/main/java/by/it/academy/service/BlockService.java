@@ -6,20 +6,15 @@ import by.it.academy.repository.BlockRepository;
 import by.it.academy.util.LoggerUtil;
 import by.it.academy.util.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Lock;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.LockModeType;
-import javax.transaction.Transactional;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.logging.Logger;
 
 @Service
-//@Transactional
 public class BlockService {
 
     @Autowired
@@ -36,22 +31,6 @@ public class BlockService {
             e.printStackTrace();
         }
     }
-
-//    public Block createBlock(String previousHash, String miningSessionId) {
-//
-//        ArrayList<Block> allBlocks = findAllBlocks();
-//        if (allBlocks.isEmpty()) {
-//            block.setBlockId("0" + "_" + miningSessionId);
-//        } else {
-//            block.setBlockId(allBlocks.size() + "_" + miningSessionId);
-//        }
-//
-//        block.setPreviousHash(previousHash);
-//        block.setTimeStamp(new Date().getTime());
-//        block.setHash(calculateHash(block));
-//        logger.info("Creating block: " + block);
-//        return block;
-//    }
 
     public String calculateHash(Block block) {
 
@@ -92,14 +71,12 @@ public class BlockService {
         return minerBlocks;
     }
 
-//    @Lock(LockModeType.PESSIMISTIC_WRITE)
     public boolean saveBlock(Block block) {
         logger.info("Saving block: " + block);
         blockRepository.save(block);
         return true;
     }
 
-//    @Lock(LockModeType.PESSIMISTIC_WRITE)
     public Block transformFromTemporary(BlockTemporary blockTemporary) {
         block.setBlockId(blockTemporary.getBlockId());
         block.setMerkleRoot(blockTemporary.getMerkleRoot());

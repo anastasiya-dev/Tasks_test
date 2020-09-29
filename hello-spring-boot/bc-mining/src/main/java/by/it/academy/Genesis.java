@@ -10,14 +10,11 @@ import org.springframework.stereotype.Component;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.logging.Logger;
 
 @Component
 public class Genesis {
 
-    @Autowired
-    BlockService blockService;
     @Autowired
     TransactionService transactionService;
     @Autowired
@@ -34,12 +31,21 @@ public class Genesis {
     Consistency consistency;
     @Autowired
     BlockTemporaryService blockTemporaryService;
+    @Autowired
+    TransactionPackageService transactionPackageService;
 
     DateTimeFormatter formatter = ApplicationConfiguration.FORMATTER;
+    Logger logger;
+
+    {
+        try {
+            logger = LoggerUtil.startLogging(Genesis.class.getName());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     public void genesis(int difficulty) throws IOException {
-
-        Logger logger = LoggerUtil.startLogging(Genesis.class.getName());
 
         if (!userService.findUserByNameExistence("Genesis0") &&
                 !userService.findUserByNameExistence("Genesis1")) {
@@ -74,19 +80,20 @@ public class Genesis {
 
             MiningSession genesisMiningSession = miningSessionService.createMiningSession();
             genesisMiningSession.setSessionStart(LocalDateTime.now().format(formatter));
-//            Block genesisBlock = blockService.createBlock("0", genesisMiningSession.getMiningSessionId());
             genesisMiningSession.setWalletId(genesisWallet.getWalletId());
             genesisMiningSession.setBlockIdAttempted("0");
             miningSessionService.saveMiningSession(genesisMiningSession);
             logger.info("Genesis mining session created: " + genesisMiningSession);
-//            logger.info("Genesis block created: " + genesisBlock);
 
             BlockTemporary genesisBlockTemporary = blockTemporaryService.createBlockTemporary(genesisMiningSession.getMiningSessionId());
-            blockManagement.addTransaction(genesisMiningSession, genesisTransaction);
-            logger.info("Genesis block filled with transactions");
+            transactionPackageService.createTransactionPackage(
+                    genesisMiningSession.getBlockIdAttempted(),
+                    genesisTransaction.getTransactionId(),
+                    genesisMiningSession.getMiningSessionId());
+            logger.info("Genesis block temporary filled with transactions");
 
             MiningSession miningSessionProcessed = blockManagement.mineBlock(genesisBlockTemporary, difficulty, genesisMiningSession);
-//            logger.info("Genesis block mined: " + genesisBlock);
+            logger.info("Genesis block mined: " + miningSessionProcessed.getBlockIdAttempted());
             logger.info("Genesis confirmation");
             logger.info(String.valueOf(consistency.isChainValid(ApplicationConfiguration.DIFFICULTY)));
             miningSessionProcessed.setConsistencyConfirmation(LocalDateTime.now().format(formatter));

@@ -18,7 +18,6 @@ import java.util.List;
 import java.util.logging.Logger;
 
 @Service
-//@Transactional
 public class UserService {
 
     static int sequence = 0;
