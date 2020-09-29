@@ -1,8 +1,5 @@
 <div class="footer">
-
         <p>&copy; BlockChain. Anastasiya Kalach</p>
-
-    </div>
-    </div>
+</div>
     </body>
 </html>

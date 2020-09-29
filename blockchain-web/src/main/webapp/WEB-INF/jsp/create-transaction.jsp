@@ -10,6 +10,6 @@
 <input type="text" id="value" pattern="[0-9]+\.?[0-9]?" name="value" placeholder=">0 and <balance"><br>
 
    <button type="submit" class="btn send-button">Submit</button>
-</form>
+</form style="margin-bottom: 3cm;">
 </div>
 <jsp:include page="footer.jsp"/>

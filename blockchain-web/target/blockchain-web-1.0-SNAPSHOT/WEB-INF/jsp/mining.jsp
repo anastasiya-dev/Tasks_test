@@ -1,5 +1,5 @@
 <jsp:include page="header.jsp"/>
 
-<h2 style="margin-top: 2cm;">New mining session started</h2>
+<h3 style="margin-top: 2cm; margin-bottom: 7cm;">New mining session started!</h3>
 
 <jsp:include page="footer.jsp"/>

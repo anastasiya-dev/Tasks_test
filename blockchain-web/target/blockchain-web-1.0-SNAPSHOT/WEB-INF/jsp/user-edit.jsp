@@ -6,7 +6,8 @@
 <form action="/blockchain-web/${user.userId}/update" method="post" >
     <label for="userName">Name</label><br>
      <input type="text" id="userName" pattern=".{1,}" name="userName" value="${user.userName}"><br>
-
+<small class="text-muted">If you change your name you'll be logged out</small><br>
+<br>
   <label for="email">Email</label><br>
      <input type="text" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name="email" value="${user.email}"><br>
 

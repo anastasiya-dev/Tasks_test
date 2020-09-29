@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-//@Transactional
 public class MiningSessionService {
 
     private static final Logger logger = LoggerFactory.getLogger(MiningSessionService.class);
@@ -28,10 +27,8 @@ public class MiningSessionService {
 
     public ArrayList<MiningSession> findAllMiningSessionsForUser(String userId) {
         List<MiningSession> all = miningSessionRepository.findAll();
-        System.out.println("all ms " + all);
         ArrayList<MiningSession> miningSessions = new ArrayList<>();
         for (MiningSession miningSession : all) {
-            System.out.println("processing ms:" + miningSession);
             if (walletService.findWalletById(miningSession.getWalletId()).getUserId().equals(userId)) {
                 miningSessions.add(miningSession);
             }

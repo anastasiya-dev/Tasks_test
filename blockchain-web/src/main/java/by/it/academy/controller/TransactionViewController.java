@@ -19,6 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Controller
@@ -31,6 +32,7 @@ public class TransactionViewController {
     private static final Logger log = LoggerFactory.getLogger(TransactionViewController.class);
 
     static ArrayList<Transaction> transactionsForDownload = new ArrayList<>();
+    FilterInput savedFilterInput = null;
 
     @RequestMapping(value = {"", "/{page}"}, method = RequestMethod.GET)
     public ModelAndView viewAllTransactions(
@@ -44,6 +46,13 @@ public class TransactionViewController {
         transactionsForDownload.clear();
         log.info("Cleared transactions filtered: " + transactionsForDownload);
         log.info("Received filter requirement " + filterInput + " for wallet " + walletId);
+
+
+        if (page == null) {
+            savedFilterInput = filterInput;
+        } else {
+            filterInput = savedFilterInput;
+        }
 
         ModelAndView modelAndView = new ModelAndView();
 
@@ -92,15 +101,14 @@ public class TransactionViewController {
             }
         }
         modelAndView.setViewName("transaction-all");
-//        modelAndView.addObject("transactionsFiltered", transactionsFiltered);
+
         transactionsForDownload.addAll(transactionsFiltered);
         log.info("Extracted transactions filtered: " + transactionsForDownload);
         modelAndView.addObject("sum", sum);
 
         PagedListHolder<Transaction> transactionList;
         if (page == null) {
-            transactionList = new PagedListHolder<Transaction>();
-//            List<Transaction> usersList = transactionsFiltered;
+            transactionList = new PagedListHolder<>();
             // Setting the source for PagedListHolder
             transactionList.setSource(transactionsFiltered);
             transactionList.setPageSize(5);
@@ -122,7 +130,6 @@ public class TransactionViewController {
             // page number starts from zero in PagedListHolder that's why subtracting 1
             transactionList.setPage(pageNum - 1);
         }
-
         return modelAndView;
     }
 
@@ -131,7 +138,6 @@ public class TransactionViewController {
                                            @PathVariable String userId,
                                            @PathVariable String walletId,
                                            @ModelAttribute FilterInput filterInput) {
-        List<Transaction> transactions = transactionManagement.getAllForWallet(walletId, false);
         return modelAndView;
     }
 }

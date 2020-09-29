@@ -22,11 +22,13 @@
         <ul>
    <sec:authorize access="isAuthenticated()">
    <li><a class="btn" href="/blockchain-web/logout">Logout</a></li>
+   <li><a class="btn" href="/blockchain-web/${userId}/wallet-all">MyBlockChain</a></li>
    </sec:authorize>
 
    <sec:authorize access="!isAuthenticated()">
-    <li><a class="btn" href="/blockchain-web/login">MyBlockChain</a></li>
+<li><a class="btn" href="/blockchain-web/login">MyBlockChain</a></li>
     </sec:authorize>
+
 
     <li><a class="btn" href="#">About</a></li>
     <li><a class="btn" href="#">Contacts</a></li>

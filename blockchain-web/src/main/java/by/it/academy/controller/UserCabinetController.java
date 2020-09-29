@@ -40,10 +40,12 @@ public class UserCabinetController {
     ) {
         userService.updateUser(user);
         modelAndView.addObject("user", user);
-
         log.info("User initial: " + userService.findUserById(userId));
         log.info("User updates: " + user);
-
-        return "redirect:/{userId}/wallet-all";
+        if (UserService.getUsernameAuthUser().equals(user.getUserName())) {
+            return "redirect:/{userId}/wallet-all";
+        } else {
+            return "redirect: /blockchain-web/logout";
+        }
     }
 }

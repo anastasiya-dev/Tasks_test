@@ -15,7 +15,7 @@
       <title>Blockchain</title>
    </head>
 <body>
-<p>Sorry, password wasn't correctly confirmed</p>
-<p><a href="/blockchain-web/signup" class="text-primary">Back to signup</a></p4>
+<h2 style="margin-top: 2cm;">Sorry, password wasn't correctly confirmed</h2>
+<p style="margin-top: 2cm; margin-bottom: 2cm;"><a href="/blockchain-web/home" class="text-primary">Back to home</a></p4>
 </body>
 <jsp:include page="footer.jsp"/>

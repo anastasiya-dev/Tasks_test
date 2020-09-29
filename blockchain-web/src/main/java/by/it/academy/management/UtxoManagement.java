@@ -12,12 +12,12 @@ public class UtxoManagement {
     private static final Logger log = LoggerFactory.getLogger(UtxoManagement.class);
 
     public boolean isMine(Utxo utxo, Wallet wallet) {
-        log.info("Verifying utxo " + utxo + " for wallet " + wallet.getWalletId());
+//        log.info("Verifying utxo " + utxo + " for wallet " + wallet.getWalletId());
         if (utxo.getWalletId() == null) {
-            log.info("Ownership rejected");
+//            log.info("Ownership rejected");
             return false;
         } else {
-            log.info("Ownership confirmed");
+//            log.info("Ownership confirmed");
             return (wallet.getWalletId().equals(utxo.getWalletId()));
         }
     }

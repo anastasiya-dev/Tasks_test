@@ -18,7 +18,7 @@
             <div class="myform form ">
                <form class="form-signin" action="/blockchain-web/signup" method="post">
                   <div class="form-group">
-                     <input type="text" pattern=".+" name="userName"  class="form-control my-input" id="username" placeholder="Name">
+                     <input type="text" pattern=".+" name="userName"  class="form-control my-input" id="username" placeholder="Name" required>
                   </div>
                   <div class="form-group">
                      <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name="email"  class="form-control my-input" id="email" placeholder="Email">
@@ -28,7 +28,7 @@
                      <input type="number" min="0" name="mobile" id="phone"  class="form-control my-input" placeholder="Phone">
                   </div>
                   <div class="form-group">
-                      <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" min="0" name="userPassword" id="userPassword"  class="form-control my-input" placeholder="Password">
+                      <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" min="0" name="userPassword" id="userPassword"  class="form-control my-input" placeholder="Password" required>
                         <small id="passwordRequirement" class="form-text text-muted">Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters</small>
                   </div>
                    <div class="form-group">

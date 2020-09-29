@@ -14,4 +14,5 @@
  <input type="text" id="privateKeyString" name="privateKeyString"><br>
  <button type="submit" class="btn send-button-small">Submit</button>
        </form>
+       <br>
 <jsp:include page="footer.jsp"/>

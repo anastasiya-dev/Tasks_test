@@ -36,7 +36,6 @@ C:\work\blockchain-web\src\main\java\by\it\academy\controller\MiningController.j
 C:\work\blockchain-web\src\main\java\by\it\academy\repository\TransactionRepository.java
 C:\work\blockchain-web\src\main\java\by\it\academy\web\WebAppInitializer.java
 C:\work\blockchain-web\src\main\java\by\it\academy\pojo\Wallet.java
-C:\work\blockchain-web\src\main\java\by\it\academy\controller\UserController.java
 C:\work\blockchain-web\src\main\java\by\it\academy\management\UtxoManagement.java
 C:\work\blockchain-web\src\main\java\by\it\academy\controller\StatisticsController.java
 C:\work\blockchain-web\src\main\java\by\it\academy\pojo\MiningSession.java

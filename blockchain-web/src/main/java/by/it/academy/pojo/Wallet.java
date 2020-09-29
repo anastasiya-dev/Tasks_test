@@ -41,8 +41,10 @@ public class Wallet {
     public String toString() {
         return "Wallet{" +
                 "walletId='" + walletId + '\'' +
+                ", walletStatus=" + walletStatus +
                 ", privateKeyString='" + privateKeyString + '\'' +
                 ", publicKeyString='" + publicKeyString + '\'' +
+                ", userId='" + userId + '\'' +
                 '}';
     }
 }

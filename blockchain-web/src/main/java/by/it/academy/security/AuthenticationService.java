@@ -1,7 +1,6 @@
 package by.it.academy.security;
 
 import by.it.academy.service.UserService;
-import by.it.academy.support.UserStatus;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

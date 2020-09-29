@@ -27,7 +27,7 @@ public class WalletManagement {
     public float getBalance(Wallet wallet) {
         log.info("Calculating balance for wallet " + wallet.getWalletId());
         float total = 0;
-        ArrayList<Utxo> UTXOs = (ArrayList<Utxo>) utxoService.findAllUTXOs();
+        ArrayList<Utxo> UTXOs = utxoService.findAllUTXOs();
         for (Utxo UTXO : UTXOs) {
             if (utxoManagement.isMine(UTXO, wallet)) { //if output belongs to me ( if coins belong to me )
                 total += UTXO.getValue();

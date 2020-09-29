@@ -57,7 +57,7 @@
             <td></td>
           </tfoot>
     </table>
-
+<br>
     <c:choose>
       <%-- Show Prev as link if not on first page --%>
       <c:when test="${transactionPageList.firstPage}">
@@ -90,5 +90,5 @@
         <a href='<c:out value="${url}" />'>Next</a>
       </c:otherwise>
     </c:choose>
-
+<br>
 <jsp:include page="footer.jsp"/>
