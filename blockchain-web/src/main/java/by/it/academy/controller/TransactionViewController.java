@@ -104,7 +104,7 @@ public class TransactionViewController {
 
         transactionsForDownload.addAll(transactionsFiltered);
         log.info("Extracted transactions filtered: " + transactionsForDownload);
-        modelAndView.addObject("sum", sum);
+        modelAndView.addObject("sum", (float) Math.round(sum * 10.0) / 10.0f);
 
         PagedListHolder<Transaction> transactionList;
         if (page == null) {

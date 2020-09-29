@@ -51,7 +51,7 @@ public class WalletViewController {
         log.info("Showing all the wallets of the user " + userId);
         modelAndView.setViewName("wallet-all");
         modelAndView.addObject("wallets", wallets);
-        modelAndView.addObject("sum", sum);
+        modelAndView.addObject("sum", (float) Math.round(sum * 10.0) / 10.0f);
         return modelAndView;
     }
 }

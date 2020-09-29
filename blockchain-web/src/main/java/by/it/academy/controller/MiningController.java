@@ -91,7 +91,7 @@ public class MiningController {
         }
         modelAndView.setViewName("mining-session-all");
         modelAndView.addObject("miningSessionsForUser", miningSessionsForUser);
-        modelAndView.addObject("sum", sum);
+        modelAndView.addObject("sum", (float) Math.round(sum * 10.0) / 10.0f);
         return modelAndView;
     }
 }

@@ -53,7 +53,7 @@ public class TransactionUnconfirmedController {
         log.info(StringUtil.getStringFromKey(walletService.findWalletById(walletId).getPrivateKey()));
 
         modelAndView.setViewName("view-unconfirmed");
-        modelAndView.addObject("sum", sum);
+        modelAndView.addObject("sum", (float) Math.round(sum * 10.0) / 10.0f);
         modelAndView.addObject("transactions", unconfirmedTransactions);
         return modelAndView;
     }
