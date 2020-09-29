@@ -43,6 +43,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../../blockchain-web/src/main/java/by/it/academy/controller/TransactionUnconfirmedController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../../blockchain-web/src/main/java/by/it/academy/controller/TransactionViewController.java">
           <value>
             <set />
@@ -304,6 +309,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/management/BlockManagement.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/by/it/academy/management/TransactionManagement.java">
           <value>
             <set />
           </value>

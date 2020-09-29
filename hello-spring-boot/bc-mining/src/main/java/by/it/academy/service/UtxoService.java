@@ -5,10 +5,8 @@ import by.it.academy.pojo.Utxo;
 import by.it.academy.repository.UtxoRepository;
 import by.it.academy.util.LoggerUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Lock;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.LockModeType;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;

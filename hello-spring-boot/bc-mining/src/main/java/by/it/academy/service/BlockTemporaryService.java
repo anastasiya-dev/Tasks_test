@@ -78,7 +78,6 @@ public class BlockTemporaryService {
         return blockTemporaryRepository.findById(blockId).get();
     }
 
-    //    @Lock(LockModeType.PESSIMISTIC_WRITE)
     public BlockTemporary updateBlockTemporary(BlockTemporary blockTemporary) {
         logger.info("Updating blockTemporary");
         String id = blockTemporary.getBlockTemporaryId();

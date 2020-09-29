@@ -1,7 +1,9 @@
 package by.it.academy;
 
+import by.it.academy.management.TransactionManagement;
 import by.it.academy.multithreading.MiningLauncher;
 import by.it.academy.pojo.MiningSession;
+import by.it.academy.service.BlockTemporaryService;
 import by.it.academy.service.MiningSessionService;
 import by.it.academy.service.TransactionService;
 import by.it.academy.support.MiningSessionStatus;
@@ -42,7 +44,10 @@ public class ApplicationConfiguration extends WebSecurityConfigurerAdapter imple
     MiningLauncher miningLauncher;
     @Autowired
     TransactionService transactionService;
-
+    @Autowired
+    TransactionManagement transactionManagement;
+    @Autowired
+    BlockTemporaryService blockTemporaryService;
 
     public static int DIFFICULTY = 5;
     public static float THRESHOLD = 1_000_000;
@@ -51,7 +56,6 @@ public class ApplicationConfiguration extends WebSecurityConfigurerAdapter imple
     public static float MINER_REWARD = 0.05f;
     public static float SENDER_REWARD = 0.01f;
     public static int CHECK_FLAG = 100_000;
-
 
     Logger logger;
 
@@ -102,10 +106,13 @@ public class ApplicationConfiguration extends WebSecurityConfigurerAdapter imple
             try {
                 ArrayList<MiningSession> allMiningSessionsByStatus
                         = miningSessionService.findAllMiningSessionsByStatus(MiningSessionStatus.IN_PROCESS);
-                if(!transactionService.findAllTransactionsByStatus(TransactionStatus.CONFIRMED).isEmpty()){
+                if (!transactionService.findAllTransactionsByStatus(TransactionStatus.CONFIRMED).isEmpty()) {
+                    logger.info("Starting mining multithreading");
+                    for (MiningSession miningSession : allMiningSessionsByStatus) {
+                        transactionManagement.formTransactionsSetForSession(miningSession);
+                    }
                     miningLauncher.launch(allMiningSessionsByStatus);
                 }
-                logger.info("Starting mining multithreading");
             } catch (NullPointerException e) {
                 logger.info("Mining session pool empty");
             }

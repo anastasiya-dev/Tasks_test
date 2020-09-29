@@ -4,11 +4,8 @@ import by.it.academy.pojo.TransactionPackage;
 import by.it.academy.repository.TransactionPackageRepository;
 import by.it.academy.util.LoggerUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Lock;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.LockModeType;
-import javax.transaction.Transactional;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.Logger;
@@ -31,8 +28,6 @@ public class TransactionPackageService {
         }
     }
 
-    @Transactional
-    @Lock(LockModeType.PESSIMISTIC_WRITE)
     public TransactionPackage createTransactionPackage(String blockAttemptedId, String transactionId, String miningSessionId) {
         transactionPackage.setTransactionPackageId(blockAttemptedId + " / " + transactionId + " / " + miningSessionId);
         transactionPackage.setBlockAttemptedId(blockAttemptedId);
