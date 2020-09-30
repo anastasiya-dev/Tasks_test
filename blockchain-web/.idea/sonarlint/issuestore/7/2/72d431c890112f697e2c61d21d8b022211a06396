@@ -1,10 +1,10 @@
 
-m	java:S117$"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ìæ†ñ8æ†‘ŒÊ.
 ^
-java:S3457?"AFormat specifiers should be used instead of string concatenation.(Š½¿¾8ºÄÔË.
+java:S3457:"AFormat specifiers should be used instead of string concatenation.(Š½¿¾8ºÄÔË.
+m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ìæ†ñ8æ†‘ŒÊ.
 T
-java:S2629?"7Use the built-in formatting to construct this argument.(Š½¿¾8ºÄÔË.
-Y
-java:S2629>"7Use the built-in formatting to construct this argument.(Ñ¸Ãüÿÿÿÿ8Êœ„«Í.
+java:S2629:"7Use the built-in formatting to construct this argument.(Š½¿¾8ºÄÔË.
 c
-java:S3457>"AFormat specifiers should be used instead of string concatenation.(Ñ¸Ãüÿÿÿÿ8Êœ„«Í.
+java:S34579"AFormat specifiers should be used instead of string concatenation.(Ñ¸Ãüÿÿÿÿ8Êœ„«Í.
+Y
+java:S26299"7Use the built-in formatting to construct this argument.(Ñ¸Ãüÿÿÿÿ8Êœ„«Í.

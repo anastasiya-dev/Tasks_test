@@ -1,15 +1,15 @@
 
-l
-java:S4488("JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(Ñ¦…©üÿÿÿÿ8Õø³Ë.
 Y
-java:S26290"7Use the built-in formatting to construct this argument.(á”³µşÿÿÿÿ8Ò¨€ÑË.
-j
-java:S4488Y"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ñ¦…©üÿÿÿÿ8Õø³Ë.
+java:S2629S"7Use the built-in formatting to construct this argument.(Ÿµô°ùÿÿÿÿ8ÆÔØË.
+Z
+java:S1128"=Remove this unused import 'by.it.academy.support.UserStatus'.(§Í’ë8øµÙË.
+c
+java:S34570"AFormat specifiers should be used instead of string concatenation.(á”³µşÿÿÿÿ8Ò¨€ÑË.
 c
 java:S3457S"AFormat specifiers should be used instead of string concatenation.(Ÿµô°ùÿÿÿÿ8ÆÔØË.
 Y
-java:S2629S"7Use the built-in formatting to construct this argument.(Ÿµô°ùÿÿÿÿ8ÆÔØË.
-c
-java:S34570"AFormat specifiers should be used instead of string concatenation.(á”³µşÿÿÿÿ8Ò¨€ÑË.
-Z
-java:S1128"=Remove this unused import 'by.it.academy.support.UserStatus'.(§Í’ë8øµÙË.
+java:S26290"7Use the built-in formatting to construct this argument.(á”³µşÿÿÿÿ8Ò¨€ÑË.
+l
+java:S4488("JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(Ñ¦…©üÿÿÿÿ8Õø³Ë.
+j
+java:S4488Y"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ñ¦…©üÿÿÿÿ8Õø³Ë.

@@ -20,18 +20,43 @@ public class MiningLaunchController {
 
     private static final Logger log = LoggerFactory.getLogger(MiningLaunchController.class);
 
-    @RequestMapping(value = "/{userId}/wallet/{walletId}/mining", method = RequestMethod.GET)
-    public ModelAndView sendRequestForMiningSession(ModelAndView modelAndView,
-                                     @PathVariable String userId,
-                                     @PathVariable String walletId) throws IOException, InterruptedException {
+    @RequestMapping(value = "/{userId}/wallet/{walletId}/mining-request", method = RequestMethod.GET)
+    public String sendRequestForMiningSession(ModelAndView modelAndView,
+                                              @PathVariable String userId,
+                                              @PathVariable String walletId) throws IOException, InterruptedException {
 
 
         String body = createPostBody(walletId);
         modelAndView.setViewName("mining");
         final HttpResponse<String> httpResponse = post(body, userId, walletId);
-        log.info("Mining session start response:" +  httpResponse.body());
+
+        log.info("Mining session start response:" + httpResponse.body());
+        if (httpResponse.statusCode() == 200) {
+            return "redirect:/accepted";
+        } else {
+            return "redirect:/denied";
+        }
+    }
+
+
+    @RequestMapping(value = "/{userId}/wallet/{walletId}/mining-request/denied", method = RequestMethod.GET)
+    public ModelAndView requestFailure(ModelAndView modelAndView,
+                                       @PathVariable String userId,
+                                       @PathVariable String walletId) {
+
+        modelAndView.setViewName("mining-request-denied");
         return modelAndView;
     }
+
+    @RequestMapping(value = "/{userId}/wallet/{walletId}/mining-request/accepted", method = RequestMethod.GET)
+    public ModelAndView requestSuccess(ModelAndView modelAndView,
+                                       @PathVariable String userId,
+                                       @PathVariable String walletId) {
+
+        modelAndView.setViewName("mining-request-accepted");
+        return modelAndView;
+    }
+
 
     private String createPostBody(String walletId) {
         StringBuilder sb = new StringBuilder();

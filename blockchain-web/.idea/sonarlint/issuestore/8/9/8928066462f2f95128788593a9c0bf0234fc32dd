@@ -1,45 +1,43 @@
 
-^
-java:S3457$"AFormat specifiers should be used instead of string concatenation.(””Ù 8‡ŒñÛÌ.
+c
+java:S3457\"AFormat specifiers should be used instead of string concatenation.(ÄÜËäúÿÿÿÿ8‡ŒñÛÌ.
 Y
-java:S2629O"7Use the built-in formatting to construct this argument.(î¯½ÿùÿÿÿÿ8‡ŒñÛÌ.
-T
-java:S2629."7Use the built-in formatting to construct this argument.(“üˆ¬8‡ŒñÛÌ.
+java:S3655N"7Call "Optional#isPresent()" before accessing the value.(áèãÖûÿÿÿÿ8ã÷ïáÊ.
+Y
+java:S3655U"7Call "Optional#isPresent()" before accessing the value.(Ç¸Æïøÿÿÿÿ8¹—†ŠÊ.
 T
 java:S2629I"7Use the built-in formatting to construct this argument.(Ğæ“8‡ŒñÛÌ.
 Y
-java:S3655]"7Call "Optional#isPresent()" before accessing the value.(Ç¸Æïøÿÿÿÿ8‡ŒñÛÌ.
-c
-java:S3457P"AFormat specifiers should be used instead of string concatenation.(çœôšùÿÿÿÿ8‡ŒñÛÌ.
-Y
-java:S3655U"7Call "Optional#isPresent()" before accessing the value.(Ç¸Æïøÿÿÿÿ8¹—†ŠÊ.
-^
-java:S3457."AFormat specifiers should be used instead of string concatenation.(“üˆ¬8‡ŒñÛÌ.
-T
-java:S2629$"7Use the built-in formatting to construct this argument.(””Ù 8‡ŒñÛÌ.
-Y
-java:S3655N"7Call "Optional#isPresent()" before accessing the value.(áèãÖûÿÿÿÿ8ã÷ïáÊ.
-^
-java:S3457I"AFormat specifiers should be used instead of string concatenation.(Ğæ“8‡ŒñÛÌ.
-S
-java:S2629@"7Use the built-in formatting to construct this argument.(áÂ68‡ŒñÛÌ.
+java:S2629\"7Use the built-in formatting to construct this argument.(ÄÜËäúÿÿÿÿ8‡ŒñÛÌ.
 ]
 java:S3457@"AFormat specifiers should be used instead of string concatenation.(áÂ68‡ŒñÛÌ.
 Y
-java:S2629P"7Use the built-in formatting to construct this argument.(çœôšùÿÿÿÿ8‡ŒñÛÌ.
-Y
 java:S2629"7Use the built-in formatting to construct this argument.(éçøıÿÿÿÿ8‡ŒñÛÌ.
+^
+java:S3457."AFormat specifiers should be used instead of string concatenation.(“üˆ¬8‡ŒñÛÌ.
 Y
-java:S3655%"7Call "Optional#isPresent()" before accessing the value.(›ëæıÿÿÿÿ8‡ŒñÛÌ.
+java:S2629P"7Use the built-in formatting to construct this argument.(çœôšùÿÿÿÿ8‡ŒñÛÌ.
+T
+java:S2629$"7Use the built-in formatting to construct this argument.(””Ù 8‡ŒñÛÌ.
+S
+java:S2629@"7Use the built-in formatting to construct this argument.(áÂ68‡ŒñÛÌ.
 Y
-java:S2629\"7Use the built-in formatting to construct this argument.(ÄÜËäúÿÿÿÿ8‡ŒñÛÌ.
+java:S3655Y"7Call "Optional#isPresent()" before accessing the value.(áèãÖûÿÿÿÿ8¹—†ŠÊ.
+Y
+java:S2629O"7Use the built-in formatting to construct this argument.(î¯½ÿùÿÿÿÿ8‡ŒñÛÌ.
+^
+java:S3457I"AFormat specifiers should be used instead of string concatenation.(Ğæ“8‡ŒñÛÌ.
+c
+java:S3457P"AFormat specifiers should be used instead of string concatenation.(çœôšùÿÿÿÿ8‡ŒñÛÌ.
+T
+java:S2629."7Use the built-in formatting to construct this argument.(“üˆ¬8‡ŒñÛÌ.
+Y
+java:S3655]"7Call "Optional#isPresent()" before accessing the value.(Ç¸Æïøÿÿÿÿ8‡ŒñÛÌ.
+c
+java:S3457"AFormat specifiers should be used instead of string concatenation.(éçøıÿÿÿÿ8‡ŒñÛÌ.
+^
+java:S3457$"AFormat specifiers should be used instead of string concatenation.(””Ù 8‡ŒñÛÌ.
 c
 java:S3457O"AFormat specifiers should be used instead of string concatenation.(î¯½ÿùÿÿÿÿ8‡ŒñÛÌ.
 Y
-java:S3655Y"7Call "Optional#isPresent()" before accessing the value.(áèãÖûÿÿÿÿ8¹—†ŠÊ.
-c
-java:S3457\"AFormat specifiers should be used instead of string concatenation.(ÄÜËäúÿÿÿÿ8‡ŒñÛÌ.
-
-java:S1319("pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(€¡¯8ºôÂ†Ê.
-c
-java:S3457"AFormat specifiers should be used instead of string concatenation.(éçøıÿÿÿÿ8‡ŒñÛÌ.
+java:S3655%"7Call "Optional#isPresent()" before accessing the value.(›ëæıÿÿÿÿ8‡ŒñÛÌ.

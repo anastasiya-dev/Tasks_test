@@ -1,7 +1,5 @@
 
 Y
-java:S2629'"7Use the built-in formatting to construct this argument.(ρφ«Έώÿÿÿÿ8θμ‡¤Ν.
-Z	java:S106"9Replace this use of System.out or System.err by a logger.(Κƒ•™ωÿÿÿÿ8θμ‡¤Ν.
-U	java:S106""9Replace this use of System.out or System.err by a logger.(ν¶Ί¶8θμ‡¤Ν.
+java:S2629$"7Use the built-in formatting to construct this argument.(ρφ«Έώÿÿÿÿ8θμ‡¤Ν.
 c
-java:S3457'"AFormat specifiers should be used instead of string concatenation.(ρφ«Έώÿÿÿÿ8θμ‡¤Ν.
+java:S3457$"AFormat specifiers should be used instead of string concatenation.(ρφ«Έώÿÿÿÿ8θμ‡¤Ν.

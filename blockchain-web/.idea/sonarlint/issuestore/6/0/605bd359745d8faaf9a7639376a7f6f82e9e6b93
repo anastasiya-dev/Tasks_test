@@ -1,23 +1,25 @@
 
-Y
-java:S2629Y"7Use the built-in formatting to construct this argument.(‚ÙĞûÿÿÿÿ8ê­©ÔË.
-]
-java:S1854c"@Remove this useless assignment to local variable "transactions".(©äÊê8¿Ü¤Í.
-o
-java:S3776!"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(ÉİÄŞ8¹œ’Ê.
-T
-java:S2629)"7Use the built-in formatting to construct this argument.(Â´°‹8ê­©ÔË.
-c
-java:S3457("AFormat specifiers should be used instead of string concatenation.(„×è§üÿÿÿÿ8›±¨ÔË.
-l
-java:S4488^"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(¤ï¡ÿÿÿÿÿ8¿Ü¤Í.
-^
-java:S3457)"AFormat specifiers should be used instead of string concatenation.(Â´°‹8ê­©ÔË.
-c
-java:S3457Y"AFormat specifiers should be used instead of string concatenation.(‚ÙĞûÿÿÿÿ8ê­©ÔË.
-N
-java:S1481c"1Remove this unused "transactions" local variable.(©äÊê8¿Ü¤Í.
 e
-java:S4488 "HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ä±8òñ–ŒÊ.
+java:S4488%"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(°ÅÊî8òñ–ŒÊ.
+c
+java:S3457/"AFormat specifiers should be used instead of string concatenation.(„×è§üÿÿÿÿ8›±¨ÔË.
+^
+java:S34570"AFormat specifiers should be used instead of string concatenation.(Â´°‹8ê­©ÔË.
+T
+java:S1128"2Remove this unused import 'java.util.Collections'.(¢³ïÓşÿÿÿÿ8ÀÍéÕÍ.
+r
+java:S1192t"PDefine a constant instead of duplicating this literal "transactionList" 4 times.(à©Üıÿÿÿÿ8§û§ÕÍ.
 Y
-java:S2629("7Use the built-in formatting to construct this argument.(„×è§üÿÿÿÿ8›±¨ÔË.
+java:S2629/"7Use the built-in formatting to construct this argument.(„×è§üÿÿÿÿ8›±¨ÔË.
+T
+java:S26290"7Use the built-in formatting to construct this argument.(Â´°‹8ê­©ÔË.
+m
+java:S4488ˆ"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(Å·ï¢ÿÿÿÿÿ8‡ˆ¹ÔÍ.
+t
+java:S3776&"RRefactor this method to reduce its Cognitive Complexity from 26 to the 15 allowed.(Õ ”¥şÿÿÿÿ8¹œ’Ê.
+Y
+java:S2629j"7Use the built-in formatting to construct this argument.(‚ÙĞûÿÿÿÿ8‡ˆ¹ÔÍ.
+c
+java:S3457j"AFormat specifiers should be used instead of string concatenation.(‚ÙĞûÿÿÿÿ8‡ˆ¹ÔÍ.
+z
+java:S2441t"XMake "PagedListHolder" and its parameters serializable or don't store it in the session.(à©Üıÿÿÿÿ8§û§ÕÍ.

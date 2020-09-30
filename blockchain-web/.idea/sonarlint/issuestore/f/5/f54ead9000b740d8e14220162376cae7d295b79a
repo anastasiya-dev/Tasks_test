@@ -1,8 +1,6 @@
 
-~
-java:S2629,"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(ôÃ¢âÿÿÿÿÿ8€ŸÕĞË.
-c
-java:S3457,"AFormat specifiers should be used instead of string concatenation.(ôÃ¢âÿÿÿÿÿ8İ‡ÔĞË.
+Y
+java:S2629,"7Use the built-in formatting to construct this argument.(¥çÓ¤üÿÿÿÿ8ú–ÖĞË.
 b
 java:S4684'"@Replace this persistent entity with a simple POJO or DTO object.(Ûİ†­ùÿÿÿÿ8ÀÉğıÊ.
 c
@@ -10,6 +8,8 @@ java:S3457"AFormat specifiers should be used instead of string concatenation.(
 Y
 java:S2629"7Use the built-in formatting to construct this argument.(™ìµ»ûÿÿÿÿ8®ŠÓĞË.
 c
-java:S3457-"AFormat specifiers should be used instead of string concatenation.(¥çÓ¤üÿÿÿÿ8‡çÕĞË.
-Y
-java:S2629-"7Use the built-in formatting to construct this argument.(¥çÓ¤üÿÿÿÿ8ú–ÖĞË.
+java:S3457,"AFormat specifiers should be used instead of string concatenation.(¥çÓ¤üÿÿÿÿ8‡çÕĞË.
+~
+java:S2629+"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(ôÃ¢âÿÿÿÿÿ8ÜˆÅÒÍ.
+c
+java:S3457+"AFormat specifiers should be used instead of string concatenation.(ôÃ¢âÿÿÿÿÿ8ÜˆÅÒÍ.

@@ -1,5 +1,5 @@
 
-^
-java:S3457,"AFormat specifiers should be used instead of string concatenation.(ÍÎ‚8Ä’‹ÖË.
 T
 java:S2629,"7Use the built-in formatting to construct this argument.(ÍÎ‚8Ä’‹ÖË.
+^
+java:S3457,"AFormat specifiers should be used instead of string concatenation.(ÍÎ‚8Ä’‹ÖË.

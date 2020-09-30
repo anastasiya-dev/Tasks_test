@@ -1,25 +1,25 @@
 
-j
-java:S4488'"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ñ¦…©üÿÿÿÿ8êå®‹Ê.
-l
-java:S4488="JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(Ñ¦…©üÿÿÿÿ8›Çô‹Ê.
-^
-java:S3457}"AFormat specifiers should be used instead of string concatenation.(¨´¤ã8òèœÔË.
-Y
-java:S26293"7Use the built-in formatting to construct this argument.(•æ‡ıÿÿÿÿ8ÓÆ’ÔË.
-c
-java:S34573"AFormat specifiers should be used instead of string concatenation.(•æ‡ıÿÿÿÿ8ÓÆ’ÔË.
-^
-java:S3457O"AFormat specifiers should be used instead of string concatenation.(¤’®ú8Èœ™ÔË.
-j
-java:S4488e"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ñ¦…©üÿÿÿÿ8›Çô‹Ê.
-T
-java:S2629O"7Use the built-in formatting to construct this argument.(¤’®ú8Èœ™ÔË.
 T
 java:S2629}"7Use the built-in formatting to construct this argument.(¨´¤ã8òèœÔË.
-U
-java:S2629„"7Use the built-in formatting to construct this argument.(ß‹€Ü8Ü¬ÔË.
+l
+java:S4488="JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(Ñ¦…©üÿÿÿÿ8›Çô‹Ê.
+T
+java:S2629O"7Use the built-in formatting to construct this argument.(¤’®ú8Èœ™ÔË.
+j
+java:S4488'"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ñ¦…©üÿÿÿÿ8êå®‹Ê.
 j
 java:S4488s"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ñ¦…©üÿÿÿÿ8›Çô‹Ê.
 _
 java:S3457„"AFormat specifiers should be used instead of string concatenation.(ß‹€Ü8Ü¬ÔË.
+c
+java:S34573"AFormat specifiers should be used instead of string concatenation.(•æ‡ıÿÿÿÿ8ÓÆ’ÔË.
+Y
+java:S26293"7Use the built-in formatting to construct this argument.(•æ‡ıÿÿÿÿ8ÓÆ’ÔË.
+^
+java:S3457O"AFormat specifiers should be used instead of string concatenation.(¤’®ú8Èœ™ÔË.
+j
+java:S4488e"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ñ¦…©üÿÿÿÿ8›Çô‹Ê.
+^
+java:S3457}"AFormat specifiers should be used instead of string concatenation.(¨´¤ã8òèœÔË.
+U
+java:S2629„"7Use the built-in formatting to construct this argument.(ß‹€Ü8Ü¬ÔË.

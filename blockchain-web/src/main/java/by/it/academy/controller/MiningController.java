@@ -41,7 +41,7 @@ public class MiningController {
         log.info("Asking user " + userId + " to choose wallet for mining");
         log.info(minerChoice.toString());
         model.addAttribute("walletId", minerChoice.getMiningWalletId());
-        return "redirect:/{userId}/wallet/{walletId}/mining";
+        return "redirect:/{userId}/wallet/{walletId}/mining-request";
     }
 
     @ModelAttribute("walletList")
