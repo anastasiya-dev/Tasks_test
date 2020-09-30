@@ -155,8 +155,6 @@ t
 Dsrc/test/java/by/it/academy/controller/StatisticsControllerTest.java,2\3\23e5bb90fac5cb4fe63db2c454af005a7f803d0d
 h
 8src/test/java/by/it/academy/service/UserServiceTest.java,c\d\cd435efce6d4ee255c682c85b6e09e7a71ae5c65
-V
-&src/main/webapp/WEB-INF/jsp/mining.jsp,8\8\88b08f54fa23f4ac606ffc6b6f299d1d6295cfe5
 d
 4src/main/java/by/it/academy/support/MinerChoice.java,1\5\157d111632d0ed51f3cf6e2b36033b10e4fe11ee
 r
@@ -175,3 +173,10 @@ b
 2src/main/webapp/WEB-INF/jsp/mining-session-all.jsp,d\5\d5c05a991c03c98e316e26cc9eeab14cf8996b4f
 l
 <src/main/java/by/it/academy/controller/MiningController.java,5\2\521c9872753f85295db6533a15f25e571de3067d
+g
+7src/main/webapp/WEB-INF/jsp/mining-request-accepted.jsp,b\4\b4d6129dd69c4c6affd822ffff8ff04248a5bedb
+e
+5src/main/webapp/WEB-INF/jsp/mining-request-denied.jsp,6\3\63ca0538a23b0a8b614ca6f044c0c17790473f22
+:
+
+Dockerfile,6\6\6651ddff6eb82c840ced7c1dddee15c6e1913dd4

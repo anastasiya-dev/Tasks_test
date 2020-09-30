@@ -43,7 +43,7 @@ public class WalletViewController {
         List<Wallet> wallets = walletService.getAllWalletsForUser(userId, WalletStatus.ACTIVE);
         Float sum = 0.0f;
         for (Wallet wallet : wallets) {
-            wallet.setBalance(walletManagement.getBalance(wallet));
+            wallet.setBalance((float) Math.round(walletManagement.getBalance(wallet) * 10.0) / 10.0f);
             sum += wallet.getBalance();
         }
 

@@ -26,15 +26,19 @@ public class MiningLaunchController {
                                               @PathVariable String walletId) throws IOException, InterruptedException {
 
 
-        String body = createPostBody(walletId);
-        modelAndView.setViewName("mining");
-        final HttpResponse<String> httpResponse = post(body, userId, walletId);
+        try {
+            String body = createPostBody(walletId);
+            modelAndView.setViewName("mining");
+            final HttpResponse<String> httpResponse = post(body, userId, walletId);
 
-        log.info("Mining session start response:" + httpResponse.body());
-        if (httpResponse.statusCode() == 200) {
-            return "redirect:/accepted";
-        } else {
-            return "redirect:/denied";
+            log.info("Mining session start response:" + httpResponse.body());
+            if (httpResponse.statusCode() == 200) {
+                return "redirect:/{userId}/wallet/{walletId}/mining-request/accepted";
+            } else {
+                return "redirect:/{userId}/wallet/{walletId}/mining-request/denied";
+            }
+        } catch (Exception e) {
+            return "redirect:/{userId}/wallet/{walletId}/mining-request/denied";
         }
     }
 

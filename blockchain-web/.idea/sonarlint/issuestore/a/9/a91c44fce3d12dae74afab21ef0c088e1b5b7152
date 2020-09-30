@@ -1,11 +1,15 @@
 
-^
-java:S3457 "AFormat specifiers should be used instead of string concatenation.(Ç®õÖ8—É‡İÌ.
-H
-java:S11726"&Remove these unused method parameters.(É€éËüÿÿÿÿ8—É‡İÌ.
-y
-java:S2629 "\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(Ç®õÖ8—É‡İÌ.
-
-java:S1488?"dImmediately return this expression instead of assigning it to the temporary variable "httpResponse".(ÔÏ¥ğ8‹æ­Ì.
 j
-java:S4488"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ó—şØøÿÿÿÿ8ßº”Ì.
+java:S4488"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Éªï·øÿÿÿÿ8ßº”Ì.
+H
+java:S1172S"&Remove these unused method parameters.(É€éËüÿÿÿÿ8—É‡İÌ.
+e
+java:S4488."HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(¶„Ùõ8Ê¿•ğÍ.
+y
+java:S2629""\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(Ç®õÖ8ÃƒÕğÍ.
+^
+java:S3457""AFormat specifiers should be used instead of string concatenation.(Ç®õÖ8ÃƒÕğÍ.
+e
+java:S44887"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(êõ†‰8ëæ ğÍ.
+
+java:S1488\"dImmediately return this expression instead of assigning it to the temporary variable "httpResponse".(ÔÏ¥ğ8‹æ­Ì.
