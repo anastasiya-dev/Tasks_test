@@ -1,5 +1,0 @@
-
-e
-java:S4488
-"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ôã®Å8’ÍÑ›Ä.
-Z	java:S106"9Replace this use of System.out or System.err by a logger.(ÀÇ¶öøÿÿÿÿ8ªŸí›Ä.

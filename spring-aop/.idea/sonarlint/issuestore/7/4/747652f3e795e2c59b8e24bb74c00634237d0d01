@@ -1,7 +1,0 @@
-
-
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ĞîÆº8µİ¤Ã.
-L
-java:S1068"*Remove this unused "logger" private field.(ú­×”úÿÿÿÿ8µİ¤Ã.
-Z	java:S106"9Replace this use of System.out or System.err by a logger.(‡úÎüÿÿÿÿ8µİ¤Ã.
-U	java:S106"9Replace this use of System.out or System.err by a logger.(£”ßâ8µİ¤Ã.
