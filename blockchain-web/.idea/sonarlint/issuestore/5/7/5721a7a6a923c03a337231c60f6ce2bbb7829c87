@@ -1,19 +1,0 @@
-
-N
-java:S1444",Make this "public static userId" field final(¢ú³ûÿÿÿÿ8ú‡ú­Ë.
-S
-java:S2696"6Make the enclosing method "static" or remove this set.(ÁĞ»¨8´¢û­Ë.
-Y
-java:S2629"7Use the built-in formatting to construct this argument.(Ì¡¨Ûşÿÿÿÿ8‚×Ÿ®Ë.
-X
-java:S1128"=Remove this unused import 'by.it.academy.support.UserStatus'.(§Í’ë8åÈÙË.
-t
-java:S1104"RMake userId a static final constant or non-public and provide accessors if needed.(¢ú³ûÿÿÿÿ8ú‡ú­Ë.
-c
-java:S3457"AFormat specifiers should be used instead of string concatenation.(Ì¡¨Ûşÿÿÿÿ8‚×Ÿ®Ë.
-°
-java:S1130"’Remove the declaration of thrown exception 'org.springframework.security.core.userdetails.UsernameNotFoundException' which is a runtime exception.(ÌÃŸ8Áœ÷­Ë.
-c
-java:S3457 "AFormat specifiers should be used instead of string concatenation.(²õ®ÿÿÿÿÿ8¯ˆ ®Ë.
-Y
-java:S2629 "7Use the built-in formatting to construct this argument.(²õ®ÿÿÿÿÿ8¯ˆ ®Ë.
