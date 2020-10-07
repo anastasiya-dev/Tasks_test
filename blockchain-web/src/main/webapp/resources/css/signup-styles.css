@@ -1,0 +1,95 @@
+html,
+body {
+	background: url(https://www.tibco.com/blog/wp-content/uploads/2018/02/enterprise-blockchain.png) no-repeat center center;
+	background-size: cover;
+	background-color: rgba(255, 255, 255, .9);
+	background-blend-mode: screen;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 100;
+}
+
+.send-button {
+	background: #00142E;
+	width: 100%;
+	font-weight: 600;
+	color: #fff;
+	padding: 8px 25px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+.g-button {
+	color: #fff !important;
+	border: 1px solid #EA4335;
+	background: #ea4335 !important;
+	width: 100%;
+	font-weight: 600;
+	color: #fff;
+	padding: 8px 25px;
+}
+
+.my-input {
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+	cursor: text;
+	padding: 8px 10px;
+	transition: border .1s linear;
+}
+
+.header-title {
+	margin: 0rem 0;
+}
+
+h1 {
+	font-size: 31px;
+	line-height: 40px;
+	font-weight: 600;
+	color: #4c5357;
+	margin-bottom: .1rem;
+}
+
+h2 {
+	color: #5e8396;
+	font-size: 21px;
+	line-height: 32px;
+	font-weight: 400;
+}
+
+.login-or {
+	position: relative;
+	color: #aaa;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.span-or {
+	display: block;
+	position: absolute;
+	left: 50%;
+	top: -2px;
+	margin-left: -25px;
+	background-color: #fff;
+	width: 50px;
+	text-align: center;
+}
+
+.hr-or {
+	height: 1px;
+	margin-top: 0px !important;
+	margin-bottom: 0px !important;
+}
+
+@media screen and (max-width:480px) {
+	h1 {
+		font-size: 26px;
+		margin-bottom: .1rem;
+	}
+	h2 {
+		font-size: 20px;
+	}
+}
