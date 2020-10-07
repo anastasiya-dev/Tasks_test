@@ -1,6 +1,0 @@
-
-Z	java:S106"9Replace this use of System.out or System.err by a logger.(š¾ÔÚıÿÿÿÿ8‹ØòŞÂ.
-j
-java:S4488"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(°¢ÆŸúÿÿÿÿ8ß¦²ŞÂ.
-]
-java:S4684"@Replace this persistent entity with a simple POJO or DTO object.(»á8¶öÌ¹Ã.
