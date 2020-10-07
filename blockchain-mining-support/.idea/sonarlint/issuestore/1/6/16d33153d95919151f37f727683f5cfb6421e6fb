@@ -1,9 +1,0 @@
-
-X	java:S125"<This block of commented-out lines of code should be removed.(ÎŒ¿8÷¶«¼È.
-U	java:S106<"9Replace this use of System.out or System.err by a logger.(ÔğÜ8ÖúÃÈ.
-X	java:S125;"<This block of commented-out lines of code should be removed.(¿³ú¨8ÅÑú»È.
-m	java:S1177"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŸèÒ÷8ÅÑú»È.
-K
-java:S19051")Remove this unnecessary cast to "Wallet".(è¯ñÌÿÿÿÿÿ8†š“ÃÈ.
-R
-java:S1172D"0Remove this unused method parameter "recipient".(¯ºÓ¢úÿÿÿÿ8Å™…¼È.
