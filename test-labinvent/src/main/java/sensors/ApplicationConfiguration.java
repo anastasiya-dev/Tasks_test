@@ -30,7 +30,7 @@ public class ApplicationConfiguration {
         BasicDataSource dataSource = new BasicDataSource();
         dataSource.setUrl("jdbc:mysql://localhost:3306/sensors?serverTimezone=UTC&createDatabaseIfNotExist=true");
         dataSource.setUsername("root");
-        dataSource.setPassword("Atme3816liveon!");
+        dataSource.setPassword("root");
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
         return dataSource;
     }
