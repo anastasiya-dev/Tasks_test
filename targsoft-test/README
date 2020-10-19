@@ -1,0 +1,24 @@
+# Test Task Targsoft
+Test Task Targsoft is a simplified financial transaction analysis system.
+It processes transactions from CSV file
+and reports their number and average value for a specific merchant for a specific period of time.
+
+## Java version
+11
+
+## Installation
+Use Apache Maven (http://maven.apache.org) to build the project,
+additional API used for the project are listed within pom.xml file.
+
+## Initialization
+Info used for the analysis should be placed here: \scr\main\resources\Input.csv
+Header format: ID, Date (format "DD/MM/YYYY hh:mm:ss"), Amount, Merchant,
+Type (PAYMENT/REVERSAL), Related Transaction (optional).
+
+## Usage
+Beginning and ending of the period and merchant name are received via console.
+System reports the total number of transactions and the average transaction value to the console.
+
+## Note
+Neither reversed nor reversing transactions are included into resulting report.
+They are stored within 'reversals' hashmap formed as a result of CSV file reading.
