@@ -11,7 +11,7 @@ Use Apache Maven (http://maven.apache.org) to build the project,
 additional API used for the project are listed within pom.xml file.
 
 ## Initialization
-Info used for the analysis should be placed here: \scr\main\resources\Input.csv
+Info used for the analysis should be placed here: \src\main\resources\Input.csv
 Header format: ID, Date (format "DD/MM/YYYY hh:mm:ss"), Amount, Merchant,
 Type (PAYMENT/REVERSAL), Related Transaction (optional).
 
